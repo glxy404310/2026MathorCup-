@@ -4,8 +4,12 @@
 
 论文定稿采用口径见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
 
+完整论文初稿已整理为[可编辑Word](paper/啤酒风味建模论文初稿.docx)与[PDF预览](paper/啤酒风味建模论文初稿.pdf)，配套[源程序与结果电子附录](paper/论文初稿支撑材料.zip)。初稿保留0–6量尺、未验证化学关联及实际品评边界，尚不标为提交终稿。
+
 | 内容 | 位置 |
 |---|---|
+| 论文正文、30个原生公式、6图及结果附表 | [paper/manuscript.json](paper/manuscript.json) |
+| 135项候选的逐行化学证据及最终引用 | [paper/chemical_evidence_final.csv](paper/chemical_evidence_final.csv) |
 | 三问主方案、正文对照与结论边界 | [final_model_selection.md](docs/final_model_selection.md) |
 | 实际数据结构、缺失、条码精度、变换与题面冲突 | [data_audit.md](docs/data_audit.md) |
 | 评分卡、45维映射、原始量尺与官方来源 | [sensory_mapping_review.md](docs/sensory_mapping_review.md) |

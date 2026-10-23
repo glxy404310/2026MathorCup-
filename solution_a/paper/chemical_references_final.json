@@ -1,0 +1,247 @@
+{
+  "references": [
+    {
+      "number": 1,
+      "authors": [
+        "Michiel Schreurs",
+        "Supinya Piampongsant",
+        "Miguel Roncoroni",
+        "Lloyd Cool",
+        "Beatriz Herrera-Malaver",
+        "Christophe Vanderaa",
+        "Florian A. Theßeling",
+        "Łukasz Kreft",
+        "Alexander Botzki",
+        "Philippe Malcorps",
+        "Luk Daenen",
+        "Tom Wenseleers",
+        "Kevin J. Verstrepen"
+      ],
+      "title": "Predicting and improving complex beer flavor through machine learning",
+      "year": 2024,
+      "journal": "Nature Communications",
+      "volume": "15",
+      "pages": "2368",
+      "doi": "10.1038/s41467-024-46346-0",
+      "url": "https://www.nature.com/articles/s41467-024-46346-0",
+      "verified_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10966102/",
+      "source_type": "primary_research",
+      "claims": [
+        "Sections on chemical analysis and pairwise sensory correlations discuss shared fermentation patterns and unexpected associations of ethyl octanoate/decanoate with hop perception and bitterness.",
+        "The model-dissection section describes ethyl acetate as fruity/solvent/alcoholic and lactic acid as contributing tart taste."
+      ],
+      "support_boundary": "本题附件主要源自同一研究，不能作为本样本关联的独立外部重复验证；研究中的加标结果也不验证全部135个Top-3位置。",
+      "original_number": 1
+    },
+    {
+      "number": 5,
+      "authors": [
+        "Kiyoshi Takoi",
+        "Yutaka Itoga",
+        "Koichiro Koie",
+        "Takayuki Kosugi",
+        "Masayuki Shimase",
+        "Yuta Katayama",
+        "Yasuyuki Nakayama",
+        "Junji Watari"
+      ],
+      "title": "The Contribution of Geraniol Metabolism to the Citrus Flavour of Beer: Synergy of Geraniol and β-Citronellol Under Coexistence with Excess Linalool",
+      "year": 2010,
+      "journal": "Journal of the Institute of Brewing",
+      "volume": "116",
+      "issue": "3",
+      "pages": "251–260",
+      "doi": "10.1002/j.2050-0416.2010.tb00428.x",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/j.2050-0416.2010.tb00428.x",
+      "source_type": "primary_research",
+      "claims": [
+        "Beer sensory experiments found combined geraniol and β-citronellol made excess linalool more fruity/citrus; coexistence of the three compounds supported synergy."
+      ],
+      "support_boundary": "支持特定试验基质中的单萜醇协同，不提供每一种萜烯对任意感官项的直接机制，也不能将试验浓度直接作为通用阈值。",
+      "original_number": 5
+    },
+    {
+      "number": 6,
+      "authors": [
+        "Stefan Hanke",
+        "V. Ditz",
+        "M. Herrmann",
+        "Werner Back",
+        "Thomas Becker",
+        "Martin Krottenthaler"
+      ],
+      "title": "Influence of Ethyl Acetate, Isoamyl Acetate and Linalool on off-flavour Perception in Beer",
+      "year": 2010,
+      "journal": "BrewingScience",
+      "volume": "63",
+      "issue": "7/8",
+      "pages": "94–99",
+      "doi": null,
+      "url": "https://brewingscience.de/index.php/brewingscience/article/view/456",
+      "verified_fulltext_url": "https://brewingscience.de/index.php/brewingscience/article/download/456/354",
+      "source_type": "primary_research",
+      "claims": [
+        "The paper describes cabbage-like DMS and buttery diacetyl and tests their perception in lager beer.",
+        "Ester and linalool additions changed DMS/diacetyl thresholds; effects depended on compound and concentration."
+      ],
+      "support_boundary": "该来源支持缺陷感知和基质交互；没有检验本题DMS感官Top-3的松油烯-4-醇、E-橙花叔醇等候选，不能据其认定相关候选可消除缺陷。DOI未在所核实出版者页面给出。",
+      "original_number": 6
+    },
+    {
+      "number": 4,
+      "authors": [
+        "Magdalena Müller",
+        "Martina Gastl",
+        "Thomas Becker"
+      ],
+      "title": "Key constituents, flavour profiles and specific sensory evaluation of wheat style non-alcoholic beers depending on their production method",
+      "year": 2021,
+      "journal": "Journal of the Institute of Brewing",
+      "volume": "127",
+      "issue": "3",
+      "pages": "262–272",
+      "doi": "10.1002/jib.663",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.663",
+      "source_type": "primary_research",
+      "claims": [
+        "Table 2 reports GC-O/MS odor qualities including banana for isoamyl acetate, clove for 4-vinylguaiacol, floral/citrus for linalool, and fruity/glue for ethyl octanoate.",
+        "The same table identifies acidic acetic acid and several fruity esters; the study emphasizes matrix/process dependence."
+      ],
+      "support_boundary": "嗅闻口气味与特定啤酒样本提供定性依据；不等于这些物质对本题45个评分的因果系数或原量尺校准。未据气味表验证辛酸乙酯产生苦味。",
+      "original_number": 7
+    },
+    {
+      "number": 7,
+      "authors": [
+        "Sophie Noël",
+        "Catherine Liégeois",
+        "Guillaume Lermusieau",
+        "Etienne Bodart",
+        "Camille Badot",
+        "Sonia Collin"
+      ],
+      "title": "Release of Deuterated Nonenal during Beer Aging from Labeled Precursors Synthesized in the Boiling Kettle",
+      "year": 1999,
+      "journal": "Journal of Agricultural and Food Chemistry",
+      "volume": "47",
+      "issue": "10",
+      "pages": "4323–4326",
+      "doi": "10.1021/jf990211r",
+      "url": "https://pubs.acs.org/doi/10.1021/jf990211r",
+      "verified_abstract_url": "https://research.dial.uclouvain.be/entities/publication/ae561bca-3653-454b-a684-32a265080276",
+      "source_type": "primary_research",
+      "claims": [
+        "Labeled-precursor experiments linked nonenal release during aging to cardboard flavor and reversible associations formed during wort boiling."
+      ],
+      "support_boundary": "支持反式-2-壬烯醛与老化纸板味的联系；不支持本题nonenal浓度同酒花香正相关的直接机制，也不将Trans-2-nonenal与Stale hops两个感官项合并。",
+      "original_number": 8
+    }
+  ],
+  "verified_on": "2026-10-23",
+  "evidence_categories": {
+    "direct": "同一化合物与相应感官描述有气味/嗅闻/加标证据；不代表本样本中的相关已被证实为因果。",
+    "general": "已核实化合物的其他气味或一般化学背景；未支持本行目标感官的直接机制。",
+    "indirect": "有共变/共同来源或复杂感官联系的依据，仅作代理或假说；可能包含对同一原研究的复核，非独立重复。",
+    "unverified": "本次核实的一级文献未支持该化合物—目标感官关联，附件元数据仍可追溯。"
+  },
+  "data_boundary": "135行按sensory_target+rank+compound与冻结top3_compounds.csv一一对应。附件8分类和阈值是元信息，不是本次新增实验。",
+  "threshold_note": "阈值列原样转录附件元数据，单位、基质与测定口径未一律统一，不据此直接计算相对谱的气味活度值。",
+  "claim_registry": [
+    {
+      "id": "C01",
+      "source_ref": "",
+      "claim": "本次核实文献未提供该化合物—感官项的直接证据。",
+      "boundary": "仅保留统计候选，不作直接机制解释。"
+    },
+    {
+      "id": "C02",
+      "source_ref": "",
+      "claim": "未找到本行乙醛与该感官描述之间的匹配一级证据。",
+      "boundary": "附件归类为酵母来源仍保留，不能据此证明直接感官机制。"
+    },
+    {
+      "id": "C03",
+      "source_ref": "[1];[6]",
+      "claim": "乙酸乙酯具有果香/溶剂样气味；啤酒加标亦显示其改变部分缺陷感知。",
+      "boundary": "气味与酯类/指甲油样描述相符，但不验证本样本相关系数或单独剂量效应。"
+    },
+    {
+      "id": "C04",
+      "source_ref": "[1]",
+      "claim": "原研究将酯类及多种醇类作为共同发酵来源讨论；可形成工艺/风格共变标记。",
+      "boundary": "间接共变解释，不证明本行麦芽或酯类具体气味由该物质直接产生。"
+    },
+    {
+      "id": "C05",
+      "source_ref": "[1]",
+      "claim": "原研究说明乳酸贡献酸啤酒的酸味。",
+      "boundary": "支持酸感官背景；非本行果香等其他描述的直接来源证明。"
+    },
+    {
+      "id": "C06",
+      "source_ref": "[4]",
+      "claim": "GC-O/MS将乙酸异戊酯的气味标为香蕉。",
+      "boundary": "相同气味描述的定性依据，非本样本关联的干预验证。"
+    },
+    {
+      "id": "C07",
+      "source_ref": "[1];[4]",
+      "claim": "GC-O/MS报告果香/胶样气味；原研究报告同酒花感知和苦味的意外关联。",
+      "boundary": "原研究与本题共享数据，非独立重复；未证明该酯直接产生酒花香或苦味。"
+    },
+    {
+      "id": "C08",
+      "source_ref": "[7]",
+      "claim": "同位素研究支持老化期间反式-2-壬烯醛释放与纸板味相关。",
+      "boundary": "本行目标为酒花感官，不能由纸板味证据解释其正相关，也不能与Stale hops等同。"
+    },
+    {
+      "id": "C09",
+      "source_ref": "[1]",
+      "claim": "原研究报告癸酸乙酯同其他发酵产物共变，并讨论同酒花感知和苦味的关联。",
+      "boundary": "同源数据的背景说明，非独立的直接气味/抑制机制验证。"
+    },
+    {
+      "id": "C10",
+      "source_ref": "[5]",
+      "claim": "香叶醇、香茅醇与芳樟醇在啤酒中具有果香/柑橘协同；芳樟醇亦有GC-O花香/柑橘依据。",
+      "boundary": "三组分交互依赖基质；不支持其他目标（如t2n）的直接抑制机制。"
+    },
+    {
+      "id": "C11",
+      "source_ref": "[5];[4]",
+      "claim": "香叶醇、香茅醇与芳樟醇在啤酒中具有果香/柑橘协同；芳樟醇亦有GC-O花香/柑橘依据。",
+      "boundary": "三组分交互依赖基质；不支持其他目标（如t2n）的直接抑制机制。"
+    },
+    {
+      "id": "C12",
+      "source_ref": "[6]",
+      "claim": "DMS具有卷心菜样气味，其感知受乙酸酯和芳樟醇改变。",
+      "boundary": "没有直接验证DMS导致本行热带酒花感官。"
+    },
+    {
+      "id": "C13",
+      "source_ref": "[4]",
+      "claim": "啤酒GC-O/MS报告乙酸的酸气味。",
+      "boundary": "不验证本行酯类果味的直接产生机制。"
+    },
+    {
+      "id": "C14",
+      "source_ref": "[4]",
+      "claim": "GC-O/MS对3-甲基丁酸乙酯及丁酸乙酯报告果香/甜果香描述。",
+      "boundary": "不验证本行醋酸、金属或麦芽焦糖感官的直接作用。"
+    },
+    {
+      "id": "C15",
+      "source_ref": "[4]",
+      "claim": "啤酒GC-O/MS识别4-乙烯基愈创木酚为丁香样气味。",
+      "boundary": "定性气味依据，不代表预测关系或统一风格阈值已验证。"
+    }
+  ],
+  "evidence_counts": {
+    "unverified": 82,
+    "indirect": 29,
+    "general": 14,
+    "direct": 10
+  }
+}

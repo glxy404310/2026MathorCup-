@@ -1,0 +1,393 @@
+{
+  "chapter": 7,
+  "title": "风格条件生成与受约束迁移",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "7 风格条件生成与受约束迁移"
+    },
+    {
+      "type": "paragraph",
+      "text": "第三问包含两个相互衔接的任务：学习目标风格的化学联合分布，并在限制缺陷变化的条件下，将Pils/Lager的化学谱向Tripel移动。前者检验分布保真性与样本新颖性，后者检验有限候选中的可行性及模型一致性。两类证据分别评价，避免把迁移搜索带来的接近度改善解释为生成分布质量的提高。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.1 混合化学表示与高斯秩映射"
+    },
+    {
+      "type": "paragraph",
+      "text": "依据附件及原研究的化学—感官数据框架[1]，删除五项汇总或派生变量后，第三问保留226维输入。其中69维用附件8的校准量替换，157维保留附件1给定的相对表示，按beer精确连接。校准负值作为缺失处理，相对表示中的负值保留。缺失填补和经验分布均只用当前训练集估计；迁移训练排除全部11款Pils，使用其余239款酒。该表示与第一问的231维输入不同，预测工件不能直接互换。"
+    },
+    {
+      "type": "paragraph",
+      "text": "采用Gaussian Copula分离边缘分布与依赖结构[4]。对第j维的不同观测值v，记小于v的样本数为N₍＜v₎、等于v的样本数为N₍＝v₎，用中点经验概率处理零值和并列值："
+    },
+    {
+      "type": "equation",
+      "latex": "\\widehat F^{\\mathrm{mid}}_j(v)=\\frac{N_{<v}+N_{=v}/2}{n}.",
+      "label": "7-1"
+    },
+    {
+      "type": "equation",
+      "latex": "z_j=\\Phi^{-1}(\\widehat F^{\\mathrm{mid}}_j(x_j)),\\qquad x_j^{*}=\\widehat F_j^{-1}(\\Phi(z_j^{*})).",
+      "label": "7-2"
+    },
+    {
+      "type": "paragraph",
+      "text": "训练观测点采用上述中点概率；评分中间输入时进行线性插值，并将概率截在[0.5/n,1−0.5/n]。逆变换按经验累计概率阶梯取值，不插值浓度。因此生成模型形成新的联合组合，但不承诺生成新的单变量测量值。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.2 共享信息的条件Copula基准"
+    },
+    {
+      "type": "paragraph",
+      "text": "小风格样本不足以稳定估计226维协方差。基准模型在全局经验边缘下，将风格中心向全局中心收缩，将局部协方差向合并风格内协方差收缩。局部和合并协方差均先用Ledoit–Wolf估计，并加入微小对角项，保证Cholesky分解可用。设nₛ为风格样本量，则"
+    },
+    {
+      "type": "equation",
+      "latex": "a_s=\\frac{n_s}{n_s+5},\\quad b_s=\\frac{n_s}{n_s+20},\\quad \\widetilde\\mu_s=a_s\\bar z_s+(1-a_s)\\bar z.",
+      "label": "7-3"
+    },
+    {
+      "type": "equation",
+      "latex": "\\widetilde\\Sigma_s=b_s\\widehat\\Sigma_s+(1-b_s)\\widehat\\Sigma_{\\mathrm{within}},\\qquad z^{*}\\sim N(\\widetilde\\mu_s,\\widetilde\\Sigma_s).",
+      "label": "7-4"
+    },
+    {
+      "type": "paragraph",
+      "text": "其中合并协方差由各风格减去自身中心后的残差估计。收缩可降低高维小样本估计波动，但全局边缘和中心回拉也可能稀释Kriek、Lambic的风格特征，故进一步比较保留局部边缘的两种方法。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.3 局部边缘Copula与平滑混合"
+    },
+    {
+      "type": "paragraph",
+      "text": "对每种风格分别建立经验边缘及高斯秩。缺失先用该风格训练中位数填补，整列缺失才回退到全局训练中位数。将局部正则相关矩阵Rₛ与各风格局部秩合并后的共享相关矩阵R共享混合；相关矩阵来自正则协方差的对角标准化。设风格内秩样本为zₛᵢ，定义"
+    },
+    {
+      "type": "equation",
+      "latex": "\\widetilde R_s=\\frac{n_s}{n_s+10}R_s+\\frac{10}{n_s+10}R_{\\mathrm{shared}},\\qquad\\varepsilon\\sim N(0,\\widetilde R_s).",
+      "label": "7-5"
+    },
+    {
+      "type": "equation",
+      "latex": "z^{*}_{\\mathrm{copula}}=\\varepsilon,\\qquad z^{*}_{\\mathrm{mixture}}=z_{sI}+0.45\\varepsilon,\\qquad I\\sim\\mathrm{Unif}\\{1,\\ldots,n_s\\}.",
+      "label": "7-6"
+    },
+    {
+      "type": "paragraph",
+      "text": "两者均由风格自身经验逆CDF还原。前者使用单位边际高斯噪声，后者在随机选取的风格秩中心附近加入固定强度的相关扰动。局部Copula在期望上保留经验零频率；平滑混合不保证该性质，须另行检查。风格局部支持也不能补足未观测尾部。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.4 嵌套选择、生成质量与感官画像"
+    },
+    {
+      "type": "paragraph",
+      "text": "外层采用两次三折风格分层划分，训练集内部以两折选择上述三个候选。共同评价坐标由当前训练集基准Copula及五维PCA确定，再按训练主成分标准差缩放。每法每次生成300条，使用两个模拟种子。以真实留出谱u和生成谱v的经验能量差异为主指标："
+    },
+    {
+      "type": "equation",
+      "latex": "\\widehat{\\mathcal E}(U,V)=2A_{UV}-A_{UU}-A_{VV},\\qquad A_{UV}=\\frac{1}{ml}\\sum_{i=1}^{m}\\sum_{k=1}^{l}\\lVert u_i-v_k\\rVert_2.",
+      "label": "7-7"
+    },
+    {
+      "type": "paragraph",
+      "text": "其中Aᵤᵤ与Aᵥᵥ分别为真实样本内部、生成样本内部的全部有序对距离均值，包含距离为零的对角项。该量为未开平方的V统计量，越小越好。内层候选须在每折满足整行及忽略训练缺失格后的复制率均为零、生成最近邻距离与真实留出最近邻距离的中位数比不低于0.35、最近训练行相等特征比例中位数不高于0.95，再按平均能量选择。主评价报告完整嵌套选择器，不能用外层表现最好的单候选代替。"
+    },
+    {
+      "type": "table",
+      "caption": "表7-1 风格生成的外层能量差异与全量拟合方法",
+      "headers": [
+        "风格",
+        "基准Copula",
+        "嵌套选择器",
+        "风格重采样",
+        "全量拟合方法"
+      ],
+      "rows": [
+        [
+          "Tripel",
+          "0.2866",
+          "0.2939",
+          "0.3218",
+          "收缩Copula"
+        ],
+        [
+          "Kriek",
+          "0.9528",
+          "0.7575",
+          "0.7434",
+          "局部边缘Copula"
+        ],
+        [
+          "Lambic",
+          "0.8701",
+          "0.6669",
+          "0.6304",
+          "平滑混合"
+        ],
+        [
+          "Pils/Lager（对照）",
+          "0.8098",
+          "0.5001",
+          "0.5736",
+          "局部边缘Copula"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Kriek、Lambic的主指标较匹配基准分别降低20.5%、23.4%，Tripel则变差约2.5%。前两种仍略逊于直接重采样，且Kriek的平均边缘误差仍受极端变量影响，不能称全面优于对照。重采样直接复制观测，故只作质量基准。全量拟合后三种指定风格各生成300条，共900条；另生成300条Pils对照。1200条的两种整行复制率均为零，但这不等于摆脱训练分布限制。"
+    },
+    {
+      "type": "paragraph",
+      "text": "除主指标外，按训练四分位距归一的边缘Wasserstein距离跨特征中位数，Kriek由0.5345降至0.4701，Lambic由0.4913降至0.4114，支持局部边缘改善的解释。但相关差异、零频率、方差覆盖与近邻距离提供不同侧面的证据，不能由单项下降推出联合分布已准确恢复。外层划分仍复用同一批真实酒，重复与折间波动也不构成独立外部验证或置信区间。"
+    },
+    {
+      "type": "paragraph",
+      "text": "感官画像中的44维由226维全量多输出树给出，Stale hops由239款非Pils训练的固定单目标树覆盖，不混称为同一新模型。各风格报告预测均值及5%、95%分位数；分位数描述生成谱间的预测分布，不是校准置信区间。全部感官量保留附件标准化尺度，未还原原始0—6分。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.5 距离、支持域与中央候选池"
+    },
+    {
+      "type": "paragraph",
+      "text": "迁移沿用239款训练样本拟合的原高斯秩坐标及Tripel几何，保持不同方案量尺一致。记z(x)为映射，目标距离d和化学改动r定义为"
+    },
+    {
+      "type": "equation",
+      "latex": "d(x)=\\sqrt{\\frac{(z(x)-\\widetilde\\mu_T)^{\\mathsf T}\\widetilde\\Sigma_T^{-1}(z(x)-\\widetilde\\mu_T)}{p}},\\qquad p=226.",
+      "label": "7-8"
+    },
+    {
+      "type": "equation",
+      "latex": "r_i(x)=\\frac{\\lVert z(x)-z(x_i)\\rVert_2}{\\sqrt p},\\qquad G_i(x)=1-\\frac{d(x)}{d(x_i)}.",
+      "label": "7-9"
+    },
+    {
+      "type": "paragraph",
+      "text": "候选须处于非Pils训练逐维范围内，且其到真实Tripel的最近邻秩空间RMS距离不超过Tripel内部留一最近邻距离的95%分位数。另要求rᵢ≥0.05，排除近似不变方案。该距离没有卡方概率标定。"
+    },
+    {
+      "type": "paragraph",
+      "text": "为增加接近Tripel中心且满足感官约束的候选，将冻结的前500条Tripel谱映射后，按c∈{0.2,0.4,0.6}向收缩中心移动，逆变换得到1500条中央目标谱。再与源谱按γ∈{0.25,0.5,0.75,1}插值，并加入四条向真实Tripel中位谱插值的候选："
+    },
+    {
+      "type": "equation",
+      "latex": "z_{kc}^{\\mathrm{central}}=\\widetilde\\mu_T+c\\{z(t_k)-\\widetilde\\mu_T\\},\\quad t_{kc}^{\\mathrm{central}}=\\widehat F^{-1}\\{\\Phi(z_{kc}^{\\mathrm{central}})\\}.",
+      "label": "7-10"
+    },
+    {
+      "type": "equation",
+      "latex": "x^{\\prime}_{ikc\\gamma}=(1-\\gamma)x_i+\\gamma t_{kc}^{\\mathrm{central}}.",
+      "label": "7-11"
+    },
+    {
+      "type": "paragraph",
+      "text": "中央池名义预算为1500×4+4=6004，与原1500条目标谱组成的6004池匹配；原500条池的2004候选另作对照。1500条中央目标谱均唯一，但逐源化学投影后可能重复，故预算不等于独立新谱数。所有投影后的距离、支持域和预测均重新计算。"
+    },
+    {
+      "type": "paragraph",
+      "text": "候选的化学可行性投影只作用于四个缺陷浓度，采用下界零及情景交集上界截断；其余维度保留插值结果。投影可能破坏原始联合依赖，因此须在投影后重新判断完整高维支持域。该处理是模型约束下的谱搜索，不能将截断四个浓度理解为可以独立调整这些化合物的生产操作。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.6 化学阈值情景与接近幅度保留"
+    },
+    {
+      "type": "paragraph",
+      "text": "对DMS、双乙酰和4VG，分别取附件阈值的均值、中位数，再各乘0.8、0.9、1.0、1.1、1.2，组成十个同时保护情景。要求相对源谱的超阈程度不增加，等价于上界约束"
+    },
+    {
+      "type": "equation",
+      "latex": "\\max(0,x^{\\prime}_d-T_{ds})\\leq\\max(0,x_{id}-T_{ds})\\qquad(\\forall s).",
+      "label": "7-12"
+    },
+    {
+      "type": "equation",
+      "latex": "0\\leq x^{\\prime}_d\\leq\\min_s\\max(T_{ds},x_{id})=\\max\\{\\min_sT_{ds},x_{id}\\}.",
+      "label": "7-13"
+    },
+    {
+      "type": "paragraph",
+      "text": "最严格阈值依次为DMS 13.8 μg/L、双乙酰0.072 mg/L、4VG 0.16 mg/L。源浓度高于阈值时上界为源值，低于阈值时允许在阈值内变化。附件未给trans-2-nonenal阈值，故单独要求浓度不增加。四项均依据源的观测校准值；不能对相对量直接套用浓度阈值。"
+    },
+    {
+      "type": "paragraph",
+      "text": "为避免满足模型约束却几乎未向目标移动，以每源原冻结默认迁移谱的改善幅度Gᵢ锚为参照，主比较要求"
+    },
+    {
+      "type": "equation",
+      "latex": "G_i(x')\\geq\\max\\{0.10,\\ 0.80G_i^{\\mathrm{anchor}}\\}.",
+      "label": "7-14"
+    },
+    {
+      "type": "paragraph",
+      "text": "同时保留100%锚改善及绝对10%、30%、50%、60%下限的敏感性结果。两种模型臂、三个候选池、六种下限及两种排序形成72个网格点，所有11款源始终保留在通过率分母内。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.7 Stale hops预测及beer 81误差诊断"
+    },
+    {
+      "type": "paragraph",
+      "text": "Stale hops代理仅接受化学输入。稳定性选型在非Pils训练内比较风格留出误差和响应波动，最终选稳定Ridge；四外层分组验证的整体规则RMSE为0.4200，同折旧多输出树为0.4280。但Pils整风格留出时，Ridge为0.5614，旧多输出树0.5307、固定单目标树0.5429，未获得跨风格提升。尾部加权备选虽降至0.5157，其非Pils留出误差恶化、未过准入，Pils的R²仍为−0.0007，故不后验替换主模型。"
+    },
+    {
+      "type": "paragraph",
+      "text": "稳定性选型先应用风格留出精度与非退化门槛，再在一标准误差容忍带内比较训练内响应稳定性。该容忍带只是选型启发式，不作参数置信区间。辅助感官方向和尾部权重只从训练折估计；真实其他感官评分不进入推理输入。上述设计减少信息泄漏，但无法补偿未见风格的条件分布变化。"
+    },
+    {
+      "type": "paragraph",
+      "text": "beer 81实测为1.6182，居全部250款第5高；239款训练酒中仅4款达到该水平。旧局部25近邻的目标范围为[−0.3668,1.0643]，非负加权均值无法越过其上界。核查未发现身份错配、缺失或非法校准负值；论坛数值术语表只作语义佐证，不作为预测输入。主Ridge对81预测仍为−0.0979，说明尾部稀疏及化学相似性与陈旧感的不一致尚未解决；储存、批次等未观测因素只能作为待检验解释，不能据此改标签或删样本。Pils标签已多次查看，以上属于开发诊断。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.8 双模型筛选与预留委员会审计"
+    },
+    {
+      "type": "paragraph",
+      "text": "分别以稳定Ridge和固定单目标树作为当前代理臂，同时保留旧45输出树中心。对候选与源使用同一bootstrap模型形成配对差，要求当前40个筛选模型、旧30个筛选模型的差值95%分位数均不大于零，两个中心预测也均不增加："
+    },
+    {
+      "type": "equation",
+      "latex": "\\Delta_b^{(a)}(x^{\\prime},x_i)=f_b^{(a)}(x^{\\prime})-f_b^{(a)}(x_i),\\qquad a=\\mathrm{new,old}.",
+      "label": "7-15"
+    },
+    {
+      "type": "equation",
+      "latex": "Q_{0.95}\\{\\Delta_b^{(\\mathrm{new})}\\}\\leq0,\\qquad Q_{0.95}\\{\\Delta_b^{(\\mathrm{old})}\\}\\leq0.",
+      "label": "7-16"
+    },
+    {
+      "type": "equation",
+      "latex": "f_0^{(a)}(x^{\\prime})-f_0^{(a)}(x_i)\\leq0,\\qquad a=\\mathrm{new,old}.",
+      "label": "7-17"
+    },
+    {
+      "type": "paragraph",
+      "text": "另要求配对响应非零、池内平均响应标准差大于10⁻⁶，避免近常数代理轻易通过。旧中心是45输出模型，但旧委员会是单目标120树ExtraTrees，两者不混称同架构审计。选谱后仅用预留当前20个模型及新种子旧协议20个模型审计；固定树臂另生成20个审计模型。旧历史10模型仅作并行诊断。所有模型共享239款训练数据，审计失败不重新挑谱；模型分位数不代表真实感官的95%保证。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.9 余量优先与几何优先的经验权衡"
+    },
+    {
+      "type": "paragraph",
+      "text": "在共同可行候选集合中，定义q新、q旧为两组筛选差值分位数。余量优先先最小化较差的一组分位数，精确并列时再比较几何目标；几何优先直接最小化目标距离与改动的加权和。设hᵢ为源到真实Tripel秩均值的RMS距离，则"
+    },
+    {
+      "type": "equation",
+      "latex": "J_i(x^{\\prime})=\\frac{d(x^{\\prime})}{d(x_i)}+0.2\\frac{r_i(x^{\\prime})}{h_i}.",
+      "label": "7-18"
+    },
+    {
+      "type": "equation",
+      "latex": "x_{i,\\mathrm{margin}}^{*}=\\mathrm{arglexmin}_{x^{\\prime}\\in\\mathcal C_i}\\big(\\max(q_{\\mathrm{new}},q_{\\mathrm{old}}),J_i(x^{\\prime})\\big).",
+      "label": "7-19"
+    },
+    {
+      "type": "equation",
+      "latex": "x_{i,\\mathrm{geometry}}^{*}=\\arg\\min_{x^{\\prime}\\in\\mathcal C_i}J_i(x^{\\prime}).",
+      "label": "7-20"
+    },
+    {
+      "type": "table",
+      "caption": "表7-2 retain80条件下的候选与排序比较",
+      "headers": [
+        "代理臂/候选池/排序",
+        "选出数",
+        "审计通过数",
+        "所选谱改善中位数",
+        "通过谱改善中位数"
+      ],
+      "rows": [
+        [
+          "稳定Ridge/中央6004/余量优先",
+          "5/11",
+          "5/11",
+          "53.17%",
+          "53.17%"
+        ],
+        [
+          "固定树/原6004/余量优先",
+          "9/11",
+          "9/11",
+          "54.38%",
+          "54.38%"
+        ],
+        [
+          "固定树/中央6004/余量优先",
+          "11/11",
+          "10/11",
+          "57.74%",
+          "58.44%"
+        ],
+        [
+          "固定树/中央6004/几何优先",
+          "11/11",
+          "10/11",
+          "70.08%",
+          "70.08%"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "正文以固定树、中央6004池、余量优先作为方法比较；相对于同规则原6004池，通过数由9增至10，所选谱改善中位数由54.38%增至57.74%。该中位数包括已选但审计失败的谱，通过谱中位数另列58.44%。两种排序均保留beer 96的当前审计分位数+0.0210所对应失败，不重新选谱。"
+    },
+    {
+      "type": "paragraph",
+      "text": "两种模型臂使用相同源、候选预算、化学情景与距离下限，因此其差异反映代理响应对可行集合的影响。没有候选的源同样计入十一款分母，候选存在与审计通过分开报告。固定树较高的检查通过率并不表示其真实陈旧感预测更准；这与整风格留出精度较弱的诊断并不矛盾。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7.10 结果采用及适用边界"
+    },
+    {
+      "type": "paragraph",
+      "text": "几何优先在本批样本上保持10/11检查通过，接近幅度达到70.08%，作为应用示例展示。该推荐是在查看完整网格后形成，属于探索性取舍，不能将同批审计视为独立确认。原先固定的稳定Ridge、中央池、retain80、余量优先实验仍按5/11报告；不能用较高的固定树结果改写原默认实验。中央候选是有限搜索提议，72点网格也不证明连续空间全局最优。"
+    },
+    {
+      "type": "paragraph",
+      "text": "十情景化学保护来自预设情景交集，不能扩展为任意未知阈值均稳健。生成与迁移输出是化学目标谱和相对感官画像，10/11表示模型检查通过数，不是实际品评成功率；化学关联与预测响应也不等于可实施的因果干预。真实酿造配方、储存过程及迁移后的感官保证，仍需新批次理化检测和盲品验证。"
+    }
+  ],
+  "sources": [
+    "solution_a/docs/final_model_selection.md",
+    "solution_a/docs/q3_refinement_results.md",
+    "solution_a/docs/q3_optimization_results.md",
+    "solution_a/outputs/q3_optimized/generation/cv_summary.csv",
+    "solution_a/outputs/q3_optimized/generation/summary.json",
+    "solution_a/outputs/q3_optimized/generated_sensory_summary.csv",
+    "solution_a/outputs/q3_refined/stale/summary.json",
+    "solution_a/outputs/q3_refined/beer81/summary.json",
+    "solution_a/outputs/q3_refined/transfer/frontier.csv",
+    "solution_a/outputs/q3_refined/transfer/transfer_summary.csv",
+    "solution_a/src/q3_data.py",
+    "solution_a/src/q3_copula.py",
+    "solution_a/src/q3_generator_optimized.py",
+    "solution_a/src/11_q3_generation_optimized.py",
+    "solution_a/src/23_q3_transfer_balanced.py"
+  ],
+  "appendix_notes": [
+    "附录保留全部生成分布指标、完整45维画像及全1200条生成谱；指定三风格共900条，Pils另300条。",
+    "附录保留12个Stale hops配置的非Pils与Pils诊断、beer 81身份及邻域核查、72个迁移网格点、全部11源及失败状态。",
+    "源文件路径为写作追溯索引，不进入正文参考文献；[1]为原啤酒化学—感官研究，[4]为全文统一的Gaussian Copula文献。"
+  ]
+}

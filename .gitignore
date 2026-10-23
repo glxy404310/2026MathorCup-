@@ -1,4 +1,5 @@
 .DS_Store
+/solution_a/paper/qa/
 .venv/
 __pycache__/
 *.pyc
