@@ -2,10 +2,11 @@
 
 本目录保存数据审计、模型、原始实验结果和复现程序。第一问已完成45维连续预测与缺失压力实验，第二问已完成关联网络与Top-3稳定性基线，第三问已运行风格生成和带缺陷保护的迁移搜索。真实0–6量尺校准、部分机制核验和实际品评验证仍待完成。
 
-当前重点见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
+论文定稿采用口径见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
 
 | 内容 | 位置 |
 |---|---|
+| 三问主方案、正文对照与结论边界 | [final_model_selection.md](docs/final_model_selection.md) |
 | 实际数据结构、缺失、条码精度、变换与题面冲突 | [data_audit.md](docs/data_audit.md) |
 | 评分卡、45维映射、原始量尺与官方来源 | [sensory_mapping_review.md](docs/sensory_mapping_review.md) |
 | 第一问异常值和折外预测复核 | [q1_validation_review.md](docs/q1_validation_review.md) |
