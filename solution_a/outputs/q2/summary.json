@@ -1,0 +1,104 @@
+{
+  "scope": "Full-sample descriptive associations; neither causal evidence nor held-out predictive validation.",
+  "n_beers": 250,
+  "n_features": 231,
+  "n_candidate_compounds": 218,
+  "n_sensory_targets": 45,
+  "bootstrap_draws": 200,
+  "seed": 20261023,
+  "excluded_compounds": [
+    "CO2.PSI.",
+    "GFS",
+    "acids_sum",
+    "aroma_hops_sum",
+    "betaglucan.mg.L.",
+    "bitterness",
+    "color.EBC.",
+    "esters_sum",
+    "kcalperc",
+    "pH",
+    "protein.g.L.",
+    "sulfur_sum",
+    "unfermentables"
+  ],
+  "excluded_sensory_targets": [
+    "aftertaste",
+    "alcohol",
+    "body",
+    "co2",
+    "overall"
+  ],
+  "correlation_audit": {
+    "supplied_vs_spearman_max_abs_error": 6.661338147750939e-16,
+    "supplied_vs_spearman_mean_abs_error": 1.5901103931861018e-16,
+    "supplied_vs_pearson_mean_abs_error": 0.08768352770151427,
+    "supplied_vs_pearson_max_abs_error": 1.1234263749065516,
+    "optimized_routine_vs_scipy_max_abs_error": 1.6653345369377348e-16
+  },
+  "networks": [
+    {
+      "absolute_rho_threshold": 0.6,
+      "edges": 266,
+      "positive_edges": 263,
+      "negative_edges": 3,
+      "isolated_nodes": 101
+    },
+    {
+      "absolute_rho_threshold": 0.7,
+      "edges": 109,
+      "positive_edges": 109,
+      "negative_edges": 0,
+      "isolated_nodes": 150
+    },
+    {
+      "absolute_rho_threshold": 0.8,
+      "edges": 39,
+      "positive_edges": 39,
+      "negative_edges": 0,
+      "isolated_nodes": 194
+    }
+  ],
+  "top3_stability": {
+    "mean_selection_frequency": 0.4551851851851852,
+    "median_selection_frequency": 0.4,
+    "number_frequency_at_least_0_8": 14,
+    "total_selected": 135,
+    "max_frequency_monte_carlo_standard_error": 0.035355339059327376
+  },
+  "mean_jaccard_spearman_pearson": 0.22222222222222218,
+  "mean_jaccard_global_within_style": 0.16,
+  "targets_with_no_global_within_overlap": 21,
+  "style_counts": {
+    "Blond": 31,
+    "Tripel": 28,
+    "Strong ale": 18,
+    "Hoppy": 17,
+    "Stout/Porter": 13,
+    "Wheat": 12,
+    "Amber": 12,
+    "Brown": 12,
+    "Pils/Lager": 11,
+    "Lambic": 11,
+    "Dubbel": 10,
+    "Kriek": 10,
+    "Saison": 10,
+    "Christmas": 9,
+    "Low/No alcohol": 8,
+    "Fruitbeer": 8,
+    "West Flanders ale": 7,
+    "Brett/cofermented": 6,
+    "Flanders old brown": 5,
+    "Scotch": 5,
+    "Brut": 4,
+    "Faro": 3
+  },
+  "limitations": [
+    "No causal interpretation",
+    "No per-candidate mechanism literature verification yet",
+    "All-sample network is not an external independent prior",
+    "Global row bootstrap does not fix style composition",
+    "Mean-centered within-style rank correlation is a sensitivity analysis, not full confounding control",
+    "Continuous standardized targets do not supply raw 0-6 calibration",
+    "Graph provides structure/context; this baseline ranks marginal correlations and does not fit a graph-regularized predictive model"
+  ]
+}

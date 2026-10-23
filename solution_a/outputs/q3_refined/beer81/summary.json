@@ -1,0 +1,162 @@
+{
+  "source_beer": 81,
+  "exact_beer_join_passed": true,
+  "barcode_consistent_at_supplied_precision": true,
+  "barcode_exact_1csv_8xlsx": true,
+  "sample_profile": {
+    "raw_numeric_missing": 0,
+    "hybrid_missing": 0,
+    "calibrated_negative_count": 0,
+    "raw_negative_count": 44,
+    "hybrid_negative_relative_count": 28,
+    "hybrid_zero_count": 3,
+    "hybrid_zero_features": [
+      "CS2",
+      "octyl_acetate",
+      "X4VG"
+    ],
+    "exact_hybrid_duplicate_other_rows": 0,
+    "outside_nonpils_feature_ranges": 1,
+    "repeated_original_values": [
+      {
+        "value": -1.81781854,
+        "count": 28,
+        "features": "propylene.glycol;ethyl.lactate;X6.methyl.5.hepten.2.one;alpha.phellandrene;beta.phellandrene;limonene;eucalyptol;cis.linalool.oxide;meta.cymenene;n.nonanal;y.methyl.1.octanol;cis.dihydro.beta.terpineol;isopentyl.hexanoate;neryl.formate;X2.undecanone;X2.undecanol;methyl.geranate;X2.butyloctanoate;methyl.para.anisate;geosmin;X4.8.alpha.epoxy.caryophyllane;germacrene.D;butylated.hydroxytoluene;X1.2.dihydro.8.hydroxy..2E..linalool;selin.11.en.4.alpha.ol;n.tetradecanol;X2.ethylhexylsalicylate;isopropyl.hexadecanoate",
+        "interpretation": "repeated supplied value; attachment does not identify an analytical detection limit"
+      }
+    ],
+    "analytical_detection_limits_available": false,
+    "detection_limit_note": "Sensory thresholds are perceptual thresholds, not analytical LOD/LOQ"
+  },
+  "stale_observed": 1.618166899,
+  "stale_descending_rank_all250": 5,
+  "nonpils_training_rows": 239,
+  "nonpils_stale_at_least_beer81": 4,
+  "nonpils_high_tail_beers": [
+    236,
+    128,
+    19,
+    147
+  ],
+  "frozen_local_top25_stale_min": -0.366768402,
+  "frozen_local_top25_stale_max": 1.0643283,
+  "beer81_outside_local_top25_target_convex_hull": true,
+  "selected_domain_model": "local_aging_pca8_k25",
+  "selected_domain_beer81_prediction": -0.11279925415378521,
+  "selected_domain_beer81_sse_share": 0.8639321858325181,
+  "relative_repeated_floor_count": 28,
+  "relative_floor_count_all250_percentile": 0.676,
+  "stale_target_datatype": "numeric",
+  "barnyard_target_datatype": "numeric",
+  "nonpils_stale_barnyard_spearman": 0.96457445617387,
+  "ood_beer81": [
+    {
+      "space": "unclipped_log_scaled_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 0.9879442903177194,
+      "nonpils_loo_nn_percentile": 0.8242677824267782,
+      "nearest_other_pils_distance": 0.9264469785349272,
+      "training_loo_nn_q95": 1.3210325645849774,
+      "nearest_nonpils_distance_rank_within_pils_desc": 1
+    },
+    {
+      "space": "unclipped_log_scaled_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.44677272320610956,
+      "nonpils_loo_nn_percentile": 0.17573221757322174,
+      "nearest_other_pils_distance": 0.50345174634544,
+      "training_loo_nn_q95": 1.11078385781742,
+      "nearest_nonpils_distance_rank_within_pils_desc": 7
+    },
+    {
+      "space": "clipped_log_scaled_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 1.00342181411765,
+      "nonpils_loo_nn_percentile": 0.8326359832635983,
+      "nearest_other_pils_distance": 0.9479649638766919,
+      "training_loo_nn_q95": 1.2242979666476157,
+      "nearest_nonpils_distance_rank_within_pils_desc": 1
+    },
+    {
+      "space": "clipped_log_scaled_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.46038101130279374,
+      "nonpils_loo_nn_percentile": 0.17573221757322174,
+      "nearest_other_pils_distance": 0.5172070030982631,
+      "training_loo_nn_q95": 1.1366299005193061,
+      "nearest_nonpils_distance_rank_within_pils_desc": 7
+    },
+    {
+      "space": "old_copula_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 0.9804658297731901,
+      "nonpils_loo_nn_percentile": 0.9079497907949791,
+      "nearest_other_pils_distance": 0.9018963159166719,
+      "training_loo_nn_q95": 1.0386626909353753,
+      "nearest_nonpils_distance_rank_within_pils_desc": 3
+    },
+    {
+      "space": "old_copula_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.5242114472217134,
+      "nonpils_loo_nn_percentile": 0.1297071129707113,
+      "nearest_other_pils_distance": 0.6642188437121245,
+      "training_loo_nn_q95": 0.9189106484699378,
+      "nearest_nonpils_distance_rank_within_pils_desc": 9
+    },
+    {
+      "space": "frozen_domain_aging_pca8",
+      "query_beer": 81,
+      "dimensions": 8,
+      "nearest_nonpils_distance": 0.3624281966279509,
+      "nonpils_loo_nn_percentile": 0.16736401673640167,
+      "nearest_other_pils_distance": 0.40202629475519924,
+      "training_loo_nn_q95": 1.009480287427542,
+      "nearest_nonpils_distance_rank_within_pils_desc": 9
+    }
+  ],
+  "forum_quality_evidence": [
+    {
+      "term": "aroma_stale",
+      "beer81_value": 1.274602625,
+      "all_percentile": 0.934,
+      "nonpils_percentile": 0.9456066945606695,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_cardboard",
+      "beer81_value": 5.121476724,
+      "all_percentile": 0.99,
+      "nonpils_percentile": 0.99581589958159,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_papery",
+      "beer81_value": 3.562096075,
+      "all_percentile": 0.986,
+      "nonpils_percentile": 0.9916317991631799,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_stale",
+      "beer81_value": 3.482028166,
+      "all_percentile": 0.978,
+      "nonpils_percentile": 0.9832635983263598,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    }
+  ],
+  "raw_forum_text_available": false,
+  "analytical_lod_loq_available": false,
+  "label_error_established": false,
+  "interpretation": "Rare high sensory target lacks matching high-target chemical neighbours; identity and descriptor evidence do not establish a wrong label. Chemical predictability remains unresolved."
+}

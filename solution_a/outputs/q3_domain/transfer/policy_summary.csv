@@ -1,0 +1,7 @@
+pool,policy,sources,selected,new_model_checks_passed,historical_cross_proxy_passed,fresh_cross_proxy_passed,all_committees_passed,no_candidate
+expanded_6004,joint_geometry,11,5,3,3,2,2,6
+expanded_6004,joint_margin,11,5,5,5,4,4,6
+expanded_6004,single_geometry,11,8,4,2,1,1,3
+matched_2004,joint_geometry,11,5,3,3,2,2,6
+matched_2004,joint_margin,11,5,5,5,4,4,6
+matched_2004,single_geometry,11,6,4,2,1,1,5

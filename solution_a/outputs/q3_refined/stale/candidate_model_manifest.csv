@@ -1,0 +1,10 @@
+method,file,selected_in_frozen_protocol,eligible_for_one_se,within_one_se,development_diagnostic_only,macro_style_rmse,pooled_rmse
+stable_ridge_aging100,candidate_models/stable_ridge_aging100.joblib,False,True,True,True,0.36838907633861556,0.42808007037405094
+stable_ridge_all1000,candidate_models/stable_ridge_all1000.joblib,True,True,True,True,0.3658492771359741,0.4260080205048606
+tail_ridge_aging100,candidate_models/tail_ridge_aging100.joblib,False,False,False,True,0.3993046726921594,0.4412505407577717
+aux4_ridge10,candidate_models/aux4_ridge10.joblib,False,False,False,True,0.37385076013810686,0.44127153131714575
+aux8_ridge10,candidate_models/aux8_ridge10.joblib,False,False,False,True,0.37590296598176504,0.4426739977973202
+aux4_tail_ridge10,candidate_models/aux4_tail_ridge10.joblib,False,False,False,True,0.4071609432101158,0.4615920297345106
+aux4_smooth_kernel,candidate_models/aux4_smooth_kernel.joblib,False,False,False,True,0.3762711091987981,0.44645224048838883
+style_center_within_ridge,candidate_models/style_center_within_ridge.joblib,False,False,False,True,0.39128634976671106,0.4473451077031172
+equal3_supervised_ensemble,candidate_models/equal3_supervised_ensemble.joblib,False,True,True,True,0.370096566415127,0.42819584783415954

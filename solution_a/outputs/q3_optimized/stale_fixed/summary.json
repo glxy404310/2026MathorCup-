@@ -1,0 +1,225 @@
+{
+  "status": "fixed follow-up after exploratory model comparisons on the same dataset",
+  "samples": 250,
+  "features": 226,
+  "target": "stale_hops",
+  "outer_seeds": [
+    20263123,
+    20264123
+  ],
+  "outer_folds": 5,
+  "parameter_tuning": false,
+  "selected_config": {
+    "name": "fixed_single_extra_trees_300",
+    "family": "extra_trees",
+    "feature_set": "all226",
+    "representation": "raw_hybrid",
+    "params": {
+      "n_estimators": 300,
+      "min_samples_leaf": 3,
+      "max_features": 0.7,
+      "n_jobs": 1
+    },
+    "bootstrap_n_estimators": 120,
+    "tuning": "none"
+  },
+  "pooled_repeat_metrics": [
+    {
+      "method": "mean",
+      "scope": "pooled_repeated_oof",
+      "repeat": 0,
+      "outer_seed": 0,
+      "mae": 0.30905923690702003,
+      "rmse": 0.44256821702706917,
+      "r2": -0.00870543232466403,
+      "spearman": -0.1025095540640929,
+      "prediction_variance": 0.0001878209004831437,
+      "target_variance": 0.19417623861817068,
+      "prediction_variance_ratio": 0.000967270258296,
+      "prediction_std_ratio": 0.031100968767805288,
+      "prediction_range90": 0.04547078359000001,
+      "target_range90": 1.088995575,
+      "prediction_range90_ratio": 0.04175479187782743,
+      "mean_bias": 4.8849813083506885e-18
+    },
+    {
+      "method": "old_multioutput_extra_trees",
+      "scope": "pooled_repeated_oof",
+      "repeat": 0,
+      "outer_seed": 0,
+      "mae": 0.3039861289997384,
+      "rmse": 0.436005881019882,
+      "r2": 0.020986658116601498,
+      "spearman": 0.19108065026454782,
+      "prediction_variance": 0.006694027222219369,
+      "target_variance": 0.19417623861817068,
+      "prediction_variance_ratio": 0.03447397719647121,
+      "prediction_std_ratio": 0.18567169196318326,
+      "prediction_range90": 0.256756992324811,
+      "target_range90": 1.088995575,
+      "prediction_range90_ratio": 0.235774137397033,
+      "mean_bias": 0.002919902069502228
+    },
+    {
+      "method": "fixed_single_extra_trees",
+      "scope": "pooled_repeated_oof",
+      "repeat": 0,
+      "outer_seed": 0,
+      "mae": 0.29339995766444815,
+      "rmse": 0.43230031839334826,
+      "r2": 0.03755698115834227,
+      "spearman": 0.25994400356123937,
+      "prediction_variance": 0.022571039155337133,
+      "target_variance": 0.19417623861817068,
+      "prediction_variance_ratio": 0.11623996486882703,
+      "prediction_std_ratio": 0.34093982587668903,
+      "prediction_range90": 0.47833369467207476,
+      "target_range90": 1.088995575,
+      "prediction_range90_ratio": 0.43924301039705765,
+      "mean_bias": 0.005722423635364552
+    }
+  ],
+  "rmse_reduction_vs_mean": 0.02320071401126589,
+  "rmse_reduction_vs_old_multioutput": 0.008498882212014891,
+  "paired_cluster_bootstrap": {
+    "seed": 20269123,
+    "repeats": 2000,
+    "independent_resampling_unit": "beer",
+    "beers": 250,
+    "pre_aggregation": "mean squared error within beer and method across two repeats",
+    "comparison": "fixed single-target ExtraTrees minus old multi-output ExtraTrees",
+    "point_rmse_difference": -0.003705562626533765,
+    "rmse_difference_percentile95": [
+      -0.015646083395678544,
+      0.009669896654431319
+    ],
+    "point_relative_rmse_reduction": 0.008498882212014891,
+    "relative_rmse_reduction_percentile95": [
+      -0.023865377685717015,
+      0.036511989635072434
+    ],
+    "bootstrap_fraction_rmse_difference_below_zero": 0.702,
+    "interpretation": "sampling uncertainty conditional on saved OOF predictions; not a selection-adjusted external-validation interval",
+    "limitations": [
+      "Same-data algorithm exploration/selection is not resampled or accounted for",
+      "Models are not refitted within these 2000 resamples",
+      "Shared training folds create dependencies beyond the repeated-beer clustering"
+    ]
+  },
+  "transfer_qualified_for_proxy": true,
+  "transfer_inner_oof_metrics": {
+    "mae": 0.29501899538708715,
+    "rmse": 0.4307087522500787,
+    "r2": 0.020688507018438274,
+    "spearman": 0.22936494717939518,
+    "prediction_variance": 0.022941277106271012,
+    "target_variance": 0.18942903314656845,
+    "prediction_variance_ratio": 0.12110750250475319,
+    "prediction_std_ratio": 0.3480050322980304,
+    "prediction_range90": 0.47109042493927206,
+    "target_range90": 1.0816738541,
+    "prediction_range90_ratio": 0.4355198409887054,
+    "mean_bias": 0.005213831962597146
+  },
+  "transfer_inner_mean_metrics": {
+    "mae": 0.3054591903599909,
+    "rmse": 0.4363819959428769,
+    "r2": -0.005280147503823773,
+    "spearman": -0.05737515609752429,
+    "prediction_variance": 0.0002008348695326957,
+    "target_variance": 0.18942903314656845,
+    "prediction_variance_ratio": 0.001060211659198525,
+    "prediction_std_ratio": 0.03256089156025254,
+    "prediction_range90": 0.03277714142138363,
+    "target_range90": 1.0816738541,
+    "prediction_range90_ratio": 0.030302240640415267,
+    "mean_bias": -4.078816500124383e-05
+  },
+  "transfer_cv_seed": 20266123,
+  "transfer_qualification_scope": "training_only_fixed_model_CV; not holdout or counterfactual validation",
+  "pils_holdout_metrics": [
+    {
+      "model": "fixed_single_extra_trees",
+      "mae": 0.336465478015394,
+      "rmse": 0.5592061699600495,
+      "r2": -0.1765222034087044,
+      "spearman": 0.36363636363636365,
+      "prediction_variance": 0.026274475692241363,
+      "target_variance": 0.2657931483276537,
+      "prediction_variance_ratio": 0.09885309631778687,
+      "prediction_std_ratio": 0.3144091225104432,
+      "prediction_range90": 0.41546061668811135,
+      "target_range90": 1.251553634,
+      "prediction_range90_ratio": 0.3319559029686069,
+      "mean_bias": -0.2098356980718283
+    },
+    {
+      "model": "non_pils_mean",
+      "mae": 0.33748453712209964,
+      "rmse": 0.5465995758349875,
+      "r2": -0.12407373246010622,
+      "spearman": null,
+      "prediction_variance": 1.925929944387236e-34,
+      "target_variance": 0.2657931483276537,
+      "prediction_variance_ratio": 7.245972879681104e-34,
+      "prediction_std_ratio": 2.6918344822223198e-17,
+      "prediction_range90": 0.0,
+      "target_range90": 1.251553634,
+      "prediction_range90_ratio": 0.0,
+      "mean_bias": -0.1815983149022442
+    },
+    {
+      "model": "old_multioutput_transfer_proxy",
+      "mae": 0.3243668564639242,
+      "rmse": 0.5262761756598126,
+      "r2": -0.04203819703316891,
+      "spearman": 0.41818181818181827,
+      "prediction_variance": 0.005668285589551108,
+      "target_variance": 0.2657931483276537,
+      "prediction_variance_ratio": 0.02132592817089321,
+      "prediction_std_ratio": 0.14603399662713204,
+      "prediction_range90": 0.19809416381691664,
+      "target_range90": 1.251553634,
+      "prediction_range90_ratio": 0.1582786054352319,
+      "mean_bias": -0.15880869301781314
+    }
+  ],
+  "pils_holdout_improves_mean": false,
+  "pils_holdout_improves_old": false,
+  "bootstrap": {
+    "models": 60,
+    "selection": 40,
+    "audit": 20,
+    "trees_per_model": 120,
+    "final_trees": 300,
+    "population": "239 non-Pils only",
+    "structure_fixed": true
+  },
+  "limitations": [
+    "Additional split seeds reuse the same 250 samples; the exploratory algorithm choice is not independently externally confirmed.",
+    "No parameter tuning or family search is performed in this follow-up.",
+    "The 500 repeated OOF predictions do not constitute 500 independent beers.",
+    "All transfer preprocessing, fitting and bootstrap sampling exclude every Pils/Lager source.",
+    "Source-style holdout is reported after the fixed model is trained and never changes the chosen algorithm.",
+    "The 0.05 OOF variance-ratio gate does not prove candidate chemical perturbation responsiveness.",
+    "Bootstrap uses 120-tree approximations to the 300-tree final forest, with fixed parameters and no algorithm-selection uncertainty.",
+    "Separate screening/audit bootstrap draws share the same observed training population and are not independent experimental validation.",
+    "Passing paired proxy quantiles cannot establish real stale-hops taste or causal effects; original 0-6 scores remain unavailable."
+  ],
+  "verification": {
+    "bootstrap_indices_shape": [
+      60,
+      239
+    ],
+    "source_exclusion": true,
+    "bootstrap_seeds_unique": true,
+    "predictions_finite": true
+  },
+  "versions": {
+    "python": "3.13.15",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "sklearn": "1.9.1"
+  },
+  "elapsed_seconds": 27.23530749999918
+}

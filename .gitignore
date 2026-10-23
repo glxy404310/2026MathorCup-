@@ -1,0 +1,10 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+solution_a/tmp/
+
+# Large B-track data archives remain local.
+/2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道B初赛.zip
+/2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道B初赛/附件/（3）日喀则市吉隆县特大洪水——200km周围内的冰川及冰川表面高程变化数据集 (2000-2020).rar

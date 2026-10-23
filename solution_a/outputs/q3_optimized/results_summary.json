@@ -1,0 +1,24 @@
+{
+  "generation_energy_reduction_vs_matched_legacy": {
+    "Tripel": -0.025360500753457194,
+    "Kriek": 0.2049078739015361,
+    "Lambic": 0.23351015424407928,
+    "Pils/Lager": 0.38246080254591397
+  },
+  "fixed_stale_rmse_reduction_vs_matched_old": 0.008498882212014891,
+  "paired_rmse_difference_interval": [
+    -0.015646083395678544,
+    0.009669896654431319
+  ],
+  "stale_improvement_stably_established": false,
+  "source_style_prediction_improved": false,
+  "default_transfer": {
+    "sources": 11,
+    "selected": 11,
+    "model_checks_passed_all_thresholds": 9,
+    "cross_proxy_checks_passed_all_thresholds": 6,
+    "audit_failed": 2,
+    "no_candidate": 0
+  },
+  "base_draws_equal": true
+}

@@ -1,0 +1,18 @@
+{
+  "generated_files": [
+    "generated_Kriek.csv",
+    "generated_Lambic.csv",
+    "generated_Pils-Lager.csv",
+    "generated_Tripel.csv"
+  ],
+  "calibrated_features_nonnegative": 69,
+  "all_values_in_imputed_training_support_with_csv_tolerance": true,
+  "maximum_csv_roundtrip_absolute_support_difference": 0,
+  "cv_records": 216,
+  "cv_fold_partitions_complete": true,
+  "all_style_covariances_positive_definite": true,
+  "bootstrap_copy_rates_all_one": true,
+  "full_generation_rows": 1200,
+  "full_generation_copies": 0,
+  "zero_diagnostic_rows": 904
+}
