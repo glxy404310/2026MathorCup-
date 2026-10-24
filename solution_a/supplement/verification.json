@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "q1_oof_metrics_and_group_exclusion",
+      "oof_tables": 8,
+      "mask_draws": 40
+    },
+    {
+      "name": "q2_stratified_draws_and_frequencies",
+      "draws": 200,
+      "candidate_target_pairs": 9810
+    },
+    {
+      "name": "held_out_permutation_metrics_and_training_modules",
+      "feature_target_pairs": 10395,
+      "folds": 5,
+      "repeats": 5,
+      "independent_raw_feature_checks": 75
+    }
+  ],
+  "scope": "Saved supplementary calculations, fold separation and source integrity; no causal or independent-population validation."
+}

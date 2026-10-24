@@ -34,7 +34,7 @@
       "original_number": 1
     },
     {
-      "number": 5,
+      "number": 6,
       "authors": [
         "Kiyoshi Takoi",
         "Yutaka Itoga",
@@ -61,7 +61,7 @@
       "original_number": 5
     },
     {
-      "number": 6,
+      "number": 4,
       "authors": [
         "Stefan Hanke",
         "V. Ditz",
@@ -88,7 +88,7 @@
       "original_number": 6
     },
     {
-      "number": 4,
+      "number": 5,
       "authors": [
         "Magdalena Müller",
         "Martina Gastl",
@@ -111,7 +111,7 @@
       "original_number": 7
     },
     {
-      "number": 7,
+      "number": 10,
       "authors": [
         "Sophie Noël",
         "Catherine Liégeois",
@@ -135,17 +135,121 @@
       ],
       "support_boundary": "支持反式-2-壬烯醛与老化纸板味的联系；不支持本题nonenal浓度同酒花香正相关的直接机制，也不将Trans-2-nonenal与Stale hops两个感官项合并。",
       "original_number": 8
+    },
+    {
+      "number": 7,
+      "authors": [
+        "Yu Zhang",
+        "Sinuo Li",
+        "Qi Meng",
+        "Huanlu Song",
+        "Xiaojun Wang"
+      ],
+      "title": "Characterization of Key Odor-Active Compounds in Draft Beers for the Chinese Market Using Molecular Sensory Science Approaches",
+      "year": 2024,
+      "journal": "Molecules",
+      "volume": "29",
+      "issue": "11",
+      "pages": "2537",
+      "doi": "10.3390/molecules29112537",
+      "url": "https://www.mdpi.com/1420-3049/29/11/2537",
+      "verified_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11173443/",
+      "source_type": "primary_research",
+      "verified_on": "2026-10-24",
+      "verified_locator": "Sections 2.3, 2.6, 2.7 and 3.8; Tables 1-2",
+      "claims": [
+        "Draft-beer GC-O/AEDA identified odor-active 1-hexanol; section 2.3 described a hawthorn note, not a banana-specific effect.",
+        "The sensory panel used acetaldehyde as a raw-green reference; this was a training reference rather than an acetaldehyde-to-malty dose-response experiment."
+      ],
+      "support_boundary": "四款鲜啤及其重组研究仅补充气味背景；不支持把正己醇等同香蕉酯香，或把乙醛视为麦芽、焦糖味的直接来源。文中阈值不替换附件阈值。",
+      "original_number": 20
+    },
+    {
+      "number": 9,
+      "authors": [
+        "Kiyoshi Takoi",
+        "Haruna Kumamaru",
+        "Atsushi Tanigawa"
+      ],
+      "title": "Study on Characteristic Aroma in Special Beers Brewed with Coriander (Coriandrum sativum L.) Seeds: Profiling of Flavor Compounds Derived from Coriander Seeds in Different Growing Areas",
+      "year": 2024,
+      "journal": "ACS Food Science & Technology",
+      "volume": "4",
+      "issue": "10",
+      "pages": "2439–2447",
+      "doi": "10.1021/acsfoodscitech.4c00579",
+      "url": "https://pubs.acs.org/doi/abs/10.1021/acsfoodscitech.4c00579",
+      "source_type": "primary_research",
+      "verified_on": "2026-10-24",
+      "verified_locator": "Publisher abstract; article metadata",
+      "claims": [
+        "Camphor, carvone and (E)-anethole were detected in Bulgarian coriander seeds and the beers made with them.",
+        "In the tested beer matrix, these compounds enhanced flowery characteristics with excess linalool."
+      ],
+      "support_boundary": "本次核验出版者摘要；支持樟脑的原料来源与特定混合物花香协同，不证明樟脑单独产生橙味或丁香味。",
+      "original_number": 21
+    },
+    {
+      "number": 11,
+      "authors": [
+        "Heidi Hai-Ling Yang",
+        "Harry T. Lawless"
+      ],
+      "title": "Time–intensity characteristics of iron compounds",
+      "year": 2006,
+      "journal": "Food Quality and Preference",
+      "volume": "17",
+      "issue": "5",
+      "pages": "337–343",
+      "doi": "10.1016/j.foodqual.2005.04.002",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0950329305000522",
+      "source_type": "primary_research",
+      "verified_on": "2026-10-24",
+      "verified_locator": "Publisher abstract, stimuli and results excerpts",
+      "claims": [
+        "Human time-intensity tests of ferrous sulfate, chloride and gluconate solutions found persistent metallic sensations.",
+        "Sensory profiles differed by the iron salt and over time."
+      ],
+      "support_boundary": "实验对象为较高浓度二价铁盐溶液，不是啤酒总铁；只列一般背景，不据此给本题总铁设金属味阈值，亦不支持总铁导致甜味。",
+      "original_number": 22
+    },
+    {
+      "number": 8,
+      "authors": [
+        "Ann Van Holle",
+        "Anita Van Landschoot",
+        "Isabel Roldán-Ruiz",
+        "Dirk Naudts",
+        "Denis De Keukeleire"
+      ],
+      "title": "The brewing value of Amarillo hops (Humulus lupulus L.) grown in northwestern USA: A preliminary study of terroir significance",
+      "year": 2017,
+      "journal": "Journal of the Institute of Brewing",
+      "volume": "123",
+      "issue": "3",
+      "pages": "312–318",
+      "doi": "10.1002/jib.433",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.433",
+      "source_type": "primary_research",
+      "verified_on": "2026-10-24",
+      "verified_locator": "Brewing trials; sensory analyses; discussion of hop-oil profiles in beer",
+      "claims": [
+        "Single-hop brewing trials compared Amarillo hops from Idaho and Washington using otherwise identical recipes.",
+        "Different citrus/floral profiles occurred with changes in limonene, linalool, methyl geranate and other compounds."
+      ],
+      "support_boundary": "提供啤酒中柑橘相关萜类的背景和混合物证据；多成分同时改变，不能分离柠檬烯的单独作用，更不能解释本题丁香味的正相关。",
+      "original_number": 23
     }
   ],
-  "verified_on": "2026-10-23",
+  "verified_on": "2026-10-24",
   "evidence_categories": {
     "direct": "同一化合物与相应感官描述有气味/嗅闻/加标证据；不代表本样本中的相关已被证实为因果。",
-    "general": "已核实化合物的其他气味或一般化学背景；未支持本行目标感官的直接机制。",
+    "general": "该物质有已核实的其他气味、基质或来源背景；本行目标机制仍未证实。",
     "indirect": "有共变/共同来源或复杂感官联系的依据，仅作代理或假说；可能包含对同一原研究的复核，非独立重复。",
-    "unverified": "本次核实的一级文献未支持该化合物—目标感官关联，附件元数据仍可追溯。"
+    "unverified": "在本次检索范围内尚无足够匹配的一级文献；不等于该候选已被证伪。"
   },
-  "data_boundary": "135行按sensory_target+rank+compound与冻结top3_compounds.csv一一对应。附件8分类和阈值是元信息，不是本次新增实验。",
-  "threshold_note": "阈值列原样转录附件元数据，单位、基质与测定口径未一律统一，不据此直接计算相对谱的气味活度值。",
+  "data_boundary": "135行的sensory_target+rank+compound及全部冻结统计值保持不变。证据背景补充不用于后验替换Top-3；新表6-2仅检查依化学文献列出的缺陷化合物对。",
+  "threshold_note": "阈值均值/中位数原样转录附件8元数据，单位未补造；缺值明确显示未给出。阈值属于浓度尺度，不能直接比较1.csv的相对或变换值；外部试验阈值不替换附件值。",
   "claim_registry": [
     {
       "id": "C01",
@@ -155,13 +259,14 @@
     },
     {
       "id": "C02",
-      "source_ref": "",
-      "claim": "未找到本行乙醛与该感官描述之间的匹配一级证据。",
-      "boundary": "附件归类为酵母来源仍保留，不能据此证明直接感官机制。"
+      "source_ref": "[7]",
+      "claim": "鲜啤感官实验以乙醛作生青味训练标准。",
+      "boundary": "该训练标准未验证乙醛对本行麦芽、焦糖或酯香描述的直接作用。",
+      "locator": "[7] §3.8"
     },
     {
       "id": "C03",
-      "source_ref": "[1];[6]",
+      "source_ref": "[1];[4]",
       "claim": "乙酸乙酯具有果香/溶剂样气味；啤酒加标亦显示其改变部分缺陷感知。",
       "boundary": "气味与酯类/指甲油样描述相符，但不验证本样本相关系数或单独剂量效应。"
     },
@@ -179,19 +284,19 @@
     },
     {
       "id": "C06",
-      "source_ref": "[4]",
+      "source_ref": "[5]",
       "claim": "GC-O/MS将乙酸异戊酯的气味标为香蕉。",
       "boundary": "相同气味描述的定性依据，非本样本关联的干预验证。"
     },
     {
       "id": "C07",
-      "source_ref": "[1];[4]",
+      "source_ref": "[1];[5]",
       "claim": "GC-O/MS报告果香/胶样气味；原研究报告同酒花感知和苦味的意外关联。",
       "boundary": "原研究与本题共享数据，非独立重复；未证明该酯直接产生酒花香或苦味。"
     },
     {
       "id": "C08",
-      "source_ref": "[7]",
+      "source_ref": "[10]",
       "claim": "同位素研究支持老化期间反式-2-壬烯醛释放与纸板味相关。",
       "boundary": "本行目标为酒花感官，不能由纸板味证据解释其正相关，也不能与Stale hops等同。"
     },
@@ -203,45 +308,80 @@
     },
     {
       "id": "C10",
-      "source_ref": "[5]",
+      "source_ref": "[6]",
       "claim": "香叶醇、香茅醇与芳樟醇在啤酒中具有果香/柑橘协同；芳樟醇亦有GC-O花香/柑橘依据。",
       "boundary": "三组分交互依赖基质；不支持其他目标（如t2n）的直接抑制机制。"
     },
     {
       "id": "C11",
-      "source_ref": "[5];[4]",
+      "source_ref": "[6];[5]",
       "claim": "香叶醇、香茅醇与芳樟醇在啤酒中具有果香/柑橘协同；芳樟醇亦有GC-O花香/柑橘依据。",
       "boundary": "三组分交互依赖基质；不支持其他目标（如t2n）的直接抑制机制。"
     },
     {
       "id": "C12",
-      "source_ref": "[6]",
+      "source_ref": "[4]",
       "claim": "DMS具有卷心菜样气味，其感知受乙酸酯和芳樟醇改变。",
       "boundary": "没有直接验证DMS导致本行热带酒花感官。"
     },
     {
       "id": "C13",
-      "source_ref": "[4]",
+      "source_ref": "[5]",
       "claim": "啤酒GC-O/MS报告乙酸的酸气味。",
       "boundary": "不验证本行酯类果味的直接产生机制。"
     },
     {
       "id": "C14",
-      "source_ref": "[4]",
+      "source_ref": "[5]",
       "claim": "GC-O/MS对3-甲基丁酸乙酯及丁酸乙酯报告果香/甜果香描述。",
       "boundary": "不验证本行醋酸、金属或麦芽焦糖感官的直接作用。"
     },
     {
       "id": "C15",
-      "source_ref": "[4]",
+      "source_ref": "[5]",
       "claim": "啤酒GC-O/MS识别4-乙烯基愈创木酚为丁香样气味。",
       "boundary": "定性气味依据，不代表预测关系或统一风格阈值已验证。"
+    },
+    {
+      "id": "C16",
+      "source_ref": "[7]",
+      "claim": "鲜啤GC-O/AEDA检出有气味活性的正己醇，嗅闻描述为山楂样。",
+      "boundary": "可补充果香背景，未检验本行香蕉香或酯类评分的直接来源。",
+      "locator": "[7] §2.3, Tables 1-2"
+    },
+    {
+      "id": "C17",
+      "source_ref": "[9]",
+      "claim": "芫荽啤酒实验检出樟脑，并报告其与过量芳樟醇下的花香协同。",
+      "boundary": "混合物花香不等于单体橙味或丁香味；本行关联仍未获直接验证。",
+      "locator": "[9] 出版者摘要"
+    },
+    {
+      "id": "C18",
+      "source_ref": "[11]",
+      "claim": "二价铁盐溶液的时间—强度实验观察到持续金属感。",
+      "boundary": "盐种、价态、基质与啤酒总铁不同；只作背景，不外推阈值或甜味机制。",
+      "locator": "[11] 摘要、试验物及结果节选"
+    },
+    {
+      "id": "C19",
+      "source_ref": "[8]",
+      "claim": "Amarillo单酒花酿造对照中，柠檬烯等萜类与柑橘/花香谱共同变化。",
+      "boundary": "非柠檬烯单体加标，不支持丁香机制，也未隔离本行橙味效应。",
+      "locator": "[8] Brewing trials; Sensory analyses"
+    },
+    {
+      "id": "C20",
+      "source_ref": "[1]",
+      "claim": "原研究描述甲硫醇在高浓度下呈硫臭、腐烂卷心菜样气味。",
+      "boundary": "未证明本行麦芽或苦味由甲硫醇直接产生；来源与本题共享数据。",
+      "locator": "[1] Model dissection identifies specific, unexpected compounds"
     }
   ],
   "evidence_counts": {
-    "unverified": 82,
+    "general": 36,
+    "direct": 10,
     "indirect": 29,
-    "general": 14,
-    "direct": 10
+    "unverified": 60
   }
 }

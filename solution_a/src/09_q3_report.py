@@ -27,9 +27,9 @@ def main():
     meta, x, y, manifest = load_q3_data()
     generation = OUT / "generation"
     cv = pd.read_csv(generation / "cv_summary.csv")
-    gs = json.loads((generation / "summary.json").read_text())
-    ss = json.loads((OUT / "sensory/summary.json").read_text())
-    ts = json.loads((OUT / "transfer/summary.json").read_text())
+    gs = json.loads((generation / "summary.json").read_text(encoding="utf-8"))
+    ss = json.loads((OUT / "sensory/summary.json").read_text(encoding="utf-8"))
+    ts = json.loads((OUT / "transfer/summary.json").read_text(encoding="utf-8"))
     transfer = pd.read_csv(OUT / "transfer/transfer_summary.csv")
     default = transfer[(transfer["mode"] == "protected") & transfer.is_default_policy].copy()
     default = default.sort_values("source_beer")
@@ -56,9 +56,9 @@ def main():
                                      "real_observed_mean": float(y.loc[meta.tasting_category_fine.eq(style), target].mean()),
                                      "scale": "attachment_4_standardized",
                                      "interval_meaning": "spread_across_generated_spectra_not_confidence_interval"})
-    pd.concat(profiles, ignore_index=True).to_csv(OUT / "generated_sensory_profiles.csv", index=False)
+    pd.concat(profiles, ignore_index=True).to_csv(OUT / "generated_sensory_profiles.csv", index=False, lineterminator="\n")
     profiles_summary = pd.DataFrame(summary_profiles)
-    profiles_summary.to_csv(OUT / "generated_sensory_summary.csv", index=False)
+    profiles_summary.to_csv(OUT / "generated_sensory_summary.csv", index=False, lineterminator="\n")
 
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                          "axes.spines.top": False, "axes.spines.right": False,
@@ -263,7 +263,7 @@ Stale hops五折R²为 **{q_stale['macro_r2']:.4f}**，RMSE **{q_stale['rmse']:.
 
 数据来源为赛题附件1/4/8。协方差实现参照 [scikit-learn LedoitWolf文档](https://scikit-learn.org/stable/modules/generated/sklearn.covariance.LedoitWolf.html)，边缘距离使用 [SciPy Wasserstein-1实现](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html)。风格收缩、迁移约束及候选审计是本题明确写出的建模选择，未声称由上述文档直接保证其效果。
 """
-    (SOLUTION / "docs/q3_results.md").write_text(report, encoding="utf-8")
+    (SOLUTION / "docs/q3_results.md").write_text(report, encoding="utf-8", newline="\n")
     print(f"Saved {len(pd.concat(profiles))} sensory profiles, three figures, and docs/q3_results.md")
 
 

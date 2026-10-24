@@ -94,7 +94,7 @@ def main():
     spectra, profiles, changes, paired_audit_records = [], [], [], []
     source_spectra = pd.concat([meta.iloc[source_rows].reset_index(drop=True),
                                x.iloc[source_rows].reset_index(drop=True)], axis=1)
-    source_spectra.to_csv(OUT / "source_spectra.csv", index=False)
+    source_spectra.to_csv(OUT / "source_spectra.csv", index=False, lineterminator="\n")
 
     for source_no, row_index in enumerate(source_rows):
         beer = int(meta.beer.iloc[row_index])
@@ -269,7 +269,7 @@ def main():
         "stale_paired_deltas.csv": paired_audit_records,
     }
     for filename, rows in tables.items():
-        pd.DataFrame(rows).to_csv(OUT / filename, index=False)
+        pd.DataFrame(rows).to_csv(OUT / filename, index=False, lineterminator="\n")
     result = pd.DataFrame(records)
     default = result[result["is_default_policy"].fillna(False) & result["mode"].eq("protected")]
     n_selected = int(default.status.isin(["model_checks_passed", "resampling_audit_failed"]).sum())
@@ -307,11 +307,11 @@ def main():
             "Hybrid relative features do not imply measured absolute concentrations or a realizable brewing recipe.",
         ],
     }
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     joblib.dump({"copula": copula, "features": x.columns.tolist(),
                  "training_rows": training_rows, "source_rows": source_rows}, OUT / "transfer_copula.joblib")
     pd.DataFrame({"beer": meta.beer.iloc[target_rows].to_numpy(), "loo_nn_rms": target_loo_nn}).to_csv(
-        OUT / "target_support_reference.csv", index=False)
+        OUT / "target_support_reference.csv", index=False, lineterminator="\n")
     print(json.dumps(summary["default_policy"], ensure_ascii=False, indent=2), flush=True)
 
 

@@ -28,7 +28,7 @@ OUT = SOLUTION / "outputs" / "q3_refined" / "stale"
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8", newline="\n")
 
 
 def scores(y, pred):
@@ -89,7 +89,7 @@ def save_candidate_models(fitted_candidates, specs, context, final_table,
             "selected_in_frozen_protocol": selected, "eligible_for_one_se": bool(row.eligible_for_one_se),
             "within_one_se": bool(row.within_one_se), "development_diagnostic_only": True,
             "macro_style_rmse": float(row.macro_style_rmse), "pooled_rmse": float(row.rmse)})
-    pd.DataFrame(manifest_rows).to_csv(OUT/"candidate_model_manifest.csv", index=False)
+    pd.DataFrame(manifest_rows).to_csv(OUT/"candidate_model_manifest.csv", index=False, lineterminator="\n")
 
 
 def evaluate_loso(indices, specs, context, seed, scope):
@@ -243,14 +243,14 @@ def main():
     })
     # The full grouped candidate comparison is fixed before reading Pils errors.
     full, by_style, pred, audit = evaluate_loso(train, specs, context, FINAL_SEED, "full_loso")
-    full.to_csv(OUT/"loso_metrics_overall_raw.csv", index=False)
-    by_style.to_csv(OUT/"loso_metrics_by_style.csv", index=False)
-    pred.to_csv(OUT/"loso_predictions.csv", index=False)
-    audit.to_csv(OUT/"loso_split_audit.csv", index=False)
+    full.to_csv(OUT/"loso_metrics_overall_raw.csv", index=False, lineterminator="\n")
+    by_style.to_csv(OUT/"loso_metrics_by_style.csv", index=False, lineterminator="\n")
+    pred.to_csv(OUT/"loso_predictions.csv", index=False, lineterminator="\n")
+    audit.to_csv(OUT/"loso_split_audit.csv", index=False, lineterminator="\n")
     decision, final_table, stability, pairs = select_stable(train, full, specs, context, STABILITY_SEED, "full_loso")
-    final_table.to_csv(OUT/"loso_metrics_overall.csv", index=False)
-    stability.to_csv(OUT/"selection_stability.csv", index=False)
-    pairs.to_csv(OUT/"selection_chemical_pairs.csv", index=False)
+    final_table.to_csv(OUT/"loso_metrics_overall.csv", index=False, lineterminator="\n")
+    stability.to_csv(OUT/"selection_stability.csv", index=False, lineterminator="\n")
+    pairs.to_csv(OUT/"selection_chemical_pairs.csv", index=False, lineterminator="\n")
     write_json(OUT/"selection_result.json", decision)
     print("Refined full LOSO selected:", decision["selected_method"], "qualified", decision["qualified_for_proxy"], flush=True)
 
@@ -288,12 +288,12 @@ def main():
                 "tail_threshold_training_q90": np.quantile(y45.iloc[tr_global][TARGET], .9)})], axis=1))
         print(f"Refined nested group fold {fold}/4: {selected['selected_method']}", flush=True)
     nested = pd.concat(outer_rows, ignore_index=True)
-    nested.to_csv(OUT/"nested_predictions.csv", index=False)
-    pd.DataFrame(nested_choices).to_csv(OUT/"nested_choices.csv", index=False)
-    pd.concat(nested_inner_rows, ignore_index=True).to_csv(OUT/"nested_inner_metrics.csv", index=False)
-    pd.concat(nested_stability_rows, ignore_index=True).to_csv(OUT/"nested_selection_stability.csv", index=False)
-    pd.concat(nested_inner_audits, ignore_index=True).to_csv(OUT/"nested_inner_split_audit.csv", index=False)
-    pd.DataFrame(nested_outer_audits).to_csv(OUT/"nested_outer_split_audit.csv", index=False)
+    nested.to_csv(OUT/"nested_predictions.csv", index=False, lineterminator="\n")
+    pd.DataFrame(nested_choices).to_csv(OUT/"nested_choices.csv", index=False, lineterminator="\n")
+    pd.concat(nested_inner_rows, ignore_index=True).to_csv(OUT/"nested_inner_metrics.csv", index=False, lineterminator="\n")
+    pd.concat(nested_stability_rows, ignore_index=True).to_csv(OUT/"nested_selection_stability.csv", index=False, lineterminator="\n")
+    pd.concat(nested_inner_audits, ignore_index=True).to_csv(OUT/"nested_inner_split_audit.csv", index=False, lineterminator="\n")
+    pd.DataFrame(nested_outer_audits).to_csv(OUT/"nested_outer_split_audit.csv", index=False, lineterminator="\n")
     nested_metrics, nested_style_rows = [], []
     for name, group in nested.groupby("method"):
         style_metrics = []
@@ -306,8 +306,8 @@ def main():
             "macro_style_abs_bias": float(np.mean([abs(z["mean_bias"]) for z in style_metrics])),
             "tail_n": int(tail.sum()), "tail_rmse": float(np.sqrt(np.mean((group.loc[tail,"prediction"]-group.loc[tail,"observed"])**2))),
             **scores(group.observed, group.prediction)})
-    pd.DataFrame(nested_metrics).to_csv(OUT/"nested_metrics.csv", index=False)
-    pd.DataFrame(nested_style_rows).to_csv(OUT/"nested_metrics_by_style.csv", index=False)
+    pd.DataFrame(nested_metrics).to_csv(OUT/"nested_metrics.csv", index=False, lineterminator="\n")
+    pd.DataFrame(nested_style_rows).to_csv(OUT/"nested_metrics_by_style.csv", index=False, lineterminator="\n")
 
     selected_spec = decision["config"]
     selected_metrics = decision["selected_loso_metrics"]
@@ -336,8 +336,8 @@ def main():
             "prediction": values, "selected_without_pils_labels": spec["name"] == decision["selected_method"]})], axis=1))
         diagnostic_metrics.append({"method": spec["name"], "selected_without_pils_labels": spec["name"] == decision["selected_method"],
                                    "n": len(source), **scores(y45.iloc[source][TARGET], values)})
-    pd.concat(diagnostic_rows, ignore_index=True).to_csv(OUT/"pils_diagnostic_predictions.csv", index=False)
-    pd.DataFrame(diagnostic_metrics).to_csv(OUT/"pils_diagnostic_metrics.csv", index=False)
+    pd.concat(diagnostic_rows, ignore_index=True).to_csv(OUT/"pils_diagnostic_predictions.csv", index=False, lineterminator="\n")
+    pd.DataFrame(diagnostic_metrics).to_csv(OUT/"pils_diagnostic_metrics.csv", index=False, lineterminator="\n")
 
     models, indices, seeds = [], [], []
     for b in range(60):
@@ -366,7 +366,7 @@ def main():
         comparisons.append({"method": label, "models": len(committee), "pair_delta_noise_rms": noise,
                             "pair_delta_signal_rms": signal, "response_noise_ratio": noise/max(signal,1e-8),
                             "status": "descriptive fixed-pair architecture comparison; not used for selection"})
-    pd.DataFrame(comparisons).to_csv(OUT/"bootstrap_response_comparison.csv", index=False)
+    pd.DataFrame(comparisons).to_csv(OUT/"bootstrap_response_comparison.csv", index=False, lineterminator="\n")
     assert np.asarray(indices).shape == (60,239)
     assert all(not set(index)&set(source) for index in indices)
     assert all(np.isfinite(m.predict(x)).all() for m in models)

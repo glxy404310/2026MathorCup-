@@ -1,0 +1,248 @@
+{
+  "review_date": "2026-10-24",
+  "scope": "Q1建议核查；保持提交稿、src、paper、outputs及submission文件不变，只在review/suggestions新增探索性核查材料。",
+  "conclusion": "可改进验证覆盖与对照完整性；当前小试没有支持以GBR/HGB替换ExtraTrees。优先增加全风格留出验证、配对重复掩码，避免堆砌模型。",
+  "independently_verified_data": {
+    "samples": 250,
+    "features": 231,
+    "targets": 45,
+    "styles": 22,
+    "missing_cells": 73,
+    "missing_columns": 9,
+    "missing_rows": 63,
+    "target_min": -1.699589618,
+    "target_max": 6.172383248,
+    "target_scale": "附件4标准化后的连续感官值，不能作为原始0–6分。"
+  },
+  "frozen_existing_evidence": {
+    "models": [
+      "训练折均值",
+      "普通Ridge：外层5折/内层4折选alpha",
+      "固定参数多输出ExtraTrees",
+      "事后1%/99%裁剪Ridge"
+    ],
+    "no_all_target_gbr_hgb_xgb_comparison": true,
+    "q3_stale_only_gbr_is_not_all_45_target_q1_comparison": true,
+    "extra_trees": {
+      "mae": 0.3408514788464736,
+      "rmse": 0.4862203536077027,
+      "macro_r2": 0.2146384687029869
+    },
+    "mean_rmse": 0.574456094800438,
+    "robust_ridge_rmse": 0.499179,
+    "test_mask_10_rmse": 0.49098732733189066,
+    "test_mask_20_rmse": 0.4992184152258415,
+    "limitations_already_disclosed": [
+      "一次随机5折",
+      "额外掩码只改变已观测测试协变量",
+      "单次配对10%/20%随机掩码",
+      "跨风格能力未证明",
+      "原始评分不可逆恢复",
+      "原附件全局预处理无法撤销"
+    ]
+  },
+  "priorities": [
+    {
+      "priority": "P1",
+      "action": "采纳：补逐目标GBR/HGB固定参数对照",
+      "reason": "现有Q1缺这一模型家族；低成本探索已完成。只证明当前固定方案比较，不能写成广义算法优劣。正式改变主模型前需冻结候选与选择规则，再做嵌套或重复验证。",
+      "status": "探索性完成，未进入提交稿"
+    },
+    {
+      "priority": "P1",
+      "action": "采纳：区分随机酒留出与整风格留出",
+      "reason": "随机CV对应现有风格混合里的新酒；GroupKFold整风格留出对应新风格。风格不作为模型特征也不消除化学特征携带的风格结构。二者是不同部署问题，不能把风格混合随机CV写成跨风格保证。",
+      "status": "探索性完成，提供平衡与不平衡两版，未进入提交稿"
+    },
+    {
+      "priority": "P2",
+      "action": "采纳：把一次MCAR掩码扩成20组配对掩码",
+      "reason": "量化掩码偶然性。与原5折的训练量不同，不能直接覆盖原指标；本次20组仅检验同一3折的测试缺失压力，未包括检出限删失或成组仪器缺失。",
+      "status": "探索性完成"
+    },
+    {
+      "priority": "P2",
+      "action": "有条件采纳：逐目标模型选择",
+      "reason": "GBR和HGB各有15/19个目标RMSE优于ET，但依据同一折外结果逐目标挑赢家会选择偏倚。必须把选择放内层，然后只用外层结果评价完整选择算法。",
+      "status": "当前不实施拼接"
+    },
+    {
+      "priority": "不采纳",
+      "action": "为了凑五六种方法立即加入神经网络、GAN或大型调参",
+      "reason": "250个样本、231特征而非大样本任务。当前优先问题是泛化与量尺；高级模型名称不能替代有效验证，GBR/HGB小试也没有整体优势。"
+    },
+    {
+      "priority": "不采纳",
+      "action": "将原研究RateBeer总体喜好R²≈0.69作为45感官目标的同口径基线",
+      "reason": "目标、标签来源和验证协议不同，不能比较；本稿宏平均感官R²≈0.21不因此判为失败。"
+    },
+    {
+      "priority": "不采纳",
+      "action": "把连续预测取整/拉伸到0–6并宣称完成原等级评分",
+      "reason": "缺少原评分及标准化逆变换参数；序数模型也必须有真实有序等级标签。"
+    },
+    {
+      "priority": "不采纳",
+      "action": "把线性模型负R²一概归于维数高、据此废弃Ridge",
+      "reason": "本地普通Ridge劣化主要被beer156的极端外推驱动；折内裁剪后0.499179接近ET0.486220，是已有更具体的证据。"
+    }
+  ],
+  "exploratory_comparison": {
+    "status": "与已见开发数据同源；不属于独立确认性验证；不改稿",
+    "seed": 20261024,
+    "runtime_seconds": 66.18442210002104,
+    "same_fold_rules": "250酒、45目标、3折同折；各模型训练中位数+缺失指示；所有填补只拟合训练折；无ID或风格输入；固定参数且无测试结果调参。",
+    "random_cv_results": [
+      {
+        "model": "mean",
+        "mae": 0.40938748283038395,
+        "rmse": 0.574250034293406,
+        "macro_r2": -0.006730073443327135,
+        "fit_and_predict_seconds": 0.013081600016448647
+      },
+      {
+        "model": "extra_trees",
+        "mae": 0.34290955067243845,
+        "rmse": 0.48999992908349826,
+        "macro_r2": 0.20429072959587227,
+        "fit_and_predict_seconds": 1.9225286000291817
+      },
+      {
+        "model": "gbr_per_target",
+        "mae": 0.3486008778070892,
+        "rmse": 0.4947722543529336,
+        "macro_r2": 0.17859528375986872,
+        "fit_and_predict_seconds": 31.16888949999702
+      },
+      {
+        "model": "hgb_per_target",
+        "mae": 0.35024108748348837,
+        "rmse": 0.49507839965899647,
+        "macro_r2": 0.17748837336956705,
+        "fit_and_predict_seconds": 29.799301900027785
+      }
+    ],
+    "boosting_targets_lower_rmse_than_et": {
+      "gbr_per_target": 15,
+      "hgb_per_target": 19
+    },
+    "balanced_style_group_results": [
+      {
+        "protocol": "unseen_style_balanced_3fold",
+        "model": "mean",
+        "mae": 0.4195082248480553,
+        "rmse": 0.5877710551849887,
+        "macro_r2": -0.046081431430953196
+      },
+      {
+        "protocol": "unseen_style_balanced_3fold",
+        "model": "extra_trees",
+        "mae": 0.3622894051228414,
+        "rmse": 0.5084154500825315,
+        "macro_r2": 0.15156829144927708
+      }
+    ],
+    "balanced_style_test_counts": [
+      83,
+      83,
+      84
+    ],
+    "balanced_style_train_counts": [
+      167,
+      167,
+      166
+    ],
+    "group_rmse_increase_relative_to_random_pct": 3.7582701355646897,
+    "mask_stress": [
+      {
+        "rate": 0.1,
+        "draws": 20,
+        "mean_rmse": 0.4956168764172257,
+        "sd_rmse_across_masks": 0.0012707184311936612,
+        "min_rmse": 0.49273162222596734,
+        "max_rmse": 0.49808825432839443,
+        "mean_relative_change_pct": 1.146315948296861
+      },
+      {
+        "rate": 0.2,
+        "draws": 20,
+        "mean_rmse": 0.5036799974906039,
+        "sd_rmse_across_masks": 0.0021624632515893343,
+        "min_rmse": 0.4993914837033706,
+        "max_rmse": 0.5081646942698742,
+        "mean_relative_change_pct": 2.7918510993854673
+      }
+    ],
+    "unbalanced_shuffled_groups": "另保留最初shuffle GroupKFold，测试量118/69/63，训练量不同；平衡组划分是在发现不平衡后补充。所有组划分均无风格交叉，后补分析仍是探索性。",
+    "interpretation": "同随机3折中ET的RMSE最低；GBR/HGB没有整体改进。整风格平衡留出仍优于同组均值，但相对随机CV劣化，支持收紧跨风格保证。单个组分折不构成可推广精度区间。"
+  },
+  "nan_support": {
+    "sklearn": "1.9.1",
+    "sample_n": 8,
+    "checks": {
+      "GradientBoostingRegressor": {
+        "fit_success": false,
+        "exception_type": "ValueError",
+        "message": "Input X contains NaN.\nGradientBoostingRegressor does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values"
+      },
+      "HistGradientBoostingRegressor": {
+        "fit_success": true,
+        "predict_nan_success": true,
+        "predictions": [
+          4.229000003635884,
+          3.686999994516373
+        ]
+      },
+      "ExtraTreesRegressor": {
+        "fit_success": true,
+        "predict_nan_success": true,
+        "predictions": [
+          2.3333333333333335,
+          4.333333333333333
+        ]
+      }
+    }
+  },
+  "nan_interpretation": "已在本地锁定sklearn1.9.1用8×2含NaN矩阵直接拟合并预测NaN输入；经典GBR报ValueError，HGB和ET成功。当前公平比较统一使用折内填补，不是在比较原生缺失路由与填补策略。不能把GBR/XGBoost/LightGBM笼统合称均原生支持缺失；库和版本必须明确。",
+  "sources": [
+    "solution_a/src/02_q1_baseline.py:52",
+    "solution_a/src/02_q1_baseline.py:75",
+    "solution_a/src/02_q1_baseline.py:102",
+    "solution_a/src/02b_q1_robust.py:29",
+    "solution_a/docs/q1_validation_review.md",
+    "solution_a/outputs/q1/metrics_overall.csv",
+    "solution_a/outputs/q1_robust/metrics_overall.csv",
+    "solution_a/paper/sections/q1.json",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html"
+  ],
+  "reproduce": [
+    ".\\solution_a\\tmp\\reproenv\\Scripts\\python.exe solution_a/review/suggestions/q1_comparison.py",
+    ".\\solution_a\\tmp\\reproenv\\Scripts\\python.exe solution_a/review/suggestions/q1_additional_checks.py"
+  ],
+  "artifacts": [
+    "solution_a/review/suggestions/q1_comparison/balanced_group_metrics_by_fold.csv",
+    "solution_a/review/suggestions/q1_comparison/balanced_group_metrics_by_target.csv",
+    "solution_a/review/suggestions/q1_comparison/balanced_group_metrics_overall.csv",
+    "solution_a/review/suggestions/q1_comparison/fold_assignment_random_3fold.csv",
+    "solution_a/review/suggestions/q1_comparison/fold_assignment_unseen_style_3fold.csv",
+    "solution_a/review/suggestions/q1_comparison/manifest.json",
+    "solution_a/review/suggestions/q1_comparison/mask_counts.csv",
+    "solution_a/review/suggestions/q1_comparison/metrics_by_fold.csv",
+    "solution_a/review/suggestions/q1_comparison/metrics_by_target.csv",
+    "solution_a/review/suggestions/q1_comparison/metrics_overall.csv",
+    "solution_a/review/suggestions/q1_comparison/nan_support_check.json",
+    "solution_a/review/suggestions/q1_comparison/oof_random_3fold_extra_trees.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_random_3fold_gbr_per_target.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_random_3fold_hgb_per_target.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_random_3fold_mean.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_unseen_style_3fold_extra_trees.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_unseen_style_3fold_mean.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_unseen_style_balanced_3fold_extra_trees.csv",
+    "solution_a/review/suggestions/q1_comparison/oof_unseen_style_balanced_3fold_mean.csv"
+  ],
+  "input_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c"
+  }
+}

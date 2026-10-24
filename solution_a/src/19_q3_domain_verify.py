@@ -43,12 +43,12 @@ def check_frozen():
     for folder, manifest_path in [(SOLUTION / "outputs/q3_optimized", OUT / "previous_hashes.json"),
                                   (SOLUTION / "outputs/q3", SOLUTION / "outputs/q3_optimized/baseline_hashes.json")]:
         manifest = BASE.read_json(manifest_path)
-        paths = {str(path.relative_to(folder)) for path in folder.rglob("*") if path.is_file()}
+        paths = {path.relative_to(folder).as_posix() for path in folder.rglob("*") if path.is_file()}
         assert paths == {row["path"] for row in manifest["files"]}
         for row in manifest["files"]:
             raw = (folder/row["path"]).read_bytes()
             assert len(raw) == row["bytes"] and hashlib.sha256(raw).hexdigest() == row["sha256"], row["path"]
-        details.append({"directory": str(folder.relative_to(SOLUTION)), "unchanged_files": len(paths)})
+        details.append({"directory": folder.relative_to(SOLUTION).as_posix(), "unchanged_files": len(paths)})
     return details
 
 
@@ -558,7 +558,7 @@ def main():
         result.update({"status":"failed","failed_check":active,"error":f"{type(error).__name__}: {error}"});raise
     finally:
         result["elapsed_seconds"]=perf_counter()-start
-        (OUT/"verification.json").write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
+        (OUT/"verification.json").write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8", newline="\n")
         print(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False),flush=True)
 
 

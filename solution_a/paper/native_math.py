@@ -21,7 +21,7 @@ def run(text, plain=False):
     pr = etree.SubElement(node, f"{{{W}}}rPr")
     fonts = etree.SubElement(pr, f"{{{W}}}rFonts")
     for key in ["ascii", "hAnsi", "eastAsia"]:
-        fonts.set(f"{{{W}}}{key}", "STIX Two Math")
+        fonts.set(f"{{{W}}}{key}", "Cambria Math")
     size = etree.SubElement(pr, f"{{{W}}}sz")
     size.set(f"{{{W}}}val", "22")
     t = etree.SubElement(node, f"{{{M}}}t")

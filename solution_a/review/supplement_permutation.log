@@ -1,0 +1,38 @@
+Permutation fold 1/5: 165 training modules; held-out rows=50
+Permutation fold 2/5: 167 training modules; held-out rows=50
+Permutation fold 3/5: 166 training modules; held-out rows=50
+Permutation fold 4/5: 169 training modules; held-out rows=50
+Permutation fold 5/5: 167 training modules; held-out rows=50
+{
+  "scope": "Supplementary post-hoc model-dependence analysis; not causal effects or a new test dataset.",
+  "seed": 20261023,
+  "folds": 5,
+  "repeats": 5,
+  "features": 231,
+  "targets": 45,
+  "chemical_candidates": 218,
+  "rmse": 0.48621939371860823,
+  "frozen_oof_max_abs_difference": 0.012478648949111167,
+  "frozen_oof_rmse": 0.4862203536077027,
+  "modules_per_fold": [
+    165,
+    167,
+    166,
+    169,
+    167
+  ],
+  "mean_jaccard_with_spearman": 0.08000000000000002,
+  "targets_with_no_top3_overlap": 30,
+  "targets_with_all_positive_top3_means": 45,
+  "input_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c"
+  },
+  "elapsed_seconds": 12.035123900015606,
+  "limitations": [
+    "Same development beers; follow-up designed after viewing the main results.",
+    "Correlated and derived inputs can substitute for each other; individual permutation may break chemical consistency.",
+    "Training-fold correlation modules differ across folds and are reported separately, not pooled as identical objects.",
+    "Positive folds and fold SD describe stability, not independent significance tests or causal contributions."
+  ]
+}

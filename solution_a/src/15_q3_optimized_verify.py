@@ -42,7 +42,7 @@ def check_baseline():
     manifest = BASE.read_json(OUT / "baseline_hashes.json")
     baseline = SOLUTION / "outputs/q3"
     expected = {row["path"] for row in manifest["files"]}
-    actual = {str(path.relative_to(baseline)) for path in baseline.rglob("*") if path.is_file()}
+    actual = {path.relative_to(baseline).as_posix() for path in baseline.rglob("*") if path.is_file()}
     assert actual == expected and len(actual) == manifest["file_count"]
     for row in manifest["files"]:
         raw = (baseline / row["path"]).read_bytes()
@@ -723,7 +723,7 @@ def main():
     finally:
         result["elapsed_seconds"] = perf_counter() - start
         (OUT / "verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2,
-                                                          allow_nan=False) + "\n", encoding="utf-8")
+                                                          allow_nan=False) + "\n", encoding="utf-8", newline="\n")
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False), flush=True)
 
 

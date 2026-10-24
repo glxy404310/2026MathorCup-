@@ -28,7 +28,7 @@ WEIGHT, TOL = .2, 1e-10
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8", newline="\n")
 
 
 def paired(models, frame, source):
@@ -83,9 +83,9 @@ def main(output_directory=OUT, proxy_directory=DOMAIN, experiment="domain_loso",
     target_rows = np.flatnonzero(meta.tasting_category_fine.eq("Tripel"))
     features = x.columns.tolist()
     defects = read_defect_thresholds()
-    scenarios = json.loads((PREVIOUS / "transfer/threshold_scenarios.json").read_text())
+    scenarios = json.loads((PREVIOUS / "transfer/threshold_scenarios.json").read_text(encoding="utf-8"))
     # This protocol is persisted before committee predictions or audit fitting.
-    manifest = {"experiment":experiment,"proxy_directory":str(DOMAIN.relative_to(SOLUTION)),
+    manifest = {"experiment":experiment,"proxy_directory":DOMAIN.relative_to(SOLUTION).as_posix(),
         "default_pool": DEFAULT_POOL, "default_policy": DEFAULT_POLICY,
         "pools": {"matched_2004": 2004, "expanded_6004": 6004}, "policies": POLICIES,
         "selection": "40 current-proxy models; first 30 frozen original models; paired Q95 <= 0",
@@ -109,7 +109,7 @@ def main(output_directory=OUT, proxy_directory=DOMAIN, experiment="domain_loso",
     reference = geometry["copula"]
     previous_draws = pd.read_csv(PREVIOUS / "transfer/optimized_base_draws.csv")
     draws = pd.concat([previous_draws, reference.sample("Tripel", 1000, seed=ADDITIONAL_DRAW_SEED)], ignore_index=True)
-    draws.to_csv(OUT / "base_draws.csv", index=False)
+    draws.to_csv(OUT / "base_draws.csv", index=False, lineterminator="\n")
     target_z = reference.transform(x.iloc[target_rows])
     dimension = x.shape[1]
     pairwise = cdist(target_z, target_z)/np.sqrt(dimension)
@@ -307,20 +307,20 @@ def main(output_directory=OUT, proxy_directory=DOMAIN, experiment="domain_loso",
                 "previous_target_improvement":float(previous_row.target_improvement)})
         print(f"Domain transfer {count}/11 beer={beer}: single={single_ok.sum()}, joint={joint_ok.sum()}",flush=True)
     result=pd.DataFrame(summaries)
-    result.to_csv(OUT/"transfer_summary.csv",index=False)
-    pd.concat(diagnostics,ignore_index=True).to_csv(OUT/"candidate_diagnostics.csv",index=False)
-    pd.DataFrame(spectra).to_csv(OUT/"transferred_spectra.csv",index=False)
-    pd.DataFrame(deltas).to_csv(OUT/"stale_paired_deltas.csv",index=False)
-    pd.DataFrame(thresholds).to_csv(OUT/"threshold_sensitivity.csv",index=False)
+    result.to_csv(OUT/"transfer_summary.csv",index=False, lineterminator="\n")
+    pd.concat(diagnostics,ignore_index=True).to_csv(OUT/"candidate_diagnostics.csv",index=False, lineterminator="\n")
+    pd.DataFrame(spectra).to_csv(OUT/"transferred_spectra.csv",index=False, lineterminator="\n")
+    pd.DataFrame(deltas).to_csv(OUT/"stale_paired_deltas.csv",index=False, lineterminator="\n")
+    pd.DataFrame(thresholds).to_csv(OUT/"threshold_sensitivity.csv",index=False, lineterminator="\n")
     previous_frame=pd.DataFrame(previous_checks)
-    previous_frame.to_csv(OUT/"previous_same_spectra_recheck.csv",index=False)
+    previous_frame.to_csv(OUT/"previous_same_spectra_recheck.csv",index=False, lineterminator="\n")
     policies=[{"pool":pool,"policy":policy,**policy_counts(part)} for (pool,policy),part in result.groupby(["pool","policy"])]
-    pd.DataFrame(policies).to_csv(OUT/"policy_summary.csv",index=False)
+    pd.DataFrame(policies).to_csv(OUT/"policy_summary.csv",index=False, lineterminator="\n")
     default=result[result.is_default_policy]
     summary={"experiment":experiment,"protocol":manifest,"training_n":len(train),"sources":len(sources),"features":len(features),
         "support_nn_limit":support_limit,"proxy_qualified":qualified,"selected_domain_config":domain_model.get("selected_config",domain_model.get("config")),
         "default_policy":policy_counts(default),"policies":policies,
-        "previous_original_rules":json.loads((PREVIOUS/"transfer/summary.json").read_text())["default_policy"],
+        "previous_original_rules":json.loads((PREVIOUS/"transfer/summary.json").read_text(encoding="utf-8"))["default_policy"],
         "previous_same_spectra_current_rules":{"sources":len(previous_frame),
             "new_model_checks_passed":int(previous_frame.all_model_checks_passed.sum()),
             "historical_cross_proxy_passed":int(previous_frame.cross_proxy_checks_passed.sum()),

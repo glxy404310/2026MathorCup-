@@ -56,9 +56,9 @@ def main():
                                  "prediction_model": "fixed_stale_forest_239_non_pils" if target == "stale_hops"
                                                      else "original_45_output_forest_250",
                                  "interval_meaning": "generated_spectrum_spread_not_confidence_interval"})
-    pd.concat(profiles, ignore_index=True).to_csv(OUT / "generated_sensory_profiles.csv", index=False)
+    pd.concat(profiles, ignore_index=True).to_csv(OUT / "generated_sensory_profiles.csv", index=False, lineterminator="\n")
     new_profiles = pd.DataFrame(profile_rows)
-    new_profiles.to_csv(OUT / "generated_sensory_summary.csv", index=False)
+    new_profiles.to_csv(OUT / "generated_sensory_summary.csv", index=False, lineterminator="\n")
     old_profiles = pd.read_csv(OLD / "generated_sensory_summary.csv")
 
     # Aggregate chemical rechecks independently of the proxy model counts.
@@ -76,7 +76,7 @@ def main():
                               "new_model_checks_and_chemical": int((current_checks & default.all_model_checks_passed).sum()),
                               "cross_proxy_checks_and_chemical": int((current_checks & default.cross_proxy_checks_passed).sum())})
     scenario_counts = pd.DataFrame(scenario_rows)
-    scenario_counts.to_csv(OUT / "transfer/threshold_pass_counts.csv", index=False)
+    scenario_counts.to_csv(OUT / "transfer/threshold_pass_counts.csv", index=False, lineterminator="\n")
 
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                          "axes.spines.top": False, "axes.spines.right": False,
@@ -278,14 +278,14 @@ Pils整风格留出11款时，专用树RMSE为 **{source_holdout.loc['fixed_sing
 
 方法与审查详见 `q3_generation_optimized.md`、`q3_stale_optimized.md`、`q3_optimization_review.md`。数值校验见 `../outputs/q3_optimized/verification.json`。当前结果不包含真实酿造或迁移后的品评实验，Stale hops预测可靠性仍是主要瓶颈。
 """
-    (SOLUTION / "docs/q3_optimization_results.md").write_text(report, encoding="utf-8")
+    (SOLUTION / "docs/q3_optimization_results.md").write_text(report, encoding="utf-8", newline="\n")
     summary = {"generation_energy_reduction_vs_matched_legacy": gains,
                "fixed_stale_rmse_reduction_vs_matched_old": fixed["rmse_reduction_vs_old_multioutput"],
                "paired_rmse_difference_interval": ci,
                "stale_improvement_stably_established": False,
                "source_style_prediction_improved": fixed["pils_holdout_improves_old"],
                "default_transfer": counts, "base_draws_equal": transfer["base_draws_equal"]}
-    (OUT / "results_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "results_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
 
 

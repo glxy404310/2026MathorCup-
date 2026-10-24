@@ -1,0 +1,26 @@
+random_3fold fold 1/3 mean: RMSE=0.599310
+random_3fold fold 1/3 extra_trees: RMSE=0.519786
+random_3fold fold 1/3 gbr_per_target: RMSE=0.519130
+random_3fold fold 1/3 hgb_per_target: RMSE=0.519440
+random_3fold fold 2/3 mean: RMSE=0.562006
+random_3fold fold 2/3 extra_trees: RMSE=0.476978
+random_3fold fold 2/3 gbr_per_target: RMSE=0.484014
+random_3fold fold 2/3 hgb_per_target: RMSE=0.485638
+random_3fold fold 3/3 mean: RMSE=0.560278
+random_3fold fold 3/3 extra_trees: RMSE=0.471436
+random_3fold fold 3/3 gbr_per_target: RMSE=0.479933
+random_3fold fold 3/3 hgb_per_target: RMSE=0.478903
+unseen_style_3fold fold 1/3 mean: RMSE=0.528632
+unseen_style_3fold fold 1/3 extra_trees: RMSE=0.483807
+unseen_style_3fold fold 2/3 mean: RMSE=0.590628
+unseen_style_3fold fold 2/3 extra_trees: RMSE=0.497601
+unseen_style_3fold fold 3/3 mean: RMSE=0.670366
+unseen_style_3fold fold 3/3 extra_trees: RMSE=0.576107
+              protocol          model  fit_and_predict_seconds      mae     rmse  macro_r2  rate  repeat
+          random_3fold           mean                 0.013082 0.409387 0.574250 -0.006730   NaN     NaN
+          random_3fold    extra_trees                 1.922529 0.342910 0.490000  0.204291   NaN     NaN
+          random_3fold gbr_per_target                31.168889 0.348601 0.494772  0.178595   NaN     NaN
+          random_3fold hgb_per_target                29.799302 0.350241 0.495078  0.177488   NaN     NaN
+random_3fold_test_mask    extra_trees                      NaN 0.347015 0.495530  0.192128   0.1     1.0
+random_3fold_test_mask    extra_trees                      NaN 0.347986 0.496907  0.189356   0.1     2.0
+Completed in 66.18 seconds

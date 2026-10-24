@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "all_draw_style_counts_preserved": true,
+  "npz_draws": 200,
+  "original_top3_positions": 135,
+  "all_candidates_count": 9810,
+  "recomputed_draws": [
+    0,
+    99,
+    199
+  ],
+  "all_frequency_counts_rebuilt_from_saved_selections": true,
+  "scope": "Independent read-only reconstruction of saved bootstrap sample indices and selected feature indices."
+}

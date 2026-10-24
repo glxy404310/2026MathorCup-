@@ -39,7 +39,7 @@ def scores(y, pred):
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8", newline="\n")
 
 
 def predict_target(model, x, spec, target_position):
@@ -82,14 +82,14 @@ def write_local_neighborhood_diagnostics(final_model, models, indices, train_ind
                 "effective_unique_beer_count": effective_beers,
                 "imputer_indicator_count": len(model.named_steps["imputer"].indicator_.features_)})
     frame = pd.DataFrame(rows)
-    frame.to_csv(OUT / "neighborhood_bootstrap_diagnostics.csv", index=False)
+    frame.to_csv(OUT / "neighborhood_bootstrap_diagnostics.csv", index=False, lineterminator="\n")
     frame.groupby("beer").agg(
         bootstrap_prediction_sd=("prediction", "std"),
         median_neighbor_jaccard=("neighbor_jaccard_vs_final", "median"),
         mean_unique_neighbors=("nearest_unique_beers", "mean"),
         median_effective_resampled_position_count=("effective_resampled_position_count", "median"),
         median_effective_unique_beer_count=("effective_unique_beer_count", "median"),
-    ).to_csv(OUT / "neighborhood_bootstrap_summary.csv")
+    ).to_csv(OUT / "neighborhood_bootstrap_summary.csv", lineterminator="\n")
 
 
 def main():
@@ -125,7 +125,7 @@ def main():
     }
     # Freeze all candidates/rules before starting the new grouped evaluation.
     write_json(OUT / "run_manifest.json", run_manifest)
-    pd.DataFrame({"feature": aging}).to_csv(OUT / "predeclared_aging_features.csv", index=False)
+    pd.DataFrame({"feature": aging}).to_csv(OUT / "predeclared_aging_features.csv", index=False, lineterminator="\n")
     predictions = {spec["name"]: np.full(len(train_indices), np.nan) for spec in specs}
     fold_ids = np.zeros(len(train_indices), dtype=int)
     rows_by_style, fold_audit = [], []
@@ -154,11 +154,11 @@ def main():
         fold_audit.extend({"fold": fold, "heldout_style": heldout_style, "role": role,
                            "global_index": int(index), "beer": int(meta.iloc[index].beer)}
                           for role, indices in [("train", train_global), ("test", test_global)] for index in indices)
-        pd.DataFrame(rows_by_style).to_csv(OUT / "loso_metrics_by_style.csv", index=False)
+        pd.DataFrame(rows_by_style).to_csv(OUT / "loso_metrics_by_style.csv", index=False, lineterminator="\n")
         print(f"Stale domain LOSO {fold}/21: {heldout_style} ({len(test_local)} samples)", flush=True)
     loso_by_style = pd.DataFrame(rows_by_style)
     audit = pd.DataFrame(fold_audit)
-    audit.to_csv(OUT / "loso_split_audit.csv", index=False)
+    audit.to_csv(OUT / "loso_split_audit.csv", index=False, lineterminator="\n")
     overall_rows, prediction_rows = [], []
     for spec in specs:
         name, pred = spec["name"], predictions[spec["name"]]
@@ -196,8 +196,8 @@ def main():
     selected_config = spec_map[selected_method]
     qualified = bool(selected_row.qualified_for_proxy)
     loso_predictions = pd.concat(prediction_rows, ignore_index=True)
-    loso_predictions.to_csv(OUT / "loso_predictions.csv", index=False)
-    overall.to_csv(OUT / "loso_metrics_overall.csv", index=False)
+    loso_predictions.to_csv(OUT / "loso_predictions.csv", index=False, lineterminator="\n")
+    overall.to_csv(OUT / "loso_metrics_overall.csv", index=False, lineterminator="\n")
     selection_result = {"selected_method": selected_method, "config": selected_config,
         "selected_loso_metrics": selected_row.to_dict(), "qualified_for_proxy": qualified,
         "fallback_used": fallback_used, "best_mean_macro_rmse": mean_floor,
@@ -239,8 +239,8 @@ def main():
                           "selected_without_pils_labels": name == selected_method})], axis=1))
         diagnostic_metrics.append({"method": name, "selected_without_pils_labels": name == selected_method,
                                    "n": len(source_indices), **scores(y.iloc[source_indices], values)})
-    pd.concat(diagnostic_rows, ignore_index=True).to_csv(OUT / "pils_diagnostic_predictions.csv", index=False)
-    pd.DataFrame(diagnostic_metrics).to_csv(OUT / "pils_diagnostic_metrics.csv", index=False)
+    pd.concat(diagnostic_rows, ignore_index=True).to_csv(OUT / "pils_diagnostic_predictions.csv", index=False, lineterminator="\n")
+    pd.DataFrame(diagnostic_metrics).to_csv(OUT / "pils_diagnostic_metrics.csv", index=False, lineterminator="\n")
 
     models, indices, bootstrap_seeds, estimator_seeds = [], [], [], []
     for b in range(60):

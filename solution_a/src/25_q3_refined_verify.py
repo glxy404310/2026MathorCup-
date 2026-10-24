@@ -18,7 +18,7 @@ from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
-from common import SOLUTION, data_dir
+from common import SOLUTION, data_dir, resolve_recorded_path
 
 BASE = importlib.import_module("10_q3_verify")
 DOMAIN = importlib.import_module("19_q3_domain_verify")
@@ -30,7 +30,7 @@ def check_frozen():
     details = DOMAIN.check_frozen()
     folder = SOLUTION / "outputs/q3_domain"
     manifest = BASE.read_json(OUT / "previous_hashes.json")
-    actual = {str(p.relative_to(folder)) for p in folder.rglob("*") if p.is_file()}
+    actual = {p.relative_to(folder).as_posix() for p in folder.rglob("*") if p.is_file()}
     assert actual == {r["path"] for r in manifest["files"]}
     for row in manifest["files"]:
         raw = (folder / row["path"]).read_bytes()
@@ -49,7 +49,7 @@ def check_beer81(context):
     index = np.flatnonzero(meta.beer.eq(81)).item()
     summary = BASE.read_json(folder / "summary.json")
     for row in BASE.read_json(folder / "source_manifest.json"):
-        assert hashlib.sha256(Path(row["path"]).read_bytes()).hexdigest() == row["sha256"]
+        assert hashlib.sha256(resolve_recorded_path(row["path"]).read_bytes()).hexdigest() == row["sha256"]
     identity = pd.read_csv(folder / "identity_join_audit.csv")
     assert len(identity) == 4 and identity.beer81_matches.eq(1).all()
     assert identity.beer_unique.all() and identity.style_matches_1csv.all() and identity.id_matches_printed_precision.all()
@@ -695,12 +695,12 @@ def check_reports(context):
         assert f"figures/{name}.png" in text
         figures.append(name)
     assert summary["figure_pairs"]==len(figures) and summary["source_denominator"]==len(transfer[transfer.is_default_policy])
-    return {"report":str(report.relative_to(SOLUTION)),"source_hashes":len(provenance),"candidate_rows":len(comparison),
+    return {"report":report.relative_to(SOLUTION).as_posix(),"source_hashes":len(provenance),"candidate_rows":len(comparison),
             "retention_policy_rows":len(retained),"reference_rows":len(expected),"figure_pairs":len(figures),
             "report_tables_and_text_reconciled":True}
 
 
-def main():
+def main(output_path=None):
     started = perf_counter()
     checks = {}
     checks["raw_sources"] = BASE.check_hashes()
@@ -713,9 +713,16 @@ def main():
     assert check_frozen() == checks["frozen_history"]
     result = {"status":"PASS","checks":checks,"elapsed_seconds":perf_counter()-started,
               "scope":"Saved-data provenance, training-only internal validation, model-response constraints and predeclared finite candidate search; no external sensory validation."}
-    (OUT/"verification.json").write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
+    if output_path is not None:
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8", newline="\n")
     print(json.dumps(result,ensure_ascii=False,indent=2),flush=True)
 
 
 if __name__ == "__main__":
-    with threadpool_limits(limits=1): main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="Optional report path; existing results are read-only by default.")
+    args = parser.parse_args()
+    with threadpool_limits(limits=1): main(args.output)

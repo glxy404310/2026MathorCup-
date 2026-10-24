@@ -25,7 +25,7 @@ TARGET = "stale_hops"
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8", newline="\n")
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
         "audit_bootstrap_seed": AUDIT_BOOTSTRAP_SEED,
         "forbidden_predictors": ["other observed sensory targets", "attachment 7 comments", "identity keys", "style"],
     })
-    pd.DataFrame({"feature": aging}).to_csv(OUT / "predeclared_aging_features.csv", index=False)
+    pd.DataFrame({"feature": aging}).to_csv(OUT / "predeclared_aging_features.csv", index=False, lineterminator="\n")
     all_inner, choices, fold_metrics, oof_rows, metrics_rows = [], [], [], [], []
     methods = ["mean", "old_multioutput_extra_trees", "fixed_single_extra_trees", "nested_selected"]
     methods += [f"nested_family_{family}" for family in families]
@@ -90,8 +90,8 @@ def main():
             for method in methods:
                 fold_metrics.append({"repeat": repeat, "outer_seed": outer_seed, "fold": fold,
                                      "method": method, **scores(y.iloc[test], predictions[method][test])})
-            pd.DataFrame(all_inner).to_csv(OUT / "nested_inner_cv_results.csv", index=False)
-            pd.DataFrame(choices).to_csv(OUT / "nested_selected_configs.csv", index=False)
+            pd.DataFrame(all_inner).to_csv(OUT / "nested_inner_cv_results.csv", index=False, lineterminator="\n")
+            pd.DataFrame(choices).to_csv(OUT / "nested_selected_configs.csv", index=False, lineterminator="\n")
             print(f"Stale nested repeat {repeat}/2 fold {fold}/5: {selected['nested_selected']['candidate']}; "
                   f"outer RMSE={scores(y.iloc[test], predictions['nested_selected'][test])['rmse']:.6f}", flush=True)
         for method, pred in predictions.items():
@@ -108,9 +108,9 @@ def main():
         metrics_rows.append({"scope": "pooled_repeated_oof", "repeat": 0, "outer_seed": 0,
                              "method": method, **scores(rows.observed, rows.prediction)})
     metrics = pd.DataFrame(metrics_rows)
-    oof.to_csv(OUT / "oof_predictions.csv", index=False)
-    metrics.to_csv(OUT / "metrics.csv", index=False)
-    pd.DataFrame(fold_metrics).to_csv(OUT / "metrics_by_fold.csv", index=False)
+    oof.to_csv(OUT / "oof_predictions.csv", index=False, lineterminator="\n")
+    metrics.to_csv(OUT / "metrics.csv", index=False, lineterminator="\n")
+    pd.DataFrame(fold_metrics).to_csv(OUT / "metrics_by_fold.csv", index=False, lineterminator="\n")
     summary_metrics = metrics[metrics.scope.eq("pooled_repeated_oof")].set_index("method")
     mean_rmse = float(summary_metrics.loc["mean", "rmse"])
 
@@ -121,7 +121,7 @@ def main():
         raise ValueError("Expected all 11 Pils/Lager sources held out")
     transfer_rows, transfer_inner_pred = inner_compare(
         x.iloc[transfer_train], y.iloc[transfer_train], specs, features, calibrated, aging, TRANSFER_CV_SEED)
-    pd.DataFrame(transfer_rows).to_csv(OUT / "transfer_inner_cv_results.csv", index=False)
+    pd.DataFrame(transfer_rows).to_csv(OUT / "transfer_inner_cv_results.csv", index=False, lineterminator="\n")
     selected = choose_candidate(transfer_rows)
     selected_spec = spec_map[selected["candidate"]]
     transfer_baseline = np.full(len(transfer_train), np.nan)
@@ -145,13 +145,13 @@ def main():
         "observed": y.iloc[transfer_train].to_numpy(),
         "selected_inner_oof_prediction": transfer_inner_pred[selected["candidate"]],
         "mean_inner_oof_prediction": transfer_baseline})], axis=1).to_csv(
-            OUT / "transfer_selected_inner_oof.csv", index=False)
+            OUT / "transfer_selected_inner_oof.csv", index=False, lineterminator="\n")
 
     # Source holdout is evaluated only after configuration selection/fitting.
     heldout = pd.concat([meta.iloc[excluded].reset_index(drop=True), pd.DataFrame({
         "observed": y.iloc[excluded].to_numpy(), "prediction": predict_1d(final, x.iloc[excluded]),
         "mean_baseline_prediction": y.iloc[transfer_train].mean()})], axis=1)
-    heldout.to_csv(OUT / "pils_style_holdout_predictions.csv", index=False)
+    heldout.to_csv(OUT / "pils_style_holdout_predictions.csv", index=False, lineterminator="\n")
     holdout_metrics = [{"model": "optimized_single_target", **scores(heldout.observed, heldout.prediction)},
                        {"model": "non_pils_mean", **scores(heldout.observed, heldout.mean_baseline_prediction)}]
     old_path = SOLUTION / "outputs" / "q3" / "sensory" / "transfer_proxy.joblib"
@@ -161,7 +161,7 @@ def main():
             raise AssertionError("Old transfer proxy leaks Pils source rows")
         old_pred = old["pipeline"].predict(x.iloc[excluded])[:, old["targets"].index(TARGET)]
         holdout_metrics.append({"model": "old_multioutput_transfer_proxy", **scores(heldout.observed, old_pred)})
-    pd.DataFrame(holdout_metrics).to_csv(OUT / "pils_style_holdout_metrics.csv", index=False)
+    pd.DataFrame(holdout_metrics).to_csv(OUT / "pils_style_holdout_metrics.csv", index=False, lineterminator="\n")
 
     models, bootstrap_indices, bootstrap_seeds, estimator_seeds = [], [], [], []
     for b in range(60):

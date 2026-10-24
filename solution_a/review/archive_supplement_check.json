@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "archive_entries": 430,
+  "source_files_matched": 56,
+  "python_sources_parsed": 55,
+  "all_manifest_hashes_match": true,
+  "default_incomplete_results_rejected": true,
+  "nonempty_main_outputs_rejected_before_training": true,
+  "nonempty_supplement_outputs_rejected_before_training": true,
+  "scope": "Fresh extraction, syntax and non-destructive runner preflight; no second full model rebuild."
+}

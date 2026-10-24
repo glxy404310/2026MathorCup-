@@ -35,7 +35,7 @@ TOL = 1e-10
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8")
+    path.write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+"\n",encoding="utf-8", newline="\n")
 
 
 def target_draws(reference, legacy):
@@ -104,7 +104,7 @@ def main():
     target = np.flatnonzero(meta.tasting_category_fine.eq("Tripel"))
     features = x.columns.tolist()
     defects = read_defect_thresholds()
-    scenarios = json.loads((OPTIMIZED/"transfer/threshold_scenarios.json").read_text())
+    scenarios = json.loads((OPTIMIZED/"transfer/threshold_scenarios.json").read_text(encoding="utf-8"))
     manifest = {"default":DEFAULT,"pools":dict(zip(POOLS,(2004,6004,6004))),
         "bounds":{key:{"absolute_minimum":value[0],"anchor_fraction":value[1]} for key,value in BOUNDS.items()},
         "rankings":RANKINGS,"contractions":CONTRACTIONS,"gammas":GAMMAS,
@@ -124,11 +124,11 @@ def main():
     reference = geometry["copula"]
     legacy = pd.read_csv(PRIOR/"consensus/base_draws.csv")
     contracted,contracted_latents = target_draws(reference,legacy)
-    legacy.to_csv(OUT/"legacy_base_draws.csv",index=False)
-    contracted.to_csv(OUT/"contracted_base_draws.csv",index=False)
+    legacy.to_csv(OUT/"legacy_base_draws.csv",index=False, lineterminator="\n")
+    contracted.to_csv(OUT/"contracted_base_draws.csv",index=False, lineterminator="\n")
     np.save(OUT/"contracted_latents.npy",contracted_latents)
     pd.DataFrame({"draw":np.arange(1500),"base_draw":np.tile(np.arange(500),3),
-        "contraction":np.repeat(CONTRACTIONS,500)}).to_csv(OUT/"contracted_draw_metadata.csv",index=False)
+        "contraction":np.repeat(CONTRACTIONS,500)}).to_csv(OUT/"contracted_draw_metadata.csv",index=False, lineterminator="\n")
     tz = reference.transform(x.iloc[target])
     dim = x.shape[1]
     pairwise = cdist(tz,tz)/np.sqrt(dim)
@@ -302,17 +302,17 @@ def main():
                         "old_fresh_audit_q95":aq["old_fresh_audit"],"fresh_consistency_passed":passed})
             print(f"Balanced transfer source {number}/11 beer={beer}, arm={arm}, joint={joint.sum()}",flush=True)
     result=pd.DataFrame(records)
-    result.to_csv(OUT/"transfer_summary.csv",index=False)
-    pd.concat(geometry_rows,ignore_index=True).to_csv(OUT/"candidate_geometry.csv.gz",index=False,compression="gzip")
-    pd.concat(diags,ignore_index=True).to_csv(OUT/"candidate_model_checks.csv.gz",index=False,compression="gzip")
-    pd.DataFrame(selected_rows).to_csv(OUT/"selected_spectra.csv",index=False)
-    pd.DataFrame(delta_rows).to_csv(OUT/"paired_deltas.csv",index=False)
-    pd.DataFrame(threshold_rows).to_csv(OUT/"threshold_checks.csv",index=False)
-    pd.DataFrame(rechecks).to_csv(OUT/"fixed_spectra_rechecks.csv",index=False)
-    pd.DataFrame(uniqueness).to_csv(OUT/"pool_uniqueness.csv",index=False)
+    result.to_csv(OUT/"transfer_summary.csv",index=False, lineterminator="\n")
+    pd.concat(geometry_rows,ignore_index=True).to_csv(OUT/"candidate_geometry.csv.gz",index=False,compression="gzip", lineterminator="\n")
+    pd.concat(diags,ignore_index=True).to_csv(OUT/"candidate_model_checks.csv.gz",index=False,compression="gzip", lineterminator="\n")
+    pd.DataFrame(selected_rows).to_csv(OUT/"selected_spectra.csv",index=False, lineterminator="\n")
+    pd.DataFrame(delta_rows).to_csv(OUT/"paired_deltas.csv",index=False, lineterminator="\n")
+    pd.DataFrame(threshold_rows).to_csv(OUT/"threshold_checks.csv",index=False, lineterminator="\n")
+    pd.DataFrame(rechecks).to_csv(OUT/"fixed_spectra_rechecks.csv",index=False, lineterminator="\n")
+    pd.DataFrame(uniqueness).to_csv(OUT/"pool_uniqueness.csv",index=False, lineterminator="\n")
     frontier=[{"arm":arm,"pool":pool,"bound":bound,"ranking":ranking,**counts(part)}
         for (arm,pool,bound,ranking),part in result.groupby(["arm","pool","bound","ranking"])]
-    pd.DataFrame(frontier).to_csv(OUT/"frontier.csv",index=False)
+    pd.DataFrame(frontier).to_csv(OUT/"frontier.csv",index=False, lineterminator="\n")
     arm_defaults={arm:counts(result[result.arm.eq(arm)&result.is_arm_default]) for arm in arms}
     summary={"default":DEFAULT,"default_results":counts(result[result.is_default_policy]),"arm_defaults":arm_defaults,
         "model_qualified":{arm:bool(models["center"]["qualified_for_proxy"]) for arm,models in arms.items()},

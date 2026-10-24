@@ -1,0 +1,1035 @@
+Running 01_audit.py
+{
+  "status": "completed",
+  "report": "D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\docs\\data_audit.md",
+  "output_directory": "D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\outputs\\audit",
+  "assertions": {
+    "all_1_4_7_beer_unique_and_same_set": true,
+    "all_three_matrices_reproduce_spearman": true,
+    "concentration_block_matches_1_values_and_missingness": true,
+    "source_hashes_unchanged": true,
+    "first_37_basic_match_log10_on_valid_pairs": true,
+    "aroma_taste_metadata_select_exactly_45": true
+  }
+}
+Running 02_q1_baseline.py
+Fold 1/5: alpha=10000.0, ridge RMSE=0.7081
+Fold 2/5: alpha=10000.0, ridge RMSE=0.5028
+Fold 3/5: alpha=100000.0, ridge RMSE=0.5360
+Fold 4/5: alpha=100000.0, ridge RMSE=0.5727
+Fold 5/5: alpha=100000.0, ridge RMSE=0.6089
+             model      mae     rmse  macro_r2
+              mean 0.409634 0.574456 -0.007574
+             ridge 0.406092 0.589966 -0.065285
+       extra_trees 0.340845 0.486219  0.214622
+      ridge_mask10 0.406923 0.590951 -0.068233
+      ridge_mask20 0.402018 0.564464  0.019492
+extra_trees_mask10 0.344339 0.490984  0.203599
+extra_trees_mask20 0.350294 0.499223  0.183017
+Running 02b_q1_robust.py
+Robust fold 1/5: alpha=1000.0
+Robust fold 2/5: alpha=1000.0
+Robust fold 3/5: alpha=1000.0
+Robust fold 4/5: alpha=1000.0
+Robust fold 5/5: alpha=1000.0
+              model      mae     rmse  macro_r2
+       ridge_winsor 0.352513 0.499179  0.185784
+ridge_winsor_mask10 0.359504 0.507932  0.162248
+ridge_winsor_mask20 0.364871 0.514142  0.146358
+Running 03_q2_network.py
+bootstrap 50/200
+bootstrap 100/200
+bootstrap 150/200
+bootstrap 200/200
+{
+  "scope": "Full-sample descriptive associations; neither causal evidence nor held-out predictive validation.",
+  "n_beers": 250,
+  "n_features": 231,
+  "n_candidate_compounds": 218,
+  "n_sensory_targets": 45,
+  "bootstrap_draws": 200,
+  "seed": 20261023,
+  "excluded_compounds": [
+    "CO2.PSI.",
+    "GFS",
+    "acids_sum",
+    "aroma_hops_sum",
+    "betaglucan.mg.L.",
+    "bitterness",
+    "color.EBC.",
+    "esters_sum",
+    "kcalperc",
+    "pH",
+    "protein.g.L.",
+    "sulfur_sum",
+    "unfermentables"
+  ],
+  "excluded_sensory_targets": [
+    "aftertaste",
+    "alcohol",
+    "body",
+    "co2",
+    "overall"
+  ],
+  "correlation_audit": {
+    "supplied_vs_spearman_max_abs_error": 6.661338147750939e-16,
+    "supplied_vs_spearman_mean_abs_error": 1.5901103931861018e-16,
+    "supplied_vs_pearson_mean_abs_error": 0.08768352770151427,
+    "supplied_vs_pearson_max_abs_error": 1.1234263749065518,
+    "optimized_routine_vs_scipy_max_abs_error": 1.6653345369377348e-16
+  },
+  "networks": [
+    {
+      "absolute_rho_threshold": 0.6,
+      "edges": 266,
+      "positive_edges": 263,
+      "negative_edges": 3,
+      "isolated_nodes": 101
+    },
+    {
+      "absolute_rho_threshold": 0.7,
+      "edges": 109,
+      "positive_edges": 109,
+      "negative_edges": 0,
+      "isolated_nodes": 150
+    },
+    {
+      "absolute_rho_threshold": 0.8,
+      "edges": 39,
+      "positive_edges": 39,
+      "negative_edges": 0,
+      "isolated_nodes": 194
+    }
+  ],
+  "top3_stability": {
+    "mean_selection_frequency": 0.4551851851851852,
+    "median_selection_frequency": 0.4,
+    "number_frequency_at_least_0_8": 14,
+    "total_selected": 135,
+    "max_frequency_monte_carlo_standard_error": 0.035355339059327376
+  },
+  "mean_jaccard_spearman_pearson": 0.22222222222222218,
+  "mean_jaccard_global_within_style": 0.16,
+  "targets_with_no_global_within_overlap": 21,
+  "style_counts": {
+    "Blond": 31,
+    "Tripel": 28,
+    "Strong ale": 18,
+    "Hoppy": 17,
+    "Stout/Porter": 13,
+    "Wheat": 12,
+    "Amber": 12,
+    "Brown": 12,
+    "Pils/Lager": 11,
+    "Lambic": 11,
+    "Dubbel": 10,
+    "Kriek": 10,
+    "Saison": 10,
+    "Christmas": 9,
+    "Low/No alcohol": 8,
+    "Fruitbeer": 8,
+    "West Flanders ale": 7,
+    "Brett/cofermented": 6,
+    "Flanders old brown": 5,
+    "Scotch": 5,
+    "Brut": 4,
+    "Faro": 3
+  },
+  "limitations": [
+    "No causal interpretation",
+    "No per-candidate mechanism literature verification yet",
+    "All-sample network is not an external independent prior",
+    "Global row bootstrap does not fix style composition",
+    "Mean-centered within-style rank correlation is a sensitivity analysis, not full confounding control",
+    "Continuous standardized targets do not supply raw 0-6 calibration",
+    "Graph provides structure/context; this baseline ranks marginal correlations and does not fit a graph-regularized predictive model"
+  ]
+}
+Running 04_stage_summary.py
+Saved D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\outputs\figures\q1_baseline_and_missingness.png and docs/stage1_results.md
+Running 05_verify_outputs.py
+{
+  "status": "passed",
+  "checks": [
+    "Original source SHA-256 unchanged: 9 files",
+    "Sample alignment, folds and independently recomputed metrics: 10 OOF tables",
+    "Mean baseline equals the training-fold target mean for every held-out beer",
+    "Saved outer-fold clipping bounds match only the corresponding training rows",
+    "All three saved models reload and predict using the recorded feature/target order",
+    "Q2 candidate counts, bootstrap frequencies and undirected graph degree sums reconcile",
+    "Stage notes, independent review and chart files exist"
+  ],
+  "scope": "Saved-output integrity and numerical consistency; not proof of model adequacy"
+}
+Running run_q3.py
+Running 06_q3_sensory.py
+Q3 sensory OOF fold 1/5: RMSE=0.521689
+Q3 sensory OOF fold 2/5: RMSE=0.443088
+Q3 sensory OOF fold 3/5: RMSE=0.478059
+Q3 sensory OOF fold 4/5: RMSE=0.487791
+Q3 sensory OOF fold 5/5: RMSE=0.498629
+Q3 stale_hops bootstrap 10/40
+Q3 stale_hops bootstrap 20/40
+Q3 stale_hops bootstrap 30/40
+Q3 stale_hops bootstrap 40/40
+      model      mae     rmse  macro_r2
+       mean 0.409634 0.574456 -0.007574
+extra_trees 0.341781 0.486538  0.214287
+stale_hops: [{"model": "mean", "target": "stale_hops", "mae": 0.30878166360932, "rmse": 0.44160921700242495, "macro_r2": -0.004338645806095887, "spearman": -0.12050725433961368}, {"model": "extra_trees", "target": "stale_hops", "mae": 0.30819440653166685, "rmse": 0.4355836656606409, "macro_r2": 0.02288183590035775, "spearman": 0.141438906839081}]
+Running 07_q3_generation.py
+Generation validation repeat=1, fold=1
+Generation validation repeat=1, fold=2
+Generation validation repeat=1, fold=3
+Generation validation repeat=2, fold=1
+Generation validation repeat=2, fold=2
+Generation validation repeat=2, fold=3
+{
+  "date": "2026-10-23",
+  "n_real": 250,
+  "n_features": 226,
+  "n_styles": 22,
+  "mean_strength": 5.0,
+  "cov_strength": 20.0,
+  "parameter_policy": "prespecified_fixed_main_and_separate_sensitivity_no_outer_selection",
+  "cv_repeat_seeds": [
+    20261023,
+    20262023
+  ],
+  "cv_folds": 3,
+  "mc_repeats": 3,
+  "generated_n_each_draw": 300,
+  "validation_records": 216,
+  "validation_test_style_n_min": 3,
+  "validation_test_style_n_max": 10,
+  "full_generation_rows": 1200,
+  "full_generation_copy_rate": 0.0,
+  "full_generation_within_insample_latent_q95": 0.0,
+  "full_generation_within_cv_latent_q95": 1.0,
+  "minimum_style_cov_eigenvalue": 0.07084380621434917,
+  "elapsed_seconds": 10.861718600004679,
+  "limits": [
+    "Tiny style samples; 300 generated rows are Monte Carlo, not independent real evidence",
+    "Shared empirical margins and shrinkage may dilute style-specific distributions",
+    "Full-fit support thresholds are descriptive, not independently calibrated",
+    "Chemical target spectra are not brewing recipes or sensory panel validation"
+  ]
+}
+Running 08_q3_transfer.py
+Transfer 1/11 beer=124: 64/2004 selection-feasible candidates
+Transfer 2/11 beer=81: 419/2004 selection-feasible candidates
+Transfer 3/11 beer=218: 487/2004 selection-feasible candidates
+Transfer 4/11 beer=96: 0/2004 selection-feasible candidates
+Transfer 5/11 beer=230: 396/2004 selection-feasible candidates
+Transfer 6/11 beer=185: 3/2004 selection-feasible candidates
+Transfer 7/11 beer=139: 113/2004 selection-feasible candidates
+Transfer 8/11 beer=209: 14/2004 selection-feasible candidates
+Transfer 9/11 beer=119: 517/2004 selection-feasible candidates
+Transfer 10/11 beer=90: 33/2004 selection-feasible candidates
+Transfer 11/11 beer=28: 1156/2004 selection-feasible candidates
+{
+  "n_sources": 11,
+  "n_candidates_selected": 10,
+  "n_model_checks_passed": 5,
+  "n_audit_failed": 5,
+  "n_no_candidate": 1,
+  "n_source_unverifiable": 0,
+  "n_all_checks_also_pass_mean_thresholds_same_spectra": 1
+}
+Running 09_q3_report.py
+Saved 1200 sensory profiles, three figures, and docs/q3_results.md
+Running 10_q3_verify.py
+Verified: generation_training_support
+Verified: generation_repeated_cv
+Verified: sensory_oof_and_source_exclusion
+Verified: transfer_constraints_and_selection
+Verified: report_and_generated_sensory
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "source_hashes_before",
+      "status": "passed",
+      "details": {
+        "files": 9,
+        "hash_algorithm": "sha256",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "hybrid_data_contract",
+      "status": "passed",
+      "details": {
+        "rows": 250,
+        "features": 226,
+        "calibrated": 69,
+        "relative": 157,
+        "negative_calibrated_invalidated": 3,
+        "missing_cells_preserved": 72
+      }
+    },
+    {
+      "name": "generation_training_support",
+      "status": "passed",
+      "details": {
+        "styles": [
+          "Tripel",
+          "Kriek",
+          "Lambic",
+          "Pils/Lager"
+        ],
+        "rows_per_style": 300,
+        "rows": 1200,
+        "whole_training_row_copies": 0,
+        "calibrated_nonnegative": true,
+        "marginal_training_support": true,
+        "discrete_empirical_support": true
+      }
+    },
+    {
+      "name": "generation_repeated_cv",
+      "status": "passed",
+      "details": {
+        "repeats": 2,
+        "folds": 3,
+        "mc_per_method_fold": 3,
+        "every_sample_test_once_per_repeat": true,
+        "metric_records": 216,
+        "fold_and_overall_summaries_reconciled": true,
+        "scope": "Saved split assignments, schema and aggregation; no claim of independent real experiments"
+      }
+    },
+    {
+      "name": "sensory_oof_and_source_exclusion",
+      "status": "passed",
+      "details": {
+        "oof_models": 2,
+        "oof_folds": 5,
+        "targets": 45,
+        "excluded_sources": 11,
+        "transfer_training_rows": 239,
+        "bootstrap_models": 40,
+        "bootstrap_resample_shape": [
+          40,
+          239
+        ],
+        "stale_hops_oof_r2": 0.02288183590035775,
+        "stale_hops_oof_rmse": 0.4355836656606409,
+        "stale_hops_oof_mean_rmse": 0.44160921700242495
+      }
+    },
+    {
+      "name": "transfer_constraints_and_selection",
+      "status": "passed",
+      "details": {
+        "selected_spectra_checked": 63,
+        "source_training_rows": 239,
+        "protected_fixed_argmin_checks": 30,
+        "selection_models": 30,
+        "audit_models": 10,
+        "maximum_paired_quantile_error": 0.0,
+        "maximum_target_distance_error": 2.220446049250313e-16,
+        "maximum_full_space_nn_error": 0.0,
+        "default_policy": {
+          "n_sources": 11,
+          "n_candidates_selected": 10,
+          "n_model_checks_passed": 5,
+          "n_audit_failed": 5,
+          "n_no_candidate": 1,
+          "n_source_unverifiable": 0,
+          "n_all_checks_also_pass_mean_thresholds_same_spectra": 1
+        },
+        "scope": "Chemical constraints and uncalibrated model diagnostics; no actual taste guarantee"
+      }
+    },
+    {
+      "name": "report_and_generated_sensory",
+      "status": "passed",
+      "details": {
+        "generated_sensory_rows": 1200,
+        "sensory_dimensions": 45,
+        "frozen_model_predictions_reconciled": true,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "source_hashes_after",
+      "status": "passed",
+      "details": {
+        "files": 9,
+        "hash_algorithm": "sha256",
+        "unchanged": true
+      }
+    }
+  ],
+  "scope": "Source provenance, saved-output integrity and independently recomputed numerical consistency",
+  "limitations": [
+    "Numerical consistency does not establish model adequacy or physical brewing feasibility.",
+    "Bootstrap selection and audit groups share real training data and have no calibrated outcome coverage.",
+    "Sensory values are relative attachment-standardized predictions, not recovered raw 0-6 panel scores."
+  ],
+  "elapsed_seconds": 6.083473199978471
+}
+Running run_q3_optimized.py
+Running 11_q3_generation_optimized.py
+Optimized generation repeat=1, fold=1
+Optimized generation repeat=1, fold=2
+Optimized generation repeat=1, fold=3
+Optimized generation repeat=2, fold=1
+Optimized generation repeat=2, fold=2
+Optimized generation repeat=2, fold=3
+Fitting final optimized generator on all 250 rows
+{
+  "date": "2026-10-23",
+  "n_real": 250,
+  "n_features": 226,
+  "outer_seeds": [
+    20261123,
+    20262123
+  ],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "mc_repeats": 2,
+  "generated_n_each_draw": 300,
+  "candidate_methods": [
+    "style_margin_copula",
+    "style_smoothed_mixture",
+    "legacy_copula"
+  ],
+  "smoothing_noise": 0.45,
+  "selection_uses_outer_test": false,
+  "selection_metric": "shared_training_reference_pca5_energy",
+  "novelty_gates": {
+    "minimum_inner_nn_ratio": 0.35,
+    "maximum_inner_nearest_equal_fraction": 0.95,
+    "maximum_inner_copy_rate": 0.0,
+    "maximum_inner_observed_training_copy_rate": 0.0
+  },
+  "cv_records": 240,
+  "full_generation_rows": 1200,
+  "full_selected_methods": {
+    "Tripel": "legacy_copula",
+    "Kriek": "style_margin_copula",
+    "Lambic": "style_smoothed_mixture",
+    "Pils/Lager": "style_margin_copula"
+  },
+  "full_generation_copy_rate": 0.0,
+  "full_generation_observed_copy_rate": 0.0,
+  "elapsed_seconds": 23.41530170000624,
+  "limits": [
+    "New outer seeds still reuse the previously explored real dataset",
+    "Small style samples and unstable inner selection",
+    "Local-margin methods use style-imputed support; legacy uses global training support",
+    "Chemical spectra are not validated brewing recipes"
+  ]
+}
+Running 12_q3_stale_optimized.py
+Stale nested repeat 1/2 fold 1/5: svr_aging_C1; outer RMSE=0.402175
+Stale nested repeat 1/2 fold 2/5: svr_aging_C1; outer RMSE=0.398110
+Stale nested repeat 1/2 fold 3/5: svr_C1; outer RMSE=0.519954
+Stale nested repeat 1/2 fold 4/5: random_forest_leaf8; outer RMSE=0.507406
+Stale nested repeat 1/2 fold 5/5: extra_trees_leaf8; outer RMSE=0.348218
+Stale nested repeat 2/2 fold 1/5: svr_aging_C1; outer RMSE=0.426380
+Stale nested repeat 2/2 fold 2/5: ridge_alpha1000; outer RMSE=0.548596
+Stale nested repeat 2/2 fold 3/5: extra_trees_leaf8; outer RMSE=0.552368
+Stale nested repeat 2/2 fold 4/5: extra_trees_leaf8; outer RMSE=0.245777
+Stale nested repeat 2/2 fold 5/5: extra_trees_leaf3; outer RMSE=0.319979
+Stale optimized bootstrap 10/60
+Stale optimized bootstrap 20/60
+Stale optimized bootstrap 30/60
+Stale optimized bootstrap 40/60
+Stale optimized bootstrap 50/60
+Stale optimized bootstrap 60/60
+                                     rmse        r2  spearman  prediction_variance_ratio
+method                                                                                  
+mean                             0.442356 -0.007738 -0.096170                   0.000860
+old_multioutput_extra_trees      0.434238  0.028908  0.206732                   0.029662
+fixed_single_extra_trees         0.424753  0.070870  0.301098                   0.110167
+nested_selected                  0.438174  0.011225  0.197421                   0.119945
+nested_family_elastic_net        0.433908  0.030384  0.240101                   0.041375
+nested_family_extra_trees        0.425288  0.068527  0.283278                   0.087212
+nested_family_gradient_boosting  0.435618  0.022729  0.207706                   0.107957
+nested_family_pls                0.468285 -0.129339  0.261604                   0.403600
+nested_family_random_forest      0.430729  0.044541  0.209791                   0.087609
+nested_family_ridge              0.427642  0.058189  0.282982                   0.100040
+nested_family_svr                0.432671  0.035904  0.214447                   0.129312
+Transfer chosen: {'name': 'svr_aging_C1', 'family': 'svr', 'feature_set': 'aging', 'params': {'C': 1.0, 'epsilon': 0.05, 'gamma': 'scale'}} qualified: True
+Pils holdout: [{"model": "optimized_single_target", "mae": 0.3375807397880762, "rmse": 0.5506518077021657, "r2": -0.1408022186932929, "spearman": 0.4090909090909091, "prediction_variance": 0.012315994807455544, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.046336765582358545, "prediction_std_ratio": 0.21525976303610145, "prediction_range90": 0.2938696841318292, "target_range90": 1.251553634, "prediction_range90_ratio": 0.2348039078378236, "mean_bias": -0.2855357637778953}, {"model": "non_pils_mean", "mae": 0.33748453712209964, "rmse": 0.5465995758349875, "r2": -0.12407373246010622, "spearman": null, "prediction_variance": 1.925929944387236e-34, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 7.245972879681104e-34, "prediction_std_ratio": 2.6918344822223198e-17, "prediction_range90": 0.0, "target_range90": 1.251553634, "prediction_range90_ratio": 0.0, "mean_bias": -0.1815983149022442}, {"model": "old_multioutput_transfer_proxy", "mae": 0.3243630213550353, "rmse": 0.5262925230409826, "r2": -0.0421029343743442, "spearman": 0.41818181818181827, "prediction_variance": 0.005583256408591225, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.02100602082378935, "prediction_std_ratio": 0.14493453978879345, "prediction_range90": 0.19624878511636107, "target_range90": 1.251553634, "prediction_range90_ratio": 0.1568041351045776, "mean_bias": -0.15814915154427778}]
+Running 12b_q3_stale_fixed.py
+Stale fixed repeat 1/2 fold 1/5: single RMSE=0.533770
+Stale fixed repeat 1/2 fold 2/5: single RMSE=0.320486
+Stale fixed repeat 1/2 fold 3/5: single RMSE=0.399257
+Stale fixed repeat 1/2 fold 4/5: single RMSE=0.544584
+Stale fixed repeat 1/2 fold 5/5: single RMSE=0.322818
+Stale fixed repeat 2/2 fold 1/5: single RMSE=0.566055
+Stale fixed repeat 2/2 fold 2/5: single RMSE=0.498615
+Stale fixed repeat 2/2 fold 3/5: single RMSE=0.367208
+Stale fixed repeat 2/2 fold 4/5: single RMSE=0.262015
+Stale fixed repeat 2/2 fold 5/5: single RMSE=0.385352
+Stale fixed bootstrap 20/60
+Stale fixed bootstrap 40/60
+Stale fixed bootstrap 60/60
+                                 rmse        r2  spearman  prediction_std_ratio
+method                                                                         
+mean                         0.442568 -0.008705 -0.102510              0.031101
+old_multioutput_extra_trees  0.436007  0.020981  0.191134              0.185567
+fixed_single_extra_trees     0.432300  0.037557  0.259944              0.340940
+Fixed transfer qualified: True holdout: [{"model": "fixed_single_extra_trees", "mae": 0.336465478015394, "rmse": 0.5592061699600495, "r2": -0.1765222034087044, "spearman": 0.36363636363636365, "prediction_variance": 0.026274475692241363, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.09885309631778687, "prediction_std_ratio": 0.3144091225104432, "prediction_range90": 0.41546061668811135, "target_range90": 1.251553634, "prediction_range90_ratio": 0.3319559029686069, "mean_bias": -0.2098356980718283}, {"model": "non_pils_mean", "mae": 0.33748453712209964, "rmse": 0.5465995758349875, "r2": -0.12407373246010622, "spearman": null, "prediction_variance": 1.925929944387236e-34, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 7.245972879681104e-34, "prediction_std_ratio": 2.6918344822223198e-17, "prediction_range90": 0.0, "target_range90": 1.251553634, "prediction_range90_ratio": 0.0, "mean_bias": -0.1815983149022442}, {"model": "old_multioutput_transfer_proxy", "mae": 0.3243630213550353, "rmse": 0.5262925230409826, "r2": -0.0421029343743442, "spearman": 0.41818181818181827, "prediction_variance": 0.005583256408591225, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.02100602082378935, "prediction_std_ratio": 0.14493453978879345, "prediction_range90": 0.19624878511636107, "target_range90": 1.251553634, "prediction_range90_ratio": 0.1568041351045776, "mean_bias": -0.15814915154427778}]
+Running 13_q3_transfer_optimized.py
+Optimized transfer 1/11 beer=124, eligible=8/4004
+Optimized transfer 2/11 beer=81, eligible=1048/4004
+Optimized transfer 3/11 beer=218, eligible=922/4004
+Optimized transfer 4/11 beer=96, eligible=22/4004
+Optimized transfer 5/11 beer=230, eligible=1518/4004
+Optimized transfer 6/11 beer=185, eligible=12/4004
+Optimized transfer 7/11 beer=139, eligible=389/4004
+Optimized transfer 8/11 beer=209, eligible=4/4004
+Optimized transfer 9/11 beer=119, eligible=1190/4004
+Optimized transfer 10/11 beer=90, eligible=102/4004
+Optimized transfer 11/11 beer=28, eligible=2450/4004
+{
+  "sources": 11,
+  "selected": 11,
+  "model_checks_passed_all_thresholds": 9,
+  "cross_proxy_checks_passed_all_thresholds": 6,
+  "audit_failed": 2,
+  "no_candidate": 0
+}
+Running 14_q3_optimization_report.py
+{
+  "generation_energy_reduction_vs_matched_legacy": {
+    "Tripel": -0.025360500753455417,
+    "Kriek": 0.20490787390153653,
+    "Lambic": 0.23351015424407862,
+    "Pils/Lager": 0.3824608025459142
+  },
+  "fixed_stale_rmse_reduction_vs_matched_old": 0.008501806543600443,
+  "paired_rmse_difference_interval": [
+    -0.01568705428889991,
+    0.009669839223661764
+  ],
+  "stale_improvement_stably_established": false,
+  "source_style_prediction_improved": false,
+  "default_transfer": {
+    "sources": 11,
+    "selected": 11,
+    "model_checks_passed_all_thresholds": 9,
+    "cross_proxy_checks_passed_all_thresholds": 6,
+    "audit_failed": 2,
+    "no_candidate": 0
+  },
+  "base_draws_equal": true
+}
+Running 15_q3_optimized_verify.py
+Verified: optimized_stale_nested_validation
+Verified: optimized_generation_nested_validation
+Verified: fixed_single_target_followup
+Verified robust candidates: source 124
+Verified robust candidates: source 81
+Verified robust candidates: source 218
+Verified robust candidates: source 96
+Verified robust candidates: source 230
+Verified robust candidates: source 185
+Verified robust candidates: source 139
+Verified robust candidates: source 209
+Verified robust candidates: source 119
+Verified robust candidates: source 90
+Verified robust candidates: source 28
+Verified: robust_threshold_transfer
+Verified: report_profiles_and_threshold_counts
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "preserved_baseline_before",
+      "details": {
+        "unchanged_files": 64,
+        "hash_algorithm": "sha256"
+      }
+    },
+    {
+      "name": "raw_sources_and_hybrid_contract",
+      "details": {
+        "sources": {
+          "files": 9,
+          "hash_algorithm": "sha256",
+          "unchanged": true
+        },
+        "contract": {
+          "rows": 250,
+          "features": 226,
+          "calibrated": 69,
+          "relative": 157,
+          "negative_calibrated_invalidated": 3,
+          "missing_cells_preserved": 72
+        }
+      }
+    },
+    {
+      "name": "optimized_stale_nested_validation",
+      "details": {
+        "outer_seeds": [
+          20261123,
+          20262123
+        ],
+        "outer_folds": 5,
+        "candidate_count": 18,
+        "nested_choices_recomputed": 80,
+        "transfer_config": {
+          "name": "svr_aging_C1",
+          "family": "svr",
+          "feature_set": "aging",
+          "params": {
+            "C": 1.0,
+            "epsilon": 0.05,
+            "gamma": "scale"
+          }
+        },
+        "qualified_for_proxy": true,
+        "training_rows": 239,
+        "excluded_sources": 11,
+        "bootstrap_shape": [
+          60,
+          239
+        ],
+        "preprocessing_training_checks": 61,
+        "nested_selected_rmse": 0.438174137332482,
+        "old_multioutput_same_split_rmse": 0.4342384639763926,
+        "fixed_single_tree_rmse": 0.4247527809803629,
+        "pils_holdout_rmse": 0.5506518077021657,
+        "pils_holdout_mean_rmse": 0.5465995758349875
+      }
+    },
+    {
+      "name": "optimized_generation_nested_validation",
+      "details": {
+        "cv_records": 240,
+        "inner_records": 144,
+        "inner_choices_recomputed": 24,
+        "generated_rows": 1200,
+        "observed_training_row_copies": 0,
+        "full_selected_methods": {
+          "Tripel": "legacy_copula",
+          "Kriek": "style_margin_copula",
+          "Lambic": "style_smoothed_mixture",
+          "Pils/Lager": "style_margin_copula"
+        },
+        "training_empirical_support": true,
+        "nested_outcomes_match_selected_methods": true
+      }
+    },
+    {
+      "name": "fixed_single_target_followup",
+      "details": {
+        "extra_internal_seeds": [
+          20263123,
+          20264123
+        ],
+        "parameter_tuning": false,
+        "fixed_single_oof_rmse": 0.43230031839334826,
+        "same_split_old_multioutput_rmse": 0.4360071669786238,
+        "same_split_mean_rmse": 0.44256821702706917,
+        "transfer_qualified": true,
+        "bootstrap_shape": [
+          60,
+          239
+        ],
+        "beer_cluster_bootstrap_repeats": 2000,
+        "rmse_difference_interval": [
+          -0.01568705428889991,
+          0.009669839223661764
+        ],
+        "pils_holdout_rmse": 0.5592061699600495,
+        "pils_holdout_mean_rmse": 0.5465995758349875
+      }
+    },
+    {
+      "name": "robust_threshold_transfer",
+      "details": {
+        "scenario_count": 10,
+        "sources": 11,
+        "reconstructed_candidates": 44044,
+        "fixed_selection_argmin_checks": 99,
+        "concentration_scenario_checks": 3960,
+        "maximum_paired_quantile_error": 0.0,
+        "base_draws_equal": true,
+        "default_policy": {
+          "sources": 11,
+          "selected": 11,
+          "model_checks_passed_all_thresholds": 9,
+          "cross_proxy_checks_passed_all_thresholds": 6,
+          "audit_failed": 2,
+          "no_candidate": 0
+        }
+      }
+    },
+    {
+      "name": "report_profiles_and_threshold_counts",
+      "details": {
+        "generated_sensory_rows": 1200,
+        "sensory_targets": 45,
+        "profile_model": "44 original full-data outputs plus source-excluded fixed stale target",
+        "scenario_count_rows": 10,
+        "summary_values_recomputed": true,
+        "figures_with_png_and_svg": 3,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "preserved_baseline_after",
+      "details": {
+        "unchanged_files": 64,
+        "hash_algorithm": "sha256"
+      }
+    }
+  ],
+  "scope": "Frozen baseline integrity, repeated internal validation and robust candidate model checks",
+  "limitations": [
+    "Repeated and nested validation reuse the same real samples; new seeds are not fresh independent data.",
+    "Bootstrap audit shares real training data and does not provide calibrated post-search coverage.",
+    "Numerical and chemical checks do not establish actual sensory improvement or brewing feasibility."
+  ],
+  "elapsed_seconds": 26.5822729000065
+}
+Running run_q3_domain.py
+Running 16_q3_stale_domain.py
+Stale domain LOSO 1/21: Amber (12 samples)
+Stale domain LOSO 2/21: Blond (31 samples)
+Stale domain LOSO 3/21: Brett/cofermented (6 samples)
+Stale domain LOSO 4/21: Brown (12 samples)
+Stale domain LOSO 5/21: Brut (4 samples)
+Stale domain LOSO 6/21: Christmas (9 samples)
+Stale domain LOSO 7/21: Dubbel (10 samples)
+Stale domain LOSO 8/21: Faro (3 samples)
+Stale domain LOSO 9/21: Flanders old brown (5 samples)
+Stale domain LOSO 10/21: Fruitbeer (8 samples)
+Stale domain LOSO 11/21: Hoppy (17 samples)
+Stale domain LOSO 12/21: Kriek (10 samples)
+Stale domain LOSO 13/21: Lambic (11 samples)
+Stale domain LOSO 14/21: Low/No alcohol (8 samples)
+Stale domain LOSO 15/21: Saison (10 samples)
+Stale domain LOSO 16/21: Scotch (5 samples)
+Stale domain LOSO 17/21: Stout/Porter (13 samples)
+Stale domain LOSO 18/21: Strong ale (18 samples)
+Stale domain LOSO 19/21: Tripel (28 samples)
+Stale domain LOSO 20/21: West Flanders ale (7 samples)
+Stale domain LOSO 21/21: Wheat (12 samples)
+Stale domain selected without Pils labels: local_aging_pca8_k25, qualified=True
+Stale domain bootstrap 10/60
+Stale domain bootstrap 20/60
+Stale domain bootstrap 30/60
+Stale domain bootstrap 40/60
+Stale domain bootstrap 50/60
+Stale domain bootstrap 60/60
+                  method  macro_style_rmse  macro_style_abs_bias  selection_score  prediction_variance_ratio  qualified_for_proxy
+             mean_global          0.377790              0.164142         0.418825                   0.000334                False
+     mean_style_balanced          0.377532              0.163992         0.418530                   0.000387                False
+    old_multioutput_tree          0.377168              0.162949         0.417905                   0.030442                False
+       fixed_single_tree          0.375771              0.166659         0.417436                   0.121167                 True
+     style_balanced_tree          0.378303              0.168656         0.420467                   0.100987                False
+  ridge_all_balanced_100          0.403091              0.175975         0.447085                   0.306857                False
+ ridge_all_balanced_1000          0.367286              0.153167         0.405577                   0.076496                 True
+ ridge_aging_balanced_10          0.390847              0.179939         0.435832                   0.228524                False
+ridge_aging_balanced_100          0.370581              0.161860         0.411046                   0.111078                 True
+  krr_aging_balanced_g01          0.367529              0.158307         0.407106                   0.074784                 True
+   krr_aging_balanced_g1          0.369052              0.165283         0.410373                   0.144641                 True
+   svr_aging_balanced_C1          0.381683              0.161685         0.422104                   0.138387                False
+    local_aging_pca8_k25          0.364968              0.156481         0.404088                   0.058183                 True
+         ensemble_equal3          0.365474              0.159560         0.405364                   0.072517                 True
+Pils selected diagnostic: {"method": "local_aging_pca8_k25", "selected_without_pils_labels": true, "n": 11, "mae": 0.33209006533514757, "rmse": 0.5615034206672974, "r2": -0.1862084986194239, "spearman": 0.44545454545454555, "prediction_variance": 0.014535221275021932, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.05468621507543073, "prediction_std_ratio": 0.23385083937294457, "prediction_range90": 0.3347062172946995, "target_range90": 1.251553634, "prediction_range90_ratio": 0.26743257995661696, "mean_bias": -0.22100057107815674}
+Running 17_q3_transfer_domain.py
+Domain transfer 1/11 beer=124: single=1, joint=0
+Domain transfer 2/11 beer=81: single=60, joint=28
+Domain transfer 3/11 beer=218: single=14, joint=11
+Domain transfer 4/11 beer=96: single=0, joint=0
+Domain transfer 5/11 beer=230: single=0, joint=0
+Domain transfer 6/11 beer=185: single=3, joint=0
+Domain transfer 7/11 beer=139: single=0, joint=0
+Domain transfer 8/11 beer=209: single=7, joint=1
+Domain transfer 9/11 beer=119: single=363, joint=154
+Domain transfer 10/11 beer=90: single=5, joint=0
+Domain transfer 11/11 beer=28: single=691, joint=612
+{
+  "sources": 11,
+  "selected": 5,
+  "new_model_checks_passed": 5,
+  "historical_cross_proxy_passed": 5,
+  "fresh_cross_proxy_passed": 4,
+  "all_committees_passed": 4,
+  "no_candidate": 6
+}
+Running 20_q3_transfer_consensus.py
+Domain transfer 1/11 beer=124: single=28, joint=15
+Domain transfer 2/11 beer=81: single=1447, joint=954
+Domain transfer 3/11 beer=218: single=1259, joint=1034
+Domain transfer 4/11 beer=96: single=55, joint=0
+Domain transfer 5/11 beer=230: single=2126, joint=1096
+Domain transfer 6/11 beer=185: single=29, joint=1
+Domain transfer 7/11 beer=139: single=599, joint=303
+Domain transfer 8/11 beer=209: single=19, joint=7
+Domain transfer 9/11 beer=119: single=1630, joint=1198
+Domain transfer 10/11 beer=90: single=145, joint=58
+Domain transfer 11/11 beer=28: single=3625, joint=3314
+{
+  "sources": 11,
+  "selected": 10,
+  "new_model_checks_passed": 6,
+  "historical_cross_proxy_passed": 6,
+  "fresh_cross_proxy_passed": 6,
+  "all_committees_passed": 6,
+  "no_candidate": 1
+}
+Running 18_q3_domain_report.py
+{
+  "selected_method": "local_aging_pca8_k25",
+  "non_pils_training_n": 239,
+  "loso_styles": 21,
+  "pils_diagnostic_n": 11,
+  "selected_loso_macro_rmse": 0.36496808436107453,
+  "selected_pils_diagnostic_rmse": 0.5615034206672974,
+  "matched_fixed_tree_pils_rmse": 0.5464203285497945,
+  "matched_old_multioutput_pils_rmse": 0.5312368420390532,
+  "pils_prediction_improved": false,
+  "experiments": {
+    "domain": {
+      "default_pool": "matched_2004",
+      "default_policy": "joint_margin",
+      "default": {
+        "sources": 11,
+        "selected": 5,
+        "new": 5,
+        "historical": 5,
+        "fresh": 4,
+        "all": 4
+      },
+      "previous_same_spectra": {
+        "sources": 11,
+        "new": 1,
+        "historical": 1,
+        "fresh": 1,
+        "all": 1
+      }
+    },
+    "consensus": {
+      "default_pool": "matched_2004",
+      "default_policy": "joint_margin",
+      "default": {
+        "sources": 11,
+        "selected": 10,
+        "new": 6,
+        "historical": 6,
+        "fresh": 6,
+        "all": 6
+      },
+      "previous_same_spectra": {
+        "sources": 11,
+        "new": 8,
+        "historical": 4,
+        "fresh": 5,
+        "all": 4
+      }
+    }
+  },
+  "consensus_expanded_same_policy": {
+    "budget": 6004,
+    "sources": 11,
+    "selected": 10,
+    "fresh": 8,
+    "all": 8,
+    "median_target_improvement_selected": 0.19868371223355208,
+    "median_change_rms_selected": 0.9382220854522909
+  },
+  "threshold_scenarios": 10,
+  "scientific_figure_count": 3,
+  "scope": "Failed Pils prediction exploration and limited consensus-search gains, no sensory guarantee"
+}
+Running 19_q3_domain_verify.py
+Verified: non_source_loso_selection
+Verified domain candidates: source 124
+Verified domain candidates: source 81
+Verified domain candidates: source 218
+Verified domain candidates: source 96
+Verified domain candidates: source 230
+Verified domain candidates: source 185
+Verified domain candidates: source 139
+Verified domain candidates: source 209
+Verified domain candidates: source 119
+Verified domain candidates: source 90
+Verified domain candidates: source 28
+Verified: predeclared_transfer_search
+Verified domain candidates: source 124
+Verified domain candidates: source 81
+Verified domain candidates: source 218
+Verified domain candidates: source 96
+Verified domain candidates: source 230
+Verified domain candidates: source 185
+Verified domain candidates: source 139
+Verified domain candidates: source 209
+Verified domain candidates: source 119
+Verified domain candidates: source 90
+Verified domain candidates: source 28
+Verified: fixed_protocol_consensus_followup
+Verified: final_artifacts
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "frozen_previous_results_before",
+      "details": [
+        {
+          "directory": "outputs/q3_optimized",
+          "unchanged_files": 71
+        },
+        {
+          "directory": "outputs/q3",
+          "unchanged_files": 64
+        }
+      ]
+    },
+    {
+      "name": "original_inputs",
+      "details": {
+        "contract": {
+          "rows": 250,
+          "features": 226,
+          "calibrated": 69,
+          "relative": 157,
+          "negative_calibrated_invalidated": 3,
+          "missing_cells_preserved": 72
+        },
+        "provenance": {
+          "files": 9,
+          "hash_algorithm": "sha256",
+          "unchanged": true
+        }
+      }
+    },
+    {
+      "name": "non_source_loso_selection",
+      "details": {
+        "non_source_rows": 239,
+        "heldout_styles": 21,
+        "candidate_count": 14,
+        "prediction_rows": 3346,
+        "selected_method": "local_aging_pca8_k25",
+        "selected_loso_predictions_refitted": 21,
+        "qualified": true,
+        "selected_macro_rmse": 0.36496808436107453,
+        "best_mean_macro_rmse": 0.37753179962465727,
+        "selected_pils_diagnostic_rmse": 0.5615034206672974,
+        "bootstrap_indices_shape": [
+          60,
+          239
+        ],
+        "pils_is_fresh_test": false
+      }
+    },
+    {
+      "name": "predeclared_transfer_search",
+      "details": {
+        "experiment": "transfer",
+        "reconstructed_candidates": 66044,
+        "selection_only_argmin_checks": 34,
+        "scenario_concentration_checks": 1360,
+        "maximum_paired_quantile_error": 5.551115123125783e-17,
+        "default_policy": {
+          "sources": 11,
+          "selected": 5,
+          "new_model_checks_passed": 5,
+          "historical_cross_proxy_passed": 5,
+          "fresh_cross_proxy_passed": 4,
+          "all_committees_passed": 4,
+          "no_candidate": 6
+        },
+        "original_committee_outputs": 1,
+        "original_center_outputs": 45,
+        "fresh_original_protocol_models": 20
+      }
+    },
+    {
+      "name": "fixed_protocol_consensus_followup",
+      "details": {
+        "experiment": "consensus",
+        "reconstructed_candidates": 66044,
+        "selection_only_argmin_checks": 62,
+        "scenario_concentration_checks": 2480,
+        "maximum_paired_quantile_error": 0.0,
+        "default_policy": {
+          "sources": 11,
+          "selected": 10,
+          "new_model_checks_passed": 6,
+          "historical_cross_proxy_passed": 6,
+          "fresh_cross_proxy_passed": 6,
+          "all_committees_passed": 6,
+          "no_candidate": 1
+        },
+        "original_committee_outputs": 1,
+        "original_center_outputs": 45,
+        "fresh_original_protocol_models": 20
+      }
+    },
+    {
+      "name": "final_artifacts",
+      "details": {
+        "hashed_report_sources": 18,
+        "prediction_comparisons": 14,
+        "experiments_with_policy_and_scenario_tables": 2,
+        "source_diagnostics": 11,
+        "figure_pairs": 3,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "frozen_previous_results_after",
+      "details": [
+        {
+          "directory": "outputs/q3_optimized",
+          "unchanged_files": 71
+        },
+        {
+          "directory": "outputs/q3",
+          "unchanged_files": 64
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Pils results are repeatedly viewed diagnostics, not fresh external tests.",
+    "LOSO-selected scores are optimistic after candidate selection; bootstrap fixes the chosen configuration.",
+    "Committee consistency and audit quantiles do not establish true taste or causal defect preservation."
+  ],
+  "elapsed_seconds": 124.3153685000143
+}
+Running run_q3_refined.py
+Running 21_q3_beer81_audit.py
+Traceback (most recent call last):
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\src\21_q3_beer81_audit.py", line 453, in <module>
+    main()
+    ~~~~^^
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\src\21_q3_beer81_audit.py", line 351, in main
+    assert verification["source_hashes_unchanged_after_analysis"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\run_q3_refined.py", line 40, in <module>
+    subprocess.run(command, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\reproenv\\Scripts\\python.exe', '-X', 'utf8', 'D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\src\\21_q3_beer81_audit.py']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\run_all.py", line 49, in <module>
+    main()
+    ~~~~^^
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\run_all.py", line 37, in main
+    run(script)
+    ~~~^^^^^^^^
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\run_all.py", line 17, in run
+    subprocess.run([sys.executable, "-X", "utf8", str(path), *map(str, arguments)],
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   check=True, env=env)
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\reproenv\\Scripts\\python.exe', '-X', 'utf8', 'D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\run_q3_refined.py']' returned non-zero exit status 1.

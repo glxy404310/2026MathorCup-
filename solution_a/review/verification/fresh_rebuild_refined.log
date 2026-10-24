@@ -1,0 +1,330 @@
+Running 21_q3_beer81_audit.py
+{
+  "source_beer": 81,
+  "exact_beer_join_passed": true,
+  "barcode_consistent_at_supplied_precision": true,
+  "barcode_exact_1csv_8xlsx": true,
+  "sample_profile": {
+    "raw_numeric_missing": 0,
+    "hybrid_missing": 0,
+    "calibrated_negative_count": 0,
+    "raw_negative_count": 44,
+    "hybrid_negative_relative_count": 28,
+    "hybrid_zero_count": 3,
+    "hybrid_zero_features": [
+      "CS2",
+      "octyl_acetate",
+      "X4VG"
+    ],
+    "exact_hybrid_duplicate_other_rows": 0,
+    "outside_nonpils_feature_ranges": 1,
+    "repeated_original_values": [
+      {
+        "value": -1.81781854,
+        "count": 28,
+        "features": "propylene.glycol;ethyl.lactate;X6.methyl.5.hepten.2.one;alpha.phellandrene;beta.phellandrene;limonene;eucalyptol;cis.linalool.oxide;meta.cymenene;n.nonanal;y.methyl.1.octanol;cis.dihydro.beta.terpineol;isopentyl.hexanoate;neryl.formate;X2.undecanone;X2.undecanol;methyl.geranate;X2.butyloctanoate;methyl.para.anisate;geosmin;X4.8.alpha.epoxy.caryophyllane;germacrene.D;butylated.hydroxytoluene;X1.2.dihydro.8.hydroxy..2E..linalool;selin.11.en.4.alpha.ol;n.tetradecanol;X2.ethylhexylsalicylate;isopropyl.hexadecanoate",
+        "interpretation": "repeated supplied value; attachment does not identify an analytical detection limit"
+      }
+    ],
+    "analytical_detection_limits_available": false,
+    "detection_limit_note": "Sensory thresholds are perceptual thresholds, not analytical LOD/LOQ"
+  },
+  "stale_observed": 1.618166899,
+  "stale_descending_rank_all250": 5,
+  "nonpils_training_rows": 239,
+  "nonpils_stale_at_least_beer81": 4,
+  "nonpils_high_tail_beers": [
+    236,
+    128,
+    19,
+    147
+  ],
+  "frozen_local_top25_stale_min": -0.366768402,
+  "frozen_local_top25_stale_max": 1.0643283,
+  "beer81_outside_local_top25_target_convex_hull": true,
+  "selected_domain_model": "local_aging_pca8_k25",
+  "selected_domain_beer81_prediction": -0.11279925415378521,
+  "selected_domain_beer81_sse_share": 0.8639321858325181,
+  "relative_repeated_floor_count": 28,
+  "relative_floor_count_all250_percentile": 0.676,
+  "stale_target_datatype": "numeric",
+  "barnyard_target_datatype": "numeric",
+  "nonpils_stale_barnyard_spearman": 0.96457445617387,
+  "ood_beer81": [
+    {
+      "space": "unclipped_log_scaled_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 0.9879442903177194,
+      "nonpils_loo_nn_percentile": 0.8242677824267782,
+      "nearest_other_pils_distance": 0.9264469785349272,
+      "training_loo_nn_q95": 1.3210325645849774,
+      "nearest_nonpils_distance_rank_within_pils_desc": 1
+    },
+    {
+      "space": "unclipped_log_scaled_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.44677272320610956,
+      "nonpils_loo_nn_percentile": 0.17573221757322174,
+      "nearest_other_pils_distance": 0.50345174634544,
+      "training_loo_nn_q95": 1.11078385781742,
+      "nearest_nonpils_distance_rank_within_pils_desc": 7
+    },
+    {
+      "space": "clipped_log_scaled_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 1.00342181411765,
+      "nonpils_loo_nn_percentile": 0.8326359832635983,
+      "nearest_other_pils_distance": 0.9479649638766919,
+      "training_loo_nn_q95": 1.2242979666476157,
+      "nearest_nonpils_distance_rank_within_pils_desc": 1
+    },
+    {
+      "space": "clipped_log_scaled_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.46038101130279363,
+      "nonpils_loo_nn_percentile": 0.17573221757322174,
+      "nearest_other_pils_distance": 0.5172070030982631,
+      "training_loo_nn_q95": 1.1366299005193061,
+      "nearest_nonpils_distance_rank_within_pils_desc": 7
+    },
+    {
+      "space": "old_copula_226",
+      "query_beer": 81,
+      "dimensions": 226,
+      "nearest_nonpils_distance": 0.9804658297731901,
+      "nonpils_loo_nn_percentile": 0.9079497907949791,
+      "nearest_other_pils_distance": 0.9018963159166719,
+      "training_loo_nn_q95": 1.0386626909353756,
+      "nearest_nonpils_distance_rank_within_pils_desc": 3
+    },
+    {
+      "space": "old_copula_aging24",
+      "query_beer": 81,
+      "dimensions": 24,
+      "nearest_nonpils_distance": 0.5242114472217134,
+      "nonpils_loo_nn_percentile": 0.1297071129707113,
+      "nearest_other_pils_distance": 0.6642188437121245,
+      "training_loo_nn_q95": 0.9189106484699378,
+      "nearest_nonpils_distance_rank_within_pils_desc": 9
+    },
+    {
+      "space": "frozen_domain_aging_pca8",
+      "query_beer": 81,
+      "dimensions": 8,
+      "nearest_nonpils_distance": 0.362428196627952,
+      "nonpils_loo_nn_percentile": 0.16736401673640167,
+      "nearest_other_pils_distance": 0.40202629475519946,
+      "training_loo_nn_q95": 1.0094802874275397,
+      "nearest_nonpils_distance_rank_within_pils_desc": 9
+    }
+  ],
+  "forum_quality_evidence": [
+    {
+      "term": "aroma_stale",
+      "beer81_value": 1.274602625,
+      "all_percentile": 0.934,
+      "nonpils_percentile": 0.9456066945606695,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_cardboard",
+      "beer81_value": 5.121476724,
+      "all_percentile": 0.99,
+      "nonpils_percentile": 0.99581589958159,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_papery",
+      "beer81_value": 3.562096075,
+      "all_percentile": 0.986,
+      "nonpils_percentile": 0.9916317991631799,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    },
+    {
+      "term": "taste_stale",
+      "beer81_value": 3.482028166,
+      "all_percentile": 0.978,
+      "nonpils_percentile": 0.9832635983263598,
+      "predeclared_quality_term": true,
+      "source": "7.csv numeric forum descriptor table"
+    }
+  ],
+  "raw_forum_text_available": false,
+  "analytical_lod_loq_available": false,
+  "label_error_established": false,
+  "interpretation": "Rare high sensory target lacks matching high-target chemical neighbours; identity and descriptor evidence do not establish a wrong label. Chemical predictability remains unresolved."
+}
+Running 22_q3_stale_refined.py
+Refined full LOSO selected: stable_ridge_all1000 qualified True
+Refined nested group fold 1/4: stable_ridge_aging100
+Refined nested group fold 2/4: equal3_supervised_ensemble
+Refined nested group fold 3/4: stable_ridge_all1000
+Refined nested group fold 4/4: equal3_supervised_ensemble
+                    method  macro_style_rmse  selection_score  prediction_variance_ratio  within_one_se
+               mean_global          0.377790         0.418825                   0.000334          False
+      old_multioutput_tree          0.377059         0.417700                   0.030063          False
+         fixed_single_tree          0.373626         0.414819                   0.117641          False
+     stable_ridge_aging100          0.368389         0.408223                   0.109564           True
+      stable_ridge_all1000          0.365849         0.404175                   0.077332           True
+       tail_ridge_aging100          0.399305         0.449030                   0.179169          False
+              aux4_ridge10          0.373851         0.416624                   0.126508          False
+              aux8_ridge10          0.375903         0.419016                   0.158209          False
+         aux4_tail_ridge10          0.407161         0.459960                   0.223410          False
+        aux4_smooth_kernel          0.376271         0.421130                   0.172920          False
+ style_center_within_ridge          0.391286         0.434064                   0.278059          False
+equal3_supervised_ensemble          0.370097         0.412909                   0.096771           True
+Pils selected development diagnostic: {"method": "stable_ridge_all1000", "selected_without_pils_labels": true, "n": 11, "mae": 0.3424569258855699, "rmse": 0.5614223239975353, "r2": -0.18586588053895303, "spearman": 0.19090909090909092, "prediction_variance": 0.009562706447771368, "target_variance": 0.2657931483276537, "prediction_variance_ratio": 0.035978002096513945, "prediction_std_ratio": 0.1896786811861416, "prediction_range90": 0.2717285155679468, "target_range90": 1.251553634, "prediction_range90_ratio": 0.217112961191679, "mean_bias": -0.21719556611666996}
+Bootstrap response: [{'method': 'refined_selected', 'models': 60, 'pair_delta_noise_rms': 0.0768188966355893, 'pair_delta_signal_rms': 0.12195504912635605, 'response_noise_ratio': 0.6298951719169761, 'status': 'descriptive fixed-pair architecture comparison; not used for selection'}, {'method': 'domain_local_previous', 'models': 60, 'pair_delta_noise_rms': 0.29486599299680205, 'pair_delta_signal_rms': 0.3799128761227098, 'response_noise_ratio': 0.7761410879413362, 'status': 'descriptive fixed-pair architecture comparison; not used for selection'}]
+Running 23_q3_transfer_balanced.py
+Balanced transfer source 1/11 beer=124, arm=refined, joint=13
+Balanced transfer source 1/11 beer=124, arm=fixed, joint=879
+Balanced transfer source 2/11 beer=81, arm=refined, joint=299
+Balanced transfer source 2/11 beer=81, arm=fixed, joint=5454
+Balanced transfer source 3/11 beer=218, arm=refined, joint=1592
+Balanced transfer source 3/11 beer=218, arm=fixed, joint=4893
+Balanced transfer source 4/11 beer=96, arm=refined, joint=0
+Balanced transfer source 4/11 beer=96, arm=fixed, joint=13
+Balanced transfer source 5/11 beer=230, arm=refined, joint=616
+Balanced transfer source 5/11 beer=230, arm=fixed, joint=4281
+Balanced transfer source 6/11 beer=185, arm=refined, joint=0
+Balanced transfer source 6/11 beer=185, arm=fixed, joint=225
+Balanced transfer source 7/11 beer=139, arm=refined, joint=720
+Balanced transfer source 7/11 beer=139, arm=fixed, joint=2821
+Balanced transfer source 8/11 beer=209, arm=refined, joint=5
+Balanced transfer source 8/11 beer=209, arm=fixed, joint=457
+Balanced transfer source 9/11 beer=119, arm=refined, joint=1549
+Balanced transfer source 9/11 beer=119, arm=fixed, joint=5614
+Balanced transfer source 10/11 beer=90, arm=refined, joint=44
+Balanced transfer source 10/11 beer=90, arm=fixed, joint=926
+Balanced transfer source 11/11 beer=28, arm=refined, joint=9839
+Balanced transfer source 11/11 beer=28, arm=fixed, joint=10598
+{
+  "default": {
+    "arm": "refined",
+    "pool": "contracted_6004",
+    "bound": "retain80",
+    "ranking": "margin"
+  },
+  "default_results": {
+    "sources": 11,
+    "selected": 5,
+    "new_passed": 5,
+    "fresh_consistency_passed": 5,
+    "historical_consistency_passed": 5,
+    "no_candidate": 6,
+    "median_improvement_selected": 0.5316619941538966,
+    "median_improvement_passed": 0.5316619941538966,
+    "median_retention_selected": 0.8284541190164343,
+    "median_change_rms_selected": 1.0618252153350156
+  },
+  "arm_defaults": {
+    "refined": {
+      "sources": 11,
+      "selected": 5,
+      "new_passed": 5,
+      "fresh_consistency_passed": 5,
+      "historical_consistency_passed": 5,
+      "no_candidate": 6,
+      "median_improvement_selected": 0.5316619941538966,
+      "median_improvement_passed": 0.5316619941538966,
+      "median_retention_selected": 0.8284541190164343,
+      "median_change_rms_selected": 1.0618252153350156
+    },
+    "fixed": {
+      "sources": 11,
+      "selected": 11,
+      "new_passed": 10,
+      "fresh_consistency_passed": 10,
+      "historical_consistency_passed": 10,
+      "no_candidate": 0,
+      "median_improvement_selected": 0.5774027685828544,
+      "median_improvement_passed": 0.5844222495356495,
+      "median_retention_selected": 1.0180052127724506,
+      "median_change_rms_selected": 0.9649779853844759
+    }
+  },
+  "model_qualified": {
+    "refined": true,
+    "fixed": true
+  },
+  "nominal_candidates_per_source": 12004,
+  "sources": 11,
+  "training_n": 239,
+  "support_limit": 1.1066513889749567,
+  "contracted_targets_unique": 1500,
+  "contracted_targets_nominal": 1500,
+  "frontier_rows": 72,
+  "policies": 792,
+  "selected": 438,
+  "threshold_rows": 17520,
+  "elapsed_seconds": 228.66020760001265
+}
+Running 24_q3_refinement_report.py
+{
+  "selected_method": "stable_ridge_all1000",
+  "selected_pils_rmse": 0.5614223239975353,
+  "tail_candidate_pils_rmse": 0.5157351861449695,
+  "tail_candidate_eligible": false,
+  "matched_old_pils_rmse": 0.5308610706896237,
+  "beer81_observed": 1.618166899,
+  "beer81_selected_prediction": -0.09789304382431928,
+  "nested_rule_rmse": 0.41995050339216855,
+  "default_results": {
+    "sources": 11,
+    "selected": 5,
+    "new_passed": 5,
+    "fresh_consistency_passed": 5,
+    "historical_consistency_passed": 5,
+    "no_candidate": 6,
+    "median_improvement_selected": 0.5316619941538966,
+    "median_improvement_passed": 0.5316619941538966,
+    "median_retention_selected": 0.8284541190164343,
+    "median_change_rms_selected": 1.0618252153350156
+  },
+  "arm_defaults": {
+    "refined": {
+      "sources": 11,
+      "selected": 5,
+      "new_passed": 5,
+      "fresh_consistency_passed": 5,
+      "historical_consistency_passed": 5,
+      "no_candidate": 6,
+      "median_improvement_selected": 0.5316619941538966,
+      "median_improvement_passed": 0.5316619941538966,
+      "median_retention_selected": 0.8284541190164343,
+      "median_change_rms_selected": 1.0618252153350156
+    },
+    "fixed": {
+      "sources": 11,
+      "selected": 11,
+      "new_passed": 10,
+      "fresh_consistency_passed": 10,
+      "historical_consistency_passed": 10,
+      "no_candidate": 0,
+      "median_improvement_selected": 0.5774027685828544,
+      "median_improvement_passed": 0.5844222495356495,
+      "median_retention_selected": 1.0180052127724506,
+      "median_change_rms_selected": 0.9649779853844759
+    }
+  },
+  "candidate_rows": 12,
+  "frontier_rows": 72,
+  "source_denominator": 11,
+  "figure_pairs": 2
+}
+Running 25_q3_refined_verify.py
+Traceback (most recent call last):
+  File "D:\Documents\2026MathorCup-latest\solution_a\tmp\rebuild_copy\solution_a\run_q3_refined.py", line 40, in <module>
+    subprocess.run(command, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\reproenv\\Scripts\\python.exe', '-X', 'utf8', 'D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\src\\25_q3_refined_verify.py', '--output', 'D:\\Documents\\2026MathorCup-latest\\solution_a\\tmp\\rebuild_copy\\solution_a\\outputs\\q3_refined\\verification.json']' returned non-zero exit status 1073807364.

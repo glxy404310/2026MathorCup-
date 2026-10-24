@@ -1,0 +1,4 @@
+﻿sensory_target,rank,compound,chemical_name,n_observed_pairs,spearman_rho,pearson_r,bootstrap_top3_count,bootstrap_top3_frequency,bootstrap_rho_lower_95,bootstrap_rho_upper_95,bootstrap_sign_agreement,bootstrap_valid_draws,within_style_spearman_rho,within_style_rank,is_pearson_top3,is_within_style_top3,stratified_top3_count,stratified_top3_frequency,frequency_difference_stratified_minus_global
+F_esters_ethac,1,ethyl_acetate,Ethyl acetate,250,0.5030965444,0.4126110248,196,0.98,0.3747792393,0.5871982243,1,200,0.2704967104,1,True,True,197,0.985,0.005
+F_malt_all,1,ethanol..v.v.,Ethanol,250,0.4720569546,0.22162413,192,0.96,0.3489702443,0.5671146256,1,200,-0.01106937599,194,False,False,200,1,0.04
+X4vg,1,X4VG,4-vinylguaiacol,250,0.4726175296,0.5190831411,175,0.875,0.3673875596,0.5629862305,1,200,0.4279530025,1,True,True,178,0.89,0.015

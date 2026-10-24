@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -20,9 +21,13 @@ PAPER = Path(__file__).resolve().parent
 SOLUTION = PAPER.parent
 OUTPUT = SOLUTION / "outputs"
 FIGURES = PAPER / "figures"
-CJK_FONT = Path("/System/Library/Fonts/Supplemental/Songti.ttc")
-if not CJK_FONT.is_file():
-    raise FileNotFoundError(f"The declared Chinese font is unavailable: {CJK_FONT}")
+font_candidates = [os.environ.get("MATHORCUP_FONT", ""),
+                   "C:/Windows/Fonts/simsun.ttc",
+                   "/System/Library/Fonts/Supplemental/Songti.ttc",
+                   "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"]
+CJK_FONT = next((Path(f) for f in font_candidates if f and Path(f).is_file()), None)
+if CJK_FONT is None:
+    raise FileNotFoundError("Set MATHORCUP_FONT to an installed Chinese font file.")
 font_manager.fontManager.addfont(str(CJK_FONT))
 FONT = FontProperties(fname=str(CJK_FONT))
 BLUE = "#315F82"
@@ -247,7 +252,7 @@ def network_layout(adjacency, seed=20261023):
 
 
 def figure3():
-    summary = json.loads((OUTPUT / "q2/summary.json").read_text())
+    summary = json.loads((OUTPUT / "q2/summary.json").read_text(encoding="utf-8"))
     top3 = read_csv("q2/top3_compounds.csv")
     nodes = read_csv("q2/network_nodes.csv")
     edges = read_csv("q2/network_edges_rho_0.7.csv")

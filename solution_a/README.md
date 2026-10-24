@@ -4,7 +4,7 @@
 
 论文定稿采用口径见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
 
-完整论文初稿已整理为[可编辑Word](paper/啤酒风味建模论文初稿.docx)与[PDF预览](paper/啤酒风味建模论文初稿.pdf)，配套[源程序与结果电子附录](paper/论文初稿支撑材料.zip)。初稿保留0–6量尺、未验证化学关联及实际品评边界，尚不标为提交终稿。
+本次提交文件为[论文PDF](submission/A2600730.pdf)与[程序及结果附件包](submission/A2600730附件.zip)，可编辑源稿保存在[Word文件](paper/啤酒风味建模提交稿.docx)。PDF含完整程序全文、135项化学证据、72组迁移策略表及逐感官折外置换结果。补充分析见[supplement/README.txt](supplement/README.txt)：保留原五折主表，另列三折固定参数比较、整风格留出、多掩码压力和分层Bootstrap。正文保留原始0–6量尺不可恢复、相关与因果区别及尚无实际品评的限制；这些限制不因排版完成而消失。
 
 | 内容 | 位置 |
 |---|---|
@@ -43,33 +43,30 @@
 
 ## 复现
 
-在仓库根目录运行，Python 3.13环境及当前依赖版本已记录。原始附件目录必须保持原有位置。
+在仓库根目录运行。原训练环境为Python 3.13.15；依赖版本列于`requirements-lock.txt`。原始赛题文件夹须与`solution_a`并列，目录名和附件名保持不变。
 
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r solution_a/requirements-lock.txt
-.venv/bin/python solution_a/run_all.py
+Windows PowerShell安装环境并检查现有结果：
+
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r solution_a/requirements-lock.txt
+.\.venv\Scripts\python.exe -X utf8 solution_a/run_all.py
 ```
 
-仅重跑本轮beer81审计、预测与迁移权衡（保留三层冻结对照）：
+macOS/Linux将上述Python路径换为`.venv/bin/python`。默认入口校验现有数据、模型、三层冻结历史及补充分析，报告写入`solution_a/review/verification/`，不重新训练，也不覆盖论文引用的`outputs/`。单独执行`src/05_verify_outputs.py`或`src/25_q3_refined_verify.py`时，默认仅向终端打印；可用`--output 路径`另存报告。
 
-```bash
-.venv/bin/python solution_a/run_q3_refined.py
+完整重建须在**新解压的源代码副本**中进行。确认其中没有旧`solution_a/outputs/`，放好原始赛题附件后执行：
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 solution_a/run_all.py --rebuild
 ```
 
-仅重新验证已保存结果：
+该路线会依次训练各轮模型、生成结果并建立新的冻结快照，运行时间明显长于保存结果校验。若`outputs/`已有文件，程序会拒绝重建；请另建副本，不要删除当前引用结果。`paper_results/`仅供查阅，不能改名为`outputs/`使用。
 
-```bash
-.venv/bin/python solution_a/src/05_verify_outputs.py
-.venv/bin/python solution_a/src/25_q3_refined_verify.py
-```
-
-默认种子为20261023。模型文件由joblib保存，加载时请将`solution_a/src`加入Python模块路径；稳健模型引用其中的`common.QuantileClipper`。
-
-首次完整复现会依次生成历轮结果，并冻结三层对照哈希；已有冻结对照时，`run_all.py`只检查旧结果并重跑最新一轮，不重写既有第三问输出。历史入口`run_q3.py`、`run_q3_optimized.py`和`run_q3_domain.py`如需重建，请在副本中运行，避免改变已冻结的比较基准。
+默认种子为20261023。joblib模型加载前须将`solution_a/src`加入Python模块路径，稳健模型依赖`common.QuantileClipper`。冻结文件按UTF-8、LF和POSIX相对路径记录，哈希保护仍逐字节核对。`src/platform_selfcheck.py`检查Windows路径、三层快照、历史来源路径及文件篡改拒绝。不同Python、NumPy或系统环境可能使重训树模型产生小幅数值差异，保存工件校验和从头重训应分别记录。
 
 ## 解释结果时的边界
 
 `oof_*.csv`是折外预测；`fitted_standardized_NOT_validation.csv`是全量拟合值，不能作为测试证据。所有感官数值均为附件4的标准化尺度，当前不能当作原始0–6分。第二问关联不证明因果机制。优化后Kriek/Lambic生成能量差异下降约20.5%/23.4%；Stale hops预测提升尚未得到稳定证实。新轮使用239个非Pils样本的21个完整风格留出选择模型，Pils标签已在此前反复查看，其指标只作诊断。上一轮9/11和6/11属于原检查规则；新轮另报同一规则下的固定旧谱对照与新增筛选结果。原bootstrap委员会为单目标树，旧中心预测器才是45输出；两者不能混称。全部数值检查均不替代真实品评。
 
-原始文件未被更改。当前没有生成提交版论文，也没有向竞赛平台提交任何文件。
+原始赛题附件未被更改。提交文件保存在submission/；尚未向竞赛平台上传。签署承诺书需由参赛队自行完成。

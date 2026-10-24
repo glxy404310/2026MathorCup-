@@ -76,7 +76,7 @@ def jaccard(a: np.ndarray, b: np.ndarray) -> float:
 
 
 def save_csv(frame: pd.DataFrame, name: str) -> None:
-    frame.to_csv(OUTPUT / name, index=False, encoding="utf-8-sig", float_format="%.10g")
+    frame.to_csv(OUTPUT / name, index=False, encoding="utf-8-sig", float_format="%.10g", lineterminator="\n")
 
 
 def main(bootstraps: int, seed: int) -> None:
@@ -207,7 +207,7 @@ def main(bootstraps: int, seed: int) -> None:
         "style_counts": {str(k): int(v) for k, v in merged.tasting_category_fine.value_counts().items()},
         "limitations": ["No causal interpretation", "No per-candidate mechanism literature verification yet", "All-sample network is not an external independent prior", "Global row bootstrap does not fix style composition", "Mean-centered within-style rank correlation is a sensitivity analysis, not full confounding control", "Continuous standardized targets do not supply raw 0-6 calibration", "Graph provides structure/context; this baseline ranks marginal correlations and does not fit a graph-regularized predictive model"],
     }
-    (OUTPUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUTPUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     (OUTPUT / "README.md").write_text(f"""# 第二问首轮关联分析
 
 本目录由 `solution_a/src/03_q2_network.py` 生成，计算结果与 scipy 成对相关计算进行数值核对。重跑：
@@ -232,7 +232,7 @@ def main(bootstraps: int, seed: int) -> None:
 Bootstrap 为 {bootstraps} 次全样本行重采样，重新排名，固定种子 {seed}，频率最大蒙特卡洛标准误 {np.sqrt(.25 / bootstraps):.4f}。并列时按附件特征顺序打破。区间为相关系数的描述性 bootstrap 分位数，不是选择后推断保证。去风格均值对 X、Y 都在当前表示上按风格减均值后计算 Spearman，只检查风格间均值混杂。
 
 本目录结论是**关联候选，不是因果因素**；稳定性不等于化学合理性。`8.xlsx` 元信息仅作附件证据，逐条机制文献验证尚未完成。`5.csv/6.csv` 和预计算 GBM/SHAP 未用于筛选。Top-3 的所有 135 项中，入选频率 ≥0.8 的有 {summary['top3_stability']['number_frequency_at_least_0_8']} 项；Spearman/Pearson 平均 Jaccard 为 {summary['mean_jaccard_spearman_pearson']:.3f}，去风格均值前后为 {summary['mean_jaccard_global_within_style']:.3f}。这些是全样本解释稳定性，不是未见啤酒预测性能。
-""", encoding="utf-8")
+""", encoding="utf-8", newline="\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 

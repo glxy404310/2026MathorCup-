@@ -107,10 +107,10 @@ def main() -> None:
         frames.update({f"{i}.xlsx::{name}": frame for name, frame in sheets.items()})
     records = [row for source, frame in frames.items() for row in profile(frame, source)]
     columns = pd.DataFrame(records)
-    columns.to_csv(output / "column_profile.csv", index=False)
-    columns.loc[columns.missing > 0].to_csv(output / "missingness.csv", index=False)
+    columns.to_csv(output / "column_profile.csv", index=False, lineterminator="\n")
+    columns.loc[columns.missing > 0].to_csv(output / "missingness.csv", index=False, lineterminator="\n")
     pd.DataFrame([{"source": path.name, "bytes": path.stat().st_size,
-                   "sha256": hashes_before[path.name]} for path in paths]).to_csv(output / "source_files.csv", index=False)
+                   "sha256": hashes_before[path.name]} for path in paths]).to_csv(output / "source_files.csv", index=False, lineterminator="\n")
 
     chemical = csv[1].set_index("beer")
     sensory = csv[4].set_index("beer")
@@ -151,8 +151,8 @@ def main() -> None:
                 id_discrepancies.append({"source": source, "beer": beer,
                     "beer_id_in_1": str(chemical.at[beer, "beer_id"]),
                     "beer_id_in_source": str(frame.at[beer, "beer_id"])})
-    pd.DataFrame(checks).to_csv(output / "key_checks.csv", index=False)
-    pd.DataFrame(id_discrepancies).to_csv(output / "beer_id_discrepancies.csv", index=False)
+    pd.DataFrame(checks).to_csv(output / "key_checks.csv", index=False, lineterminator="\n")
+    pd.DataFrame(id_discrepancies).to_csv(output / "beer_id_discrepancies.csv", index=False, lineterminator="\n")
 
     # Chemical labels follow 2.csv's order. The complete Spearman reconciliation
     # below checks this positional correspondence, rather than assuming it.
@@ -182,7 +182,7 @@ def main() -> None:
             "map_basis": "Sensory names: R_name <-> CleanName_PanelFeedback",
             "category_paper": panel_metadata.at[field, "Category_Paper"],
             "selected_aroma_taste_45": field in selected_45})
-    pd.DataFrame(feature_map).to_csv(output / "feature_name_map.csv", index=False)
+    pd.DataFrame(feature_map).to_csv(output / "feature_name_map.csv", index=False, lineterminator="\n")
 
     reconcile = []
     matrices = {}
@@ -217,7 +217,7 @@ def main() -> None:
                 "max_abs_error": float(np.max(error)), "mean_abs_error": float(np.mean(error)),
                 "entries_with_error_gt_1e_10": int((error > 1e-10).sum()),
                 "matches_at_1e_10": bool(np.all(error <= 1e-10))})
-    pd.DataFrame(reconcile).to_csv(output / "matrix_reconciliation.csv", index=False)
+    pd.DataFrame(reconcile).to_csv(output / "matrix_reconciliation.csv", index=False, lineterminator="\n")
 
     concentration_error = chemical[chem_columns] - concentrations.loc[chemical.index, chem_columns]
     calibration_check = []
@@ -242,14 +242,14 @@ def main() -> None:
             "log10_max_abs_error": number(log10_error.max()),
             "log10_matches_at_1e_7": bool(log10_error.max() < 1e-7),
         })
-    pd.DataFrame(calibration_check).to_csv(output / "calibrated_comparison.csv", index=False)
+    pd.DataFrame(calibration_check).to_csv(output / "calibrated_comparison.csv", index=False, lineterminator="\n")
 
     negative_calibrated = []
     for field in calibrated.columns[2:]:
         for beer, value in calibrated[field][calibrated[field] < 0].items():
             negative_calibrated.append({"beer": beer, "field": field, "value": value,
                 "unit_metadata": thresholds.at[field, "unit"]})
-    pd.DataFrame(negative_calibrated).to_csv(output / "negative_calibrated_values.csv", index=False)
+    pd.DataFrame(negative_calibrated).to_csv(output / "negative_calibrated_values.csv", index=False, lineterminator="\n")
     extreme = []
     for source, frame in [("1.csv", chemical), ("4.csv", sensory), ("7.csv", comments)]:
         for field in frame.columns[2:]:
@@ -261,7 +261,7 @@ def main() -> None:
             for beer, value in valid.loc[(valid < q1 - 3 * iqr) | (valid > q3 + 3 * iqr)].items():
                 extreme.append({"source": source, "beer": beer, "field": field, "value": value,
                     "q25": q1, "q75": q3, "rule": "outside [q25-3IQR,q75+3IQR]; flag only, not error verdict"})
-    pd.DataFrame(extreme).to_csv(output / "extreme_value_flags.csv", index=False)
+    pd.DataFrame(extreme).to_csv(output / "extreme_value_flags.csv", index=False, lineterminator="\n")
 
     # Inspect formula-bearing forms read-only, so cached zeros are not mistaken
     # for observations or 12 additional beers.
@@ -270,13 +270,13 @@ def main() -> None:
                          for sheet in workbook3.worksheets}
     workbook3.close()
     price_cols = [col for col in prices if col.startswith("Price_")]
-    prices[price_cols].notna().sum().rename("available_beers").to_csv(output / "price_availability.csv")
+    prices[price_cols].notna().sum().rename("available_beers").to_csv(output / "price_availability.csv", lineterminator="\n")
     category_counts = chemical.tasting_category_fine.value_counts().rename_axis("style").reset_index(name="beers")
-    category_counts.to_csv(output / "style_counts.csv", index=False)
+    category_counts.to_csv(output / "style_counts.csv", index=False, lineterminator="\n")
     category_map = pd.concat([chemical.tasting_category_fine.rename("category_1"),
                              prices.tasting_category.rename("category_prices")], axis=1)
     category_map.groupby(["category_1", "category_prices"]).size().reset_index(name="beers").to_csv(
-        output / "price_category_map.csv", index=False)
+        output / "price_category_map.csv", index=False, lineterminator="\n")
     missing_primary = {str(i): {name: int(count) for name, count in csv[i].isna().sum().items() if count}
                        for i in (1, 4, 7)}
     assertions = {
@@ -293,7 +293,7 @@ def main() -> None:
     basic_log10 = [row for row in calibration_check if row["transformation_group"] == "first_37_basic"]
     summary = {
         "attribution": ATTRIBUTION,
-        "audit_date": "2026-10-23", "source_directory": str(data_dir.relative_to(project)) if data_dir.is_relative_to(project) else str(data_dir),
+        "audit_date": "2026-10-23", "source_directory": data_dir.relative_to(project).as_posix() if data_dir.is_relative_to(project) else str(data_dir),
         "environment": {"python": platform.python_version(), "pandas": pd.__version__, "numpy": np.__version__, "openpyxl": openpyxl.__version__},
         "source_sha256": hashes_before, "tables": {name: table_summary(frame) for name, frame in frames.items()},
         "documentation_discrepancies": [
@@ -332,8 +332,8 @@ def main() -> None:
                         "Outlier flags are descriptive; they do not prove measurement errors.",
                         "Provided MDI/SHAP and full-sample matrices must not be used as supervised-selection inputs before CV splitting."],
     }
-    (output / "audit_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-    report_path.write_text(make_report(summary, csv, xlsx, reconcile, checks, negative_calibrated), encoding="utf-8")
+    (output / "audit_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8", newline="\n")
+    report_path.write_text(make_report(summary, csv, xlsx, reconcile, checks, negative_calibrated), encoding="utf-8", newline="\n")
     if not all(assertions.values()):
         raise RuntimeError(f"Audit invariants failed: {assertions}")
     print(json.dumps({"status": "completed", "report": str(report_path), "output_directory": str(output),

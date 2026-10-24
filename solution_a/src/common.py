@@ -39,6 +39,19 @@ def data_dir():
     return candidates[0]
 
 
+def resolve_recorded_path(value):
+    """Resolve repository-relative provenance and the original machine's paths."""
+    recorded = str(value).replace("\\", "/")
+    if recorded.startswith("solution_a/"):
+        return ROOT / recorded
+    if "/solution_a/" in recorded:
+        return SOLUTION / recorded.split("/solution_a/", 1)[1]
+    if "/附件/" in recorded:
+        return data_dir() / recorded.rsplit("/", 1)[1]
+    direct = Path(recorded)
+    return direct if direct.is_absolute() else ROOT / direct
+
+
 def load_xy():
     """Join by exact beer number, never by the rounded barcodes in 4.csv."""
     chem = pd.read_csv(data_dir() / "1.csv", dtype={"beer_id": str})

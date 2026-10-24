@@ -29,7 +29,7 @@ AUDIT_BOOTSTRAP_SEED = 20268123
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8", newline="\n")
 
 
 def paired_cluster_bootstrap(oof, repeats=2000, seed=20269123):
@@ -105,9 +105,9 @@ def main():
         metric_rows.append({"scope": "pooled_repeated_oof", "repeat": 0, "outer_seed": 0,
                             "method": method, **scores(group.observed, group.prediction)})
     metrics = pd.DataFrame(metric_rows)
-    oof.to_csv(OUT / "oof_predictions.csv", index=False)
-    metrics.to_csv(OUT / "metrics.csv", index=False)
-    pd.DataFrame(fold_rows).to_csv(OUT / "metrics_by_fold.csv", index=False)
+    oof.to_csv(OUT / "oof_predictions.csv", index=False, lineterminator="\n")
+    metrics.to_csv(OUT / "metrics.csv", index=False, lineterminator="\n")
+    pd.DataFrame(fold_rows).to_csv(OUT / "metrics_by_fold.csv", index=False, lineterminator="\n")
     cluster_result = paired_cluster_bootstrap(oof)
     write_json(OUT / "paired_cluster_bootstrap.json", cluster_result)
     pooled = metrics[metrics.scope.eq("pooled_repeated_oof")].set_index("method")
@@ -136,18 +136,18 @@ def main():
     joblib.dump(artifact, OUT / "transfer_stale_model.joblib", compress=3)
     pd.concat([meta.iloc[train_global].reset_index(drop=True), pd.DataFrame({"observed": y.iloc[train_global].to_numpy(),
         "fixed_inner_oof_prediction": train_oof, "mean_inner_oof_prediction": mean_oof})], axis=1).to_csv(
-            OUT / "transfer_inner_oof.csv", index=False)
+            OUT / "transfer_inner_oof.csv", index=False, lineterminator="\n")
     heldout = pd.concat([meta.iloc[excluded].reset_index(drop=True), pd.DataFrame({
         "observed": y.iloc[excluded].to_numpy(), "prediction": predict_1d(final, x.iloc[excluded]),
         "mean_baseline_prediction": y.iloc[train_global].mean()})], axis=1)
     old_artifact = joblib.load(SOLUTION / "outputs" / "q3" / "sensory" / "transfer_proxy.joblib")
     assert not set(old_artifact["train_global_indices"]) & set(excluded)
     heldout["old_multioutput_prediction"] = old_artifact["pipeline"].predict(x.iloc[excluded])[:, stale_position]
-    heldout.to_csv(OUT / "pils_style_holdout_predictions.csv", index=False)
+    heldout.to_csv(OUT / "pils_style_holdout_predictions.csv", index=False, lineterminator="\n")
     heldout_metrics = [{"model": name, **scores(heldout.observed, heldout[column])} for name, column in [
         ("fixed_single_extra_trees", "prediction"), ("non_pils_mean", "mean_baseline_prediction"),
         ("old_multioutput_transfer_proxy", "old_multioutput_prediction")]]
-    pd.DataFrame(heldout_metrics).to_csv(OUT / "pils_style_holdout_metrics.csv", index=False)
+    pd.DataFrame(heldout_metrics).to_csv(OUT / "pils_style_holdout_metrics.csv", index=False, lineterminator="\n")
 
     models, indices, seeds = [], [], []
     for b in range(60):

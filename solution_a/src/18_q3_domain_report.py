@@ -30,7 +30,7 @@ CHECKS = {"new": "all_model_checks_passed", "historical": "cross_proxy_checks_pa
 
 
 def record_source(path, rows=None):
-    SOURCES.append({"path": str(path.relative_to(SOLUTION)), "rows": rows,
+    SOURCES.append({"path": path.relative_to(SOLUTION).as_posix(), "rows": rows,
                     "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
 
 
@@ -84,7 +84,7 @@ def prediction_tables(overall, by_style, pils_metrics, pils_predictions, stale_s
     merged = overall.merge(pils_metrics[["method", "rmse", "mae", "r2"]].rename(
         columns={"rmse": "pils_rmse", "mae": "pils_mae", "r2": "pils_r2"}), on="method", validate="one_to_one")
     merged["is_selected"] = merged.method.eq(selected)
-    merged.to_csv(TABLES / "prediction_method_comparison.csv", index=False)
+    merged.to_csv(TABLES / "prediction_method_comparison.csv", index=False, lineterminator="\n")
     selected_predictions = pils_predictions.loc[pils_predictions.method.eq(selected)].copy()
     if not selected_predictions.beer.is_unique:
         raise ValueError("Expected one saved Pils diagnostic prediction per selected-method beer")
@@ -107,9 +107,9 @@ def prediction_tables(overall, by_style, pils_metrics, pils_predictions, stale_s
         paired[f"{label}_residual"] = paired[field] - paired.observed
         squared = paired[f"{label}_residual"] ** 2
         paired[f"{label}_sse_share"] = squared / squared.sum()
-    paired.sort_values("beer").to_csv(TABLES / "pils_source_error_influence.csv", index=False)
+    paired.sort_values("beer").to_csv(TABLES / "pils_source_error_influence.csv", index=False, lineterminator="\n")
     style_table = by_style.loc[by_style.method.eq(selected)].copy()
-    style_table.to_csv(TABLES / "selected_loso_by_style.csv", index=False)
+    style_table.to_csv(TABLES / "selected_loso_by_style.csv", index=False, lineterminator="\n")
     return merged, paired, selected
 
 
@@ -126,7 +126,7 @@ def transfer_tables(transfers, thresholds, previous, scenarios, experiment):
             "median_change_rms_selected": float(group.loc[selected, "change_latent_rms"].median()),
             "median_target_improvement_fresh_pass": float(group.loc[group[CHECKS["fresh"]], "target_improvement"].median())})
     policies = pd.DataFrame(rows)
-    policies.to_csv(TABLES / f"{experiment}_policy_comparison.csv", index=False)
+    policies.to_csv(TABLES / f"{experiment}_policy_comparison.csv", index=False, lineterminator="\n")
     default = transfers.loc[transfers.is_default_policy].sort_values("source_beer")
     if not default.source_beer.is_unique:
         raise ValueError("Default policy must contain one row per source")
@@ -143,10 +143,10 @@ def transfer_tables(transfers, thresholds, previous, scenarios, experiment):
             **{f"{key}_passed": int(np.sum(mask & default[field].to_numpy(bool)))
                for key, field in CHECKS.items()}})
     scenario_table = pd.DataFrame(scenario_rows)
-    scenario_table.to_csv(TABLES / f"{experiment}_default_threshold_pass_counts.csv", index=False)
+    scenario_table.to_csv(TABLES / f"{experiment}_default_threshold_pass_counts.csv", index=False, lineterminator="\n")
     source = default.merge(previous.rename(columns={field: "previous_" + field for field in CHECKS.values()}),
                            on="source_beer", suffixes=("", "_previous"), validate="one_to_one")
-    source.to_csv(TABLES / f"{experiment}_default_source_comparison.csv", index=False)
+    source.to_csv(TABLES / f"{experiment}_default_source_comparison.csv", index=False, lineterminator="\n")
     return policies, default, scenario_table, source
 
 
@@ -256,7 +256,7 @@ def target_figure(experiments, archived):
         frame = frame.merge(keep.rename(columns={c: f"{name}_{c}" for c in keep if c != "source_beer"}),
                             on="source_beer", validate="one_to_one")
     frame = frame.sort_values("source_beer")
-    frame.to_csv(TABLES / "all_default_target_comparison.csv", index=False)
+    frame.to_csv(TABLES / "all_default_target_comparison.csv", index=False, lineterminator="\n")
     fig, axes = plt.subplots(1, 2, figsize=(14.5, 7.0), sharey=True)
     positions = np.arange(len(frame))
     for ax, field, label, scale in [(axes[0], "target_improvement", "Reduction in target-style distance (%)", 100),
@@ -447,7 +447,7 @@ def write_report(comparison, influence, selected, by_style, stale_summary, stale
         "- 三张图的PNG/SVG：`../outputs/q3_domain/figures/`。",
         "- 输入逐文件哈希与行数：`../outputs/q3_domain/report_source_manifest.json`。", "",
         "```bash", ".venv/bin/python solution_a/src/18_q3_domain_report.py", "```", ""])
-    (SOLUTION / "docs/q3_domain_results.md").write_text("\n".join(lines), encoding="utf-8")
+    (SOLUTION / "docs/q3_domain_results.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
     result = {"selected_method": selected, "non_pils_training_n": n_train, "loso_styles": n_styles,
         "pils_diagnostic_n": n_sources, "selected_loso_macro_rmse": float(selected_row.macro_style_rmse),
         "selected_pils_diagnostic_rmse": selected_pils, "matched_fixed_tree_pils_rmse": float(matched_tree.pils_rmse),
@@ -466,7 +466,7 @@ def write_report(comparison, influence, selected, by_style, stale_summary, stale
             "median_change_rms_selected": float(expanded.change_latent_rms.median())},
         "threshold_scenarios": len(ds), "scientific_figure_count": 3,
         "scope": "Failed Pils prediction exploration and limited consensus-search gains, no sensory guarantee"}
-    (OUT / "report_summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "report_summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     return result
 
 
@@ -505,7 +505,7 @@ def main():
     target_figure(experiments, archived)
     result = write_report(comparison, influence, selected, by_style, stale_summary, stale_manifest,
                           experiments, neighborhood)
-    (OUT / "report_source_manifest.json").write_text(json.dumps(SOURCES, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "report_source_manifest.json").write_text(json.dumps(SOURCES, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(json.dumps(result, ensure_ascii=False, indent=2), flush=True)
 
 

@@ -319,7 +319,7 @@ def write_report(summary, sensitivity, full_diagnostics, support, elapsed, x, la
     lines.extend(["条件生成能量距离在固定划分内的 3 次 Monte Carlo 标准差："
                   f"中位数 {conditional_mc.median():.4f}，最大值 {conditional_mc.max():.4f}。"
                   "它仅反映有限生成次数的随机波动，不覆盖真实风格样本少带来的估计误差。", ""])
-    (SOLUTION / "docs" / "q3_generation.md").write_text("\n".join(lines), encoding="utf-8")
+    (SOLUTION / "docs" / "q3_generation.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
 def main():
@@ -331,47 +331,47 @@ def main():
     if min(labels.value_counts()) < 3:
         raise ValueError("Repeated 3-fold validation requires at least 3 rows per style")
     records, sensitivity, assignments, marginal, cv_support_rows = run_validation(x, labels)
-    records.to_csv(OUT / "cv_metrics.csv", index=False)
-    sensitivity.to_csv(OUT / "sensitivity_metrics.csv", index=False)
+    records.to_csv(OUT / "cv_metrics.csv", index=False, lineterminator="\n")
+    sensitivity.to_csv(OUT / "sensitivity_metrics.csv", index=False, lineterminator="\n")
     assignments.insert(3, "beer", assignments.row_index.map(meta.beer))
-    assignments.to_csv(OUT / "cv_assignments.csv", index=False)
-    marginal.to_csv(OUT / "cv_marginal_w1_by_feature.csv", index=False)
+    assignments.to_csv(OUT / "cv_assignments.csv", index=False, lineterminator="\n")
+    marginal.to_csv(OUT / "cv_marginal_w1_by_feature.csv", index=False, lineterminator="\n")
     cv_support_rows.insert(3, "beer", cv_support_rows.row_index.map(meta.beer))
-    cv_support_rows.to_csv(OUT / "cv_holdout_support_metrics.csv", index=False)
+    cv_support_rows.to_csv(OUT / "cv_holdout_support_metrics.csv", index=False, lineterminator="\n")
     cv_support = cv_support_rows.groupby("style").agg(
         reference_rows=("row_index", "size"), unique_beers=("beer", "nunique"),
         latent_distance_q95=("latent_distance", lambda v: v.quantile(0.95)),
         nn_train_style_q95=("nn_train_style", lambda v: v.quantile(0.95))).reset_index()
     cv_support["calibration"] = "repeated_3fold_heldout_descriptive_not_formal_fullfit_coverage"
-    cv_support.to_csv(OUT / "cv_support_thresholds.csv", index=False)
+    cv_support.to_csv(OUT / "cv_support_thresholds.csv", index=False, lineterminator="\n")
     mc_variability = records.groupby(["repeat", "fold", "style", "method"])[METRICS].agg(["mean", "std"])
     mc_variability.columns = [f"{metric}_{stat}" for metric, stat in mc_variability.columns]
-    mc_variability.reset_index().to_csv(OUT / "cv_mc_variability.csv", index=False)
+    mc_variability.reset_index().to_csv(OUT / "cv_mc_variability.csv", index=False, lineterminator="\n")
     folds, summary = summarize_validation(records)
-    folds.to_csv(OUT / "cv_fold_means.csv", index=False)
-    summary.to_csv(OUT / "cv_summary.csv", index=False)
+    folds.to_csv(OUT / "cv_fold_means.csv", index=False, lineterminator="\n")
+    summary.to_csv(OUT / "cv_summary.csv", index=False, lineterminator="\n")
     sensitivity_all = pd.concat([sensitivity, records.loc[
         (records.method == "conditional_copula") & (records.mc == 0)]], ignore_index=True)
     sensitivity_summary = sensitivity_all.groupby(["mean_strength", "cov_strength"], as_index=False)[
         ["marginal_w1_iqr", "marginal_w1_iqr_median", "energy_pca5", "spearman_mae", "copy_rate",
          "variance_coverage_0p5_2"]].mean()
-    sensitivity_summary.to_csv(OUT / "sensitivity_summary.csv", index=False)
+    sensitivity_summary.to_csv(OUT / "sensitivity_summary.csv", index=False, lineterminator="\n")
     model = ConditionalGaussianCopula(*MAIN_PARAMS).fit(x, labels)
     joblib.dump(model, OUT / "fitted_model.joblib")
-    pd.DataFrame(model.fit_diagnostics_).to_csv(OUT / "fit_diagnostics.csv", index=False)
+    pd.DataFrame(model.fit_diagnostics_).to_csv(OUT / "fit_diagnostics.csv", index=False, lineterminator="\n")
     _, scale_source = training_scale(model.impute(x))
     pd.DataFrame({"feature": x.columns, "scaling_source": scale_source,
-                  "imputation_median": model.median_}).to_csv(OUT / "full_preprocessing.csv", index=False)
+                  "imputation_median": model.median_}).to_csv(OUT / "full_preprocessing.csv", index=False, lineterminator="\n")
     support_rows, support = support_diagnostics(model, x, labels)
     support_rows.insert(1, "beer", support_rows.row_index.map(meta.beer))
-    support_rows.to_csv(OUT / "full_style_support_metrics.csv", index=False)
-    support.to_csv(OUT / "full_style_support_thresholds.csv", index=False)
+    support_rows.to_csv(OUT / "full_style_support_metrics.csv", index=False, lineterminator="\n")
+    support.to_csv(OUT / "full_style_support_thresholds.csv", index=False, lineterminator="\n")
     full_diagnostics, zero_diagnostics = [], []
     for index, style in enumerate(STYLES):
         generated = model.sample(style, N_GENERATED, SEED + 100000 + index)
         generated.insert(0, "sample_id", [f"{safe_style(style)}_{i:03d}" for i in range(1, N_GENERATED + 1)])
         generated.insert(1, "target_style", style)
-        generated.to_csv(OUT / f"generated_{safe_style(style)}.csv", index=False)
+        generated.to_csv(OUT / f"generated_{safe_style(style)}.csv", index=False, lineterminator="\n")
         diag = generated_diagnostics(model, generated[x.columns], style, x, labels, support, cv_support)
         diag["sample_id"] = generated.sample_id
         full_diagnostics.append(diag)
@@ -386,8 +386,8 @@ def main():
                 "style_imputed_zero_fraction": float(np.mean(imputed_style[:, j] == 0)),
                 "generated_zero_fraction": float(generated[feature].eq(0).mean())})
     full_diagnostics = pd.concat(full_diagnostics, ignore_index=True)
-    full_diagnostics.to_csv(OUT / "generated_diagnostics.csv", index=False)
-    pd.DataFrame(zero_diagnostics).to_csv(OUT / "generated_zero_diagnostics.csv", index=False)
+    full_diagnostics.to_csv(OUT / "generated_diagnostics.csv", index=False, lineterminator="\n")
+    pd.DataFrame(zero_diagnostics).to_csv(OUT / "generated_zero_diagnostics.csv", index=False, lineterminator="\n")
     elapsed = time.perf_counter() - start
     summary_json = {
         "date": "2026-10-23",
@@ -409,7 +409,7 @@ def main():
                    "Full-fit support thresholds are descriptive, not independently calibrated",
                    "Chemical target spectra are not brewing recipes or sensory panel validation"],
     }
-    (OUT / "summary.json").write_text(json.dumps(summary_json, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary_json, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     write_report(summary, sensitivity_summary, full_diagnostics, support, elapsed, x, labels)
     print(json.dumps(summary_json, ensure_ascii=False, indent=2), flush=True)
 

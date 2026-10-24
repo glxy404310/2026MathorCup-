@@ -81,7 +81,7 @@ def main():
     meta, x, y, manifest = load_q3_data()
     defects = read_defect_thresholds()
     scenario_list = scenarios(defects)
-    (OUT / "threshold_scenarios.json").write_text(json.dumps(scenario_list, indent=2), encoding="utf-8")
+    (OUT / "threshold_scenarios.json").write_text(json.dumps(scenario_list, indent=2), encoding="utf-8", newline="\n")
     source_rows = np.flatnonzero(meta.tasting_category_fine.eq("Pils/Lager"))
     train = np.flatnonzero(~meta.tasting_category_fine.eq("Pils/Lager"))
     target_rows = np.flatnonzero(meta.tasting_category_fine.eq("Tripel"))
@@ -96,8 +96,8 @@ def main():
     assert old_draws.columns.tolist() == new_draws.columns.tolist() == x.columns.tolist()
     joblib.dump({"generator": generator, "training_rows": train, "source_rows": source_rows,
                  "features": x.columns.tolist()}, OUT / "transfer_generator.joblib", compress=3)
-    new_draws.to_csv(OUT / "optimized_base_draws.csv", index=False)
-    old_draws.to_csv(OUT / "old_base_draws.csv", index=False)
+    new_draws.to_csv(OUT / "optimized_base_draws.csv", index=False, lineterminator="\n")
+    old_draws.to_csv(OUT / "old_base_draws.csv", index=False, lineterminator="\n")
 
     stale_model = joblib.load(ROOT_OUT / "stale_fixed/transfer_stale_model.joblib")
     ensemble = joblib.load(ROOT_OUT / "stale_fixed/bootstrap_ensemble.joblib")
@@ -266,7 +266,7 @@ def main():
               "transferred_spectra.csv": spectra, "threshold_sensitivity.csv": threshold_rows,
               "stale_paired_deltas.csv": delta_rows, "sensory_before_after.csv": profiles}
     for name, rows in frames.items():
-        pd.DataFrame(rows).to_csv(OUT / name, index=False)
+        pd.DataFrame(rows).to_csv(OUT / name, index=False, lineterminator="\n")
 
     # Recheck the unchanged first-round selections on the same threshold grid.
     archived = pd.read_csv(OLD / "transfer/transfer_summary.csv")
@@ -283,7 +283,7 @@ def main():
                                "scenario": scenario["scenario"], "old_model_checks_passed": row.all_model_checks_passed,
                                "chemical_passed": bool(chemical_feasible(selected, source, scenario)[0])})
     archived_checks = pd.DataFrame(old_checks)
-    archived_checks.to_csv(OUT / "archived_threshold_recheck.csv", index=False)
+    archived_checks.to_csv(OUT / "archived_threshold_recheck.csv", index=False, lineterminator="\n")
     result = pd.DataFrame(records)
     policy_rows = []
     for (pool, weight), part in result.groupby(["pool", "lambda"]):
@@ -293,7 +293,7 @@ def main():
                             "cross_proxy_checks_passed": int(part.cross_proxy_checks_passed.sum()),
                             "audit_failed": int(part.status.eq("resampling_audit_failed").sum()),
                             "no_candidate": int(part.status.eq("no_candidate_found").sum())})
-    pd.DataFrame(policy_rows).to_csv(OUT / "policy_summary.csv", index=False)
+    pd.DataFrame(policy_rows).to_csv(OUT / "policy_summary.csv", index=False, lineterminator="\n")
     archived_robust = archived_checks.groupby("source_beer").chemical_passed.all()
     old_passed_beers = archived.loc[archived.all_model_checks_passed, "source_beer"]
     old_all_grid = int(archived_robust.reindex(old_passed_beers, fill_value=False).sum())
@@ -326,7 +326,7 @@ def main():
             "Combined-pool gains are reported separately from matched-budget generator comparisons.",
         ],
     }
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(json.dumps(summary["default_policy"], ensure_ascii=False, indent=2), flush=True)
 
 

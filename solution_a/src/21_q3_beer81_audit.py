@@ -15,7 +15,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from threadpoolctl import threadpool_limits
 
-from common import KEYS, SOLUTION, data_dir
+from common import KEYS, ROOT, SOLUTION, data_dir, resolve_recorded_path
 from q3_data import load_q3_data
 from q3_stale_optimized import FoldChemicalTransform
 
@@ -26,7 +26,7 @@ SOURCE_FILES = []
 
 
 def source(path):
-    SOURCE_FILES.append({"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    SOURCE_FILES.append({"path": path.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
     return path
 
 
@@ -64,7 +64,7 @@ def identity_audit(raw, sensory, comments, calibrated):
     if not (table.beer_unique.all() and table.beer81_matches.eq(1).all()
             and table.style_matches_1csv.all() and table.id_matches_printed_precision.all()):
         raise AssertionError("Identity audit found an unresolved discrepancy")
-    table.to_csv(OUT / "identity_join_audit.csv", index=False)
+    table.to_csv(OUT / "identity_join_audit.csv", index=False, lineterminator="\n")
     return table
 
 
@@ -94,7 +94,7 @@ def chemical_audit(meta, x, manifest, raw, calibrated, thresholds, train, target
             "ratio_to_sensory_threshold": value / threshold if entry["representation"] == "calibrated"
             and pd.notna(threshold) and threshold > 0 else np.nan})
     table = pd.DataFrame(rows)
-    table.to_csv(OUT / "chemical_profile_beer81.csv", index=False)
+    table.to_csv(OUT / "chemical_profile_beer81.csv", index=False, lineterminator="\n")
     relative = manifest.loc[manifest.representation.eq("relative"), "feature"].tolist()
     floor_rows = []
     for i in range(len(raw)):
@@ -102,14 +102,14 @@ def chemical_audit(meta, x, manifest, raw, calibrated, thresholds, train, target
         floor_rows.append({"beer": int(meta.beer.iloc[i]), "style": meta.tasting_category_fine.iloc[i],
             "most_repeated_relative_value": float(counts.index[0]), "most_repeated_relative_count": int(counts.iloc[0])})
     floor_table = pd.DataFrame(floor_rows)
-    floor_table.to_csv(OUT / "relative_value_repeat_patterns.csv", index=False)
+    floor_table.to_csv(OUT / "relative_value_repeat_patterns.csv", index=False, lineterminator="\n")
     numeric_fields = [c for c in raw if c not in KEYS]
     repeated = raw_row[numeric_fields].value_counts()
     repeated_rows = [{"value": float(v), "count": int(n),
         "features": ";".join(c for c in numeric_fields if raw_row[c] == v),
         "interpretation": "repeated supplied value; attachment does not identify an analytical detection limit"}
         for v, n in repeated.items() if n > 1]
-    pd.DataFrame(repeated_rows).to_csv(OUT / "beer81_repeated_original_values.csv", index=False)
+    pd.DataFrame(repeated_rows).to_csv(OUT / "beer81_repeated_original_values.csv", index=False, lineterminator="\n")
     calibrated_fields = manifest.loc[manifest.representation.eq("calibrated"), "feature"].tolist()
     zero_fields = table.loc[table.zero, "feature"].tolist()
     profile = {"raw_numeric_missing": int(raw_row[numeric_fields].isna().sum()),
@@ -140,13 +140,13 @@ def sensory_and_comments(meta, sensory, comments, train, target):
             "nonpils_spearman_with_stale": float(correlation)})
         if field != "stale_hops":
             associations.append({"sensory": field, "nonpils_spearman_with_stale": float(correlation)})
-    pd.DataFrame(profiles).to_csv(OUT / "sensory_profile_beer81.csv", index=False)
-    pd.DataFrame(associations).to_csv(OUT / "sensory_covariation_nonpils.csv", index=False)
+    pd.DataFrame(profiles).to_csv(OUT / "sensory_profile_beer81.csv", index=False, lineterminator="\n")
+    pd.DataFrame(associations).to_csv(OUT / "sensory_covariation_nonpils.csv", index=False, lineterminator="\n")
     tail = meta.copy()
     tail["stale_hops"] = stale
     tail["descending_rank"] = stale.rank(method="min", ascending=False).astype(int)
     tail["nonpils_training"] = train
-    tail.sort_values("stale_hops", ascending=False).to_csv(OUT / "stale_target_distribution.csv", index=False)
+    tail.sort_values("stale_hops", ascending=False).to_csv(OUT / "stale_target_distribution.csv", index=False, lineterminator="\n")
     terms = []
     for field in [c for c in comments if c not in KEYS]:
         value = comments[field].iloc[target]
@@ -157,8 +157,8 @@ def sensory_and_comments(meta, sensory, comments, train, target):
             "nonpils_percentile": percentile(comments.loc[train, field], value) if pd.notna(value) else np.nan,
             "predeclared_quality_term": relevant, "source": "7.csv numeric forum descriptor table"})
     terms = pd.DataFrame(terms)
-    terms.to_csv(OUT / "forum_all_terms_beer81.csv", index=False)
-    terms.loc[terms.predeclared_quality_term].to_csv(OUT / "forum_quality_term_evidence.csv", index=False)
+    terms.to_csv(OUT / "forum_all_terms_beer81.csv", index=False, lineterminator="\n")
+    terms.loc[terms.predeclared_quality_term].to_csv(OUT / "forum_quality_term_evidence.csv", index=False, lineterminator="\n")
     return pd.DataFrame(profiles), tail, terms
 
 
@@ -233,11 +233,11 @@ def distance_audit(meta, x, manifest, train, target, y):
     ood, neighbors, reference, all81 = map(pd.DataFrame, [ood, neighbor_rows, reference_rows, all81])
     ood["nearest_nonpils_distance_rank_within_pils_desc"] = ood.groupby("space").nearest_nonpils_distance.rank(
         ascending=False, method="min").astype(int)
-    ood.to_csv(OUT / "chemical_ood_all_pils.csv", index=False)
-    neighbors.to_csv(OUT / "nearest_training_neighbors.csv", index=False)
-    all81.to_csv(OUT / "beer81_all_training_neighbor_ranks.csv", index=False)
-    reference.to_csv(OUT / "training_loo_distance_reference.csv", index=False)
-    pd.DataFrame(other_pils_rows).to_csv(OUT / "beer81_other_pils_neighbors.csv", index=False)
+    ood.to_csv(OUT / "chemical_ood_all_pils.csv", index=False, lineterminator="\n")
+    neighbors.to_csv(OUT / "nearest_training_neighbors.csv", index=False, lineterminator="\n")
+    all81.to_csv(OUT / "beer81_all_training_neighbor_ranks.csv", index=False, lineterminator="\n")
+    reference.to_csv(OUT / "training_loo_distance_reference.csv", index=False, lineterminator="\n")
+    pd.DataFrame(other_pils_rows).to_csv(OUT / "beer81_other_pils_neighbors.csv", index=False, lineterminator="\n")
     neighbor_summaries = []
     for (name, query), group in neighbors.groupby(["space", "query_beer"]):
         for k in [5, 10, 25]:
@@ -246,9 +246,9 @@ def distance_audit(meta, x, manifest, train, target, y):
                 "stale_min": part.neighbor_stale.min(), "stale_median": part.neighbor_stale.median(),
                 "stale_mean": part.neighbor_stale.mean(), "stale_max": part.neighbor_stale.max(),
                 "stale_at_least_beer81": int(part.neighbor_stale.ge(y.stale_hops.iloc[target]).sum())})
-    pd.DataFrame(neighbor_summaries).to_csv(OUT / "neighbor_target_summaries.csv", index=False)
+    pd.DataFrame(neighbor_summaries).to_csv(OUT / "neighbor_target_summaries.csv", index=False, lineterminator="\n")
     tail_ranks = all81.loc[all81.neighbor_stale.ge(y.stale_hops.iloc[target])]
-    tail_ranks.to_csv(OUT / "high_stale_training_neighbor_ranks.csv", index=False)
+    tail_ranks.to_csv(OUT / "high_stale_training_neighbor_ranks.csv", index=False, lineterminator="\n")
     return ood, all81, tail_ranks
 
 
@@ -271,7 +271,7 @@ def influence_audit(sensory):
     predictions["residual"] = predictions.prediction - predictions.observed
     predictions["squared_error"] = predictions.residual ** 2
     predictions["sse_share"] = predictions.squared_error / predictions.groupby(["stage", "method"]).squared_error.transform("sum")
-    predictions.to_csv(OUT / "all_saved_pils_prediction_errors.csv", index=False)
+    predictions.to_csv(OUT / "all_saved_pils_prediction_errors.csv", index=False, lineterminator="\n")
     rows, deletion = [], []
     for (stage, method), group in predictions.groupby(["stage", "method"]):
         source81 = group.loc[group.beer.eq(TARGET_BEER)].iloc[0]
@@ -286,8 +286,8 @@ def influence_audit(sensory):
                 "fixed_prediction_rmse_without_one_source": float(np.sqrt(reduced.squared_error.mean())),
                 "interpretation": "influence only; same fixed predictions, no retraining, never substitutes the all-source metric"})
     influence = pd.DataFrame(rows)
-    influence.to_csv(OUT / "beer81_sse_contribution.csv", index=False)
-    pd.DataFrame(deletion).to_csv(OUT / "leave_one_source_out_influence.csv", index=False)
+    influence.to_csv(OUT / "beer81_sse_contribution.csv", index=False, lineterminator="\n")
+    pd.DataFrame(deletion).to_csv(OUT / "leave_one_source_out_influence.csv", index=False, lineterminator="\n")
     return influence
 
 
@@ -301,7 +301,7 @@ def main():
     thresholds = pd.read_excel(root / "8.xlsx", sheet_name="Sensory thresholds")
     sensory_names = pd.read_excel(root / "8.xlsx", sheet_name="Sensory names")
     target_metadata = sensory_names.loc[sensory_names.R_name.isin(["stale_hops", "barnyard", "t2n", "dms"])]
-    target_metadata.to_csv(OUT / "sensory_target_metadata.csv", index=False)
+    target_metadata.to_csv(OUT / "sensory_target_metadata.csv", index=False, lineterminator="\n")
     meta, x, y, manifest = load_q3_data()
     target = int(np.flatnonzero(meta.beer.eq(TARGET_BEER))[0])
     train = meta.tasting_category_fine.ne("Pils/Lager")
@@ -313,7 +313,7 @@ def main():
     local_neighbors = neighbors.loc[neighbors.space.eq("frozen_domain_aging_pca8") & neighbors.neighbor_rank.le(25)]
     key_terms = terms.loc[terms.term.isin(["aroma_stale", "taste_stale", "taste_cardboard", "taste_papery"])]
     high_tail = tail.loc[tail.nonpils_training & tail.stale_hops.ge(y.stale_hops.iloc[target])]
-    selected = json.loads((SOLUTION / "outputs/q3_domain/stale/summary.json").read_text())["selected_method"]
+    selected = json.loads((SOLUTION / "outputs/q3_domain/stale/summary.json").read_text(encoding="utf-8"))["selected_method"]
     source(SOLUTION / "outputs/q3_domain/stale/summary.json")
     selected_influence = influence.loc[influence.stage.eq("domain_same_seed_comparison") & influence.method.eq(selected)].iloc[0]
     own_floor = floors.loc[floors.beer.eq(TARGET_BEER)].iloc[0]
@@ -339,18 +339,18 @@ def main():
         "raw_forum_text_available": False, "analytical_lod_loq_available": False,
         "label_error_established": False,
         "interpretation": "Rare high sensory target lacks matching high-target chemical neighbours; identity and descriptor evidence do not establish a wrong label. Chemical predictability remains unresolved."}
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     verification = {"identity_join_four_sources_passed": bool(identity.beer_unique.all()),
         "features": len(chemicals), "forum_fields": len(terms), "ood_query_space_rows": len(ood),
         "training_neighbor_rank_rows": len(neighbors),
         "other_pils_neighbor_rows": len(pd.read_csv(OUT / "beer81_other_pils_neighbors.csv")),
         "local_target_convex_hull_gap_verified": summary["beer81_outside_local_top25_target_convex_hull"],
         "leave_one_source_out_only_fixed_prediction_influence": True,
-        "source_hashes_unchanged_after_analysis": all(hashlib.sha256(Path(row["path"]).read_bytes()).hexdigest()
+        "source_hashes_unchanged_after_analysis": all(hashlib.sha256(resolve_recorded_path(row["path"]).read_bytes()).hexdigest()
                                                        == row["sha256"] for row in SOURCE_FILES)}
     assert verification["source_hashes_unchanged_after_analysis"]
-    (OUT / "verification.json").write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding="utf-8")
-    (OUT / "source_manifest.json").write_text(json.dumps(SOURCE_FILES, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "verification.json").write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
+    (OUT / "source_manifest.json").write_text(json.dumps(SOURCE_FILES, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     write_note(summary, chemicals, sensation, terms, tail_ranks, influence)
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
 
@@ -445,7 +445,7 @@ def write_note(summary, chemicals, sensation, terms, tail_ranks, influence):
         "不能确认是测量、储存、批次、未观测成分、感官个体差异或标签问题所致。"
         "后续仅可在非Pils训练内验证尾部权重、共享感官表示及其他化学模型；论坛描述和81标签不得进入选型。", "",
         "```bash", ".venv/bin/python solution_a/src/21_q3_beer81_audit.py", "```", ""])
-    (SOLUTION / "docs/q3_beer81_audit.md").write_text("\n".join(lines), encoding="utf-8")
+    (SOLUTION / "docs/q3_beer81_audit.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

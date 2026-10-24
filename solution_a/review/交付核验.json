@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "artifacts": [
+    {
+      "name": "A2600730.pdf",
+      "bytes": 3758089,
+      "sha256": "03287ed5830de2d60d91cf1c2cd27223a16324e67c101cafe4167bc91fbdcdd1"
+    },
+    {
+      "name": "A2600730附件.zip",
+      "bytes": 41004450,
+      "sha256": "5545c955b303d4b362df54e7173ef436240f0bf21564ce8c2305c553f4fc3a75"
+    }
+  ],
+  "saved_results_validation": "PASS",
+  "supplementary_validation": "PASS",
+  "fresh_archive_checks": "PASS",
+  "original_outputs_unchanged": 333,
+  "principal_transfer_reproduction": "PASS",
+  "full_grid_bitwise_reproduction": "FAIL; prior cross-platform differences retained and disclosed",
+  "pdf_pages": 353,
+  "body_including_references_pages": 22,
+  "printed_source_files": 56,
+  "printed_source_lines": 12945,
+  "visual_review": "PASS; all 353 pages rendered and inspected",
+  "notes": [
+    "Supplementary comparisons are post-hoc analyses of the same 250 beers.",
+    "Complete fresh original rebuild previously passed execution and principal comparisons; supplemental saved results independently recalculated."
+  ]
+}

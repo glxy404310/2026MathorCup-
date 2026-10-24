@@ -16,7 +16,7 @@ from common import SOLUTION
 def main():
     base = pd.read_csv(SOLUTION / "outputs/q1/metrics_overall.csv").set_index("model")
     robust = pd.read_csv(SOLUTION / "outputs/q1_robust/metrics_overall.csv").set_index("model")
-    q2 = json.loads((SOLUTION / "outputs/q2/summary.json").read_text())
+    q2 = json.loads((SOLUTION / "outputs/q2/summary.json").read_text(encoding="utf-8"))
     targets = pd.read_csv(SOLUTION / "outputs/q1/metrics_by_target.csv")
     tree_targets = targets[targets.model == "extra_trees"]
     figures = SOLUTION / "outputs/figures"
@@ -123,7 +123,7 @@ ExtraTrees 的 RMSE 比均值基线降低 **{gain:.2f}%**。附加随机遮蔽20
 
 原始附件保持原样，哈希记录在 `../outputs/audit/source_files.csv`。一键复现命令及文件索引见 `../README.md`。官方原研究为 [Schreurs等，Nature Communications 15,2368 (2024)](https://doi.org/10.1038/s41467-024-46346-0)，公开数据见 [Zenodo 10653704](https://zenodo.org/records/10653704)。来源对应核验详情已记录于感官映射报告。
 """
-    (SOLUTION / "docs/stage1_results.md").write_text(text, encoding="utf-8")
+    (SOLUTION / "docs/stage1_results.md").write_text(text, encoding="utf-8", newline="\n")
     print(f"Saved {figures / 'q1_baseline_and_missingness.png'} and docs/stage1_results.md")
 
 

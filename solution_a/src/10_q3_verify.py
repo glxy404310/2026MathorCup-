@@ -534,7 +534,7 @@ def main():
         result["elapsed_seconds"] = perf_counter() - start
         OUT.mkdir(parents=True, exist_ok=True)
         (OUT / "verification.json").write_text(
-            json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+            json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8", newline="\n")
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False), flush=True)
 
 

@@ -14,8 +14,9 @@ def preserve_baseline():
     paths = sorted(path for path in BASELINE.rglob("*") if path.is_file())
     if not (BASELINE / "verification.json").exists():
         raise RuntimeError("Run the original third-question experiment before the optimization.")
-    rows = [{"path": str(path.relative_to(BASELINE)), "bytes": path.stat().st_size,
+    rows = [{"path": path.relative_to(BASELINE).as_posix(), "bytes": path.stat().st_size,
              "sha256": hashlib.sha256(path.read_bytes()).hexdigest()} for path in paths]
+    rows.sort(key=lambda row: row["path"])
     if SNAPSHOT.exists():
         expected = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
         if rows != expected["files"]:
@@ -24,7 +25,7 @@ def preserve_baseline():
         SNAPSHOT.parent.mkdir(parents=True, exist_ok=True)
         record = {"baseline_directory": "solution_a/outputs/q3", "hash_algorithm": "sha256",
                   "file_count": len(rows), "files": rows}
-        SNAPSHOT.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        SNAPSHOT.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
@@ -33,4 +34,4 @@ if __name__ == "__main__":
                    "12b_q3_stale_fixed.py", "13_q3_transfer_optimized.py",
                    "14_q3_optimization_report.py", "15_q3_optimized_verify.py"]:
         print(f"Running {script}", flush=True)
-        subprocess.run([sys.executable, str(HERE / "src" / script)], check=True)
+        subprocess.run([sys.executable, "-X", "utf8", str(HERE / "src" / script)], check=True)

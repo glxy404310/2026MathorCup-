@@ -68,11 +68,11 @@ def main():
                               **baseline.scores(y.iloc[:, j], values[:, j]),
                               "spearman": float(spearmanr(y.iloc[:, j], values[:, j]).statistic)})
         pd.concat([meta, pd.DataFrame({"fold": fold_ids}), pd.DataFrame(values, columns=y.columns)], axis=1).to_csv(
-            OUT / f"oof_{name}.csv", index=False)
-    pd.DataFrame(metrics).to_csv(OUT / "metrics_overall.csv", index=False)
-    pd.DataFrame(by_target).to_csv(OUT / "metrics_by_target.csv", index=False)
-    pd.DataFrame(fold_metrics).to_csv(OUT / "metrics_by_fold.csv", index=False)
-    pd.DataFrame(clipping).to_csv(OUT / "clipping_bounds.csv", index=False)
+            OUT / f"oof_{name}.csv", index=False, lineterminator="\n")
+    pd.DataFrame(metrics).to_csv(OUT / "metrics_overall.csv", index=False, lineterminator="\n")
+    pd.DataFrame(by_target).to_csv(OUT / "metrics_by_target.csv", index=False, lineterminator="\n")
+    pd.DataFrame(fold_metrics).to_csv(OUT / "metrics_by_fold.csv", index=False, lineterminator="\n")
+    pd.DataFrame(clipping).to_csv(OUT / "clipping_bounds.csv", index=False, lineterminator="\n")
     final = search(SEED + 99).fit(x, y)
     joblib.dump({"pipeline": final.best_estimator_, "features": x.columns.tolist(),
                  "targets": y.columns.tolist(), "target_scale": "attachment_4_standardized"},
@@ -84,7 +84,7 @@ def main():
         "limitations": ["Not a fresh holdout test", "Fixed 1%/99% clipping can suppress genuine extremes",
                         "Original 0-6 scores still not identified", "One split seed only"],
     }
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(pd.DataFrame(metrics).to_string(index=False), flush=True)
 
 

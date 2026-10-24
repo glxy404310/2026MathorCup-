@@ -18,7 +18,7 @@ COLORS={"legacy_2004":"#929AA3","legacy_6004":"#B98632","contracted_6004":"#267D
 def read(path):
     raw=path.read_bytes()
     value=json.loads(raw) if path.suffix==".json" else pd.read_csv(path)
-    SOURCES.append({"path":str(path.relative_to(SOLUTION)),"sha256":hashlib.sha256(raw).hexdigest(),
+    SOURCES.append({"path":path.relative_to(SOLUTION).as_posix(),"sha256":hashlib.sha256(raw).hexdigest(),
                     "rows":len(value) if isinstance(value,pd.DataFrame) else None})
     return value
 
@@ -50,7 +50,7 @@ def main():
     references=read(OUT/"transfer/fixed_spectra_rechecks.csv")
     unique=read(OUT/"transfer/pool_uniqueness.csv")
     comparison=loso.merge(pils[["method","rmse","mean_bias"]].rename(columns={"rmse":"pils_rmse","mean_bias":"pils_bias"}),on="method",validate="one_to_one")
-    comparison.to_csv(OUT/"report_tables/prediction_comparison.csv",index=False)
+    comparison.to_csv(OUT/"report_tables/prediction_comparison.csv",index=False, lineterminator="\n")
     selected=prediction["selected_method"]
     selected_row=comparison.set_index("method").loc[selected]
     tail=comparison.set_index("method").loc["tail_ridge_aging100"]
@@ -60,12 +60,12 @@ def main():
     selected81=float(pils_rows.loc[pils_rows.method.eq(selected)&pils_rows.beer.eq(81),"prediction"].iloc[0])
     tail81=float(pils_rows.loc[pils_rows.method.eq("tail_ridge_aging100")&pils_rows.beer.eq(81),"prediction"].iloc[0])
     retained=outcomes[outcomes.bound.eq("retain80")]
-    retained.to_csv(OUT/"report_tables/retain80_all_policies.csv",index=False)
+    retained.to_csv(OUT/"report_tables/retain80_all_policies.csv",index=False, lineterminator="\n")
     ref_counts=references.groupby(["arm","reference","bound"],as_index=False).agg(
         available=("source_beer","size"),passed=("fresh_consistency_passed","sum"),
         median_gain=("target_improvement","median"))
     ref_counts["sources_denominator"]=11
-    ref_counts.to_csv(OUT/"report_tables/reference_counts.csv",index=False)
+    ref_counts.to_csv(OUT/"report_tables/reference_counts.csv",index=False, lineterminator="\n")
     plt.rcParams.update({"font.family":"DejaVu Sans","font.size":10,"axes.spines.top":False,"axes.spines.right":False,"svg.fonttype":"none"})
     fig,axes=plt.subplots(1,2,figsize=(12,5.4),gridspec_kw={"width_ratios":[1.1,1]})
     for row in comparison.itertuples():
@@ -173,15 +173,15 @@ def main():
         "全部目标仍为附件标准化尺度，未恢复原0–6分。",
         "诊断详见 `q3_beer81_audit.md`，预测方法见 `q3_stale_refined.md`，独立审查见 `q3_refinement_review.md`。",
         "","```bash",".venv/bin/python solution_a/run_q3_refined.py","```",""])
-    (SOLUTION/"docs/q3_refinement_results.md").write_text("\n".join(lines),encoding="utf-8")
+    (SOLUTION/"docs/q3_refinement_results.md").write_text("\n".join(lines),encoding="utf-8", newline="\n")
     summary={"selected_method":selected,"selected_pils_rmse":float(selected_row.pils_rmse),
         "tail_candidate_pils_rmse":float(tail.pils_rmse),"tail_candidate_eligible":bool(tail.eligible_for_one_se),
         "matched_old_pils_rmse":float(old.pils_rmse),"beer81_observed":audit["stale_observed"],"beer81_selected_prediction":selected81,
         "nested_rule_rmse":float(nested_values.loc["nested_stability_rule","rmse"]),
         "default_results":transfer["default_results"],"arm_defaults":transfer["arm_defaults"],
         "candidate_rows":len(comparison),"frontier_rows":len(frontier),"source_denominator":11,"figure_pairs":2}
-    (OUT/"report_summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    (OUT/"report_sources.json").write_text(json.dumps(SOURCES,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (OUT/"report_summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8", newline="\n")
+    (OUT/"report_sources.json").write_text(json.dumps(SOURCES,ensure_ascii=False,indent=2)+"\n",encoding="utf-8", newline="\n")
     print(json.dumps(summary,ensure_ascii=False,indent=2),flush=True)
 
 

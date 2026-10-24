@@ -67,6 +67,33 @@
   {
     "number": 4,
     "authors": [
+      "Stefan Hanke",
+      "V. Ditz",
+      "M. Herrmann",
+      "Werner Back",
+      "Thomas Becker",
+      "Martin Krottenthaler"
+    ],
+    "title": "Influence of Ethyl Acetate, Isoamyl Acetate and Linalool on off-flavour Perception in Beer",
+    "year": 2010,
+    "journal": "BrewingScience",
+    "volume": "63",
+    "issue": "7/8",
+    "pages": "94–99",
+    "doi": null,
+    "url": "https://brewingscience.de/index.php/brewingscience/article/view/456",
+    "verified_fulltext_url": "https://brewingscience.de/index.php/brewingscience/article/download/456/354",
+    "source_type": "primary_research",
+    "claims": [
+      "The paper describes cabbage-like DMS and buttery diacetyl and tests their perception in lager beer.",
+      "Ester and linalool additions changed DMS/diacetyl thresholds; effects depended on compound and concentration."
+    ],
+    "support_boundary": "该来源支持缺陷感知和基质交互；没有检验本题DMS感官Top-3的松油烯-4-醇、E-橙花叔醇等候选，不能据其认定相关候选可消除缺陷。DOI未在所核实出版者页面给出。",
+    "original_number": 6
+  },
+  {
+    "number": 5,
+    "authors": [
       "Magdalena Müller",
       "Martina Gastl",
       "Thomas Becker"
@@ -88,7 +115,7 @@
     "original_number": 7
   },
   {
-    "number": 5,
+    "number": 6,
     "authors": [
       "Kiyoshi Takoi",
       "Yutaka Itoga",
@@ -115,34 +142,87 @@
     "original_number": 5
   },
   {
-    "number": 6,
+    "number": 7,
     "authors": [
-      "Stefan Hanke",
-      "V. Ditz",
-      "M. Herrmann",
-      "Werner Back",
-      "Thomas Becker",
-      "Martin Krottenthaler"
+      "Yu Zhang",
+      "Sinuo Li",
+      "Qi Meng",
+      "Huanlu Song",
+      "Xiaojun Wang"
     ],
-    "title": "Influence of Ethyl Acetate, Isoamyl Acetate and Linalool on off-flavour Perception in Beer",
-    "year": 2010,
-    "journal": "BrewingScience",
-    "volume": "63",
-    "issue": "7/8",
-    "pages": "94–99",
-    "doi": null,
-    "url": "https://brewingscience.de/index.php/brewingscience/article/view/456",
-    "verified_fulltext_url": "https://brewingscience.de/index.php/brewingscience/article/download/456/354",
+    "title": "Characterization of Key Odor-Active Compounds in Draft Beers for the Chinese Market Using Molecular Sensory Science Approaches",
+    "year": 2024,
+    "journal": "Molecules",
+    "volume": "29",
+    "issue": "11",
+    "pages": "2537",
+    "doi": "10.3390/molecules29112537",
+    "url": "https://www.mdpi.com/1420-3049/29/11/2537",
+    "verified_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11173443/",
     "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Sections 2.3, 2.6, 2.7 and 3.8; Tables 1-2",
     "claims": [
-      "The paper describes cabbage-like DMS and buttery diacetyl and tests their perception in lager beer.",
-      "Ester and linalool additions changed DMS/diacetyl thresholds; effects depended on compound and concentration."
+      "Draft-beer GC-O/AEDA identified odor-active 1-hexanol; section 2.3 described a hawthorn note, not a banana-specific effect.",
+      "The sensory panel used acetaldehyde as a raw-green reference; this was a training reference rather than an acetaldehyde-to-malty dose-response experiment."
     ],
-    "support_boundary": "该来源支持缺陷感知和基质交互；没有检验本题DMS感官Top-3的松油烯-4-醇、E-橙花叔醇等候选，不能据其认定相关候选可消除缺陷。DOI未在所核实出版者页面给出。",
-    "original_number": 6
+    "support_boundary": "四款鲜啤及其重组研究仅补充气味背景；不支持把正己醇等同香蕉酯香，或把乙醛视为麦芽、焦糖味的直接来源。文中阈值不替换附件阈值。",
+    "original_number": 20
   },
   {
-    "number": 7,
+    "number": 8,
+    "authors": [
+      "Ann Van Holle",
+      "Anita Van Landschoot",
+      "Isabel Roldán-Ruiz",
+      "Dirk Naudts",
+      "Denis De Keukeleire"
+    ],
+    "title": "The brewing value of Amarillo hops (Humulus lupulus L.) grown in northwestern USA: A preliminary study of terroir significance",
+    "year": 2017,
+    "journal": "Journal of the Institute of Brewing",
+    "volume": "123",
+    "issue": "3",
+    "pages": "312–318",
+    "doi": "10.1002/jib.433",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.433",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Brewing trials; sensory analyses; discussion of hop-oil profiles in beer",
+    "claims": [
+      "Single-hop brewing trials compared Amarillo hops from Idaho and Washington using otherwise identical recipes.",
+      "Different citrus/floral profiles occurred with changes in limonene, linalool, methyl geranate and other compounds."
+    ],
+    "support_boundary": "提供啤酒中柑橘相关萜类的背景和混合物证据；多成分同时改变，不能分离柠檬烯的单独作用，更不能解释本题丁香味的正相关。",
+    "original_number": 23
+  },
+  {
+    "number": 9,
+    "authors": [
+      "Kiyoshi Takoi",
+      "Haruna Kumamaru",
+      "Atsushi Tanigawa"
+    ],
+    "title": "Study on Characteristic Aroma in Special Beers Brewed with Coriander (Coriandrum sativum L.) Seeds: Profiling of Flavor Compounds Derived from Coriander Seeds in Different Growing Areas",
+    "year": 2024,
+    "journal": "ACS Food Science & Technology",
+    "volume": "4",
+    "issue": "10",
+    "pages": "2439–2447",
+    "doi": "10.1021/acsfoodscitech.4c00579",
+    "url": "https://pubs.acs.org/doi/abs/10.1021/acsfoodscitech.4c00579",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Publisher abstract; article metadata",
+    "claims": [
+      "Camphor, carvone and (E)-anethole were detected in Bulgarian coriander seeds and the beers made with them.",
+      "In the tested beer matrix, these compounds enhanced flowery characteristics with excess linalool."
+    ],
+    "support_boundary": "本次核验出版者摘要；支持樟脑的原料来源与特定混合物花香协同，不证明樟脑单独产生橙味或丁香味。",
+    "original_number": 21
+  },
+  {
+    "number": 10,
     "authors": [
       "Sophie Noël",
       "Catherine Liégeois",
@@ -168,7 +248,31 @@
     "original_number": 8
   },
   {
-    "number": 8,
+    "number": 11,
+    "authors": [
+      "Heidi Hai-Ling Yang",
+      "Harry T. Lawless"
+    ],
+    "title": "Time–intensity characteristics of iron compounds",
+    "year": 2006,
+    "journal": "Food Quality and Preference",
+    "volume": "17",
+    "issue": "5",
+    "pages": "337–343",
+    "doi": "10.1016/j.foodqual.2005.04.002",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0950329305000522",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Publisher abstract, stimuli and results excerpts",
+    "claims": [
+      "Human time-intensity tests of ferrous sulfate, chloride and gluconate solutions found persistent metallic sensations.",
+      "Sensory profiles differed by the iron salt and over time."
+    ],
+    "support_boundary": "实验对象为较高浓度二价铁盐溶液，不是啤酒总铁；只列一般背景，不据此给本题总铁设金属味阈值，亦不支持总铁导致甜味。",
+    "original_number": 22
+  },
+  {
+    "number": 12,
     "authors": [
       "Han Liu",
       "John Lafferty",

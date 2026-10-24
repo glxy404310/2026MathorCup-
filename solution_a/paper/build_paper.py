@@ -1,4 +1,4 @@
-"""Assemble the editable thesis draft from verified section and result files."""
+"""Assemble the editable submission paper from verified section and result files."""
 from copy import deepcopy
 import hashlib
 import json
@@ -21,10 +21,13 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 REPO = ROOT.parent
 REFERENCE = next((REPO / "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题").glob("*论文模板.docx"))
-FINAL = HERE / "啤酒风味建模论文初稿.docx"
+FINAL = HERE / "啤酒风味建模提交稿.docx"
 (HERE/'qa').mkdir(parents=True,exist_ok=True)
-core = json.loads((HERE / "sections/core.json").read_text())
-figs = json.loads((HERE / "figure_manifest.json").read_text())["figures"]
+from submission_content import add_submission_appendices
+from supplement_sections import add_main_sections
+
+core = json.loads((HERE / "sections/core.json").read_text(encoding="utf-8"))
+figs = json.loads((HERE / "figure_manifest.json").read_text(encoding="utf-8"))["figures"]
 FIGURES = {Path(x["relativepath"]).stem: x for x in figs}
 
 
@@ -41,8 +44,9 @@ def table(caption, headers, rows, widths=None, compact=False):
             "rows": rows, "widths": widths, "compact": compact}
 
 
-q1, q2, q3 = [json.loads((HERE / f"sections/q{i}.json").read_text())["blocks"] for i in [1, 2, 3]]
-q1 = q1 + [{"type": "figure", "key": "figure2_q1"}]
+q1, q2, q3 = [json.loads((HERE / f"sections/q{i}.json").read_text(encoding="utf-8"))["blocks"] for i in [1, 2, 3]]
+q1, q2, q3 = add_main_sections(q1, q2, q3, ROOT)
+q1.insert(next(i for i, b in enumerate(q1) if b.get("text", "").startswith("5.6 ")), {"type": "figure", "key": "figure2_q1"})
 # Place figures close to the results they support.
 q2.insert(next(i for i, b in enumerate(q2) if b.get("text", "").startswith("6.3 ")), {"type": "figure", "key": "figure3_q2"})
 q3.insert(next(i for i, b in enumerate(q3) if b.get("text", "").startswith("7.5 ")), {"type": "figure", "key": "figure4_generation"})
@@ -50,7 +54,7 @@ q3.insert(next(i for i, b in enumerate(q3) if b.get("text", "").startswith("7.5 
 q3.insert(next(i for i, b in enumerate(q3) if b.get("text", "").startswith("7.10 ")), {"type": "figure", "key": "figure6_transfer"})
 blocks = deepcopy(core["opening"] + q1 + q2 + q3 + core["ending"])
 
-refs = json.loads((HERE / "chemical_references.json").read_text())["references"]
+refs = json.loads((HERE / "chemical_references.json").read_text(encoding="utf-8"))["references"]
 refs.extend([
     {"number": 2, "authors": ["Pierre Geurts", "Damien Ernst", "Louis Wehenkel"],
      "title": "Extremely randomized trees", "journal": "Machine Learning", "year": 2006,
@@ -88,12 +92,12 @@ def remap(value):
 blocks = remap(blocks)
 reference_lookup = {r["number"]: r for r in refs}
 references = [dict(reference_lookup[old], original_number=old, number=mapping[old]) for old in order]
-(HERE / "references.json").write_text(json.dumps(references, ensure_ascii=False, indent=2)+"\n")
-chemical_meta=remap(json.loads((HERE/"chemical_references.json").read_text()))
+(HERE / "references.json").write_text(json.dumps(references, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+chemical_meta=remap(json.loads((HERE/"chemical_references.json").read_text(encoding="utf-8")))
 for ref in chemical_meta['references']:
     ref['original_number']=ref['number']
     ref['number']=mapping[ref['number']]
-(HERE/'chemical_references_final.json').write_text(json.dumps(chemical_meta,ensure_ascii=False,indent=2)+"\n")
+(HERE/'chemical_references_final.json').write_text(json.dumps(chemical_meta,ensure_ascii=False,indent=2)+"\n", encoding="utf-8")
 
 def format_reference(r):
     authors = ", ".join(r["authors"][:3]) + (", et al." if len(r["authors"])>3 else ".")
@@ -102,7 +106,7 @@ def format_reference(r):
     link = f"DOI: {r['doi']}." if r.get("doi") else f"{r['url']}，访问日期2026-10-23。"
     return f"[{r['number']}] {authors} {r['title']}[J]. {source} {link}"
 
-blocks += [heading("使用声明"), paragraph((ROOT / "docs/use_statement.md").read_text().strip().splitlines()[-1]), heading("参考文献")]
+blocks += [heading("使用声明"), paragraph((ROOT / "docs/use_statement.md").read_text(encoding="utf-8").strip().splitlines()[-1]), heading("参考文献")]
 blocks += [{"type": "reference", "text": format_reference(r)} for r in references]
 appendix_start = len(blocks)
 blocks += [heading("附录A 感官字段及逐维精度"), paragraph("表A-1列出第一问ExtraTrees的全部45维折外误差。A_前缀表示香气，F_前缀为相应风味；其余字段按附件字典保留。所有值均为附件标准化尺度，完整250×45折外预测随电子附录保存。")]
@@ -111,7 +115,7 @@ metrics = metrics.loc[metrics.model.eq("extra_trees")]
 blocks.append(table("表A-1 全部感官维度的五折折外指标", ["目标字段", "MAE", "RMSE", "R²", "Spearman"],
                     [[r.target, f"{r.mae:.4f}", f"{r.rmse:.4f}", f"{r.macro_r2:.4f}", f"{r.spearman:.4f}"] for r in metrics.itertuples()],
                     [6.0, 2.5, 2.5, 2.5, 2.5], True))
-blocks += [heading("附录B 完整Top 3候选"), paragraph("表B-1沿用绝对Spearman相关排名，不按文献证据后验改选。每项依次给出附件字段名、带符号相关ρ与Bootstrap入选频率π。化学名称、来源、单位、阈值及逐行证据等级见电子附录chemical_evidence_final.csv；135个位置涉及60种不同化合物。")]
+blocks += [heading("附录B 完整Top 3候选"), paragraph("表B-1沿用绝对Spearman相关排名，不按文献证据后验改选。每项依次给出附件字段名、带符号相关ρ与Bootstrap入选频率π。化学名称、来源、单位、阈值及逐行证据等级见表B-2及电子附件chemical_evidence_final.csv；135个位置涉及60种不同化合物。")]
 top = pd.read_csv(ROOT / "outputs/q2/top3_compounds.csv")
 rows = []
 for target in metrics.target:
@@ -124,27 +128,14 @@ for col in [c for c in evidence.columns if "ref" in c]:
     evidence[col] = evidence[col].map(lambda x: remap(x) if isinstance(x, str) else x)
 for col in evidence.columns:
     evidence[col]=evidence[col].map(lambda x: x.replace('chemical_references.json','chemical_references_final.json') if isinstance(x,str) else x)
-evidence.to_csv(HERE / "chemical_evidence_final.csv", index=False, encoding="utf-8-sig")
+evidence.to_csv(HERE / "chemical_evidence_final.csv", index=False, encoding="utf-8-sig", lineterminator="\n")
 blocks += [heading("附录C 逐源迁移检查"), paragraph("表C-1采用固定树、中央6004池、retain80、余量优先口径。两个Q95为预留当前模型及新种子旧协议模型的配对预测差分位数；任一大于零均记为失败。改善率已包含所有选中谱，不删除失败的beer 96。完整72点策略网格及十情景化学检查随电子附录保存。")]
 transfer = pd.read_csv(ROOT / "outputs/q3_refined/transfer/transfer_summary.csv")
 selected = transfer.loc[transfer.arm.eq("fixed") & transfer.pool.eq("contracted_6004") & transfer.bound.eq("retain80") & transfer.ranking.eq("margin")]
 blocks.append(table("表C-1 全部11款源的余量优先迁移检查", ["beer", "距离改善", "保留锚幅度", "当前Q95", "旧协议Q95", "审计结果"],
                     [[str(r.source_beer), f"{r.target_improvement:.2%}", f"{r.retained_anchor_gain:.2%}", f"{r.new_audit_q95:+.5f}", f"{r.old_fresh_audit_q95:+.5f}", "通过" if r.fresh_consistency_passed else "未通过"] for r in selected.itertuples()],
                     [1.3, 2.5, 3.2, 3.0, 3.0, 2.5], True))
-blocks += [heading("附录D 软件环境与电子附录"),
-           paragraph("计算环境为Python 3.13，主要依赖numpy、pandas、scipy、scikit-learn、matplotlib和openpyxl，精确版本见solution_a/requirements-lock.txt。随机种子、模型参数及结果来源保存于各实验摘要。电子附录包含全部实际使用的源程序、依赖文件及关键计算结果，表D-1路径均相对于电子附录根目录；原始赛题附件另行保留。模型可由程序重建，不依赖将训练内拟合值当作测试证据。"),
-           paragraph("从仓库根目录执行：python -m venv .venv；安装solution_a/requirements-lock.txt后，运行python solution_a/run_all.py。完整重建会顺序运行各阶段并建立冻结记录；已有历史结果时按程序校验并重跑当前阶段。已冻结历史不应单独覆盖重写，重建宜在新目录执行。"),
-           table("表D-1 源程序与结果索引", ["内容", "电子附录位置"], [
-               ["审计、预测及网络", "solution_a/src/01_audit.py；02_q1_baseline.py；02b_q1_robust.py；03_q2_network.py"],
-               ["生成、感官代理及历轮比较", "solution_a/src/06_q3_sensory.py至20_q3_transfer_consensus.py及其公共模块"],
-               ["最新诊断、迁移及核验", "solution_a/src/21_q3_beer81_audit.py至25_q3_refined_verify.py及其公共模块"],
-               ["统一复现与依赖", "solution_a/run_all.py及run_q3*.py；requirements-lock.txt"],
-               ["正文图表与文献依据", "solution_a/paper/make_figures.py；figure_manifest.json；references.json；chemical_evidence_final.csv"],
-               ["45维精度及预测", "paper_results/q1/与q1_robust/"],
-               ["完整候选及关联稳定性", "paper_results/q2/"],
-               ["生成谱、画像与质量指标", "paper_results/q3_optimized/"],
-               ["逐源、逐策略与阈值检查", "paper_results/q3_refined/"],
-           ], [5.0, 11.0], True)]
+blocks = add_submission_appendices(blocks, ROOT, HERE, mapping)
 
 # Save a structured editable source with every table included.
 manuscript = dict(title=core["title"], abstract=core["abstract"], keywords=core["keywords"], blocks=blocks)
@@ -154,7 +145,7 @@ manuscript = dict(title=core["title"], abstract=core["abstract"], keywords=core[
 with ZipFile(REFERENCE) as z:
     inventory = {name: hashlib.sha256(z.read(name)).hexdigest() for name in z.namelist() if not name.endswith("/")}
 template_sha = hashlib.sha256(REFERENCE.read_bytes()).hexdigest()
-(HERE / "qa/template_inventory.json").write_text(json.dumps(inventory, indent=2)+"\n")
+(HERE / "qa/template_inventory.json").write_text(json.dumps(inventory, indent=2)+"\n", encoding="utf-8")
 (HERE / "qa/artifact.md").write_text(f"""# Paper template execution contract
 Reference: {REFERENCE}\nSHA-256: {template_sha}\nReference render: qa/template/page-1.png through page-3.png.
 The retained source has three portrait A4 sections, 2.00025 cm top/bottom and 2.50119 cm side margins, footer distance 1.74978 cm.
@@ -162,8 +153,8 @@ Source roles: centered 14 pt title and contents heading; 12 pt abstract/body; Ch
 Editable: main body placeholder paragraphs and identity table; section header/footer text; styles used for manuscript headings and tables; document properties; settings; image relationships. Replace all placeholder content, retain the three-section abstract/contents/body system, and restart body page numbers at one.
 Preserve-only: font table, theme and customXml parts; inventory in template_inventory.json. The original template is never changed.
 Source template is sparse and has no completed mathematical/table/figure content. Added components use 12 pt body with 1.25 line spacing, 14/12 pt headings, 9.5/10 pt tables, native OMML equations and 300 dpi figures. Table cells wrap and repeat headers. No fixed row heights.
-The identity placeholders and source page decorations are removed to satisfy anonymous paper and no-header rules. Chinese font is resolved explicitly to Songti SC because the initial runtime render had missing CJK glyphs; qa/fonts.conf resolves the installed serif font for QA without changing system configuration. The source document grid is disabled for content paragraphs because its interaction with the CJK font doubled line spacing; the specified 1.25 body spacing is used instead, with unchanged page geometry.
-Title/abstract occupy section one, static linked contents section two, body and appendices section three. Contents page caches are computed from the rendered draft and PAGEREF fields are marked for Word refresh. No headless save is used to update fields.
+The identity placeholders and source page decorations are removed to satisfy anonymous paper and no-header rules. Chinese font uses the installed Windows SimSun/SimHei and equations use Cambria Math. The source document grid is disabled for content paragraphs because its interaction with the CJK font doubled line spacing; the specified 1.25 body spacing is used instead, with unchanged page geometry.
+Title/abstract occupy section one, static linked contents section two, body and appendices section three. Contents page caches are computed from the rendered draft and PAGEREF fields are marked for Word refresh. Word-compatible COM updates the displayed fields during PDF export without saving over the constructed DOCX.
 Slots: source body paragraphs 3/4/5/22 are title/abstract/keywords; 23–35 are contents placeholders and break; 36 onward is body. These slots may expand. All source placeholder and table text is intentionally removed.
 Fidelity gates: template hash, A4 geometry, three sections, anonymous headers/footers, no placeholders, intact preserve-only parts, every final page visually checked, formulas and references reconciled.
 """, encoding="utf-8")
@@ -177,7 +168,7 @@ body = doc._element.body
 for element in list(body): body.remove(element)
 body.append(sections[-1])
 
-def style(name, size, bold=False, family="Songti SC"):
+def style(name, size, bold=False, family="SimSun"):
     if name not in doc.styles:
         doc.styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
     s = doc.styles[name]
@@ -204,7 +195,7 @@ normal.paragraph_format.first_line_indent = Pt(24)
 normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 style("Title", 14, True).paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 for level, size in [(1, 14), (2, 12), (3, 12)]:
-    s=style(f"Heading {level}", size, True, "Heiti SC")
+    s=style(f"Heading {level}", size, True, "SimHei")
     s.paragraph_format.first_line_indent = Pt(0)
     s.paragraph_format.space_before = Pt(12 if level==1 else 7)
     s.paragraph_format.space_after = Pt(6)
@@ -257,7 +248,7 @@ for i,b in enumerate(blocks):
         if b["level"]==1 or (b["level"]==2 and re.match(r"[567]\.\d+ ",text)):
             headings.append((i,b,f"sec_{i}"))
 page_map_path=HERE/"qa/page_map.json"
-page_map=json.loads(page_map_path.read_text()) if page_map_path.exists() else {}
+page_map=json.loads(page_map_path.read_text(encoding="utf-8")) if page_map_path.exists() else {}
 for i,b,name in headings:
     x=add_text("", "ContentsText")
     x.paragraph_format.line_spacing=Pt(13)
@@ -303,7 +294,7 @@ def add_table(b):
             pr.append(margins)
             x=cell.paragraphs[0];x.style=doc.styles["TableText"]
             x.paragraph_format.line_spacing=1.12;x.paragraph_format.space_after=Pt(0)
-            x.paragraph_format.keep_with_next=(n<len(allrows)-1) if len(b['rows'])<=12 else n==0
+            x.paragraph_format.keep_with_next=n==0 or (len(b["rows"])<=4 and n<len(b["rows"]))
             val=str(value)
             x.alignment=WD_ALIGN_PARAGRAPH.CENTER if (j>0 and len(val)<20) or n==0 else WD_ALIGN_PARAGRAPH.LEFT
             r=x.add_run(val);r.font.size=Pt(9.5 if b.get("compact") else 10)
@@ -331,6 +322,13 @@ for index,b in enumerate(blocks):
         x.paragraph_format.tab_stops.add_tab_stop(Cm(7.8),WD_TAB_ALIGNMENT.CENTER)
         x.paragraph_format.tab_stops.add_tab_stop(Cm(15.8),WD_TAB_ALIGNMENT.RIGHT)
         x.add_run("\t");x._p.append(to_omml(b["latex"]));x.add_run("\t（"+b["label"]+"）")
+    elif kind=="code":
+        x=doc.add_paragraph()
+        x.paragraph_format.first_line_indent=Pt(0)
+        x.paragraph_format.line_spacing=Pt(12)
+        x.paragraph_format.keep_together=True
+        r=x.add_run(b["text"])
+        r.font.name="Consolas";r.font.size=Pt(9)
     elif kind=="table": add_table(b)
     elif kind=="figure":
         fig=FIGURES[b["key"]]
@@ -373,7 +371,7 @@ mathpr=settings.find(qn("m:mathPr"))
 if mathpr is None: mathpr=OxmlElement("m:mathPr");settings.append(mathpr)
 font=mathpr.find(qn("m:mathFont"))
 if font is None: font=OxmlElement("m:mathFont");mathpr.append(font)
-font.set(qn("m:val"),"STIX Two Math")
+font.set(qn("m:val"),"Cambria Math")
 doc.core_properties.title=core["title"]
 doc.core_properties.author=""
 doc.core_properties.last_modified_by=""
@@ -398,9 +396,9 @@ with ZipFile(FINAL) as z:
         assert hashlib.sha256(z.read(name)).hexdigest()==inventory[name],name
     xml=z.read('word/document.xml').decode()
     assert len(re.findall(r'<w:sectPr(?:\s|>)',xml))==3
-    assert xml.count('<m:oMath>')==30
+    assert xml.count('<m:oMath>')==sum(b['type']=='equation' for b in blocks)
     for old in ['论文题目','摘要正文','这里开始论文正文','MCB260XXXX','键入章级']:
         assert old not in xml,old
-(HERE/"qa/bookmarks.json").write_text(json.dumps(bookmark_records,ensure_ascii=False,indent=2)+"\n")
-print(f"Created {FINAL.name}: {len(blocks)} blocks, 30 native equations, {len(references)} references.")
+(HERE/"qa/bookmarks.json").write_text(json.dumps(bookmark_records,ensure_ascii=False,indent=2)+"\n", encoding="utf-8")
+print(f"Created {FINAL.name}: {len(blocks)} blocks, {sum(b['type']=='equation' for b in blocks)} native equations, {len(references)} references.")
 

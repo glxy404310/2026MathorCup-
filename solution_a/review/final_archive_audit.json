@@ -1,0 +1,121 @@
+{
+  "status": "ARCHIVE_PASS_WITH_NUMERICAL_REPRODUCTION_LIMITATION",
+  "reviewed_at_utc": "2026-10-24T02:43:41.456650+00:00",
+  "scope": "Final refreshed archive structure, byte integrity, packaged source SHA-256 and embedded verification evidence. Packaging and saved-output checks pass; the principal transfer comparisons reproduce. Exact reproduction of the full exploration grid failed and is explicitly not claimed. No program file, ZIP, PDF or frozen experiment result was modified by this audit.",
+  "archive": {
+    "status": "PASS",
+    "path": "solution_a/submission/A2600730附件.zip",
+    "bytes": 31187488,
+    "sha256": "ce0c74ed0a9361d25185dce972a1a5416f15881cc2b587782d003a81ccc1600a",
+    "entries": 383,
+    "payload_manifest_entries": 381,
+    "zip_crc_failure": null,
+    "duplicate_names": [],
+    "invalid_entry_paths": [],
+    "manifest_missing_payloads": [],
+    "unmanifested_payloads": [],
+    "manifest_sha256_failures": [],
+    "manifest_size_failures": [],
+    "printed_source_sha256_failures": [],
+    "working_source_sha256_failures": [],
+    "packaged_inventory_matches_current_printed_inventory": true,
+    "printed_source_files": 49,
+    "printed_source_lines": 11984,
+    "python_syntax_failures": [],
+    "missing_import_source_or_requirements": [],
+    "suspicious_secret_or_temp_filenames": [],
+    "common_secret_pattern_hits": []
+  },
+  "extracted_runner_checks": {
+    "fresh_default": {
+      "exit_code": 2,
+      "documented_incomplete_error": true,
+      "created_outputs": false
+    },
+    "fresh_rebuild": {
+      "dispatch_only": true,
+      "stages": [
+        "01_audit.py",
+        "02_q1_baseline.py",
+        "02b_q1_robust.py",
+        "03_q2_network.py",
+        "04_stage_summary.py",
+        "05_verify_outputs.py --output outputs/verification.json",
+        "run_q3.py",
+        "run_q3_optimized.py",
+        "run_q3_domain.py",
+        "run_q3_refined.py"
+      ],
+      "all_dispatch_source_files_packaged": true
+    },
+    "nonempty_outputs_rebuild": {
+      "exit_code": 2,
+      "refused": true,
+      "sentinel_unchanged": true
+    },
+    "official_raw_directory_resolved": true,
+    "legacy_source_provenance_relocated": true
+  },
+  "official_rule_basis": {
+    "file": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup数学应用挑战赛—大数据挑战赛论文格式及提交规范.pdf",
+    "paper_section_6": "The appendix must contain software names, commands and all actually written computer source programs. All source files must be retained until the final award list.",
+    "submission_section_4": "The general submission rule makes supporting ZIP/RAR optional only when the selected task has no explicit requirement; it also excludes original contest raw data from supporting material. This general optionality does not apply to track A.",
+    "filename": "A2600730.pdf and A2600730附件.zip match the A + seven-digit numeric team identifier convention shown in the official examples. The user supplied MCB2600730.",
+    "body_rule": "Chinese; title/abstract/keywords first, contents second, body page numbering starts at 1; body within 30 pages and appendix unlimited.",
+    "a_task_file": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/2026年MathorCup大数据挑战赛-赛道A初赛.pdf",
+    "a_task_page_3_requirement_2": "支撑材料中提交完整、可复现的源代码。",
+    "attachment_requirement": "REQUIRED for track A: submit the complete reproducible source in supporting material. The team deliverables therefore include both A2600730.pdf and A2600730附件.zip.",
+    "required_team_deliverables": [
+      "solution_a/submission/A2600730.pdf",
+      "solution_a/submission/A2600730附件.zip"
+    ]
+  },
+  "notes": [
+    {
+      "priority": "P3 optional documentation",
+      "path": "solution_a/README.md",
+      "finding": "Repository README links to PDF, attachment ZIP, editable DOCX and outputs/q2/README.md which are intentionally absent from the lean archive; the top-level README.txt gives correct archive-specific instructions.",
+      "minimal_fix": "Optionally add an archive note to solution_a/README.md directing readers to ../README.txt and explain excluded files; no source-program change is needed."
+    },
+    {
+      "priority": "informational",
+      "path": "paper_results/q3_refined/beer81/source_manifest.json and source/report text",
+      "finding": "Some contents retain absolute historical /Users/Admin1 provenance; src/01_audit.py also prints an old runtime command; paper rendering intentionally uses Windows font paths. No absolute ZIP entry exists. Relocation of recorded data/source paths passed.",
+      "minimal_fix": "Preserve frozen provenance and source bytes. Treat these strings as historical records or declared Windows paper-render prerequisites, not portable executable instructions."
+    }
+  ],
+  "package_guide_assessment": "The archive provides a fresh-copy --rebuild route after the complete original official contest folder is placed beside solution_a and Python 3.13 dependencies are installed. Required runner sources and requirements are packaged. Earlier extracted-runner control-flow checks remain valid; numerical completion and its limits are recorded in the packaged fresh_final, platform and rebuilt_numeric_comparison reports. Paper rendering requires the documented Windows fonts, Word-compatible COM and Poppler prerequisites.",
+  "rule_correction_at_utc": "2026-10-24T02:39:05.371111+00:00",
+  "snapshot_scope": "This report applies to the final ZIP and PDF SHA-256 values recorded above. All 381 manifested payloads and all 49 printed source-file hashes were rechecked after the final archive refresh.",
+  "pdf": {
+    "path": "solution_a/submission/A2600730.pdf",
+    "bytes": 3651709,
+    "sha256": "a30c2f88bed225ffc416e1b35fee480d08be839c9c6ad4d5ac02c93114499c57",
+    "pages": 324,
+    "source_pages": 277
+  },
+  "embedded_verification": {
+    "fresh_final/q1_q2.json": "passed",
+    "fresh_final/q3_refined.json": "PASS",
+    "platform_selfchecks": "PASS",
+    "fresh_rebuild": "PASS",
+    "default_run_exit_code": 0,
+    "raw_hash_status": "PASS",
+    "original_outputs_unchanged": true,
+    "principal_transfer_headline_reproduction": "PASS",
+    "exact_full_grid_reproduction": "FAIL",
+    "comparison_report_packaged": "verification/rebuilt_numeric_comparison.json"
+  },
+  "numerical_reproduction_limitation": {
+    "status": "FAIL for exact full exploration-grid reproduction",
+    "scope": "The saved outputs pass integrity checks, and the three principal contracted_6004/retain80 comparisons reproduce. Do not state that every candidate selection, exploratory policy or result was reproduced exactly.",
+    "details": "Full exploration grid differs in 16/792 selected candidate indices, 7 statuses and 4 fresh-consistency flags; 9/72 frontier rows differ in at least one count. All three principal contracted_6004/retain80 comparisons reproduce."
+  },
+  "resolved_notes": [
+    {
+      "previous_priority": "P2 before final refresh",
+      "path": "verification/platform_reproducibility.json",
+      "resolution": "Refreshed final ZIP includes fresh_final reports with passed/PASS, platform selfchecks PASS, fresh_rebuild PASS, principal comparison PASS and explicit full-grid exact reproduction FAIL."
+    }
+  ]
+}

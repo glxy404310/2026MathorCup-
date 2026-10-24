@@ -129,11 +129,11 @@ def main():
                                 "spearman": float(spearmanr(truth[:, j], pred[:, j]).statistic)})
         table = pd.concat([meta, pd.DataFrame({"fold": fold_ids}),
                            pd.DataFrame(pred, columns=targets)], axis=1)
-        table.to_csv(OUT / f"oof_{name}.csv", index=False)
-    pd.DataFrame(metric_rows).to_csv(OUT / "metrics_overall.csv", index=False)
-    pd.DataFrame(target_rows).to_csv(OUT / "metrics_by_target.csv", index=False)
-    pd.DataFrame(folds).to_csv(OUT / "metrics_by_fold.csv", index=False)
-    pd.DataFrame(stress_counts).to_csv(OUT / "missingness_stress.csv", index=False)
+        table.to_csv(OUT / f"oof_{name}.csv", index=False, lineterminator="\n")
+    pd.DataFrame(metric_rows).to_csv(OUT / "metrics_overall.csv", index=False, lineterminator="\n")
+    pd.DataFrame(target_rows).to_csv(OUT / "metrics_by_target.csv", index=False, lineterminator="\n")
+    pd.DataFrame(folds).to_csv(OUT / "metrics_by_fold.csv", index=False, lineterminator="\n")
+    pd.DataFrame(stress_counts).to_csv(OUT / "missingness_stress.csv", index=False, lineterminator="\n")
 
     # Full-data model is for later synthesis/inference; fitted values are not a test.
     final = make_search(SEED + 99)
@@ -143,8 +143,8 @@ def main():
                 OUT / "ridge_model.joblib")
     fitted = final.predict(x)
     pd.concat([meta, pd.DataFrame(fitted, columns=targets)], axis=1).to_csv(
-        OUT / "fitted_standardized_NOT_validation.csv", index=False)
-    pd.concat([meta, y], axis=1).to_csv(OUT / "observed_standardized.csv", index=False)
+        OUT / "fitted_standardized_NOT_validation.csv", index=False, lineterminator="\n")
+    pd.concat([meta, y], axis=1).to_csv(OUT / "observed_standardized.csv", index=False, lineterminator="\n")
     tree = tree_pipeline(SEED + 99).fit(x, y)
     joblib.dump({"pipeline": tree, "features": x.columns.tolist(), "targets": targets,
                  "target_scale": "attachment_4_standardized"}, OUT / "extra_trees_model.joblib")
@@ -164,7 +164,7 @@ def main():
         "versions": {"python": platform.python_version(), "numpy": np.__version__,
                      "pandas": pd.__version__, "sklearn": sklearn.__version__},
     }
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(pd.DataFrame(metric_rows).to_string(index=False), flush=True)
 
 

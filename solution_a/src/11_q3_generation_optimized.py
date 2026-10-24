@@ -199,7 +199,7 @@ def build_report(summary, selections, full_model, full_diag, elapsed):
         "相关与零频率估计不稳定。生成谱是化学目标组合，仍需酿造可行性、理化检测和感官实测验证。", "",
         "```bash", ".venv/bin/python solution_a/src/11_q3_generation_optimized.py", "```", "",
         f"运行耗时约 {elapsed:.1f} 秒，线性代数线程固定为 1。", ""])
-    (SOLUTION / 'docs' / 'q3_generation_optimized.md').write_text('\n'.join(lines), encoding='utf-8')
+    (SOLUTION / 'docs' / 'q3_generation_optimized.md').write_text('\n'.join(lines), encoding='utf-8', newline="\n")
 
 
 def main():
@@ -209,30 +209,30 @@ def main():
     styles = meta.tasting_category_fine
     calibrated = manifest.loc[manifest.representation == 'calibrated', 'feature'].tolist()
     records, assignments, selections, inner_details, margins = nested_validation(meta, x, styles, calibrated)
-    records.to_csv(OUT / 'cv_metrics.csv', index=False)
-    assignments.to_csv(OUT / 'cv_assignments.csv', index=False)
-    selections.to_csv(OUT / 'inner_selection_outer.csv', index=False)
-    inner_details.to_csv(OUT / 'inner_scores_outer.csv', index=False)
-    margins.to_csv(OUT / 'cv_marginal_w1_by_feature.csv', index=False)
+    records.to_csv(OUT / 'cv_metrics.csv', index=False, lineterminator="\n")
+    assignments.to_csv(OUT / 'cv_assignments.csv', index=False, lineterminator="\n")
+    selections.to_csv(OUT / 'inner_selection_outer.csv', index=False, lineterminator="\n")
+    inner_details.to_csv(OUT / 'inner_scores_outer.csv', index=False, lineterminator="\n")
+    margins.to_csv(OUT / 'cv_marginal_w1_by_feature.csv', index=False, lineterminator="\n")
     folds, summary = fold_summary(records)
-    folds.to_csv(OUT / 'cv_fold_means.csv', index=False)
-    summary.to_csv(OUT / 'cv_summary.csv', index=False)
+    folds.to_csv(OUT / 'cv_fold_means.csv', index=False, lineterminator="\n")
+    summary.to_csv(OUT / 'cv_summary.csv', index=False, lineterminator="\n")
     mc = records.groupby(['repeat', 'fold', 'style', 'method'])[METRICS].std().reset_index()
-    mc.to_csv(OUT / 'cv_monte_carlo_std.csv', index=False)
+    mc.to_csv(OUT / 'cv_monte_carlo_std.csv', index=False, lineterminator="\n")
     print('Fitting final optimized generator on all 250 rows', flush=True)
     full_model = OptimizedStyleGenerator(selection_seed=OUTER_SEEDS[0]).fit(x, styles)
     joblib.dump(full_model, OUT / 'fullmodel.joblib', compress=3)
-    full_model.inner_scores_.to_csv(OUT / 'inner_scores_full.csv', index=False)
-    pd.DataFrame(full_model.selection_table_).to_csv(OUT / 'inner_selection_full.csv', index=False)
+    full_model.inner_scores_.to_csv(OUT / 'inner_scores_full.csv', index=False, lineterminator="\n")
+    pd.DataFrame(full_model.selection_table_).to_csv(OUT / 'inner_selection_full.csv', index=False, lineterminator="\n")
     pd.DataFrame([{'style': style, 'method': method} for style, method in full_model.selected_methods_.items()]).to_csv(
-        OUT / 'full_selected_methods.csv', index=False)
+        OUT / 'full_selected_methods.csv', index=False, lineterminator="\n")
     reference = full_model.fitted_candidates_['legacy_copula']
     full_diags, zero_rows = [], []
     for i, style in enumerate(EVALUATION_STYLES):
         generated = full_model.sample(style, N_GENERATED, OUTER_SEEDS[0] + 900000 + i)
         generated.insert(0, 'sample_id', [f"optimized_{REFERENCE.safe_style(style)}_{j:03d}" for j in range(1, N_GENERATED+1)])
         generated.insert(1, 'target_style', style)
-        generated.to_csv(OUT / f'generated_{REFERENCE.safe_style(style)}.csv', index=False)
+        generated.to_csv(OUT / f'generated_{REFERENCE.safe_style(style)}.csv', index=False, lineterminator="\n")
         style_x = x.loc[styles == style]
         generated_x = generated[x.columns]
         fake_z, style_z = reference.transform(generated_x), reference.transform(style_x)
@@ -257,8 +257,8 @@ def main():
                 'style_observed_zero_fraction': float(style_x[feature].eq(0).sum() / style_x[feature].notna().sum()),
                 'generated_zero_fraction': float(generated[feature].eq(0).mean())})
     full_diag = pd.concat(full_diags, ignore_index=True)
-    full_diag.to_csv(OUT / 'generated_diagnostics.csv', index=False)
-    pd.DataFrame(zero_rows).to_csv(OUT / 'generated_zero_diagnostics.csv', index=False)
+    full_diag.to_csv(OUT / 'generated_diagnostics.csv', index=False, lineterminator="\n")
+    pd.DataFrame(zero_rows).to_csv(OUT / 'generated_zero_diagnostics.csv', index=False, lineterminator="\n")
     elapsed = time.perf_counter() - started
     result = {'date': '2026-10-23', 'n_real': len(x), 'n_features': x.shape[1],
         'outer_seeds': OUTER_SEEDS, 'outer_folds': 3, 'inner_folds': 2,
@@ -278,7 +278,7 @@ def main():
                    'Small style samples and unstable inner selection',
                    'Local-margin methods use style-imputed support; legacy uses global training support',
                    'Chemical spectra are not validated brewing recipes']}
-    (OUT / 'summary.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
+    (OUT / 'summary.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8', newline="\n")
     build_report(summary, selections, full_model, full_diag, elapsed)
     print(json.dumps(result, ensure_ascii=False, indent=2), flush=True)
 

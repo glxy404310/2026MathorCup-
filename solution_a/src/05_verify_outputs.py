@@ -4,6 +4,7 @@ These checks assess numerical consistency and saved-output integrity.
 """
 import hashlib
 import json
+from pathlib import Path
 
 import joblib
 import numpy as np
@@ -13,7 +14,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from common import SOLUTION, data_dir, load_xy
 
 
-def main():
+def main(output_path=None):
     checks = []
     meta, x, y = load_xy()
     sources = pd.read_csv(SOLUTION / "outputs/audit/source_files.csv")
@@ -74,7 +75,7 @@ def main():
     all_scores = pd.read_csv(q2 / "all_candidate_stability.csv")
     top = pd.read_csv(q2 / "top3_compounds.csv")
     nodes = pd.read_csv(q2 / "network_nodes.csv")
-    summary = json.loads((q2 / "summary.json").read_text())
+    summary = json.loads((q2 / "summary.json").read_text(encoding="utf-8"))
     assert len(all_scores) == 218 * 45 and len(top) == 3 * 45 and len(nodes) == 231
     assert not all_scores.duplicated(["sensory_target", "compound"]).any()
     assert (top.groupby("sensory_target").size() == 3).all()
@@ -96,10 +97,15 @@ def main():
     checks.append("Stage notes, independent review and chart files exist")
     result = {"status": "passed", "checks": checks,
               "scope": "Saved-output integrity and numerical consistency; not proof of model adequacy"}
-    (SOLUTION / "outputs/verification.json").write_text(
-        json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if output_path is not None:
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="Optional report path; existing results are read-only by default.")
+    main(parser.parse_args().output)
