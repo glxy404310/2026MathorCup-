@@ -1,0 +1,4 @@
+scenario,frozen_rmse,refit_rmse,max_abs_prediction_difference,mean_abs_prediction_difference,same_predictions_at_1e_10
+original,0.4862203536077027,0.4862203536077027,0.0,0.0,True
+mask10,0.4909873273318906,0.49098732733189066,0.0,0.0,True
+mask20,0.4992184152258415,0.4992184152258415,0.0,0.0,True

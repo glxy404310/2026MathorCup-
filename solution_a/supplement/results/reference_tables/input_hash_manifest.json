@@ -1,0 +1,127 @@
+{
+  "script": {
+    "path": "supplement/reference_tables.py",
+    "sha256": "a0191d5003e8d8ba7ea448132b51bd9154b7b6b3e5181d35612f23c02240f5a8"
+  },
+  "inputs": [
+    {
+      "path": "outputs/q3_refined/transfer/transfer_summary.csv",
+      "bytes": 318028,
+      "sha256": "e69a04695ca20c11fb3d071b5d949b72f0e12fe2cf6a0a5114553e7877809e69",
+      "newline_normalized_sha256": "e69a04695ca20c11fb3d071b5d949b72f0e12fe2cf6a0a5114553e7877809e69"
+    },
+    {
+      "path": "outputs/q3_optimized/transfer/threshold_scenarios.json",
+      "bytes": 2292,
+      "sha256": "5c16254ecabfc79c469fbf6de971a67409e7971f94888b84bd79dcaba1c739f7",
+      "newline_normalized_sha256": "5c16254ecabfc79c469fbf6de971a67409e7971f94888b84bd79dcaba1c739f7"
+    },
+    {
+      "path": "outputs/q3/sensory/defect_thresholds.json",
+      "bytes": 968,
+      "sha256": "c92248a6b38c9ab468c73adc9900d0dd1b51c1dd799a31817a08314e9b4d1d71",
+      "newline_normalized_sha256": "c92248a6b38c9ab468c73adc9900d0dd1b51c1dd799a31817a08314e9b4d1d71"
+    },
+    {
+      "path": "outputs/q3_refined/transfer/threshold_checks.csv",
+      "bytes": 1947104,
+      "sha256": "790750d6ef2000a73dacc6fc7c4fb815d63189426aa6812ceb91193140a298ca",
+      "newline_normalized_sha256": "790750d6ef2000a73dacc6fc7c4fb815d63189426aa6812ceb91193140a298ca"
+    },
+    {
+      "path": "outputs/q3_refined/transfer/paired_deltas.csv",
+      "bytes": 4405359,
+      "sha256": "4598e6fafecdc3f587afce39830df9efb51bcf576eef1d3c2f05bce1e4e740a8",
+      "newline_normalized_sha256": "4598e6fafecdc3f587afce39830df9efb51bcf576eef1d3c2f05bce1e4e740a8"
+    },
+    {
+      "path": "supplement/results/q2_permutation/module_membership.csv",
+      "bytes": 26246,
+      "sha256": "b54c0f322a03fa4732a4771fbf276a64a3f4359ece1d88845db18cc1b4ef394e",
+      "newline_normalized_sha256": "b54c0f322a03fa4732a4771fbf276a64a3f4359ece1d88845db18cc1b4ef394e"
+    },
+    {
+      "path": "supplement/results/q2_permutation/module_importance_by_fold.csv",
+      "bytes": 2063310,
+      "sha256": "b5e26b7d24a810a856ef455d1aa7284c96b36aaa92c45c03e11adbed10d0653c",
+      "newline_normalized_sha256": "b5e26b7d24a810a856ef455d1aa7284c96b36aaa92c45c03e11adbed10d0653c"
+    },
+    {
+      "path": "supplement/results/q2_permutation/importance_by_fold.csv",
+      "bytes": 3454258,
+      "sha256": "4ef03ae7475aeabe9109f5ff905f83accea6bac2c88c759855567694c379b389",
+      "newline_normalized_sha256": "4ef03ae7475aeabe9109f5ff905f83accea6bac2c88c759855567694c379b389"
+    },
+    {
+      "path": "review/verification/rebuilt_numeric_comparison.json",
+      "bytes": 40455,
+      "sha256": "d1e76bcb19b713dd8adcbd0dba3fae48142714128e434554b0627360f5b1fbc3",
+      "newline_normalized_sha256": "d1e76bcb19b713dd8adcbd0dba3fae48142714128e434554b0627360f5b1fbc3"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "supplement/results/reference_tables/beer96_chemical.csv",
+      "bytes": 812,
+      "sha256": "f4942160184da0e466584a8c57c66986a95c4af5d971ee2ca6fc3e9b536cf498",
+      "newline_normalized_sha256": "f4942160184da0e466584a8c57c66986a95c4af5d971ee2ca6fc3e9b536cf498"
+    },
+    {
+      "path": "supplement/results/reference_tables/beer96_committees.csv",
+      "bytes": 1406,
+      "sha256": "4fbd722887ee8a4869f323731a93063d3dc67296b3ac204e74c51ab0a84de9a5",
+      "newline_normalized_sha256": "4fbd722887ee8a4869f323731a93063d3dc67296b3ac204e74c51ab0a84de9a5"
+    },
+    {
+      "path": "supplement/results/reference_tables/ethyl_acetate_F_esters_ethac_by_fold.csv",
+      "bytes": 3363,
+      "sha256": "77759964f1b4fdad1f7c4634508a33d0093acaaab7939e5b7eac266c9a77e0d8",
+      "newline_normalized_sha256": "77759964f1b4fdad1f7c4634508a33d0093acaaab7939e5b7eac266c9a77e0d8"
+    },
+    {
+      "path": "supplement/results/reference_tables/ethyl_acetate_module_by_fold.csv",
+      "bytes": 145401,
+      "sha256": "ef09f251266bb29a89d7ea8d994b2040c5d3a25891d2b503f0fc6909cd8bb407",
+      "newline_normalized_sha256": "ef09f251266bb29a89d7ea8d994b2040c5d3a25891d2b503f0fc6909cd8bb407"
+    },
+    {
+      "path": "supplement/results/reference_tables/rebuild_changed_frontier.csv",
+      "bytes": 888,
+      "sha256": "16341ef45c26d333084fabf05cb9f0575c1d2f22d73d807291630cd3cba7a5ea",
+      "newline_normalized_sha256": "16341ef45c26d333084fabf05cb9f0575c1d2f22d73d807291630cd3cba7a5ea"
+    },
+    {
+      "path": "supplement/results/reference_tables/rebuild_changed_policies.csv",
+      "bytes": 6672,
+      "sha256": "6d774e6a21c8948c528e8119e6a210a4a497fce91a1cec786d5823e82212162a",
+      "newline_normalized_sha256": "6d774e6a21c8948c528e8119e6a210a4a497fce91a1cec786d5823e82212162a"
+    },
+    {
+      "path": "supplement/results/reference_tables/rebuild_grid_field_counts.csv",
+      "bytes": 156,
+      "sha256": "9bf985d4e40b1e0970752fd0cb6103f1d3b74a88652bf352bb23ee07499280a9",
+      "newline_normalized_sha256": "9bf985d4e40b1e0970752fd0cb6103f1d3b74a88652bf352bb23ee07499280a9"
+    },
+    {
+      "path": "supplement/results/reference_tables/summary.json",
+      "bytes": 2950,
+      "sha256": "4f4fde73fedfd7b9a1c4914f8d18eff98a4787aa0ba8d7837d68e123a6ad24d6",
+      "newline_normalized_sha256": "4f4fde73fedfd7b9a1c4914f8d18eff98a4787aa0ba8d7837d68e123a6ad24d6"
+    },
+    {
+      "path": "supplement/results/reference_tables/transfer_defect_activity_summary.csv",
+      "bytes": 260,
+      "sha256": "af26d2a0236436bc872a4fccc723985e65a63b9cec0d75a3e6ff99601169cb75",
+      "newline_normalized_sha256": "af26d2a0236436bc872a4fccc723985e65a63b9cec0d75a3e6ff99601169cb75"
+    },
+    {
+      "path": "supplement/results/reference_tables/transfer_defect_concentrations.csv",
+      "bytes": 7194,
+      "sha256": "d0e95f87c62edea1f6faecb89638872bcd72df7ae8ff447abb2878399a5a857b",
+      "newline_normalized_sha256": "d0e95f87c62edea1f6faecb89638872bcd72df7ae8ff447abb2878399a5a857b"
+    }
+  ],
+  "no_model_fitting": true,
+  "text_hash_rule": "Exact bytes, or CRLF/LF-only equivalence verified by newline_normalized_sha256.",
+  "read_interface": "from supplement.reference_tables import load_reference_tables; tables = load_reference_tables(solution_root)"
+}

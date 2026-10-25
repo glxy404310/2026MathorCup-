@@ -67,6 +67,13 @@ def add_submission_appendices(blocks, root, paper, mapping):
                      gridrows, [1.6, 2.2, 2.1, 1.4, 1.5, 1.5, 3.7]),
                paragraph("改善中位数按全部选中谱计算，包括复核未通过者；无候选时记为横线。"
                          "每组分母均为11，不以选出的条数代替源样本总数。逐化合物十情景检查及全部数值文件随支撑材料提交。")]
+    from supplement_sections import concentration_rows, CONCENTRATION_HEADERS, CONCENTRATION_WIDTHS
+    concentration = pd.read_csv(root / "supplement/results/reference_tables/transfer_defect_concentrations.csv")
+    blocks += [paragraph("表C-3列出余量优先主方案全部11款源的44项浓度检查。每行上界为十情景中最严值，"
+                         "剩余裕量为上界减迁移浓度，单位与该行校准浓度相同；源浓度超过阈值时，上界可以高于感知阈值。"
+                         "化学检查不代替表C-1的Stale hops模型复核。"),
+               table("表C-3 全部源的迁移前后校准浓度与保护裕量", CONCENTRATION_HEADERS,
+                     concentration_rows(concentration), CONCENTRATION_WIDTHS)]
     blocks += [heading("附录D 软件环境与运行方法"),
                paragraph("模型原计算环境为Python 3.13，精确依赖列于表D-1。程序采用UTF-8文本、"
                          "正斜杠相对路径和固定换行规则，支持Windows。原始赛题附件与solution_a文件夹并列，"
@@ -82,9 +89,11 @@ def add_submission_appendices(blocks, root, paper, mapping):
                {"type": "code", "text": ".\\.venv\\Scripts\\python.exe -X utf8 solution_a/run_all.py --rebuild"},
                paragraph("重建须保留全部原始附件，依次执行数据核验、预测、关联分析、风格生成、迁移及补充验证。"
                          "程序对非空历史或补充输出拒绝覆盖；重新试验应另建副本。补充验证源码与结果位于supplement目录，run_supplement.py可单独核查。计算耗时随硬件变化。"
-                         "不同操作系统、数学库及并行实现可能出现小幅浮点差，须结合模型参数及逐项指标判断。"),
-               paragraph("论文构建另需python-docx、lxml、reportlab和matplotlib。Windows中由Word兼容COM接口导出正文PDF，"
-                         "再拼接文字型源码附录。完整依赖、命令及文件校验方法见支撑材料README.txt。"),
+                         "历史独立重建中，主方案关键比较一致，全探索网格仍有候选与计数差异，具体范围见第8.2节及核验记录。"),
+               paragraph("论文构建另需python-docx、lxml、reportlab和matplotlib。正文可经Windows的Word兼容COM接口，"
+                         "或明确配置中文及数学字体的LibreOffice导出，再拼接文字型源码附录。"
+                         "本次修订使用macOS下的独立LibreOffice运行时，保持A4、12pt正文及原生公式；"
+                         "源程序附录支持显式指定等宽、中文与数学字体。完整依赖、命令及文件校验方法见支撑材料README.txt。"),
                heading("附录E 完整计算机源程序"),
                paragraph("本附录按文件给出计算、校验及论文构建所用源程序。源代码以可选取的文本排印，"
                          "左侧为原文件行号；长行折行处不另编号。运行时使用支撑包中的同名文件，"

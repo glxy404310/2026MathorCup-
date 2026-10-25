@@ -4,11 +4,11 @@
 
 论文定稿采用口径见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
 
-本次提交文件为[论文PDF](submission/A2600730.pdf)与[程序及结果附件包](submission/A2600730附件.zip)，可编辑源稿保存在[Word文件](paper/啤酒风味建模提交稿.docx)。PDF含完整程序全文、135项化学证据、72组迁移策略表及逐感官折外置换结果。补充分析见[supplement/README.txt](supplement/README.txt)：保留原五折主表，另列三折固定参数比较、整风格留出、多掩码压力和分层Bootstrap。正文保留原始0–6量尺不可恢复、相关与因果区别及尚无实际品评的限制；这些限制不因排版完成而消失。
+本次提交文件为[论文PDF](submission/A2600730.pdf)与[程序及结果附件包](submission/A2600730附件.zip)，可编辑源稿保存在[Word文件](paper/啤酒风味建模提交稿.docx)。PDF含完整程序全文、135项化学证据、72组迁移策略表及逐感官折外置换结果。补充分析见[supplement/README.txt](supplement/README.txt)：保留原五折主表，另列三折固定参数比较、整风格留出、多掩码压力、缺失指示消融和分层Bootstrap；补入逐折模块案例、44项迁移浓度及beer 96逐阶段复核。正文保留原始0–6量尺不可恢复、相关与因果区别及尚无实际品评的限制；这些限制不因排版完成而消失。
 
 | 内容 | 位置 |
 |---|---|
-| 论文正文、30个原生公式、6图及结果附表 | [paper/manuscript.json](paper/manuscript.json) |
+| 论文正文、31个原生公式、6图及结果附表 | [paper/manuscript.json](paper/manuscript.json) |
 | 135项候选的逐行化学证据及最终引用 | [paper/chemical_evidence_final.csv](paper/chemical_evidence_final.csv) |
 | 三问主方案、正文对照与结论边界 | [final_model_selection.md](docs/final_model_selection.md) |
 | 实际数据结构、缺失、条码精度、变换与题面冲突 | [data_audit.md](docs/data_audit.md) |
@@ -63,7 +63,7 @@ macOS/Linux将上述Python路径换为`.venv/bin/python`。默认入口校验现
 
 该路线会依次训练各轮模型、生成结果并建立新的冻结快照，运行时间明显长于保存结果校验。若`outputs/`已有文件，程序会拒绝重建；请另建副本，不要删除当前引用结果。`paper_results/`仅供查阅，不能改名为`outputs/`使用。
 
-默认种子为20261023。joblib模型加载前须将`solution_a/src`加入Python模块路径，稳健模型依赖`common.QuantileClipper`。冻结文件按UTF-8、LF和POSIX相对路径记录，哈希保护仍逐字节核对。`src/platform_selfcheck.py`检查Windows路径、三层快照、历史来源路径及文件篡改拒绝。不同Python、NumPy或系统环境可能使重训树模型产生小幅数值差异，保存工件校验和从头重训应分别记录。
+默认种子为20261023。joblib模型加载前须将`solution_a/src`加入Python模块路径，稳健模型依赖`common.QuantileClipper`。冻结文件按UTF-8、LF和POSIX相对路径记录，哈希保护仍逐字节核对。`src/platform_selfcheck.py`检查Windows路径、三层快照、历史来源路径及文件篡改拒绝。不同Python、NumPy或系统环境可能使重训模型及候选选择出现差异；历史重建的主比较一致，全探索网格有16条候选、7条状态及9组汇总计数变化，不能全部视为末位浮点误差。保存工件校验和从头重训应分别记录。
 
 ## 解释结果时的边界
 

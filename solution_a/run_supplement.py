@@ -19,7 +19,8 @@ def main():
     if args.rebuild:
         if folder.exists() and any(folder.iterdir()):
             parser.error("Supplementary results already exist; rebuild in a clean copy.")
-        for name in ["q1_comparison.py", "q1_additional_checks.py", "q2_stratified_bootstrap.py", "q2_permutation.py"]:
+        for name in ["q1_comparison.py", "q1_additional_checks.py", "q2_stratified_bootstrap.py", "q2_permutation.py",
+                     "q1_indicator_ablation.py", "reference_tables.py"]:
             run(name)
     elif not (folder / "q2_permutation/summary.json").exists():
         parser.error("Supplementary results are missing; run --rebuild after the main experiments.")

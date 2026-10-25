@@ -1,4 +1,5 @@
 """Print every source line and combine it with the main paper PDF."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -23,11 +24,13 @@ OUT.mkdir(exist_ok=True)
 QA.mkdir(exist_ok=True)
 
 
-def build():
+def build(mono_font="C:/Windows/Fonts/consola.ttf",
+          cjk_font="C:/Windows/Fonts/simsun.ttc",
+          math_font="C:/Windows/Fonts/cambria.ttc", cjk_index=0, math_index=1):
     main = PdfReader(QA / "main.pdf")
-    pdfmetrics.registerFont(TTFont("CodeMono", "C:/Windows/Fonts/consola.ttf"))
-    pdfmetrics.registerFont(TTFont("CodeCJK", "C:/Windows/Fonts/simsun.ttc", subfontIndex=0))
-    pdfmetrics.registerFont(TTFont("CodeMath", "C:/Windows/Fonts/cambria.ttc", subfontIndex=1))
+    pdfmetrics.registerFont(TTFont("CodeMono", mono_font))
+    pdfmetrics.registerFont(TTFont("CodeCJK", cjk_font, subfontIndex=cjk_index))
+    pdfmetrics.registerFont(TTFont("CodeMath", math_font, subfontIndex=math_index))
     width, height = A4
     left, right, top, bottom = 25 * mm, width - 25 * mm, height - 20 * mm, 22 * mm
     code_x = left + 27
@@ -109,6 +112,9 @@ def build():
     writer = PdfWriter(clone_from=QA / "main.pdf")
     # Rebuild internal contents links: COM exporters may misread PAGEREF switches.
     contents = writer.pages[1]
+    exported_rows = sorted({(round(float(a.get_object()["/Rect"][1]), 1),
+                             round(float(a.get_object()["/Rect"][3]), 1))
+                            for a in contents.get("/Annots", [])}, reverse=True)
     if "/Annots" in contents:
         del contents[NameObject("/Annots")]
     blocks = json.loads((HERE / "manuscript.json").read_text(encoding="utf-8"))["blocks"]
@@ -119,11 +125,11 @@ def build():
     for i, b in enumerate(headings):
         text = b["text"]
         target = next(j for j in range(2, len(normalized)) if re.sub(r"\s+", "", text) in normalized[j])
-        y0 = 734.55 - i * 13
-        annotation = writer.add_annotation(1, Link(rect=(70.9, y0, 524.5, y0 + 13), target_page_index=target))
+        y0, y1 = exported_rows[i] if len(exported_rows) == len(headings) else (734.55 - i * 13, 747.55 - i * 13)
+        annotation = writer.add_annotation(1, Link(rect=(70.9, y0, 524.5, y1), target_page_index=target))
         annotation["/Dest"][0] = writer.pages[target].indirect_reference
         writer.add_outline_item(text, target)
-        toc_links.append({"text": text, "target_pdf_page": target + 1})
+        toc_links.append({"text": text, "target_pdf_page": target + 1, "rect": [70.9, y0, 524.5, y1]})
     writer.append(path)
     for r in records:
         writer.add_outline_item(r["path"], r["first_pdf_page"] - 1)
@@ -135,11 +141,21 @@ def build():
                 "total_pages": len(main.pages) + page, "files": records,
                 "source_lines": sum(r["lines"] for r in records), "contents_links": toc_links,
                 "layout": {"font_pt": font_size, "leading_pt": leading,
-                           "all_lines_within_margins": True}}
+                           "all_lines_within_margins": True,
+                           "contents_rectangles": "exported" if len(exported_rows) == len(headings) else "legacy",
+                           "fonts": {"mono": Path(mono_font).name, "cjk": Path(cjk_font).name,
+                                     "cjk_index": cjk_index, "math": Path(math_font).name, "math_index": math_index}}}
     (QA / "source_inventory.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in manifest.items() if k not in ("files", "contents_links")}, ensure_ascii=False))
     print(final)
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--mono-font", default="C:/Windows/Fonts/consola.ttf")
+    parser.add_argument("--cjk-font", default="C:/Windows/Fonts/simsun.ttc")
+    parser.add_argument("--math-font", default="C:/Windows/Fonts/cambria.ttc")
+    parser.add_argument("--cjk-index", type=int, default=0)
+    parser.add_argument("--math-index", type=int, default=1)
+    args = parser.parse_args()
+    build(args.mono_font, args.cjk_font, args.math_font, args.cjk_index, args.math_index)

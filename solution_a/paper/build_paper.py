@@ -152,9 +152,9 @@ The retained source has three portrait A4 sections, 2.00025 cm top/bottom and 2.
 Source roles: centered 14 pt title and contents heading; 12 pt abstract/body; Chinese serif body and Times New Roman Latin text. Existing style and opaque package parts are retained.
 Editable: main body placeholder paragraphs and identity table; section header/footer text; styles used for manuscript headings and tables; document properties; settings; image relationships. Replace all placeholder content, retain the three-section abstract/contents/body system, and restart body page numbers at one.
 Preserve-only: font table, theme and customXml parts; inventory in template_inventory.json. The original template is never changed.
-Source template is sparse and has no completed mathematical/table/figure content. Added components use 12 pt body with 1.25 line spacing, 14/12 pt headings, 9.5/10 pt tables, native OMML equations and 300 dpi figures. Table cells wrap and repeat headers. No fixed row heights.
-The identity placeholders and source page decorations are removed to satisfy anonymous paper and no-header rules. Chinese font uses the installed Windows SimSun/SimHei and equations use Cambria Math. The source document grid is disabled for content paragraphs because its interaction with the CJK font doubled line spacing; the specified 1.25 body spacing is used instead, with unchanged page geometry.
-Title/abstract occupy section one, static linked contents section two, body and appendices section three. Contents page caches are computed from the rendered draft and PAGEREF fields are marked for Word refresh. Word-compatible COM updates the displayed fields during PDF export without saving over the constructed DOCX.
+Source template is sparse and has no completed mathematical/table/figure content. Added components use 12 pt body with fixed 18 pt spacing, 14/12 pt headings, 9.5/10 pt tables with fixed 13 pt spacing, native OMML equations and 300 dpi figures. Table cells wrap and repeat headers. No fixed row heights.
+The identity placeholders and source page decorations are removed to satisfy anonymous paper and no-header rules. Chinese font uses the installed Windows SimSun/SimHei and equations use Cambria Math. The source document grid is disabled for content paragraphs because its interaction with the CJK font doubled line spacing; fixed 18 pt body spacing is used instead, with unchanged page geometry.
+Title/abstract occupy section one, static linked contents section two, body and appendices section three. Contents page caches are computed from the rendered draft and PAGEREF fields are marked for Word refresh. The revision exports through a separate LibreOffice runtime with fonts_macos.conf; the Windows COM route remains available. Render-derived contents caches are reconciled after export.
 Slots: source body paragraphs 3/4/5/22 are title/abstract/keywords; 23–35 are contents placeholders and break; 36 onward is body. These slots may expand. All source placeholder and table text is intentionally removed.
 Fidelity gates: template hash, A4 geometry, three sections, anonymous headers/footers, no placeholders, intact preserve-only parts, every final page visually checked, formulas and references reconciled.
 """, encoding="utf-8")
@@ -191,6 +191,7 @@ def style(name, size, bold=False, family="SimSun"):
     return s
 
 normal = style("Normal", 12)
+normal.paragraph_format.line_spacing = Pt(18)
 normal.paragraph_format.first_line_indent = Pt(24)
 normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 style("Title", 14, True).paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -293,7 +294,7 @@ def add_table(b):
                 v=OxmlElement("w:"+side);v.set(qn("w:w"),str(amount));v.set(qn("w:type"),"dxa");margins.append(v)
             pr.append(margins)
             x=cell.paragraphs[0];x.style=doc.styles["TableText"]
-            x.paragraph_format.line_spacing=1.12;x.paragraph_format.space_after=Pt(0)
+            x.paragraph_format.line_spacing=Pt(13);x.paragraph_format.space_after=Pt(0)
             x.paragraph_format.keep_with_next=n==0 or (len(b["rows"])<=4 and n<len(b["rows"]))
             val=str(value)
             x.alignment=WD_ALIGN_PARAGRAPH.CENTER if (j>0 and len(val)<20) or n==0 else WD_ALIGN_PARAGRAPH.LEFT

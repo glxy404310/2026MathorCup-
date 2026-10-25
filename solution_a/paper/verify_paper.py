@@ -130,6 +130,25 @@ assert next(b for cap,b in table_lookup.items() if cap.startswith('表B-3'))['ro
 defects=next(b for cap,b in table_lookup.items() if cap.startswith('表7-2'))['rows']
 assert len(defects)==5 and [r[0] for r in defects]==['DMS','Diacetyl','4VG','trans-2-nonenal','Stale hops']
 assert defects[3][2]=='附件空缺' and '代理检查' in defects[4][-1]
+paired=pd.read_csv(supp/'q1_indicator_ablation/paired_metrics.csv')
+cohorts={'all':'全部样本','original_missing':'原始有缺失','original_complete':'原始完整'}
+expected_ablation=[[cohorts[r.cohort],str(r.n),f'{r.rmse_with_indicator:.6f}',
+                    f'{r.rmse_without_indicator:.6f}',f'{r.delta_rmse:+.6f}']
+                   for r in paired.loc[paired.scenario.eq('original')].itertuples()]
+assert next(b for cap,b in table_lookup.items() if cap.startswith('表5-4'))['rows']==expected_ablation
+module_case=pd.read_csv(supp/'reference_tables/ethyl_acetate_F_esters_ethac_by_fold.csv')
+expected_module=[[str(r.fold),str(r.size),f'{r.individual_delta_mse:+.5f}',f'{r.module_delta_mse:+.5f}']
+                 for r in module_case.itertuples()]
+assert next(b for cap,b in table_lookup.items() if cap.startswith('表6-4'))['rows']==expected_module
+assert next(b for cap,b in table_lookup.items() if cap.startswith('表B-4'))['rows']==[
+    [f'第{r.fold}折\n{r.size}项',r.memberlist] for r in module_case.itertuples()]
+concentrations=pd.read_csv(supp/'reference_tables/transfer_defect_concentrations.csv')
+from supplement_sections import concentration_rows
+assert next(b for cap,b in table_lookup.items() if cap.startswith('表C-3'))['rows']==concentration_rows(concentrations)
+assert next(b for cap,b in table_lookup.items() if cap.startswith('表7-3'))['rows']==concentration_rows(
+    concentrations.loc[concentrations.source_beer.isin([81,96,124])])
+assert len(next(b for cap,b in table_lookup.items() if cap.startswith('表7-4'))['rows'])==4
+assert any('792条策略中16条候选编号' in b.get('text','') for b in blocks)
 from submission_content import source_files
 inventory=json.loads((HERE/'qa/source_inventory.json').read_text(encoding='utf-8'))
 assert [p.relative_to(ROOT).as_posix() for p in source_files(ROOT)]==[r['path'] for r in inventory['files']]
@@ -166,6 +185,7 @@ report={'status':'PASS','main_pdf_pages':len(read.pages),'final_pdf_pages':len(f
         'q1_target_rows':45,'top3_positions':135,'transfer_sources':11,'raw_source_hashes_unchanged':9,
         'frozen_refined_protection_passed':True,'source_refs_reconciled':True,
         'supplementary_tables_reconciled':True,
+        'reference_revision_tables_reconciled':True,'concentration_checks':44,'module_case_folds':5,
         'visual_review':'Recorded separately in qa/visual_review.json after inspection of page PNGs.',
         'artifact_sha256':{'docx':hashlib.sha256(docx.read_bytes()).hexdigest(),'main_pdf':hashlib.sha256(pdf.read_bytes()).hexdigest(),'final_pdf':hashlib.sha256((ROOT/'submission/A2600730.pdf').read_bytes()).hexdigest()}}
 (HERE/'qa/paper_verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')

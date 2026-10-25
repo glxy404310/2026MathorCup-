@@ -34,6 +34,17 @@ def scores(actual, predicted):
                 macro_r2=r2_score(actual, predicted, multioutput="uniform_average"))
 
 
+def input_hash_matches(path, expected):
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() == expected:
+        return True
+    if path.suffix not in {".csv", ".json"}:
+        return False
+    lf = raw.replace(b"\r\n", b"\n")
+    return expected in {hashlib.sha256(lf).hexdigest(),
+                        hashlib.sha256(lf.replace(b"\n", b"\r\n")).hexdigest()}
+
+
 def main():
     meta, x, y = load_xy()
     targets = list(y)
@@ -144,7 +155,11 @@ def main():
         hashes = record.get("input_sha256", record.get("input_sha256_before", {}))
         for name, expected in hashes.items():
             path = ROOT.parent / name if "/" in name else data_dir() / name
-            assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, name
+            assert input_hash_matches(path, expected), name
+    from q1_indicator_ablation import verify_saved
+    from reference_tables import verify_reference_tables
+    checks.append({"name": "paired_missing_indicator_ablation", **verify_saved()})
+    checks.append({"name": "saved_reference_tables", **verify_reference_tables()})
     report = {"status": "PASS", "checks": checks,
               "scope": "Saved supplementary calculations, fold separation and source integrity; no causal or independent-population validation."}
     (HERE / "verification.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

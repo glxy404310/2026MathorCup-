@@ -1,30 +1,70 @@
 {
   "status": "PASS",
+  "revision_date": "2026-10-25",
   "artifacts": [
     {
       "name": "A2600730.pdf",
-      "bytes": 3758089,
-      "sha256": "03287ed5830de2d60d91cf1c2cd27223a16324e67c101cafe4167bc91fbdcdd1"
+      "bytes": 5539865,
+      "sha256": "be531f159326ac6db1c37a84b8c6e4bfe748eed628405deec4fa2b62cc2f6389"
     },
     {
       "name": "A2600730附件.zip",
-      "bytes": 41004450,
-      "sha256": "5545c955b303d4b362df54e7173ef436240f0bf21564ce8c2305c553f4fc3a75"
+      "bytes": 41751244,
+      "sha256": "86adf27797f5baf2d654c4592e2b7868e27211c236082b99c503a31d46f24d7a"
+    },
+    {
+      "name": "啤酒风味建模提交稿.docx",
+      "bytes": 1270405,
+      "sha256": "118ee70cf21bd6e40b5d2cdbde2c3e2e3236f2671d39a7a0e94dad051bf65430"
     }
   ],
   "saved_results_validation": "PASS",
   "supplementary_validation": "PASS",
   "fresh_archive_checks": "PASS",
   "original_outputs_unchanged": 333,
-  "principal_transfer_reproduction": "PASS",
-  "full_grid_bitwise_reproduction": "FAIL; prior cross-platform differences retained and disclosed",
-  "pdf_pages": 353,
-  "body_including_references_pages": 22,
-  "printed_source_files": 56,
-  "printed_source_lines": 12945,
-  "visual_review": "PASS; all 353 pages rendered and inspected",
+  "raw_attachments_unchanged": 9,
+  "principal_transfer_reproduction": "PASS (historical independent rebuild retained; not a new full rebuild)",
+  "full_grid_bitwise_reproduction": "FAIL; historical cross-platform differences retained and disclosed in section 8.2",
+  "new_full_model_rebuild_performed": false,
+  "pdf_pages": 392,
+  "body_including_references_pages": 24,
+  "printed_source_files": 58,
+  "printed_source_lines": 13720,
+  "visual_review": "PASS; all pages rendered, main 57 pages viewed at native size; source 335 pages checked in contact sheets plus native-size samples, full text and drawn margins independently reconciled",
+  "missing_indicator_ablation": [
+    {
+      "scenario": "original",
+      "rmse_with_indicator": 0.4862203536077027,
+      "rmse_without_indicator": 0.4863104986145118,
+      "delta_rmse": -9.014500680915027e-05
+    },
+    {
+      "scenario": "mask10",
+      "rmse_with_indicator": 0.4909873273318906,
+      "rmse_without_indicator": 0.4913437253514816,
+      "delta_rmse": -0.0003563980195909
+    },
+    {
+      "scenario": "mask20",
+      "rmse_with_indicator": 0.4992184152258415,
+      "rmse_without_indicator": 0.4989249475749261,
+      "delta_rmse": 0.0002934676509153
+    }
+  ],
+  "added_tables": [
+    "5-4 indicator ablation",
+    "6-4 fold-specific module comparison",
+    "7-3 calibrated concentrations",
+    "7-4 beer 96 audit",
+    "B-4 module members",
+    "C-3 all 44 concentration checks"
+  ],
+  "archive_manifest_entries": 460,
+  "archive_program_files": 58,
   "notes": [
-    "Supplementary comparisons are post-hoc analyses of the same 250 beers.",
-    "Complete fresh original rebuild previously passed execution and principal comparisons; supplemental saved results independently recalculated."
+    "New ablation is post-hoc on the same 250 beers, not independent external validation.",
+    "Original main models, labels, selected transfer candidates and held-out audit rules were not changed.",
+    "Only supplementary textual input hashes accept pure CRLF/LF differences; frozen model/artifact byte checks remain intact.",
+    "Conditional permutation, calibrated prediction intervals and alternative model families remain future work."
   ]
 }

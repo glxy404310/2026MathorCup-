@@ -16,7 +16,7 @@ for name in ['requirements-lock.txt', 'final_model_selection.json', 'README.md']
     entries['solution_a/' + name] = ROOT / name
 for path in (ROOT / 'docs').glob('*.md'):
     entries['solution_a/docs/' + path.name] = path
-for pattern in ['*.json', '*.csv', '*.txt', 'sections/*.json', 'figures/*.png', 'figures/*.svg']:
+for pattern in ['*.json', '*.csv', '*.txt', '*.conf', 'sections/*.json', 'figures/*.png', 'figures/*.svg']:
     for path in HERE.glob(pattern):
         entries['solution_a/paper/' + path.relative_to(HERE).as_posix()] = path
 for path in sorted((ROOT / 'outputs').rglob('*')):
@@ -49,13 +49,17 @@ guide = '''A题论文配套程序与数值结果
    .\\.venv\\Scripts\\python.exe -X utf8 solution_a/run_all.py --rebuild
    全部模型、候选缓存、outputs与supplement/results由源码重建。--rebuild拒绝覆盖非空输出目录。
 5. 对重建完成的完整目录，去掉--rebuild即可只读验证。报告写入solution_a/review/verification/。
-6. 重建论文需原赛题Word模板、Windows中文字体和Word兼容COM接口（本次使用WPS）：
+6. 重建论文需原赛题Word模板、中文和数学字体；以下为Windows的Word兼容COM接口路线：
    python -m pip install -r solution_a/paper/requirements-paper.txt
    python solution_a/paper/make_figures.py
    python solution_a/paper/build_paper.py
    powershell -ExecutionPolicy Bypass -File solution_a/paper/export_pdf.ps1
    python solution_a/paper/source_appendix.py
    python solution_a/paper/package_support.py
+   本次修订用独立LibreOffice运行时导出正文，macOS字体替换配置为solution_a/paper/fonts_macos.conf；
+   导出前设置FONTCONFIG_FILE为该配置的绝对路径，使用明确的LibreOffice可执行文件和独立用户配置目录。
+   正文PDF保存为paper/qa/main.pdf。源码附录可用--mono-font、--cjk-font、--math-font、
+   --cjk-index、--math-index指定本机字体；本轮采用Monaco、Songti SC Regular（TTC索引6）及DejaVu Sans。
    paper脚本读取outputs；欲保留论文原始数值，可在单独的论文构建副本中将paper_results复制为solution_a/outputs，
    将supplement_results复制为solution_a/supplement/results，
    仅运行上述paper构建脚本，不对该不完整副本运行run_all.py。
