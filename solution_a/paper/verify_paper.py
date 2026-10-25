@@ -158,6 +158,13 @@ final=PdfReader(ROOT/'submission/A2600730.pdf')
 assert len(final.pages)==inventory['total_pages']
 assert inventory['main_pages']==len(read.pages)
 assert not final.metadata.get('/Author')
+final_text=norm(''.join(page.extract_text() for page in final.pages))
+assert norm(Path.home().as_posix()).lower() not in final_text.lower()
+assert not any(name in final_text for name in ['export_pdf.ps1','render_docx.py','source_appendix.py',
+                                               'build_paper.py','FONTCONFIG_FILE','-ComObject'])
+assert inventory['layout']['running_source_headers'] is False
+with ZipFile(docx) as z:
+    assert b'KSOTemplateDocerSaveRecord' not in z.read('docProps/custom.xml')
 for row in inventory['files']:
     recovered=[]
     def source_text(text, cm, tm, font, size):
@@ -186,6 +193,7 @@ report={'status':'PASS','main_pdf_pages':len(read.pages),'final_pdf_pages':len(f
         'frozen_refined_protection_passed':True,'source_refs_reconciled':True,
         'supplementary_tables_reconciled':True,
         'reference_revision_tables_reconciled':True,'concentration_checks':44,'module_case_folds':5,
+        'account_path_removed':True,'document_export_tools_excluded':True,'template_account_metadata_removed':True,
         'visual_review':'Recorded separately in qa/visual_review.json after inspection of page PNGs.',
         'artifact_sha256':{'docx':hashlib.sha256(docx.read_bytes()).hexdigest(),'main_pdf':hashlib.sha256(pdf.read_bytes()).hexdigest(),'final_pdf':hashlib.sha256((ROOT/'submission/A2600730.pdf').read_bytes()).hexdigest()}}
 (HERE/'qa/paper_verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')

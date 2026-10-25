@@ -4,33 +4,33 @@
   "artifacts": [
     {
       "name": "A2600730.pdf",
-      "bytes": 5539865,
-      "sha256": "be531f159326ac6db1c37a84b8c6e4bfe748eed628405deec4fa2b62cc2f6389"
+      "bytes": 5337689,
+      "sha256": "31ba483b09ca4c5621aba3d36a4e1b984fb0d61dbf0cbda6344543dc36b31ee7"
     },
     {
       "name": "A2600730附件.zip",
-      "bytes": 41751244,
-      "sha256": "86adf27797f5baf2d654c4592e2b7868e27211c236082b99c503a31d46f24d7a"
+      "bytes": 41705800,
+      "sha256": "e280e634070798274dfcf508bad63fc3d86e9e24929b3d2ff3ce258ee88c4789"
     },
     {
       "name": "啤酒风味建模提交稿.docx",
-      "bytes": 1270405,
-      "sha256": "118ee70cf21bd6e40b5d2cdbde2c3e2e3236f2671d39a7a0e94dad051bf65430"
+      "bytes": 1269807,
+      "sha256": "d14dc3bc23105cf009d0a604f73e22e58f33ad5f60239424c432e7ea1df26712"
     }
   ],
   "saved_results_validation": "PASS",
   "supplementary_validation": "PASS",
-  "fresh_archive_checks": "PASS",
+  "fresh_archive_checks": "PASS; 450 members, 448 manifest entries, 49 source programs, CRC and all member bytes/SHA-256 reconciled",
   "original_outputs_unchanged": 333,
   "raw_attachments_unchanged": 9,
   "principal_transfer_reproduction": "PASS (historical independent rebuild retained; not a new full rebuild)",
   "full_grid_bitwise_reproduction": "FAIL; historical cross-platform differences retained and disclosed in section 8.2",
   "new_full_model_rebuild_performed": false,
-  "pdf_pages": 392,
+  "pdf_pages": 354,
   "body_including_references_pages": 24,
-  "printed_source_files": 58,
-  "printed_source_lines": 13720,
-  "visual_review": "PASS; all pages rendered, main 57 pages viewed at native size; source 335 pages checked in contact sheets plus native-size samples, full text and drawn margins independently reconciled",
+  "printed_source_files": 49,
+  "printed_source_lines": 12284,
+  "visual_review": "PASS; 354 pages rendered; main pages 1–53 are byte-identical PNGs of the previously native-reviewed edition, pages 54–57 newly viewed at native size; 297 source pages checked in contact sheets plus native samples, all source text and drawn margins reconciled",
   "missing_indicator_ablation": [
     {
       "scenario": "original",
@@ -59,12 +59,28 @@
     "B-4 module members",
     "C-3 all 44 concentration checks"
   ],
-  "archive_manifest_entries": 460,
-  "archive_program_files": 58,
+  "archive_manifest_entries": 448,
+  "archive_program_files": 49,
   "notes": [
     "New ablation is post-hoc on the same 250 beers, not independent external validation.",
     "Original main models, labels, selected transfer candidates and held-out audit rules were not changed.",
     "Only supplementary textual input hashes accept pure CRLF/LF differences; frozen model/artifact byte checks remain intact.",
-    "Conditional permutation, calibrated prediction intervals and alternative model families remain future work."
-  ]
+    "Conditional permutation, calibrated prediction intervals and alternative model families remain future work.",
+    "This revision only cleans account information and the submitted documentation/source scope; no model training, result changes or candidate reselection."
+  ],
+  "centered_footer_sequence": "PASS; first two pages unnumbered, remaining physical pages numbered 1–352",
+  "account_paths_removed": true,
+  "template_account_metadata_removed": true,
+  "document_export_tools_excluded": true,
+  "scientific_content_unchanged": true,
+  "archive_total_entries": 450,
+  "provenance_path_normalization": {
+    "record": "paper_results/q3_refined/beer81/source_manifest.json",
+    "paths": 11,
+    "referenced_file_checksums_unchanged": true,
+    "original_frozen_record_unchanged": true,
+    "independent_review": "PASS; exactly 11 path fields changed, all SHA-256 values unchanged and referenced files matched"
+  },
+  "archive_privacy_scan": "PASS; all uncompressed member payloads checked for actual account identifiers and removed document-export instructions/tools",
+  "word_xml_privacy_scan": "PASS; account identifiers, inherited account record and document-export instructions absent"
 }

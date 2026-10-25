@@ -6,11 +6,10 @@ import pandas as pd
 
 
 def source_files(root):
-    """Use one inventory for the printed appendix and the source archive."""
+    """Share the modelling, numerical-check and result-plot source inventory."""
     paths = list(root.glob("*.py"))
     paths += list((root / "src").glob("*.py"))
-    paths += list((root / "paper").glob("*.py"))
-    paths += list((root / "paper").glob("*.ps1"))
+    paths += [root / "paper/make_figures.py"]
     paths += list((root / "tests").glob("*.py"))
     paths += list((root / "supplement").glob("*.py"))
     return sorted(set(paths), key=lambda p: p.relative_to(root).as_posix())
@@ -77,7 +76,7 @@ def add_submission_appendices(blocks, root, paper, mapping):
     blocks += [heading("附录D 软件环境与运行方法"),
                paragraph("模型原计算环境为Python 3.13，精确依赖列于表D-1。程序采用UTF-8文本、"
                          "正斜杠相对路径和固定换行规则，支持Windows。原始赛题附件与solution_a文件夹并列，"
-                         "保持官方目录名；数据不重复打包。所有计算源码及论文构建程序全文列于附录E。"),
+                         "保持官方目录名；数据不重复打包。建模计算、结果绘图及数值检验源码全文列于附录E。"),
                table("表D-1 计算依赖版本", ["软件包", "版本"],
                      [line.split("==", 1) for line in (root / "requirements-lock.txt").read_text(encoding="utf-8").splitlines()
                       if "==" in line], [8, 8]),
@@ -90,12 +89,8 @@ def add_submission_appendices(blocks, root, paper, mapping):
                paragraph("重建须保留全部原始附件，依次执行数据核验、预测、关联分析、风格生成、迁移及补充验证。"
                          "程序对非空历史或补充输出拒绝覆盖；重新试验应另建副本。补充验证源码与结果位于supplement目录，run_supplement.py可单独核查。计算耗时随硬件变化。"
                          "历史独立重建中，主方案关键比较一致，全探索网格仍有候选与计数差异，具体范围见第8.2节及核验记录。"),
-               paragraph("论文构建另需python-docx、lxml、reportlab和matplotlib。正文可经Windows的Word兼容COM接口，"
-                         "或明确配置中文及数学字体的LibreOffice导出，再拼接文字型源码附录。"
-                         "本次修订使用macOS下的独立LibreOffice运行时，保持A4、12pt正文及原生公式；"
-                         "源程序附录支持显式指定等宽、中文与数学字体。完整依赖、命令及文件校验方法见支撑材料README.txt。"),
                heading("附录E 完整计算机源程序"),
-               paragraph("本附录按文件给出计算、校验及论文构建所用源程序。源代码以可选取的文本排印，"
+               paragraph("本附录按文件给出建模计算、结果绘图及数值检验所用源程序。源代码以可选取的文本排印，"
                          "左侧为原文件行号；长行折行处不另编号。运行时使用支撑包中的同名文件，"
                          "避免PDF阅读器复制时丢失缩进。文件清单、源码全文和支撑包采用同一份程序目录。")]
     files = source_files(root)

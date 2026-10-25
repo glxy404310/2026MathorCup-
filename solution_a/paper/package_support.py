@@ -16,9 +16,10 @@ for name in ['requirements-lock.txt', 'final_model_selection.json', 'README.md']
     entries['solution_a/' + name] = ROOT / name
 for path in (ROOT / 'docs').glob('*.md'):
     entries['solution_a/docs/' + path.name] = path
-for pattern in ['*.json', '*.csv', '*.txt', '*.conf', 'sections/*.json', 'figures/*.png', 'figures/*.svg']:
+for pattern in ['*.json', '*.csv', 'sections/*.json', 'figures/*.png', 'figures/*.svg']:
     for path in HERE.glob(pattern):
-        entries['solution_a/paper/' + path.relative_to(HERE).as_posix()] = path
+        if path.name != 'reference_note.json':
+            entries['solution_a/paper/' + path.relative_to(HERE).as_posix()] = path
 for path in sorted((ROOT / 'outputs').rglob('*')):
     if path.is_file() and path.suffix in ['.csv', '.json']:
         entries['paper_results/' + path.relative_to(ROOT / 'outputs').as_posix()] = path
@@ -37,10 +38,23 @@ for name in ['source_inventory.json', 'paper_verification.json', 'visual_review.
     if path.exists():
         entries['verification/' + name] = path
 
+overrides = {}
+provenance_name = 'paper_results/q3_refined/beer81/source_manifest.json'
+original_provenance = entries[provenance_name].read_bytes()
+provenance = json.loads(original_provenance)
+for row in provenance:
+    original = Path(row['path'])
+    if not original.is_absolute():
+        original = ROOT.parent / original
+    assert hashlib.sha256(original.read_bytes()).hexdigest() == row['sha256']
+    row['path'] = original.relative_to(ROOT.parent).as_posix()
+    assert hashlib.sha256((ROOT.parent / row['path']).read_bytes()).hexdigest() == row['sha256']
+overrides[provenance_name] = (json.dumps(provenance, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+
 guide = '''A题论文配套程序与数值结果
 
-1. PDF附录E已印出全部源程序；本包保留可直接运行的文件及缩进。
-2. solution_a/src/为主分析程序，run_all.py为统一入口，supplement/为补充分析，paper/为论文结构化源稿、表图和构建检查程序。
+1. PDF附录E已印出建模计算、结果绘图及数值检验源程序；本包保留可直接运行的文件及缩进。
+2. solution_a/src/为主分析程序，run_all.py为统一入口，supplement/为补充分析，paper/保存结果绘图程序、结构化论文和图表。
 3. paper_results/及supplement_results/保存论文引用结果，不是运行输出目录。本包不含原始赛题附件、模型权重及大型候选缓存。
 4. 原始赛题目录与solution_a并列，保持官方目录名。计算使用Python 3.13及requirements-lock.txt。
    Windows PowerShell在解压根目录运行：
@@ -49,34 +63,25 @@ guide = '''A题论文配套程序与数值结果
    .\\.venv\\Scripts\\python.exe -X utf8 solution_a/run_all.py --rebuild
    全部模型、候选缓存、outputs与supplement/results由源码重建。--rebuild拒绝覆盖非空输出目录。
 5. 对重建完成的完整目录，去掉--rebuild即可只读验证。报告写入solution_a/review/verification/。
-6. 重建论文需原赛题Word模板、中文和数学字体；以下为Windows的Word兼容COM接口路线：
-   python -m pip install -r solution_a/paper/requirements-paper.txt
-   python solution_a/paper/make_figures.py
-   python solution_a/paper/build_paper.py
-   powershell -ExecutionPolicy Bypass -File solution_a/paper/export_pdf.ps1
-   python solution_a/paper/source_appendix.py
-   python solution_a/paper/package_support.py
-   本次修订用独立LibreOffice运行时导出正文，macOS字体替换配置为solution_a/paper/fonts_macos.conf；
-   导出前设置FONTCONFIG_FILE为该配置的绝对路径，使用明确的LibreOffice可执行文件和独立用户配置目录。
-   正文PDF保存为paper/qa/main.pdf。源码附录可用--mono-font、--cjk-font、--math-font、
-   --cjk-index、--math-index指定本机字体；本轮采用Monaco、Songti SC Regular（TTC索引6）及DejaVu Sans。
-   paper脚本读取outputs；欲保留论文原始数值，可在单独的论文构建副本中将paper_results复制为solution_a/outputs，
-   将supplement_results复制为solution_a/supplement/results，
-   仅运行上述paper构建脚本，不对该不完整副本运行run_all.py。
-   verify_paper.py须在完整重建目录运行，并先用Poppler的pdftoppm命令把qa/main.pdf渲染为qa/render/page-*.png。
+6. 本包中beer81/source_manifest.json的本机绝对路径已转换为仓库相对路径，所指文件的SHA-256保持不变；原始冻结记录和数值结果未改写。
 7. MANIFEST.json记录包内文件SHA-256。verification内为原始冻结结果的只读验证和独立重建检查记录。
 8. 原评分量尺不能从现有附件唯一恢复，文中标准化预测不冒充0—6评分；化学相关不等于感官因果，迁移结果尚未经实际品评。
 '''
-manifest = {'scope': 'Complete printed source, paper evidence and saved numerical results; original attachments excluded.',
+manifest = {'scope': 'Modelling, numerical-check and result-plot source with saved numerical evidence; original attachments excluded.',
             'program_files': len(source_files(ROOT)),
-            'files': [{'path': name, 'bytes': p.stat().st_size,
-                       'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for name, p in sorted(entries.items())]}
+            'path_normalization': {'path': provenance_name, 'fields': ['path'], 'referenced_file_checksums_unchanged': True},
+            'files': [{'path': name, 'bytes': len(overrides[name]) if name in overrides else p.stat().st_size,
+                       'sha256': hashlib.sha256(overrides[name] if name in overrides else p.read_bytes()).hexdigest()}
+                      for name, p in sorted(entries.items())]}
 out = OUT / 'A2600730附件.zip'
 with ZipFile(out, 'w', compression=ZIP_DEFLATED, compresslevel=7) as archive:
     archive.writestr('README.txt', guide)
     archive.writestr('MANIFEST.json', json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     for name, path in sorted(entries.items()):
-        archive.write(path, name)
+        if name in overrides:
+            archive.writestr(name, overrides[name])
+        else:
+            archive.write(path, name)
 with ZipFile(out) as archive:
     assert archive.testzip() is None
     for folder in ['q1', 'q1_robust', 'q2', 'q3_optimized', 'q3_refined']:

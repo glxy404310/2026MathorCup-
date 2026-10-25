@@ -7,6 +7,7 @@ import re
 from zipfile import ZipFile
 
 import pandas as pd
+from lxml import etree
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.table import WD_ALIGN_VERTICAL, WD_TABLE_ALIGNMENT
@@ -388,6 +389,12 @@ temporary=FINAL.with_suffix('.tmp.docx')
 with ZipFile(REFERENCE) as original, ZipFile(FINAL) as built, ZipFile(temporary,'w') as out:
     for info in built.infolist():
         data=original.read(info.filename) if info.filename in preserve else built.read(info.filename)
+        if info.filename == 'docProps/custom.xml':
+            custom = etree.fromstring(data)
+            for item in list(custom):
+                if item.get('name') == 'KSOTemplateDocerSaveRecord':
+                    custom.remove(item)
+            data = etree.tostring(custom, xml_declaration=True, encoding='UTF-8', standalone=True)
         out.writestr(info,data)
 temporary.replace(FINAL)
 

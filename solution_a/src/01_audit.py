@@ -454,7 +454,7 @@ CSV均为UTF-8可读取，三个样本级CSV没有完全重复记录；数值列
 在仓库根目录执行：
 
 ```bash
-/Users/Admin1/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 solution_a/src/01_audit.py
+python solution_a/src/01_audit.py
 ```
 
 也可用安装了pandas、numpy、openpyxl的Python执行同一脚本。可选 `--data-dir` 和 `--output-dir` 修改输入及审计证据目录；脚本不修改原始附件。环境版本保存在 `audit_summary.json`，SHA-256保存在 `source_files.csv`；本次执行前后哈希一致。

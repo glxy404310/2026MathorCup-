@@ -72,8 +72,9 @@ def build(mono_font="C:/Windows/Fonts/consola.ttf",
         c.setFont("CodeMono", 10)
         c.drawCentredString(width / 2, 17.5 * mm, str(len(main.pages) - 2 + page))
         y = top - 10
-        draw(name + ("（续）" if continuation else ""), left, y, 10)
-        y -= 22
+        if not continuation:
+            draw(name, left, y, 10)
+            y -= 22
 
     for p in source_files(ROOT):
         relative = p.relative_to(ROOT).as_posix()
@@ -142,6 +143,7 @@ def build(mono_font="C:/Windows/Fonts/consola.ttf",
                 "source_lines": sum(r["lines"] for r in records), "contents_links": toc_links,
                 "layout": {"font_pt": font_size, "leading_pt": leading,
                            "all_lines_within_margins": True,
+                           "running_source_headers": False,
                            "contents_rectangles": "exported" if len(exported_rows) == len(headings) else "legacy",
                            "fonts": {"mono": Path(mono_font).name, "cjk": Path(cjk_font).name,
                                      "cjk_index": cjk_index, "math": Path(math_font).name, "math_index": math_index}}}
