@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "main_pdf_pages": 57,
+  "final_pdf_pages": 354,
+  "printed_source_files": 49,
+  "printed_source_lines": 12284,
+  "front_matter_pages": 2,
+  "body_including_references_pages": 24,
+  "appendix_pages": 31,
+  "native_equations": 31,
+  "figures": 6,
+  "references": 12,
+  "q1_target_rows": 45,
+  "top3_positions": 135,
+  "transfer_sources": 11,
+  "raw_source_hashes_unchanged": 9,
+  "frozen_refined_protection_passed": true,
+  "source_refs_reconciled": true,
+  "supplementary_tables_reconciled": true,
+  "reference_revision_tables_reconciled": true,
+  "concentration_checks": 44,
+  "module_case_folds": 5,
+  "account_path_removed": true,
+  "document_export_tools_excluded": true,
+  "template_account_metadata_removed": true,
+  "visual_review": "Recorded separately in qa/visual_review.json after inspection of page PNGs.",
+  "artifact_sha256": {
+    "docx": "d14dc3bc23105cf009d0a604f73e22e58f33ad5f60239424c432e7ea1df26712",
+    "main_pdf": "a16d8b3cd33c3ffb8517ddb94e105894331804ea6b8a0c3944d5acb96ca0565a",
+    "final_pdf": "31ba483b09ca4c5621aba3d36a4e1b984fb0d61dbf0cbda6344543dc36b31ee7"
+  }
+}

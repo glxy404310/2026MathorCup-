@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "oof_tables": 6,
+  "metric_rows": 18,
+  "fold_metric_rows": 90,
+  "paired_metric_rows": 9,
+  "paired_beer_scenarios": 750,
+  "folds": 5,
+  "test_mask_scenarios": 2,
+  "protected_files_unchanged": 344,
+  "baseline_consistency": [
+    {
+      "scenario": "original",
+      "frozen_rmse": 0.4862203536077027,
+      "refit_rmse": 0.4862203536077027,
+      "max_abs_prediction_difference": 0.0,
+      "mean_abs_prediction_difference": 0.0,
+      "same_predictions_at_1e_10": true
+    },
+    {
+      "scenario": "mask10",
+      "frozen_rmse": 0.4909873273318906,
+      "refit_rmse": 0.4909873273318906,
+      "max_abs_prediction_difference": 0.0,
+      "mean_abs_prediction_difference": 0.0,
+      "same_predictions_at_1e_10": true
+    },
+    {
+      "scenario": "mask20",
+      "frozen_rmse": 0.4992184152258415,
+      "refit_rmse": 0.4992184152258415,
+      "max_abs_prediction_difference": 0.0,
+      "mean_abs_prediction_difference": 0.0,
+      "same_predictions_at_1e_10": true
+    }
+  ],
+  "scope": "Read-only recomputation of saved numerical results and data contracts; no second model fit."
+}

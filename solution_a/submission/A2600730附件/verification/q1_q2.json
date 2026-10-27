@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "Original source SHA-256 unchanged: 9 files",
+    "Sample alignment, folds and independently recomputed metrics: 10 OOF tables",
+    "Mean baseline equals the training-fold target mean for every held-out beer",
+    "Saved outer-fold clipping bounds match only the corresponding training rows",
+    "All three saved models reload and predict using the recorded feature/target order",
+    "Q2 candidate counts, bootstrap frequencies and undirected graph degree sums reconcile",
+    "Stage notes, independent review and chart files exist"
+  ],
+  "scope": "Saved-output integrity and numerical consistency; not proof of model adequacy"
+}

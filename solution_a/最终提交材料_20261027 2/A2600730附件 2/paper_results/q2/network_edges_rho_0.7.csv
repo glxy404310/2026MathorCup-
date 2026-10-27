@@ -1,0 +1,110 @@
+﻿source,target,source_name,target_name,spearman_rho,absolute_weight,sign
+ethyl_2.methyl_butyrate,ethyl_isovalerate,Ethyl 2-methylbutyrate,Ethyl 3-methylbutyrate,0.7370566768,0.7370566768,1
+ethyl_acetate,ethanol..v.v.,Ethyl acetate,Ethanol,0.7193915158,0.7193915158,1
+ethyl_acetate,esters_sum,Ethyl acetate,Total ester compounds,0.7671932031,0.7671932031,1
+ethyl_decanoate,ethyl_octanoate,Ethyl decanoate,Ethyl octanoate,0.8531308417,0.8531308417,1
+ethyl_hexanoate,ethyl_octanoate,Ethyl hexanoate,Ethyl octanoate,0.7236973501,0.7236973501,1
+ethyl_hexanoate,ethanol..v.v.,Ethyl hexanoate,Ethanol,0.7401667479,0.7401667479,1
+ethyl_hexanoate,esters_sum,Ethyl hexanoate,Total ester compounds,0.7264332549,0.7264332549,1
+H2S,sulfur_sum,Hydrogen sulfide,Total sulfur compounds,0.7752281313,0.7752281313,1
+isoamyl_alcohol,isobutanol,Isoamyl alcohol,Isobutanol,0.7089557698,0.7089557698,1
+isobutyl_acetate,isopentyl_acetate,Isobutyl acetate,Isoamyl acetate,0.8264237354,0.8264237354,1
+isobutyl_acetate,esters_sum,Isobutyl acetate,Total ester compounds,0.8220475308,0.8220475308,1
+isopentyl_acetate,phenethyl_acetate,Isoamyl acetate,Phenethyl acetate,0.727000816,0.727000816,1
+isopentyl_acetate,esters_sum,Isoamyl acetate,Total ester compounds,0.9222779244,0.9222779244,1
+acetic_acid.g.L.,acids_sum,Acetic acid,Total acids,0.9662555861,0.9662555861,1
+color.EBC.,protein.g.L.,Color,Protein,0.7882727997,0.7882727997,1
+glycerol,ethanol..v.v.,Glycerol,Ethanol,0.7330559983,0.7330559983,1
+ethanol..v.v.,kcalperc,Ethanol,Caloric value,0.8535666977,0.8535666977,1
+ethanol..v.v.,esters_sum,Ethanol,Total ester compounds,0.7203576807,0.7203576807,1
+X1.propanol,n.pentanol,1-propanol,N-pentanol,0.7123210081,0.7123210081,1
+n.pentanol,X2.methyl.1.butanol,N-pentanol,2-methyl-1-butanol,0.7452411079,0.7452411079,1
+X2.methyl.1.butanol,isopentyl.formate,2-methyl-1-butanol,Isopentyl formate,0.9222687083,0.9222687083,1
+X3.methyl.2.hexanol,X3.furanmethanol,3-methyl-2-hexanol,3-furanmethanol,0.7802570921,0.7802570921,1
+X3.methyl.2.hexanol,ortho.cresol,3-methyl-2-hexanol,O-cresol,0.7304539395,0.7304539395,1
+X3.methyl.2.hexanol,n.octanol,3-methyl-2-hexanol,N-octanol,0.7082175395,0.7082175395,1
+X3.methyl.2.hexanol,X4.methyl.1.pentanol,3-methyl-2-hexanol,4-methyl-1-pentanol,0.7540988895,0.7540988895,1
+X3.furanmethanol,ortho.cresol,3-furanmethanol,O-cresol,0.7460530401,0.7460530401,1
+prenyl.isobutyrate,ethyl.phenylacetate,Prenyl isobutyrate,Ethyl phenylacetate,0.7687528584,0.7687528584,1
+linalool,aroma_hops_sum,Linalool,Total hop aroma compounds,0.9584149901,0.9584149901,1
+X4.methyl.1.pentanol,x.methyl.1.octanol,4-methyl-1-pentanol,X-methyl-1-octanol,0.8140384856,0.8140384856,1
+isobutyl.hexanoate,nerol.oxide,Isobutyl hexanoate,Nerol oxide,0.7177917802,0.7177917802,1
+nerol.oxide,trans.dihydro.alpha.terpinyl.acetate,Nerol oxide,Trans-dihydro-α-terpinyl acetate,0.7338456198,0.7338456198,1
+X4.ethyl.phenol,X4.ethyl.guaiacol,4-ethyl-phenol,4-ethyl-guaiacol,0.8084993306,0.8084993306,1
+isoborneol,terpinen.4.ol,Isoborneol,Terpinen-4-ol,0.7446300478,0.7446300478,1
+isoborneol,ethyl..E..linalool,Isoborneol,Ethyl linalool,0.7435138482,0.7435138482,1
+ethyl.benzoate,ethyl.phenylacetate,Ethyl benzoate,Ethyl phenylacetate,0.764248644,0.764248644,1
+terpinen.4.ol,ethyl..E..linalool,Terpinen-4-ol,Ethyl linalool,0.7586904597,0.7586904597,1
+X1.alpha.terpineol,aroma_hops_sum,Alpha-terpineol,Total hop aroma compounds,0.714082887,0.714082887,1
+citronellol,aroma_hops_sum,Citronellol,Total hop aroma compounds,0.7313727894,0.7313727894,1
+isopentyl.hexanoate,trans.dihydro.alpha.terpinyl.acetate,Isopentyl hexanoate,Trans-dihydro-α-terpinyl acetate,0.7562299598,0.7562299598,1
+isopentyl.hexanoate,X2.butyloctanoate,Isopentyl hexanoate,2-butyl octanoate,0.7992814614,0.7992814614,1
+isopentyl.hexanoate,X2.phenyl.ethyl.butyrate,Isopentyl hexanoate,2-phenyl ethyl butyrate,0.8125023548,0.8125023548,1
+isopentyl.hexanoate,X.Z..beta.farnesene,Isopentyl hexanoate,Z-β-farnesene,0.820122101,0.820122101,1
+isopentyl.hexanoate,pentyl.octanoate,Isopentyl hexanoate,Pentyl octanoate,0.8815581148,0.8815581148,1
+isopentyl.hexanoate,X2.methylbutyl.octanoate,Isopentyl hexanoate,2-methylbutyl octanoate,0.8156732994,0.8156732994,1
+isopentyl.hexanoate,X1.2.dihydro.8.hydroxy..2E..linalool,Isopentyl hexanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.8199160019,0.8199160019,1
+isopentyl.hexanoate,ethyl.tetradecanoate,Isopentyl hexanoate,Ethyl tetradecanoate,0.7730455815,0.7730455815,1
+isopentyl.hexanoate,ethyl.pentadecanoate,Isopentyl hexanoate,Ethyl pentadecanoate,0.7688673842,0.7688673842,1
+neryl.formate,X4.ethyl.guaiacol,Neryl formate,4-ethyl-guaiacol,0.7958876846,0.7958876846,1
+trans.dihydro.alpha.terpinyl.acetate,X2.phenyl.ethyl.butyrate,Trans-dihydro-α-terpinyl acetate,2-phenyl ethyl butyrate,0.7553969764,0.7553969764,1
+trans.dihydro.alpha.terpinyl.acetate,X.Z..beta.farnesene,Trans-dihydro-α-terpinyl acetate,Z-β-farnesene,0.7762707049,0.7762707049,1
+trans.dihydro.alpha.terpinyl.acetate,pentyl.octanoate,Trans-dihydro-α-terpinyl acetate,Pentyl octanoate,0.7981401973,0.7981401973,1
+trans.dihydro.alpha.terpinyl.acetate,X2.methylbutyl.octanoate,Trans-dihydro-α-terpinyl acetate,2-methylbutyl octanoate,0.7680786235,0.7680786235,1
+trans.dihydro.alpha.terpinyl.acetate,X1.2.dihydro.8.hydroxy..2E..linalool,Trans-dihydro-α-terpinyl acetate,"1,2-dihydro-8-hydroxy-2E-linalool",0.7529398267,0.7529398267,1
+trans.dihydro.alpha.terpinyl.acetate,ethyl.tetradecanoate,Trans-dihydro-α-terpinyl acetate,Ethyl tetradecanoate,0.7072621491,0.7072621491,1
+X2.undecanol,methyl.geranate,2-undecanol,Methyl geranate,0.7589539693,0.7589539693,1
+methyl.geranate,alpha.muurolol,Methyl geranate,α-muurolol,0.7150451143,0.7150451143,1
+car.3.en.2.one,dimethoxy..E..citral,Car-3-en-2-one,Dimethoxy-E-citral,0.7806932683,0.7806932683,1
+X2.butyloctanoate,X2.phenyl.ethyl.butyrate,2-butyl octanoate,2-phenyl ethyl butyrate,0.7950368974,0.7950368974,1
+X2.butyloctanoate,X.Z..beta.farnesene,2-butyl octanoate,Z-β-farnesene,0.791732833,0.791732833,1
+X2.butyloctanoate,pentyl.octanoate,2-butyl octanoate,Pentyl octanoate,0.8683510701,0.8683510701,1
+X2.butyloctanoate,X2.methylbutyl.octanoate,2-butyl octanoate,2-methylbutyl octanoate,0.8271730299,0.8271730299,1
+X2.butyloctanoate,X1.2.dihydro.8.hydroxy..2E..linalool,2-butyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.8241735655,0.8241735655,1
+X2.butyloctanoate,ethyl.tetradecanoate,2-butyl octanoate,Ethyl tetradecanoate,0.7161521341,0.7161521341,1
+X2.butyloctanoate,ethyl.pentadecanoate,2-butyl octanoate,Ethyl pentadecanoate,0.726462509,0.726462509,1
+X2.phenyl.ethyl.butyrate,X.Z..beta.farnesene,2-phenyl ethyl butyrate,Z-β-farnesene,0.893216232,0.893216232,1
+X2.phenyl.ethyl.butyrate,pentyl.octanoate,2-phenyl ethyl butyrate,Pentyl octanoate,0.9045789131,0.9045789131,1
+X2.phenyl.ethyl.butyrate,X2.methylbutyl.octanoate,2-phenyl ethyl butyrate,2-methylbutyl octanoate,0.8733129701,0.8733129701,1
+X2.phenyl.ethyl.butyrate,X1.2.dihydro.8.hydroxy..2E..linalool,2-phenyl ethyl butyrate,"1,2-dihydro-8-hydroxy-2E-linalool",0.8550043732,0.8550043732,1
+X2.phenyl.ethyl.butyrate,ethyl.tetradecanoate,2-phenyl ethyl butyrate,Ethyl tetradecanoate,0.7350935219,0.7350935219,1
+X2.phenyl.ethyl.butyrate,ethyl.pentadecanoate,2-phenyl ethyl butyrate,Ethyl pentadecanoate,0.7528037255,0.7528037255,1
+X.Z..beta.farnesene,pentyl.octanoate,Z-β-farnesene,Pentyl octanoate,0.9161090889,0.9161090889,1
+X.Z..beta.farnesene,X2.methylbutyl.octanoate,Z-β-farnesene,2-methylbutyl octanoate,0.8988958386,0.8988958386,1
+X.Z..beta.farnesene,X1.2.dihydro.8.hydroxy..2E..linalool,Z-β-farnesene,"1,2-dihydro-8-hydroxy-2E-linalool",0.8643351977,0.8643351977,1
+X.Z..beta.farnesene,ethyl.tetradecanoate,Z-β-farnesene,Ethyl tetradecanoate,0.7618940622,0.7618940622,1
+X.Z..beta.farnesene,ethyl.pentadecanoate,Z-β-farnesene,Ethyl pentadecanoate,0.7548855021,0.7548855021,1
+pentyl.octanoate,X2.methylbutyl.octanoate,Pentyl octanoate,2-methylbutyl octanoate,0.9366185924,0.9366185924,1
+pentyl.octanoate,X1.2.dihydro.8.hydroxy..2E..linalool,Pentyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.9118885581,0.9118885581,1
+pentyl.octanoate,ethyl.tetradecanoate,Pentyl octanoate,Ethyl tetradecanoate,0.8079226916,0.8079226916,1
+pentyl.octanoate,ethyl.pentadecanoate,Pentyl octanoate,Ethyl pentadecanoate,0.8095703696,0.8095703696,1
+pentyl.octanoate,ethyl.hexadecanoate,Pentyl octanoate,Ethyl hexadecanoate,0.7158697661,0.7158697661,1
+X2.methylbutyl.octanoate,X1.2.dihydro.8.hydroxy..2E..linalool,2-methylbutyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.8770710439,0.8770710439,1
+X2.methylbutyl.octanoate,ethyl.tetradecanoate,2-methylbutyl octanoate,Ethyl tetradecanoate,0.7654419285,0.7654419285,1
+X2.methylbutyl.octanoate,ethyl.pentadecanoate,2-methylbutyl octanoate,Ethyl pentadecanoate,0.7706614151,0.7706614151,1
+neryl.propanoate,alpha.calacorene,Neryl propanoate,α-calacorene,0.775355429,0.775355429,1
+n.dodecanol,n.tetradecanol,N-dodecanol,N-tetradecanol,0.7238065478,0.7238065478,1
+n.dodecanol,manool,N-dodecanol,Manool,0.713628371,0.713628371,1
+E.methyl.isoeugenol,butylated.hydroxytoluene,Methyl isoeugenol,Butylated hydroxytoluene,0.8692162436,0.8692162436,1
+alpha.calacorene,alloaromadendrene.epoxide,α-calacorene,Allo-aromadendrene epoxide,0.7097818946,0.7097818946,1
+alpha.calacorene,X1.10.di.epi.cubenol,α-calacorene,Epicubenol,0.7178473859,0.7178473859,1
+E.nerolidol,dihydroisocaryophyllene.epoxide,E-nerolidol,Tobacarol,0.8859965312,0.8859965312,1
+caryophyllene.oxide,humulene.epoxide.II,Caryophyllene oxide,Humulene epoxide II,0.8182149772,0.8182149772,1
+caryophyllene.oxide,alpha.muurolol,Caryophyllene oxide,α-muurolol,0.7965356785,0.7965356785,1
+caryophyllene.oxide,tau.muurolol,Caryophyllene oxide,Tau-muurolol,0.725331201,0.725331201,1
+humulene.epoxide.II,alpha.muurolol,Humulene epoxide II,α-muurolol,0.7801779841,0.7801779841,1
+alloaromadendrene.epoxide,X1.10.di.epi.cubenol,Allo-aromadendrene epoxide,Epicubenol,0.8670568766,0.8670568766,1
+alloaromadendrene.epoxide,caryophylla.4.12..8.13..dien.5.alpha.ol,Allo-aromadendrene epoxide,"Caryophylla-4,8-dien-5-ol",0.763933134,0.763933134,1
+X1.10.di.epi.cubenol,caryophylla.4.12..8.13..dien.5.alpha.ol,Epicubenol,"Caryophylla-4,8-dien-5-ol",0.7029500422,0.7029500422,1
+X1.10.di.epi.cubenol,alpha.muurolol,Epicubenol,α-muurolol,0.7592186464,0.7592186464,1
+X1.10.di.epi.cubenol,tau.muurolol,Epicubenol,Tau-muurolol,0.8154427668,0.8154427668,1
+alpha.muurolol,tau.muurolol,α-muurolol,Tau-muurolol,0.8641141399,0.8641141399,1
+X1.2.dihydro.8.hydroxy..2E..linalool,ethyl.tetradecanoate,"1,2-dihydro-8-hydroxy-2E-linalool",Ethyl tetradecanoate,0.7501839369,0.7501839369,1
+X1.2.dihydro.8.hydroxy..2E..linalool,ethyl.pentadecanoate,"1,2-dihydro-8-hydroxy-2E-linalool",Ethyl pentadecanoate,0.7162102639,0.7162102639,1
+ethyl.tetradecanoate,ethyl.pentadecanoate,Ethyl tetradecanoate,Ethyl pentadecanoate,0.8219443877,0.8219443877,1
+ethyl.tetradecanoate,ethyl.hexadecanoate,Ethyl tetradecanoate,Ethyl hexadecanoate,0.9025649001,0.9025649001,1
+ethyl.pentadecanoate,ethyl.hexadecanoate,Ethyl pentadecanoate,Ethyl hexadecanoate,0.8035046074,0.8035046074,1
+Z.Z.geranyl.linalool,ethyl.hexadecanoate,"Z,Z-geranyl linalool",Ethyl hexadecanoate,0.7495894199,0.7495894199,1
+Z.Z.geranyl.linalool,ethyl.octadecanoate,"Z,Z-geranyl linalool",Ethyl octadecanoate,0.7071747057,0.7071747057,1
+ethyl.hexadecanoate,ethyl.octadecanoate,Ethyl hexadecanoate,Ethyl octadecanoate,0.7806269539,0.7806269539,1
+manool.oxide,isopropyl.hexadecanoate,Manool oxide,Isopropyl hexadecanoate,0.7354967802,0.7354967802,1

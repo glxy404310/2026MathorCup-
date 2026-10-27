@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "revision": "account path cleanup and removal of document-export tooling",
+  "final_pdf_sha256": "31ba483b09ca4c5621aba3d36a4e1b984fb0d61dbf0cbda6344543dc36b31ee7",
+  "rendered_pages": 354,
+  "main_document_pages": 57,
+  "body_including_references_pages": 24,
+  "main_review": {
+    "method": "Native-size page review; identical scientific pages reused by exact PNG comparison",
+    "unchanged_native_reviewed_pages": [
+      1,
+      53
+    ],
+    "changed_native_reviewed_pages": [
+      54,
+      55,
+      56,
+      57
+    ]
+  },
+  "source_review": {
+    "pages": [
+      58,
+      354
+    ],
+    "contact_sheets": 25,
+    "contact_sheet_coverage": [
+      58,
+      354
+    ],
+    "method": "All source pages reviewed in contact sheets for overall layout with selected pages at native size, complemented by full text and margin reconciliation",
+    "native_size_samples": [
+      58,
+      76,
+      85,
+      327,
+      354
+    ],
+    "source_files_text_reconciled": 49,
+    "source_lines_text_reconciled": 12284,
+    "every_drawn_line_within_margins": true,
+    "running_source_headers": false
+  },
+  "privacy": {
+    "actual_account_path_absent": true,
+    "template_account_metadata_removed": true,
+    "document_export_code_absent": true
+  },
+  "findings": {
+    "missing_glyphs": false,
+    "clipping": false,
+    "overlap": false,
+    "broken_tables": false,
+    "repeated_table_headers": true
+  },
+  "notes": [
+    "Scientific text, formulas, figures and result tables unchanged before appendix D.",
+    "Only modelling, result-plotting and numerical-verification programs are included.",
+    "Short terminal code pages reflect individual file endings."
+  ]
+}

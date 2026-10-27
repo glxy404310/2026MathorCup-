@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "frozen_previous_results_before",
+      "details": [
+        {
+          "directory": "outputs/q3_optimized",
+          "unchanged_files": 72
+        },
+        {
+          "directory": "outputs/q3",
+          "unchanged_files": 65
+        }
+      ]
+    },
+    {
+      "name": "original_inputs",
+      "details": {
+        "contract": {
+          "rows": 250,
+          "features": 226,
+          "calibrated": 69,
+          "relative": 157,
+          "negative_calibrated_invalidated": 3,
+          "missing_cells_preserved": 72
+        },
+        "provenance": {
+          "files": 9,
+          "hash_algorithm": "sha256",
+          "unchanged": true
+        }
+      }
+    },
+    {
+      "name": "non_source_loso_selection",
+      "details": {
+        "non_source_rows": 239,
+        "heldout_styles": 21,
+        "candidate_count": 14,
+        "prediction_rows": 3346,
+        "selected_method": "local_aging_pca8_k25",
+        "selected_loso_predictions_refitted": 21,
+        "qualified": true,
+        "selected_macro_rmse": 0.36496808436107453,
+        "best_mean_macro_rmse": 0.37753179962465727,
+        "selected_pils_diagnostic_rmse": 0.5615034206672974,
+        "bootstrap_indices_shape": [
+          60,
+          239
+        ],
+        "pils_is_fresh_test": false
+      }
+    },
+    {
+      "name": "predeclared_transfer_search",
+      "details": {
+        "experiment": "transfer",
+        "reconstructed_candidates": 66044,
+        "selection_only_argmin_checks": 34,
+        "scenario_concentration_checks": 1360,
+        "maximum_paired_quantile_error": 1.0408340855860843e-16,
+        "default_policy": {
+          "sources": 11,
+          "selected": 5,
+          "new_model_checks_passed": 5,
+          "historical_cross_proxy_passed": 5,
+          "fresh_cross_proxy_passed": 4,
+          "all_committees_passed": 4,
+          "no_candidate": 6
+        },
+        "original_committee_outputs": 1,
+        "original_center_outputs": 45,
+        "fresh_original_protocol_models": 20
+      }
+    },
+    {
+      "name": "fixed_protocol_consensus_followup",
+      "details": {
+        "experiment": "consensus",
+        "reconstructed_candidates": 66044,
+        "selection_only_argmin_checks": 62,
+        "scenario_concentration_checks": 2480,
+        "maximum_paired_quantile_error": 0.0,
+        "default_policy": {
+          "sources": 11,
+          "selected": 10,
+          "new_model_checks_passed": 6,
+          "historical_cross_proxy_passed": 6,
+          "fresh_cross_proxy_passed": 6,
+          "all_committees_passed": 6,
+          "no_candidate": 1
+        },
+        "original_committee_outputs": 1,
+        "original_center_outputs": 45,
+        "fresh_original_protocol_models": 20
+      }
+    },
+    {
+      "name": "final_artifacts",
+      "details": {
+        "hashed_report_sources": 18,
+        "prediction_comparisons": 14,
+        "experiments_with_policy_and_scenario_tables": 2,
+        "source_diagnostics": 11,
+        "figure_pairs": 3,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "frozen_previous_results_after",
+      "details": [
+        {
+          "directory": "outputs/q3_optimized",
+          "unchanged_files": 72
+        },
+        {
+          "directory": "outputs/q3",
+          "unchanged_files": 65
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Pils results are repeatedly viewed diagnostics, not fresh external tests.",
+    "LOSO-selected scores are optimistic after candidate selection; bootstrap fixes the chosen configuration.",
+    "Committee consistency and audit quantiles do not establish true taste or causal defect preservation."
+  ],
+  "elapsed_seconds": 69.38341504201526
+}

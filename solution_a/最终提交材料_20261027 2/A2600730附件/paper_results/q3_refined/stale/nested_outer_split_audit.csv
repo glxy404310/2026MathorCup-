@@ -1,0 +1,957 @@
+outer_fold,role,global_index,style
+1,train,0,Low/No alcohol
+1,train,1,Low/No alcohol
+1,train,2,Low/No alcohol
+1,train,3,Low/No alcohol
+1,train,4,Low/No alcohol
+1,train,5,Fruitbeer
+1,train,6,Dubbel
+1,train,7,Fruitbeer
+1,train,9,Fruitbeer
+1,train,10,Low/No alcohol
+1,train,11,Low/No alcohol
+1,train,12,Flanders old brown
+1,train,13,Fruitbeer
+1,train,14,Fruitbeer
+1,train,15,Fruitbeer
+1,train,16,Kriek
+1,train,17,Blond
+1,train,18,Wheat
+1,train,20,Stout/Porter
+1,train,21,Blond
+1,train,25,Wheat
+1,train,26,Flanders old brown
+1,train,27,Wheat
+1,train,28,Wheat
+1,train,30,Brett/cofermented
+1,train,31,Low/No alcohol
+1,train,32,Lambic
+1,train,33,Flanders old brown
+1,train,34,Wheat
+1,train,35,Tripel
+1,train,38,Scotch
+1,train,40,Lambic
+1,train,43,Dubbel
+1,train,44,Blond
+1,train,45,Hoppy
+1,train,48,Wheat
+1,train,49,Kriek
+1,train,50,Blond
+1,train,56,Wheat
+1,train,58,Stout/Porter
+1,train,60,Brett/cofermented
+1,train,61,Hoppy
+1,train,62,Dubbel
+1,train,63,Wheat
+1,train,65,Dubbel
+1,train,67,Blond
+1,train,68,Hoppy
+1,train,70,Kriek
+1,train,72,Stout/Porter
+1,train,73,Kriek
+1,train,74,Kriek
+1,train,75,Blond
+1,train,76,Blond
+1,train,78,Strong ale
+1,train,79,Flanders old brown
+1,train,80,Blond
+1,train,81,Tripel
+1,train,82,Kriek
+1,train,83,Kriek
+1,train,87,Blond
+1,train,88,Stout/Porter
+1,train,89,Brown
+1,train,90,Hoppy
+1,train,91,Brown
+1,train,92,Lambic
+1,train,93,Hoppy
+1,train,94,Strong ale
+1,train,95,Brown
+1,train,96,Blond
+1,train,97,Hoppy
+1,train,98,Stout/Porter
+1,train,99,Kriek
+1,train,100,Stout/Porter
+1,train,101,Brett/cofermented
+1,train,102,Stout/Porter
+1,train,103,Strong ale
+1,train,105,Fruitbeer
+1,train,107,Flanders old brown
+1,train,110,Tripel
+1,train,111,Blond
+1,train,112,Blond
+1,train,113,Dubbel
+1,train,115,Brown
+1,train,116,Brown
+1,train,117,Kriek
+1,train,118,Blond
+1,train,119,Tripel
+1,train,121,Blond
+1,train,122,Wheat
+1,train,123,Strong ale
+1,train,124,Blond
+1,train,125,Hoppy
+1,train,126,Tripel
+1,train,127,Lambic
+1,train,128,Brett/cofermented
+1,train,129,Tripel
+1,train,130,Strong ale
+1,train,133,Dubbel
+1,train,134,Tripel
+1,train,135,Blond
+1,train,136,Lambic
+1,train,137,Blond
+1,train,138,Hoppy
+1,train,139,Hoppy
+1,train,140,Brett/cofermented
+1,train,141,Lambic
+1,train,142,Brown
+1,train,143,Dubbel
+1,train,145,Hoppy
+1,train,147,Dubbel
+1,train,148,Hoppy
+1,train,150,Wheat
+1,train,151,Fruitbeer
+1,train,154,Blond
+1,train,156,Stout/Porter
+1,train,157,Brown
+1,train,158,Blond
+1,train,159,Tripel
+1,train,160,Tripel
+1,train,161,Blond
+1,train,162,Strong ale
+1,train,163,Blond
+1,train,164,Brown
+1,train,165,Blond
+1,train,166,Tripel
+1,train,167,Tripel
+1,train,169,Strong ale
+1,train,170,Lambic
+1,train,172,Lambic
+1,train,173,Kriek
+1,train,174,Scotch
+1,train,175,Scotch
+1,train,176,Blond
+1,train,177,Brown
+1,train,179,Lambic
+1,train,180,Stout/Porter
+1,train,182,Hoppy
+1,train,183,Hoppy
+1,train,184,Stout/Porter
+1,train,185,Hoppy
+1,train,186,Tripel
+1,train,187,Blond
+1,train,188,Scotch
+1,train,189,Lambic
+1,train,190,Tripel
+1,train,191,Brown
+1,train,192,Dubbel
+1,train,193,Tripel
+1,train,194,Tripel
+1,train,195,Blond
+1,train,197,Wheat
+1,train,199,Strong ale
+1,train,201,Blond
+1,train,202,Blond
+1,train,203,Strong ale
+1,train,204,Brown
+1,train,205,Hoppy
+1,train,207,Strong ale
+1,train,208,Tripel
+1,train,209,Hoppy
+1,train,210,Strong ale
+1,train,211,Stout/Porter
+1,train,212,Tripel
+1,train,213,Wheat
+1,train,214,Strong ale
+1,train,215,Blond
+1,train,216,Hoppy
+1,train,217,Blond
+1,train,218,Dubbel
+1,train,219,Strong ale
+1,train,220,Tripel
+1,train,221,Tripel
+1,train,222,Tripel
+1,train,223,Tripel
+1,train,225,Blond
+1,train,227,Tripel
+1,train,228,Stout/Porter
+1,train,230,Tripel
+1,train,231,Scotch
+1,train,232,Tripel
+1,train,235,Brown
+1,train,236,Brett/cofermented
+1,train,237,Tripel
+1,train,238,Blond
+1,train,239,Lambic
+1,train,241,Tripel
+1,train,242,Strong ale
+1,train,243,Tripel
+1,train,244,Stout/Porter
+1,train,245,Strong ale
+1,train,246,Strong ale
+1,train,247,Strong ale
+1,train,248,Strong ale
+1,train,249,Tripel
+1,test,29,Amber
+1,test,37,Saison
+1,test,39,West Flanders ale
+1,test,42,Saison
+1,test,46,Faro
+1,test,47,Amber
+1,test,52,Saison
+1,test,53,Amber
+1,test,54,Saison
+1,test,55,West Flanders ale
+1,test,57,Faro
+1,test,59,Saison
+1,test,64,Amber
+1,test,66,Saison
+1,test,69,West Flanders ale
+1,test,71,Faro
+1,test,77,West Flanders ale
+1,test,84,Amber
+1,test,85,West Flanders ale
+1,test,86,West Flanders ale
+1,test,106,Christmas
+1,test,109,Amber
+1,test,114,Brut
+1,test,120,Christmas
+1,test,131,Saison
+1,test,132,Saison
+1,test,144,Amber
+1,test,146,Christmas
+1,test,149,West Flanders ale
+1,test,152,Amber
+1,test,153,Saison
+1,test,155,Amber
+1,test,168,Christmas
+1,test,178,Amber
+1,test,181,Brut
+1,test,196,Saison
+1,test,198,Christmas
+1,test,200,Christmas
+1,test,206,Christmas
+1,test,224,Brut
+1,test,226,Christmas
+1,test,229,Amber
+1,test,233,Amber
+1,test,234,Christmas
+1,test,240,Brut
+2,train,5,Fruitbeer
+2,train,6,Dubbel
+2,train,7,Fruitbeer
+2,train,9,Fruitbeer
+2,train,12,Flanders old brown
+2,train,13,Fruitbeer
+2,train,14,Fruitbeer
+2,train,15,Fruitbeer
+2,train,16,Kriek
+2,train,20,Stout/Porter
+2,train,26,Flanders old brown
+2,train,29,Amber
+2,train,32,Lambic
+2,train,33,Flanders old brown
+2,train,35,Tripel
+2,train,37,Saison
+2,train,38,Scotch
+2,train,39,West Flanders ale
+2,train,40,Lambic
+2,train,42,Saison
+2,train,43,Dubbel
+2,train,45,Hoppy
+2,train,46,Faro
+2,train,47,Amber
+2,train,49,Kriek
+2,train,52,Saison
+2,train,53,Amber
+2,train,54,Saison
+2,train,55,West Flanders ale
+2,train,57,Faro
+2,train,58,Stout/Porter
+2,train,59,Saison
+2,train,61,Hoppy
+2,train,62,Dubbel
+2,train,64,Amber
+2,train,65,Dubbel
+2,train,66,Saison
+2,train,68,Hoppy
+2,train,69,West Flanders ale
+2,train,70,Kriek
+2,train,71,Faro
+2,train,72,Stout/Porter
+2,train,73,Kriek
+2,train,74,Kriek
+2,train,77,West Flanders ale
+2,train,78,Strong ale
+2,train,79,Flanders old brown
+2,train,81,Tripel
+2,train,82,Kriek
+2,train,83,Kriek
+2,train,84,Amber
+2,train,85,West Flanders ale
+2,train,86,West Flanders ale
+2,train,88,Stout/Porter
+2,train,90,Hoppy
+2,train,92,Lambic
+2,train,93,Hoppy
+2,train,94,Strong ale
+2,train,97,Hoppy
+2,train,98,Stout/Porter
+2,train,99,Kriek
+2,train,100,Stout/Porter
+2,train,102,Stout/Porter
+2,train,103,Strong ale
+2,train,105,Fruitbeer
+2,train,106,Christmas
+2,train,107,Flanders old brown
+2,train,109,Amber
+2,train,110,Tripel
+2,train,113,Dubbel
+2,train,114,Brut
+2,train,117,Kriek
+2,train,119,Tripel
+2,train,120,Christmas
+2,train,123,Strong ale
+2,train,125,Hoppy
+2,train,126,Tripel
+2,train,127,Lambic
+2,train,129,Tripel
+2,train,130,Strong ale
+2,train,131,Saison
+2,train,132,Saison
+2,train,133,Dubbel
+2,train,134,Tripel
+2,train,136,Lambic
+2,train,138,Hoppy
+2,train,139,Hoppy
+2,train,141,Lambic
+2,train,143,Dubbel
+2,train,144,Amber
+2,train,145,Hoppy
+2,train,146,Christmas
+2,train,147,Dubbel
+2,train,148,Hoppy
+2,train,149,West Flanders ale
+2,train,151,Fruitbeer
+2,train,152,Amber
+2,train,153,Saison
+2,train,155,Amber
+2,train,156,Stout/Porter
+2,train,159,Tripel
+2,train,160,Tripel
+2,train,162,Strong ale
+2,train,166,Tripel
+2,train,167,Tripel
+2,train,168,Christmas
+2,train,169,Strong ale
+2,train,170,Lambic
+2,train,172,Lambic
+2,train,173,Kriek
+2,train,174,Scotch
+2,train,175,Scotch
+2,train,178,Amber
+2,train,179,Lambic
+2,train,180,Stout/Porter
+2,train,181,Brut
+2,train,182,Hoppy
+2,train,183,Hoppy
+2,train,184,Stout/Porter
+2,train,185,Hoppy
+2,train,186,Tripel
+2,train,188,Scotch
+2,train,189,Lambic
+2,train,190,Tripel
+2,train,192,Dubbel
+2,train,193,Tripel
+2,train,194,Tripel
+2,train,196,Saison
+2,train,198,Christmas
+2,train,199,Strong ale
+2,train,200,Christmas
+2,train,203,Strong ale
+2,train,205,Hoppy
+2,train,206,Christmas
+2,train,207,Strong ale
+2,train,208,Tripel
+2,train,209,Hoppy
+2,train,210,Strong ale
+2,train,211,Stout/Porter
+2,train,212,Tripel
+2,train,214,Strong ale
+2,train,216,Hoppy
+2,train,218,Dubbel
+2,train,219,Strong ale
+2,train,220,Tripel
+2,train,221,Tripel
+2,train,222,Tripel
+2,train,223,Tripel
+2,train,224,Brut
+2,train,226,Christmas
+2,train,227,Tripel
+2,train,228,Stout/Porter
+2,train,229,Amber
+2,train,230,Tripel
+2,train,231,Scotch
+2,train,232,Tripel
+2,train,233,Amber
+2,train,234,Christmas
+2,train,237,Tripel
+2,train,239,Lambic
+2,train,240,Brut
+2,train,241,Tripel
+2,train,242,Strong ale
+2,train,243,Tripel
+2,train,244,Stout/Porter
+2,train,245,Strong ale
+2,train,246,Strong ale
+2,train,247,Strong ale
+2,train,248,Strong ale
+2,train,249,Tripel
+2,test,0,Low/No alcohol
+2,test,1,Low/No alcohol
+2,test,2,Low/No alcohol
+2,test,3,Low/No alcohol
+2,test,4,Low/No alcohol
+2,test,10,Low/No alcohol
+2,test,11,Low/No alcohol
+2,test,17,Blond
+2,test,18,Wheat
+2,test,21,Blond
+2,test,25,Wheat
+2,test,27,Wheat
+2,test,28,Wheat
+2,test,30,Brett/cofermented
+2,test,31,Low/No alcohol
+2,test,34,Wheat
+2,test,44,Blond
+2,test,48,Wheat
+2,test,50,Blond
+2,test,56,Wheat
+2,test,60,Brett/cofermented
+2,test,63,Wheat
+2,test,67,Blond
+2,test,75,Blond
+2,test,76,Blond
+2,test,80,Blond
+2,test,87,Blond
+2,test,89,Brown
+2,test,91,Brown
+2,test,95,Brown
+2,test,96,Blond
+2,test,101,Brett/cofermented
+2,test,111,Blond
+2,test,112,Blond
+2,test,115,Brown
+2,test,116,Brown
+2,test,118,Blond
+2,test,121,Blond
+2,test,122,Wheat
+2,test,124,Blond
+2,test,128,Brett/cofermented
+2,test,135,Blond
+2,test,137,Blond
+2,test,140,Brett/cofermented
+2,test,142,Brown
+2,test,150,Wheat
+2,test,154,Blond
+2,test,157,Brown
+2,test,158,Blond
+2,test,161,Blond
+2,test,163,Blond
+2,test,164,Brown
+2,test,165,Blond
+2,test,176,Blond
+2,test,177,Brown
+2,test,187,Blond
+2,test,191,Brown
+2,test,195,Blond
+2,test,197,Wheat
+2,test,201,Blond
+2,test,202,Blond
+2,test,204,Brown
+2,test,213,Wheat
+2,test,215,Blond
+2,test,217,Blond
+2,test,225,Blond
+2,test,235,Brown
+2,test,236,Brett/cofermented
+2,test,238,Blond
+3,train,0,Low/No alcohol
+3,train,1,Low/No alcohol
+3,train,2,Low/No alcohol
+3,train,3,Low/No alcohol
+3,train,4,Low/No alcohol
+3,train,10,Low/No alcohol
+3,train,11,Low/No alcohol
+3,train,12,Flanders old brown
+3,train,16,Kriek
+3,train,17,Blond
+3,train,18,Wheat
+3,train,21,Blond
+3,train,25,Wheat
+3,train,26,Flanders old brown
+3,train,27,Wheat
+3,train,28,Wheat
+3,train,29,Amber
+3,train,30,Brett/cofermented
+3,train,31,Low/No alcohol
+3,train,32,Lambic
+3,train,33,Flanders old brown
+3,train,34,Wheat
+3,train,37,Saison
+3,train,38,Scotch
+3,train,39,West Flanders ale
+3,train,40,Lambic
+3,train,42,Saison
+3,train,44,Blond
+3,train,46,Faro
+3,train,47,Amber
+3,train,48,Wheat
+3,train,49,Kriek
+3,train,50,Blond
+3,train,52,Saison
+3,train,53,Amber
+3,train,54,Saison
+3,train,55,West Flanders ale
+3,train,56,Wheat
+3,train,57,Faro
+3,train,59,Saison
+3,train,60,Brett/cofermented
+3,train,63,Wheat
+3,train,64,Amber
+3,train,66,Saison
+3,train,67,Blond
+3,train,69,West Flanders ale
+3,train,70,Kriek
+3,train,71,Faro
+3,train,73,Kriek
+3,train,74,Kriek
+3,train,75,Blond
+3,train,76,Blond
+3,train,77,West Flanders ale
+3,train,78,Strong ale
+3,train,79,Flanders old brown
+3,train,80,Blond
+3,train,82,Kriek
+3,train,83,Kriek
+3,train,84,Amber
+3,train,85,West Flanders ale
+3,train,86,West Flanders ale
+3,train,87,Blond
+3,train,89,Brown
+3,train,91,Brown
+3,train,92,Lambic
+3,train,94,Strong ale
+3,train,95,Brown
+3,train,96,Blond
+3,train,99,Kriek
+3,train,101,Brett/cofermented
+3,train,103,Strong ale
+3,train,106,Christmas
+3,train,107,Flanders old brown
+3,train,109,Amber
+3,train,111,Blond
+3,train,112,Blond
+3,train,114,Brut
+3,train,115,Brown
+3,train,116,Brown
+3,train,117,Kriek
+3,train,118,Blond
+3,train,120,Christmas
+3,train,121,Blond
+3,train,122,Wheat
+3,train,123,Strong ale
+3,train,124,Blond
+3,train,127,Lambic
+3,train,128,Brett/cofermented
+3,train,130,Strong ale
+3,train,131,Saison
+3,train,132,Saison
+3,train,135,Blond
+3,train,136,Lambic
+3,train,137,Blond
+3,train,140,Brett/cofermented
+3,train,141,Lambic
+3,train,142,Brown
+3,train,144,Amber
+3,train,146,Christmas
+3,train,149,West Flanders ale
+3,train,150,Wheat
+3,train,152,Amber
+3,train,153,Saison
+3,train,154,Blond
+3,train,155,Amber
+3,train,157,Brown
+3,train,158,Blond
+3,train,161,Blond
+3,train,162,Strong ale
+3,train,163,Blond
+3,train,164,Brown
+3,train,165,Blond
+3,train,168,Christmas
+3,train,169,Strong ale
+3,train,170,Lambic
+3,train,172,Lambic
+3,train,173,Kriek
+3,train,174,Scotch
+3,train,175,Scotch
+3,train,176,Blond
+3,train,177,Brown
+3,train,178,Amber
+3,train,179,Lambic
+3,train,181,Brut
+3,train,187,Blond
+3,train,188,Scotch
+3,train,189,Lambic
+3,train,191,Brown
+3,train,195,Blond
+3,train,196,Saison
+3,train,197,Wheat
+3,train,198,Christmas
+3,train,199,Strong ale
+3,train,200,Christmas
+3,train,201,Blond
+3,train,202,Blond
+3,train,203,Strong ale
+3,train,204,Brown
+3,train,206,Christmas
+3,train,207,Strong ale
+3,train,210,Strong ale
+3,train,213,Wheat
+3,train,214,Strong ale
+3,train,215,Blond
+3,train,217,Blond
+3,train,219,Strong ale
+3,train,224,Brut
+3,train,225,Blond
+3,train,226,Christmas
+3,train,229,Amber
+3,train,231,Scotch
+3,train,233,Amber
+3,train,234,Christmas
+3,train,235,Brown
+3,train,236,Brett/cofermented
+3,train,238,Blond
+3,train,239,Lambic
+3,train,240,Brut
+3,train,242,Strong ale
+3,train,245,Strong ale
+3,train,246,Strong ale
+3,train,247,Strong ale
+3,train,248,Strong ale
+3,test,5,Fruitbeer
+3,test,6,Dubbel
+3,test,7,Fruitbeer
+3,test,9,Fruitbeer
+3,test,13,Fruitbeer
+3,test,14,Fruitbeer
+3,test,15,Fruitbeer
+3,test,20,Stout/Porter
+3,test,35,Tripel
+3,test,43,Dubbel
+3,test,45,Hoppy
+3,test,58,Stout/Porter
+3,test,61,Hoppy
+3,test,62,Dubbel
+3,test,65,Dubbel
+3,test,68,Hoppy
+3,test,72,Stout/Porter
+3,test,81,Tripel
+3,test,88,Stout/Porter
+3,test,90,Hoppy
+3,test,93,Hoppy
+3,test,97,Hoppy
+3,test,98,Stout/Porter
+3,test,100,Stout/Porter
+3,test,102,Stout/Porter
+3,test,105,Fruitbeer
+3,test,110,Tripel
+3,test,113,Dubbel
+3,test,119,Tripel
+3,test,125,Hoppy
+3,test,126,Tripel
+3,test,129,Tripel
+3,test,133,Dubbel
+3,test,134,Tripel
+3,test,138,Hoppy
+3,test,139,Hoppy
+3,test,143,Dubbel
+3,test,145,Hoppy
+3,test,147,Dubbel
+3,test,148,Hoppy
+3,test,151,Fruitbeer
+3,test,156,Stout/Porter
+3,test,159,Tripel
+3,test,160,Tripel
+3,test,166,Tripel
+3,test,167,Tripel
+3,test,180,Stout/Porter
+3,test,182,Hoppy
+3,test,183,Hoppy
+3,test,184,Stout/Porter
+3,test,185,Hoppy
+3,test,186,Tripel
+3,test,190,Tripel
+3,test,192,Dubbel
+3,test,193,Tripel
+3,test,194,Tripel
+3,test,205,Hoppy
+3,test,208,Tripel
+3,test,209,Hoppy
+3,test,211,Stout/Porter
+3,test,212,Tripel
+3,test,216,Hoppy
+3,test,218,Dubbel
+3,test,220,Tripel
+3,test,221,Tripel
+3,test,222,Tripel
+3,test,223,Tripel
+3,test,227,Tripel
+3,test,228,Stout/Porter
+3,test,230,Tripel
+3,test,232,Tripel
+3,test,237,Tripel
+3,test,241,Tripel
+3,test,243,Tripel
+3,test,244,Stout/Porter
+3,test,249,Tripel
+4,train,0,Low/No alcohol
+4,train,1,Low/No alcohol
+4,train,2,Low/No alcohol
+4,train,3,Low/No alcohol
+4,train,4,Low/No alcohol
+4,train,5,Fruitbeer
+4,train,6,Dubbel
+4,train,7,Fruitbeer
+4,train,9,Fruitbeer
+4,train,10,Low/No alcohol
+4,train,11,Low/No alcohol
+4,train,13,Fruitbeer
+4,train,14,Fruitbeer
+4,train,15,Fruitbeer
+4,train,17,Blond
+4,train,18,Wheat
+4,train,20,Stout/Porter
+4,train,21,Blond
+4,train,25,Wheat
+4,train,27,Wheat
+4,train,28,Wheat
+4,train,29,Amber
+4,train,30,Brett/cofermented
+4,train,31,Low/No alcohol
+4,train,34,Wheat
+4,train,35,Tripel
+4,train,37,Saison
+4,train,39,West Flanders ale
+4,train,42,Saison
+4,train,43,Dubbel
+4,train,44,Blond
+4,train,45,Hoppy
+4,train,46,Faro
+4,train,47,Amber
+4,train,48,Wheat
+4,train,50,Blond
+4,train,52,Saison
+4,train,53,Amber
+4,train,54,Saison
+4,train,55,West Flanders ale
+4,train,56,Wheat
+4,train,57,Faro
+4,train,58,Stout/Porter
+4,train,59,Saison
+4,train,60,Brett/cofermented
+4,train,61,Hoppy
+4,train,62,Dubbel
+4,train,63,Wheat
+4,train,64,Amber
+4,train,65,Dubbel
+4,train,66,Saison
+4,train,67,Blond
+4,train,68,Hoppy
+4,train,69,West Flanders ale
+4,train,71,Faro
+4,train,72,Stout/Porter
+4,train,75,Blond
+4,train,76,Blond
+4,train,77,West Flanders ale
+4,train,80,Blond
+4,train,81,Tripel
+4,train,84,Amber
+4,train,85,West Flanders ale
+4,train,86,West Flanders ale
+4,train,87,Blond
+4,train,88,Stout/Porter
+4,train,89,Brown
+4,train,90,Hoppy
+4,train,91,Brown
+4,train,93,Hoppy
+4,train,95,Brown
+4,train,96,Blond
+4,train,97,Hoppy
+4,train,98,Stout/Porter
+4,train,100,Stout/Porter
+4,train,101,Brett/cofermented
+4,train,102,Stout/Porter
+4,train,105,Fruitbeer
+4,train,106,Christmas
+4,train,109,Amber
+4,train,110,Tripel
+4,train,111,Blond
+4,train,112,Blond
+4,train,113,Dubbel
+4,train,114,Brut
+4,train,115,Brown
+4,train,116,Brown
+4,train,118,Blond
+4,train,119,Tripel
+4,train,120,Christmas
+4,train,121,Blond
+4,train,122,Wheat
+4,train,124,Blond
+4,train,125,Hoppy
+4,train,126,Tripel
+4,train,128,Brett/cofermented
+4,train,129,Tripel
+4,train,131,Saison
+4,train,132,Saison
+4,train,133,Dubbel
+4,train,134,Tripel
+4,train,135,Blond
+4,train,137,Blond
+4,train,138,Hoppy
+4,train,139,Hoppy
+4,train,140,Brett/cofermented
+4,train,142,Brown
+4,train,143,Dubbel
+4,train,144,Amber
+4,train,145,Hoppy
+4,train,146,Christmas
+4,train,147,Dubbel
+4,train,148,Hoppy
+4,train,149,West Flanders ale
+4,train,150,Wheat
+4,train,151,Fruitbeer
+4,train,152,Amber
+4,train,153,Saison
+4,train,154,Blond
+4,train,155,Amber
+4,train,156,Stout/Porter
+4,train,157,Brown
+4,train,158,Blond
+4,train,159,Tripel
+4,train,160,Tripel
+4,train,161,Blond
+4,train,163,Blond
+4,train,164,Brown
+4,train,165,Blond
+4,train,166,Tripel
+4,train,167,Tripel
+4,train,168,Christmas
+4,train,176,Blond
+4,train,177,Brown
+4,train,178,Amber
+4,train,180,Stout/Porter
+4,train,181,Brut
+4,train,182,Hoppy
+4,train,183,Hoppy
+4,train,184,Stout/Porter
+4,train,185,Hoppy
+4,train,186,Tripel
+4,train,187,Blond
+4,train,190,Tripel
+4,train,191,Brown
+4,train,192,Dubbel
+4,train,193,Tripel
+4,train,194,Tripel
+4,train,195,Blond
+4,train,196,Saison
+4,train,197,Wheat
+4,train,198,Christmas
+4,train,200,Christmas
+4,train,201,Blond
+4,train,202,Blond
+4,train,204,Brown
+4,train,205,Hoppy
+4,train,206,Christmas
+4,train,208,Tripel
+4,train,209,Hoppy
+4,train,211,Stout/Porter
+4,train,212,Tripel
+4,train,213,Wheat
+4,train,215,Blond
+4,train,216,Hoppy
+4,train,217,Blond
+4,train,218,Dubbel
+4,train,220,Tripel
+4,train,221,Tripel
+4,train,222,Tripel
+4,train,223,Tripel
+4,train,224,Brut
+4,train,225,Blond
+4,train,226,Christmas
+4,train,227,Tripel
+4,train,228,Stout/Porter
+4,train,229,Amber
+4,train,230,Tripel
+4,train,232,Tripel
+4,train,233,Amber
+4,train,234,Christmas
+4,train,235,Brown
+4,train,236,Brett/cofermented
+4,train,237,Tripel
+4,train,238,Blond
+4,train,240,Brut
+4,train,241,Tripel
+4,train,243,Tripel
+4,train,244,Stout/Porter
+4,train,249,Tripel
+4,test,12,Flanders old brown
+4,test,16,Kriek
+4,test,26,Flanders old brown
+4,test,32,Lambic
+4,test,33,Flanders old brown
+4,test,38,Scotch
+4,test,40,Lambic
+4,test,49,Kriek
+4,test,70,Kriek
+4,test,73,Kriek
+4,test,74,Kriek
+4,test,78,Strong ale
+4,test,79,Flanders old brown
+4,test,82,Kriek
+4,test,83,Kriek
+4,test,92,Lambic
+4,test,94,Strong ale
+4,test,99,Kriek
+4,test,103,Strong ale
+4,test,107,Flanders old brown
+4,test,117,Kriek
+4,test,123,Strong ale
+4,test,127,Lambic
+4,test,130,Strong ale
+4,test,136,Lambic
+4,test,141,Lambic
+4,test,162,Strong ale
+4,test,169,Strong ale
+4,test,170,Lambic
+4,test,172,Lambic
+4,test,173,Kriek
+4,test,174,Scotch
+4,test,175,Scotch
+4,test,179,Lambic
+4,test,188,Scotch
+4,test,189,Lambic
+4,test,199,Strong ale
+4,test,203,Strong ale
+4,test,207,Strong ale
+4,test,210,Strong ale
+4,test,214,Strong ale
+4,test,219,Strong ale
+4,test,231,Scotch
+4,test,239,Lambic
+4,test,242,Strong ale
+4,test,245,Strong ale
+4,test,246,Strong ale
+4,test,247,Strong ale
+4,test,248,Strong ale

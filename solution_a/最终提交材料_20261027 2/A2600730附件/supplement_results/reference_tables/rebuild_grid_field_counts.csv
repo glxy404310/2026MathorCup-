@@ -1,0 +1,6 @@
+field,changed_rows,total_rows
+candidate_index,16,792
+status,7,792
+new_model_passed,5,792
+fresh_consistency_passed,4,792
+historical_consistency_passed,5,792

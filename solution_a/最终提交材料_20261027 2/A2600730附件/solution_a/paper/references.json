@@ -1,0 +1,290 @@
+[
+  {
+    "number": 1,
+    "authors": [
+      "Michiel Schreurs",
+      "Supinya Piampongsant",
+      "Miguel Roncoroni",
+      "Lloyd Cool",
+      "Beatriz Herrera-Malaver",
+      "Christophe Vanderaa",
+      "Florian A. Theßeling",
+      "Łukasz Kreft",
+      "Alexander Botzki",
+      "Philippe Malcorps",
+      "Luk Daenen",
+      "Tom Wenseleers",
+      "Kevin J. Verstrepen"
+    ],
+    "title": "Predicting and improving complex beer flavor through machine learning",
+    "year": 2024,
+    "journal": "Nature Communications",
+    "volume": "15",
+    "pages": "2368",
+    "doi": "10.1038/s41467-024-46346-0",
+    "url": "https://www.nature.com/articles/s41467-024-46346-0",
+    "verified_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10966102/",
+    "source_type": "primary_research",
+    "claims": [
+      "Sections on chemical analysis and pairwise sensory correlations discuss shared fermentation patterns and unexpected associations of ethyl octanoate/decanoate with hop perception and bitterness.",
+      "The model-dissection section describes ethyl acetate as fruity/solvent/alcoholic and lactic acid as contributing tart taste."
+    ],
+    "support_boundary": "本题附件主要源自同一研究，不能作为本样本关联的独立外部重复验证；研究中的加标结果也不验证全部135个Top-3位置。",
+    "original_number": 1
+  },
+  {
+    "number": 2,
+    "authors": [
+      "Pierre Geurts",
+      "Damien Ernst",
+      "Louis Wehenkel"
+    ],
+    "title": "Extremely randomized trees",
+    "journal": "Machine Learning",
+    "year": 2006,
+    "volume": "63",
+    "pages": "3–42",
+    "doi": "10.1007/s10994-006-6226-1",
+    "url": "https://doi.org/10.1007/s10994-006-6226-1",
+    "original_number": 2
+  },
+  {
+    "number": 3,
+    "authors": [
+      "Arthur E. Hoerl",
+      "Robert W. Kennard"
+    ],
+    "title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+    "journal": "Technometrics",
+    "year": 1970,
+    "volume": "12",
+    "issue": "1",
+    "pages": "55–67",
+    "doi": "10.1080/00401706.1970.10488634",
+    "url": "https://www.stat.cmu.edu/technometrics/70-79/VOL-12-01/v1201055.pdf",
+    "original_number": 3
+  },
+  {
+    "number": 4,
+    "authors": [
+      "Stefan Hanke",
+      "V. Ditz",
+      "M. Herrmann",
+      "Werner Back",
+      "Thomas Becker",
+      "Martin Krottenthaler"
+    ],
+    "title": "Influence of Ethyl Acetate, Isoamyl Acetate and Linalool on off-flavour Perception in Beer",
+    "year": 2010,
+    "journal": "BrewingScience",
+    "volume": "63",
+    "issue": "7/8",
+    "pages": "94–99",
+    "doi": null,
+    "url": "https://brewingscience.de/index.php/brewingscience/article/view/456",
+    "verified_fulltext_url": "https://brewingscience.de/index.php/brewingscience/article/download/456/354",
+    "source_type": "primary_research",
+    "claims": [
+      "The paper describes cabbage-like DMS and buttery diacetyl and tests their perception in lager beer.",
+      "Ester and linalool additions changed DMS/diacetyl thresholds; effects depended on compound and concentration."
+    ],
+    "support_boundary": "该来源支持缺陷感知和基质交互；没有检验本题DMS感官Top-3的松油烯-4-醇、E-橙花叔醇等候选，不能据其认定相关候选可消除缺陷。DOI未在所核实出版者页面给出。",
+    "original_number": 6
+  },
+  {
+    "number": 5,
+    "authors": [
+      "Magdalena Müller",
+      "Martina Gastl",
+      "Thomas Becker"
+    ],
+    "title": "Key constituents, flavour profiles and specific sensory evaluation of wheat style non-alcoholic beers depending on their production method",
+    "year": 2021,
+    "journal": "Journal of the Institute of Brewing",
+    "volume": "127",
+    "issue": "3",
+    "pages": "262–272",
+    "doi": "10.1002/jib.663",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.663",
+    "source_type": "primary_research",
+    "claims": [
+      "Table 2 reports GC-O/MS odor qualities including banana for isoamyl acetate, clove for 4-vinylguaiacol, floral/citrus for linalool, and fruity/glue for ethyl octanoate.",
+      "The same table identifies acidic acetic acid and several fruity esters; the study emphasizes matrix/process dependence."
+    ],
+    "support_boundary": "嗅闻口气味与特定啤酒样本提供定性依据；不等于这些物质对本题45个评分的因果系数或原量尺校准。未据气味表验证辛酸乙酯产生苦味。",
+    "original_number": 7
+  },
+  {
+    "number": 6,
+    "authors": [
+      "Kiyoshi Takoi",
+      "Yutaka Itoga",
+      "Koichiro Koie",
+      "Takayuki Kosugi",
+      "Masayuki Shimase",
+      "Yuta Katayama",
+      "Yasuyuki Nakayama",
+      "Junji Watari"
+    ],
+    "title": "The Contribution of Geraniol Metabolism to the Citrus Flavour of Beer: Synergy of Geraniol and β-Citronellol Under Coexistence with Excess Linalool",
+    "year": 2010,
+    "journal": "Journal of the Institute of Brewing",
+    "volume": "116",
+    "issue": "3",
+    "pages": "251–260",
+    "doi": "10.1002/j.2050-0416.2010.tb00428.x",
+    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/j.2050-0416.2010.tb00428.x",
+    "source_type": "primary_research",
+    "claims": [
+      "Beer sensory experiments found combined geraniol and β-citronellol made excess linalool more fruity/citrus; coexistence of the three compounds supported synergy."
+    ],
+    "support_boundary": "支持特定试验基质中的单萜醇协同，不提供每一种萜烯对任意感官项的直接机制，也不能将试验浓度直接作为通用阈值。",
+    "original_number": 5
+  },
+  {
+    "number": 7,
+    "authors": [
+      "Yu Zhang",
+      "Sinuo Li",
+      "Qi Meng",
+      "Huanlu Song",
+      "Xiaojun Wang"
+    ],
+    "title": "Characterization of Key Odor-Active Compounds in Draft Beers for the Chinese Market Using Molecular Sensory Science Approaches",
+    "year": 2024,
+    "journal": "Molecules",
+    "volume": "29",
+    "issue": "11",
+    "pages": "2537",
+    "doi": "10.3390/molecules29112537",
+    "url": "https://www.mdpi.com/1420-3049/29/11/2537",
+    "verified_fulltext_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11173443/",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Sections 2.3, 2.6, 2.7 and 3.8; Tables 1-2",
+    "claims": [
+      "Draft-beer GC-O/AEDA identified odor-active 1-hexanol; section 2.3 described a hawthorn note, not a banana-specific effect.",
+      "The sensory panel used acetaldehyde as a raw-green reference; this was a training reference rather than an acetaldehyde-to-malty dose-response experiment."
+    ],
+    "support_boundary": "四款鲜啤及其重组研究仅补充气味背景；不支持把正己醇等同香蕉酯香，或把乙醛视为麦芽、焦糖味的直接来源。文中阈值不替换附件阈值。",
+    "original_number": 20
+  },
+  {
+    "number": 8,
+    "authors": [
+      "Ann Van Holle",
+      "Anita Van Landschoot",
+      "Isabel Roldán-Ruiz",
+      "Dirk Naudts",
+      "Denis De Keukeleire"
+    ],
+    "title": "The brewing value of Amarillo hops (Humulus lupulus L.) grown in northwestern USA: A preliminary study of terroir significance",
+    "year": 2017,
+    "journal": "Journal of the Institute of Brewing",
+    "volume": "123",
+    "issue": "3",
+    "pages": "312–318",
+    "doi": "10.1002/jib.433",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.433",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Brewing trials; sensory analyses; discussion of hop-oil profiles in beer",
+    "claims": [
+      "Single-hop brewing trials compared Amarillo hops from Idaho and Washington using otherwise identical recipes.",
+      "Different citrus/floral profiles occurred with changes in limonene, linalool, methyl geranate and other compounds."
+    ],
+    "support_boundary": "提供啤酒中柑橘相关萜类的背景和混合物证据；多成分同时改变，不能分离柠檬烯的单独作用，更不能解释本题丁香味的正相关。",
+    "original_number": 23
+  },
+  {
+    "number": 9,
+    "authors": [
+      "Kiyoshi Takoi",
+      "Haruna Kumamaru",
+      "Atsushi Tanigawa"
+    ],
+    "title": "Study on Characteristic Aroma in Special Beers Brewed with Coriander (Coriandrum sativum L.) Seeds: Profiling of Flavor Compounds Derived from Coriander Seeds in Different Growing Areas",
+    "year": 2024,
+    "journal": "ACS Food Science & Technology",
+    "volume": "4",
+    "issue": "10",
+    "pages": "2439–2447",
+    "doi": "10.1021/acsfoodscitech.4c00579",
+    "url": "https://pubs.acs.org/doi/abs/10.1021/acsfoodscitech.4c00579",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Publisher abstract; article metadata",
+    "claims": [
+      "Camphor, carvone and (E)-anethole were detected in Bulgarian coriander seeds and the beers made with them.",
+      "In the tested beer matrix, these compounds enhanced flowery characteristics with excess linalool."
+    ],
+    "support_boundary": "本次核验出版者摘要；支持樟脑的原料来源与特定混合物花香协同，不证明樟脑单独产生橙味或丁香味。",
+    "original_number": 21
+  },
+  {
+    "number": 10,
+    "authors": [
+      "Sophie Noël",
+      "Catherine Liégeois",
+      "Guillaume Lermusieau",
+      "Etienne Bodart",
+      "Camille Badot",
+      "Sonia Collin"
+    ],
+    "title": "Release of Deuterated Nonenal during Beer Aging from Labeled Precursors Synthesized in the Boiling Kettle",
+    "year": 1999,
+    "journal": "Journal of Agricultural and Food Chemistry",
+    "volume": "47",
+    "issue": "10",
+    "pages": "4323–4326",
+    "doi": "10.1021/jf990211r",
+    "url": "https://pubs.acs.org/doi/10.1021/jf990211r",
+    "verified_abstract_url": "https://research.dial.uclouvain.be/entities/publication/ae561bca-3653-454b-a684-32a265080276",
+    "source_type": "primary_research",
+    "claims": [
+      "Labeled-precursor experiments linked nonenal release during aging to cardboard flavor and reversible associations formed during wort boiling."
+    ],
+    "support_boundary": "支持反式-2-壬烯醛与老化纸板味的联系；不支持本题nonenal浓度同酒花香正相关的直接机制，也不将Trans-2-nonenal与Stale hops两个感官项合并。",
+    "original_number": 8
+  },
+  {
+    "number": 11,
+    "authors": [
+      "Heidi Hai-Ling Yang",
+      "Harry T. Lawless"
+    ],
+    "title": "Time–intensity characteristics of iron compounds",
+    "year": 2006,
+    "journal": "Food Quality and Preference",
+    "volume": "17",
+    "issue": "5",
+    "pages": "337–343",
+    "doi": "10.1016/j.foodqual.2005.04.002",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0950329305000522",
+    "source_type": "primary_research",
+    "verified_on": "2026-10-24",
+    "verified_locator": "Publisher abstract, stimuli and results excerpts",
+    "claims": [
+      "Human time-intensity tests of ferrous sulfate, chloride and gluconate solutions found persistent metallic sensations.",
+      "Sensory profiles differed by the iron salt and over time."
+    ],
+    "support_boundary": "实验对象为较高浓度二价铁盐溶液，不是啤酒总铁；只列一般背景，不据此给本题总铁设金属味阈值，亦不支持总铁导致甜味。",
+    "original_number": 22
+  },
+  {
+    "number": 12,
+    "authors": [
+      "Han Liu",
+      "John Lafferty",
+      "Larry Wasserman"
+    ],
+    "title": "The Nonparanormal: Semiparametric Estimation of High Dimensional Undirected Graphs",
+    "journal": "Journal of Machine Learning Research",
+    "year": 2009,
+    "volume": "10",
+    "pages": "2295–2328",
+    "doi": null,
+    "url": "https://www.jmlr.org/papers/v10/liu09a.html",
+    "original_number": 4
+  }
+]

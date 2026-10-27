@@ -1,0 +1,34 @@
+{
+  "DMS": {
+    "feature": "DMS",
+    "chemical_name": "Dimethyl sulfide",
+    "unit": "ug/L",
+    "threshold_median": 19.0,
+    "threshold_mean": 17.25,
+    "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+  },
+  "Diacetyl": {
+    "feature": "X2.3.butanedione",
+    "chemical_name": "Diacetyl",
+    "unit": "mg/L",
+    "threshold_median": 0.09,
+    "threshold_mean": 0.29925,
+    "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+  },
+  "4VG": {
+    "feature": "X4VG",
+    "chemical_name": "4-vinylguaiacol",
+    "unit": "mg/L",
+    "threshold_median": 0.2,
+    "threshold_mean": 0.206333333,
+    "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+  },
+  "trans_2_nonenal": {
+    "feature": "X.E..2.nonenal",
+    "chemical_name": "E-2-nonenal",
+    "unit": "mg/L",
+    "threshold_median": null,
+    "threshold_mean": null,
+    "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+  }
+}

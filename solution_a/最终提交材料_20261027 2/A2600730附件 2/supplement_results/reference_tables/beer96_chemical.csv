@@ -1,0 +1,5 @@
+source_beer,transfer_id,defect,feature,unit,unit_display,source,transferred,delta,cap,slack,scenario_count,passed,at_upper,at_zero
+96,fixed_beer96_contracted_6004_retain80_margin,DMS,DMS,ug/L,μg/L,15.558450000000001,15.558450000000001,0,15.558450000000001,0,10,True,True,False
+96,fixed_beer96_contracted_6004_retain80_margin,Diacetyl,X2.3.butanedione,mg/L,mg/L,0.52388594099999997,0.50470533562499997,-0.019180605374999993,0.52388594099999997,0.019180605374999993,10,True,False,False
+96,fixed_beer96_contracted_6004_retain80_margin,4VG,X4VG,mg/L,mg/L,0,0,0,0.16000000000000003,0.16000000000000003,10,True,False,True
+96,fixed_beer96_contracted_6004_retain80_margin,trans_2_nonenal,X.E..2.nonenal,mg/L,mg/L,0.0119350085,0.005988822875,-0.0059461856250000002,0.0119350085,0.0059461856250000002,10,True,False,False

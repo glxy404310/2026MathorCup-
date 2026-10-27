@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "checks": {
+    "raw_sources": {
+      "files": 9,
+      "hash_algorithm": "sha256",
+      "unchanged": true
+    },
+    "frozen_history": [
+      {
+        "directory": "outputs/q3_optimized",
+        "unchanged_files": 71
+      },
+      {
+        "directory": "outputs/q3",
+        "unchanged_files": 64
+      },
+      {
+        "directory": "outputs/q3_domain",
+        "unchanged_files": 58
+      }
+    ],
+    "data_contract": {
+      "rows": 250,
+      "features": 226,
+      "calibrated": 69,
+      "relative": 157,
+      "negative_calibrated_invalidated": 3,
+      "missing_cells_preserved": 72
+    },
+    "beer81": {
+      "source": 81,
+      "chemical_features": 226,
+      "ood_spaces": 7,
+      "retained_sources": 11,
+      "stale_rank": 5,
+      "high_tail_training": 4,
+      "label_error_established": false,
+      "fixed_prediction_influence_groups": 18
+    },
+    "stale_prediction": {
+      "candidate_models": 12,
+      "archived_selectable_models": 9,
+      "loso_styles": 21,
+      "loso_predictions": 2868,
+      "nested_outer_folds": 4,
+      "bootstrap_models": 60,
+      "source_excluded": true,
+      "selected_method": "stable_ridge_all1000",
+      "qualified_internal": true,
+      "pils_rmse": 0.5614223239975353,
+      "pooled_loso_rmse": 0.4260080205048606,
+      "nested_selected_rmse": 0.41995050339216855
+    },
+    "balanced_transfer": {
+      "candidate_geometry_rows": 132044,
+      "candidate_screening_rows": 264088,
+      "policies": 792,
+      "selected_spectra": 438,
+      "threshold_checks": 17520,
+      "frontier_rows": 72,
+      "same_rule_rechecks": 372,
+      "default": {
+        "arm": "refined",
+        "pool": "contracted_6004",
+        "bound": "retain80",
+        "ranking": "margin"
+      },
+      "default_counts": {
+        "sources": 11,
+        "selected": 5,
+        "new_passed": 5,
+        "fresh_consistency_passed": 5,
+        "historical_consistency_passed": 5,
+        "no_candidate": 6,
+        "median_improvement_selected": 0.5316619941538966,
+        "median_improvement_passed": 0.5316619941538966,
+        "median_retention_selected": 0.8284541190164343,
+        "median_change_rms_selected": 1.0618252153350156
+      },
+      "fixed_control_counts": {
+        "sources": 11,
+        "selected": 11,
+        "new_passed": 10,
+        "fresh_consistency_passed": 10,
+        "historical_consistency_passed": 10,
+        "no_candidate": 0,
+        "median_improvement_selected": 0.5774027685828544,
+        "median_improvement_passed": 0.5844222495356495,
+        "median_retention_selected": 1.0180052127724506,
+        "median_change_rms_selected": 0.9649779853844759
+      },
+      "all_argmins_reconstructed_without_audit": true
+    },
+    "final_artifacts": {
+      "report": "docs/q3_refinement_results.md",
+      "source_hashes": 13,
+      "candidate_rows": 12,
+      "retention_policy_rows": 132,
+      "reference_rows": 36,
+      "figure_pairs": 2,
+      "report_tables_and_text_reconciled": true
+    }
+  },
+  "elapsed_seconds": 163.46946629998274,
+  "scope": "Saved-data provenance, training-only internal validation, model-response constraints and predeclared finite candidate search; no external sensory validation."
+}

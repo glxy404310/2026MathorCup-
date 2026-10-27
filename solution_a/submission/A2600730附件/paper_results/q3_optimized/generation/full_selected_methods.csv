@@ -1,0 +1,23 @@
+style,method
+Low/No alcohol,legacy_copula
+Fruitbeer,legacy_copula
+Dubbel,legacy_copula
+Pils/Lager,style_margin_copula
+Flanders old brown,legacy_copula
+Kriek,style_margin_copula
+Blond,legacy_copula
+Wheat,legacy_copula
+Stout/Porter,legacy_copula
+Amber,legacy_copula
+Brett/cofermented,legacy_copula
+Lambic,style_smoothed_mixture
+Tripel,legacy_copula
+Saison,legacy_copula
+Scotch,legacy_copula
+West Flanders ale,legacy_copula
+Hoppy,legacy_copula
+Faro,legacy_copula
+Strong ale,legacy_copula
+Brown,legacy_copula
+Christmas,legacy_copula
+Brut,legacy_copula

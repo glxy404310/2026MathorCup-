@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "document": "docs/final_model_selection.md",
+  "suggested_title": "基于集成学习与条件Copula的啤酒风味预测及受约束风格迁移",
+  "selection_scope": "Manuscript choices from existing exploratory experiments; no new external validation.",
+  "paths_relative_to": "solution_a",
+  "data": {
+    "beers": 250,
+    "styles": 22,
+    "sensory_targets": 45,
+    "sensory_scale": "attachment-standardized continuous values; original 0-6 calibration unavailable",
+    "q1_q2_features": 231,
+    "q3_features": 226,
+    "q3_calibrated": 69,
+    "q3_relative": 157
+  },
+  "q1": {
+    "main_method": "multioutput_extra_trees",
+    "parameters": {
+      "n_estimators": 300,
+      "min_samples_leaf": 3,
+      "max_features": 0.7
+    },
+    "preprocessing": "training-fold median imputation and missingness indicators",
+    "validation": "fixed-parameter shuffled 5-fold OOF; Ridge control uses inner 4-fold tuning",
+    "metrics": {
+      "model": "extra_trees",
+      "mae": 0.3408514788464736,
+      "rmse": 0.4862203536077027,
+      "macro_r2": 0.2146384687029869
+    },
+    "mask20_metrics": {
+      "model": "extra_trees_mask20",
+      "mae": 0.35030448678336795,
+      "rmse": 0.4992184152258415,
+      "macro_r2": 0.183054193038814
+    },
+    "controls": [
+      "training_fold_mean",
+      "ridge",
+      "winsorized_ridge"
+    ],
+    "scope": "New beers in the existing style mixture; no unseen-style claim."
+  },
+  "q2": {
+    "main_method": "descriptive_spearman_network_and_absolute_correlation_top3",
+    "absolute_rho_threshold": 0.7,
+    "nodes": 231,
+    "edges": 109,
+    "candidate_compounds": 218,
+    "target_compound_positions": 135,
+    "bootstrap_draws": 200,
+    "top3_stability": {
+      "mean_selection_frequency": 0.4551851851851852,
+      "median_selection_frequency": 0.4,
+      "number_frequency_at_least_0_8": 14,
+      "total_selected": 135,
+      "max_frequency_monte_carlo_standard_error": 0.035355339059327376
+    },
+    "scope": "Marginal association candidates with stability and style sensitivity; no causal claims."
+  },
+  "q3_generation": {
+    "feature_count": 226,
+    "full_fit_methods": {
+      "Tripel": "legacy_copula",
+      "Kriek": "style_margin_copula",
+      "Lambic": "style_smoothed_mixture",
+      "Pils/Lager": "style_margin_copula"
+    },
+    "primary_evaluation": "nested_selected",
+    "outer_seeds": [
+      20261123,
+      20262123
+    ],
+    "outer_folds": 3,
+    "inner_folds": 2,
+    "specified_target_styles": [
+      "Tripel",
+      "Kriek",
+      "Lambic"
+    ],
+    "specified_target_rows": 900,
+    "pils_control_rows": 300,
+    "complete_row_copy_rate": 0.0,
+    "energy_results": {
+      "Tripel": {
+        "nested_selected_energy": 0.2938710646074023,
+        "legacy_energy": 0.2866026771964197,
+        "relative_energy_reduction": -0.025360500753457194,
+        "bootstrap_energy": 0.32178985067569293
+      },
+      "Kriek": {
+        "nested_selected_energy": 0.7575389784066937,
+        "legacy_energy": 0.9527688094761492,
+        "relative_energy_reduction": 0.2049078739015361,
+        "bootstrap_energy": 0.7434185621509551
+      },
+      "Lambic": {
+        "nested_selected_energy": 0.6669092074316499,
+        "legacy_energy": 0.8700822471743729,
+        "relative_energy_reduction": 0.23351015424407928,
+        "bootstrap_energy": 0.6304370104758011
+      }
+    }
+  },
+  "q3_profiles": {
+    "rows": 1200,
+    "dimensions": 45,
+    "proxy_split": "44 targets use the hybrid full-data multioutput model; stale_hops is overwritten by the fixed source-excluded single-target tree.",
+    "interval_scope": "p05/p95 describe the generated distribution, not calibrated predictive confidence intervals"
+  },
+  "q3_stale": {
+    "training_samples": 239,
+    "excluded_style": "Pils/Lager",
+    "training_selected_method": "stable_ridge_all1000",
+    "nested_selection_metrics": {
+      "method": "nested_stability_rule",
+      "macro_style_rmse": 0.3621523686069579,
+      "macro_style_abs_bias": 0.15951160032294162,
+      "tail_n": 24,
+      "tail_rmse": 1.0826235528233275,
+      "mae": 0.2890768968909829,
+      "rmse": 0.4199505033921685,
+      "r2": 0.06900002407297023,
+      "spearman": 0.267145780051027,
+      "prediction_variance": 0.01509213164356433,
+      "target_variance": 0.18942903314656845,
+      "prediction_variance_ratio": 0.079671692310687,
+      "prediction_std_ratio": 0.28226174432729456,
+      "prediction_range90": 0.3963144389116397,
+      "target_range90": 1.0816738541,
+      "prediction_range90_ratio": 0.3663899588673988,
+      "mean_bias": 0.008438901650897935
+    },
+    "selected_method_pils_diagnostic": {
+      "method": "stable_ridge_all1000",
+      "selected_without_pils_labels": true,
+      "n": 11,
+      "mae": 0.3424569258855699,
+      "rmse": 0.5614223239975353,
+      "r2": -0.18586588053895303,
+      "spearman": 0.19090909090909092,
+      "prediction_variance": 0.009562706447771381,
+      "target_variance": 0.2657931483276537,
+      "prediction_variance_ratio": 0.035978002096514,
+      "prediction_std_ratio": 0.18967868118614173,
+      "prediction_range90": 0.2717285155679471,
+      "target_range90": 1.251553634,
+      "prediction_range90_ratio": 0.21711296119167922,
+      "mean_bias": -0.21719556611666982
+    },
+    "tail_diagnostic_only": {
+      "method": "tail_ridge_aging100",
+      "selected_without_pils_labels": false,
+      "n": 11,
+      "mae": 0.3299620687011968,
+      "rmse": 0.5157351861449695,
+      "r2": -0.0007134642165376182,
+      "spearman": 0.29090909090909095,
+      "prediction_variance": 0.007812919654648887,
+      "target_variance": 0.2657931483276537,
+      "prediction_variance_ratio": 0.029394736861379105,
+      "prediction_std_ratio": 0.17144893368399555,
+      "prediction_range90": 0.23134693352103666,
+      "target_range90": 1.251553634,
+      "prediction_range90_ratio": 0.1848477981575951,
+      "mean_bias": -0.19018065633867656
+    },
+    "tail_adopted_as_main": false,
+    "scope": "Pils labels were repeatedly inspected; retain as diagnosis, not a fresh independent test. Beer 81 is retained."
+  },
+  "q3_transfer": {
+    "primary_comparison": {
+      "role": "manuscript_primary_method_comparison",
+      "selector": {
+        "arm": "fixed",
+        "pool": "contracted_6004",
+        "bound": "retain80",
+        "ranking": "margin"
+      },
+      "results": {
+        "sources": 11,
+        "selected": 11,
+        "new_passed": 10,
+        "fresh_consistency_passed": 10,
+        "historical_consistency_passed": 10,
+        "no_candidate": 0,
+        "median_improvement_selected": 0.5774027686,
+        "median_improvement_passed": 0.5844222495,
+        "median_retention_selected": 1.0180052128,
+        "median_change_rms_selected": 0.9649779854
+      },
+      "selected_transfer_ids": [
+        "fixed_beer124_contracted_6004_retain80_margin",
+        "fixed_beer81_contracted_6004_retain80_margin",
+        "fixed_beer218_contracted_6004_retain80_margin",
+        "fixed_beer96_contracted_6004_retain80_margin",
+        "fixed_beer230_contracted_6004_retain80_margin",
+        "fixed_beer185_contracted_6004_retain80_margin",
+        "fixed_beer139_contracted_6004_retain80_margin",
+        "fixed_beer209_contracted_6004_retain80_margin",
+        "fixed_beer119_contracted_6004_retain80_margin",
+        "fixed_beer90_contracted_6004_retain80_margin",
+        "fixed_beer28_contracted_6004_retain80_margin"
+      ],
+      "fresh_audit_passed_sources": [
+        124,
+        81,
+        218,
+        230,
+        185,
+        139,
+        209,
+        119,
+        90,
+        28
+      ],
+      "selected_but_fresh_audit_failed_sources": [
+        96
+      ],
+      "no_candidate_sources": []
+    },
+    "application_example": {
+      "role": "exploratory_application_example",
+      "selector": {
+        "arm": "fixed",
+        "pool": "contracted_6004",
+        "bound": "retain80",
+        "ranking": "geometry"
+      },
+      "results": {
+        "sources": 11,
+        "selected": 11,
+        "new_passed": 10,
+        "fresh_consistency_passed": 10,
+        "historical_consistency_passed": 10,
+        "no_candidate": 0,
+        "median_improvement_selected": 0.7007946361,
+        "median_improvement_passed": 0.7008124397,
+        "median_retention_selected": 1.0811036256,
+        "median_change_rms_selected": 0.9671317507
+      },
+      "selected_transfer_ids": [
+        "fixed_beer124_contracted_6004_retain80_geometry",
+        "fixed_beer81_contracted_6004_retain80_geometry",
+        "fixed_beer218_contracted_6004_retain80_geometry",
+        "fixed_beer96_contracted_6004_retain80_geometry",
+        "fixed_beer230_contracted_6004_retain80_geometry",
+        "fixed_beer185_contracted_6004_retain80_geometry",
+        "fixed_beer139_contracted_6004_retain80_geometry",
+        "fixed_beer209_contracted_6004_retain80_geometry",
+        "fixed_beer119_contracted_6004_retain80_geometry",
+        "fixed_beer90_contracted_6004_retain80_geometry",
+        "fixed_beer28_contracted_6004_retain80_geometry"
+      ],
+      "fresh_audit_passed_sources": [
+        124,
+        81,
+        218,
+        230,
+        185,
+        139,
+        209,
+        119,
+        90,
+        28
+      ],
+      "selected_but_fresh_audit_failed_sources": [
+        96
+      ],
+      "no_candidate_sources": []
+    },
+    "preserved_original_default": {
+      "role": "preserved_original_experiment_default",
+      "selector": {
+        "arm": "refined",
+        "pool": "contracted_6004",
+        "bound": "retain80",
+        "ranking": "margin"
+      },
+      "results": {
+        "sources": 11,
+        "selected": 5,
+        "new_passed": 5,
+        "fresh_consistency_passed": 5,
+        "historical_consistency_passed": 5,
+        "no_candidate": 6,
+        "median_improvement_selected": 0.5316619942,
+        "median_improvement_passed": 0.5316619942,
+        "median_retention_selected": 0.828454119,
+        "median_change_rms_selected": 1.0618252153
+      },
+      "selected_transfer_ids": [
+        "refined_beer218_contracted_6004_retain80_margin",
+        "refined_beer139_contracted_6004_retain80_margin",
+        "refined_beer119_contracted_6004_retain80_margin",
+        "refined_beer90_contracted_6004_retain80_margin",
+        "refined_beer28_contracted_6004_retain80_margin"
+      ],
+      "fresh_audit_passed_sources": [
+        218,
+        139,
+        119,
+        90,
+        28
+      ],
+      "selected_but_fresh_audit_failed_sources": [],
+      "no_candidate_sources": [
+        124,
+        81,
+        96,
+        230,
+        185,
+        209
+      ]
+    },
+    "matched_pool_control": {
+      "role": "matched_candidate_pool_control",
+      "selector": {
+        "arm": "fixed",
+        "pool": "legacy_6004",
+        "bound": "retain80",
+        "ranking": "margin"
+      },
+      "results": {
+        "sources": 11,
+        "selected": 9,
+        "new_passed": 9,
+        "fresh_consistency_passed": 9,
+        "historical_consistency_passed": 7,
+        "no_candidate": 2,
+        "median_improvement_selected": 0.5438192485,
+        "median_improvement_passed": 0.5438192485,
+        "median_retention_selected": 0.9371547115,
+        "median_change_rms_selected": 0.8346949569
+      },
+      "selected_transfer_ids": [
+        "fixed_beer124_legacy_6004_retain80_margin",
+        "fixed_beer81_legacy_6004_retain80_margin",
+        "fixed_beer218_legacy_6004_retain80_margin",
+        "fixed_beer230_legacy_6004_retain80_margin",
+        "fixed_beer139_legacy_6004_retain80_margin",
+        "fixed_beer209_legacy_6004_retain80_margin",
+        "fixed_beer119_legacy_6004_retain80_margin",
+        "fixed_beer90_legacy_6004_retain80_margin",
+        "fixed_beer28_legacy_6004_retain80_margin"
+      ],
+      "fresh_audit_passed_sources": [
+        124,
+        81,
+        218,
+        230,
+        139,
+        209,
+        119,
+        90,
+        28
+      ],
+      "selected_but_fresh_audit_failed_sources": [],
+      "no_candidate_sources": [
+        96,
+        185
+      ]
+    },
+    "selection_status": "Margin is retained for the formal method comparison. Geometry is a post-grid exploratory application recommendation.",
+    "threshold_scenarios": 10,
+    "claim_scope": "Model consistency checks; no guarantee of actual sensory non-increase or validated brewing feasibility."
+  },
+  "artifacts": {
+    "q1_model": "outputs/q1/extra_trees_model.joblib",
+    "q1_summary": "outputs/q1/summary.json",
+    "q1_robust_control": "outputs/q1_robust/ridge_winsor_model.joblib",
+    "q2_summary": "outputs/q2/summary.json",
+    "q2_network": "outputs/q2/network_edges_rho_0.7.csv",
+    "q2_top3": "outputs/q2/top3_compounds.csv",
+    "q2_stability": "outputs/q2/all_candidate_stability.csv",
+    "q3_generator": "outputs/q3_optimized/generation/fullmodel.joblib",
+    "q3_generation_summary": "outputs/q3_optimized/generation/summary.json",
+    "q3_generation_validation": "outputs/q3_optimized/generation/cv_summary.csv",
+    "q3_profile_proxy_44_targets": "outputs/q3/sensory/sensory_model.joblib",
+    "q3_fixed_stale_proxy": "outputs/q3_optimized/stale_fixed/transfer_stale_model.joblib",
+    "q3_profiles": "outputs/q3_optimized/generated_sensory_profiles.csv",
+    "q3_selected_stale_proxy": "outputs/q3_refined/stale/transfer_stale_model.joblib",
+    "q3_stale_selection": "outputs/q3_refined/stale/selection_result.json",
+    "q3_tail_diagnostic_only": "outputs/q3_refined/stale/candidate_models/tail_ridge_aging100.joblib",
+    "q3_stale_summary": "outputs/q3_refined/stale/summary.json",
+    "q3_transfer_frontier": "outputs/q3_refined/transfer/frontier.csv",
+    "q3_transfer_summary": "outputs/q3_refined/transfer/transfer_summary.csv",
+    "q3_selected_spectra": "outputs/q3_refined/transfer/selected_spectra.csv",
+    "q3_verification": "outputs/q3_refined/verification.json"
+  },
+  "source_summary_sha256": {
+    "outputs/q1/summary.json": "2916b76ce0f24f43f7417f32b0eeac6d3e5dc8f2aacabeba948fa73229e0e518",
+    "outputs/q2/summary.json": "a6092fce550ab7eba2ae138e9a5a002e6c4058d4cd56d7c78a6313d9e8cbb480",
+    "outputs/q3_optimized/generation/summary.json": "8246508a9bd37022f2d77a136b7cda756bd63cc35fa2a3379aa17c38b2a2e5b1",
+    "outputs/q3_refined/stale/summary.json": "051d12f02e429c86de5eef9563867ab98715649303c5a12824cfd2d6ded47b21",
+    "outputs/q3_refined/verification.json": "ed40e391e2100047034e23d05987f3aa2f7d38750f4b75ccc0a6901f3241a1ee"
+  }
+}

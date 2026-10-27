@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "scope": "Saved-data summaries only; no fitting or new reconstruction run.",
+  "policy": {
+    "arm": "fixed",
+    "pool": "contracted_6004",
+    "bound": "retain80",
+    "ranking": "margin"
+  },
+  "sources": 11,
+  "concentration_rows": 44,
+  "chemical_scenarios": 10,
+  "chemical_all_passed": true,
+  "upper_counts": {
+    "DMS": 11,
+    "Diacetyl": 7,
+    "4VG": 0,
+    "trans_2_nonenal": 10
+  },
+  "zero_counts": {
+    "DMS": 0,
+    "Diacetyl": 0,
+    "4VG": 11,
+    "trans_2_nonenal": 0
+  },
+  "interpretation": "Touching a bound is descriptive; it does not identify a binding causal bottleneck or a KKT multiplier.",
+  "beer96": {
+    "candidate_count": 6004,
+    "feasible_count": 13,
+    "chemical_all_passed": true,
+    "status": "new_audit_failed",
+    "current_fresh_q95": 0.0210027907557986,
+    "current_fresh_positive_count": 2,
+    "old_fresh_q95": -0.04174940719312487
+  },
+  "ethyl_acetate_module": {
+    "feature": "ethyl_acetate",
+    "token_match": "exact pipe-delimited member token",
+    "fold_sizes": [
+      11,
+      12,
+      9,
+      11,
+      27
+    ],
+    "all_target_rows": 225,
+    "case_target": "F_esters_ethac",
+    "case_rows": 5,
+    "scope": "Q1 231-variable fold graphs; not a Q3 226-variable soft constraint or causal importance."
+  },
+  "reconstruction": {
+    "evidence_scope": "Recount of detailed saved historical reconstruction evidence packaged in the current verified delivery.",
+    "new_rebuild_performed": false,
+    "raw_rebuilt_folder_available": false,
+    "historical_original_equals_current_outputs_required": false,
+    "historical_scope": "The report original/rebuilt pair is recounted internally; current transfer CSVs independently supply the chemistry and beer96 tables.",
+    "comparison_report": "review/verification/rebuilt_numeric_comparison.json",
+    "review_baseline_provenance": {
+      "scope": "Pre-revision 353-page delivery checked on 2026-10-25; current submission hashes may change.",
+      "pdf_pages": 353,
+      "pdf_sha256": "03287ed5830de2d60d91cf1c2cd27223a16324e67c101cafe4167bc91fbdcdd1",
+      "archive_sha256": "5545c955b303d4b362df54e7173ef436240f0bf21564ce8c2305c553f4fc3a75",
+      "comparison_report_sha256": "d1e76bcb19b713dd8adcbd0dba3fae48142714128e434554b0627360f5b1fbc3",
+      "packaged_report_matched_working_report": true,
+      "packaged_transfer_matched_saved_transfer": true
+    },
+    "policies": 792,
+    "changed_policies": 16,
+    "changed_fields": {
+      "candidate_index": 16,
+      "status": 7,
+      "new_model_passed": 5,
+      "fresh_consistency_passed": 4,
+      "historical_consistency_passed": 5
+    },
+    "frontier_rows": 72,
+    "changed_frontier_count_rows": 9,
+    "principal_transfer_headlines": "PASS",
+    "principal_transfer_rows": 33,
+    "full_grid_exact_reproduction": "FAIL"
+  },
+  "positive_count_definition": "Number of saved paired deltas strictly greater than zero; Q95 pass tolerance is 1e-10."
+}

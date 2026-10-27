@@ -1,0 +1,91 @@
+{
+  "seed": 20261023,
+  "source_style": "Pils/Lager",
+  "target_style": "Tripel",
+  "source_beers": [
+    124,
+    81,
+    218,
+    96,
+    230,
+    185,
+    139,
+    209,
+    119,
+    90,
+    28
+  ],
+  "n_training_beers": 239,
+  "source_exclusion": "All Pils/Lager rows excluded from fitted copula, sensory proxy and bootstrap models",
+  "n_base_generated": 500,
+  "n_candidates_per_source": 2004,
+  "lambdas": [
+    0.05,
+    0.2,
+    1.0
+  ],
+  "default_lambda": 0.2,
+  "minimum_target_improvement": 0.1,
+  "minimum_latent_rms_change": 0.05,
+  "support": {
+    "metric": "full-226-dimensional Gaussian-rank RMS nearest Tripel distance",
+    "reference": "Tripel training leave-one-out nearest-neighbor distances",
+    "quantile": 0.95,
+    "limit": 1.1066513889749567,
+    "additional_rule": "All features within non-source training marginal support"
+  },
+  "constraints": {
+    "DMS": {
+      "feature": "DMS",
+      "chemical_name": "Dimethyl sulfide",
+      "unit": "ug/L",
+      "threshold_median": 19.0,
+      "threshold_mean": 17.25,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "Diacetyl": {
+      "feature": "X2.3.butanedione",
+      "chemical_name": "Diacetyl",
+      "unit": "mg/L",
+      "threshold_median": 0.09,
+      "threshold_mean": 0.29925,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "4VG": {
+      "feature": "X4VG",
+      "chemical_name": "4-vinylguaiacol",
+      "unit": "mg/L",
+      "threshold_median": 0.2,
+      "threshold_mean": 0.206333333,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "trans_2_nonenal": {
+      "feature": "X.E..2.nonenal",
+      "chemical_name": "E-2-nonenal",
+      "unit": "mg/L",
+      "threshold_median": null,
+      "threshold_mean": null,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    }
+  },
+  "selection_bootstrap_models": 30,
+  "audit_bootstrap_models": 10,
+  "default_policy": {
+    "n_sources": 11,
+    "n_candidates_selected": 10,
+    "n_model_checks_passed": 5,
+    "n_audit_failed": 5,
+    "n_no_candidate": 1,
+    "n_source_unverifiable": 0,
+    "n_all_checks_also_pass_mean_thresholds_same_spectra": 1
+  },
+  "limitations": [
+    "Model checks passed does not mean verified sensory or brewing success.",
+    "Bootstrap quantiles after candidate search are uncalibrated model diagnostics, not 95% outcome guarantees.",
+    "The 10 audit models share real training data; separate resampling is not an independent experiment.",
+    "No audit-based reselection or post-result relaxation of improvement/support thresholds.",
+    "Trans-2-nonenal has no supplied threshold: its concentration may not increase.",
+    "The 45 sensory outputs remain on attachment 4 standardized scale, not raw 0-6.",
+    "Hybrid relative features do not imply measured absolute concentrations or a realizable brewing recipe."
+  ]
+}

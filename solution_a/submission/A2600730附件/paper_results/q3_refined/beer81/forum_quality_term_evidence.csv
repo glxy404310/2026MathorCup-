@@ -1,0 +1,25 @@
+term,beer81_value,all_percentile,nonpils_percentile,predeclared_quality_term,source
+aroma_acetaldehyde,12.00413636,0.998,1.0,True,7.csv numeric forum descriptor table
+aroma_barnyard,-0.471511557,0.178,0.16736401673640167,True,7.csv numeric forum descriptor table
+aroma_cabbage,-0.212193387,0.416,0.4205020920502092,True,7.csv numeric forum descriptor table
+aroma_cardboard,1.893406038,0.958,0.9665271966527197,True,7.csv numeric forum descriptor table
+aroma_cheesy,-0.2747135,0.312,0.3075313807531381,True,7.csv numeric forum descriptor table
+aroma_metallic,2.624454588,0.978,0.9874476987447699,True,7.csv numeric forum descriptor table
+aroma_papery,2.364336351,0.99,0.9916317991631799,True,7.csv numeric forum descriptor table
+aroma_stale,1.274602625,0.934,0.9456066945606695,True,7.csv numeric forum descriptor table
+palate_acetaldehyde,,,,True,7.csv numeric forum descriptor table
+palate_barnyard,-0.34475016,0.39,0.38702928870292885,True,7.csv numeric forum descriptor table
+palate_cabbage,-0.080899785,0.496,0.49581589958158995,True,7.csv numeric forum descriptor table
+palate_cardboard,-0.181455202,0.462,0.46234309623430964,True,7.csv numeric forum descriptor table
+palate_cheesy,-0.173939527,0.48,0.4790794979079498,True,7.csv numeric forum descriptor table
+palate_metallic,2.093248681,0.95,0.9581589958158996,True,7.csv numeric forum descriptor table
+palate_papery,-0.083202574,0.482,0.48535564853556484,True,7.csv numeric forum descriptor table
+palate_stale,-0.189431907,0.478,0.4811715481171548,True,7.csv numeric forum descriptor table
+taste_acetaldehyde,-0.092570678,0.486,0.4874476987447699,True,7.csv numeric forum descriptor table
+taste_barnyard,-0.448134743,0.244,0.23221757322175732,True,7.csv numeric forum descriptor table
+taste_cabbage,2.691211255,0.982,0.9832635983263598,True,7.csv numeric forum descriptor table
+taste_cardboard,5.121476724,0.99,0.99581589958159,True,7.csv numeric forum descriptor table
+taste_cheesy,-0.305512303,0.348,0.34518828451882844,True,7.csv numeric forum descriptor table
+taste_metallic,2.414867808,0.974,0.9832635983263598,True,7.csv numeric forum descriptor table
+taste_papery,3.562096075,0.986,0.9916317991631799,True,7.csv numeric forum descriptor table
+taste_stale,3.482028166,0.978,0.9832635983263598,True,7.csv numeric forum descriptor table

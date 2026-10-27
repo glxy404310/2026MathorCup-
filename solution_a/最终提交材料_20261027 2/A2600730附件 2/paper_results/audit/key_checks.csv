@@ -1,0 +1,8 @@
+source,rows,unique_beer,duplicate_beer_rows,missing_beer_rows,unique_beer_id,duplicate_beer_id_rows,beer_overlap_with_1,beer_missing_from_1,beer_missing_in_source,same_order_as_1,beer_id_mismatches_with_1,category_mismatches_with_1
+1.csv,250,250,0,0,250,0,250,0,0,True,0,0.0
+4.csv,250,250,0,0,96,190,250,0,0,True,213,0.0
+7.csv,250,250,0,0,96,190,250,0,0,True,213,0.0
+8.xlsx::Calibrated chemical dataset,250,250,0,0,250,0,250,0,0,True,0,0.0
+8.xlsx::Beer Prices,250,250,0,0,250,0,250,0,0,False,0,
+8.xlsx::GBM SHAP Values::concentration,250,250,0,0,250,0,250,0,0,True,0,0.0
+8.xlsx::GBM SHAP Values::SHAP,250,250,0,0,250,0,250,0,0,True,0,0.0

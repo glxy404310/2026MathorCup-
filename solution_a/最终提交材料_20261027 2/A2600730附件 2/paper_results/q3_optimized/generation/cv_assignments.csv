@@ -1,0 +1,501 @@
+repeat,fold,row_index,beer,style,role
+1,1,1,86,Low/No alcohol,test
+1,1,3,83,Low/No alcohol,test
+1,1,6,48,Dubbel,test
+1,1,7,165,Fruitbeer,test
+1,1,11,141,Low/No alcohol,test
+1,1,13,33,Fruitbeer,test
+1,1,15,227,Fruitbeer,test
+1,1,17,77,Blond,test
+1,1,19,81,Pils/Lager,test
+1,1,23,96,Pils/Lager,test
+1,1,27,195,Wheat,test
+1,1,28,142,Wheat,test
+1,1,29,137,Amber,test
+1,1,38,216,Scotch,test
+1,1,39,200,West Flanders ale,test
+1,1,40,116,Lambic,test
+1,1,41,139,Pils/Lager,test
+1,1,42,183,Saison,test
+1,1,52,58,Saison,test
+1,1,55,84,West Flanders ale,test
+1,1,56,172,Wheat,test
+1,1,58,188,Stout/Porter,test
+1,1,59,20,Saison,test
+1,1,60,122,Brett/cofermented,test
+1,1,61,169,Hoppy,test
+1,1,66,7,Saison,test
+1,1,70,232,Kriek,test
+1,1,71,151,Faro,test
+1,1,82,82,Kriek,test
+1,1,83,241,Kriek,test
+1,1,84,128,Amber,test
+1,1,85,244,West Flanders ale,test
+1,1,88,231,Stout/Porter,test
+1,1,90,219,Hoppy,test
+1,1,96,246,Blond,test
+1,1,101,14,Brett/cofermented,test
+1,1,107,159,Flanders old brown,test
+1,1,109,92,Amber,test
+1,1,113,107,Dubbel,test
+1,1,114,205,Brut,test
+1,1,115,206,Brown,test
+1,1,117,24,Kriek,test
+1,1,119,69,Tripel,test
+1,1,121,49,Blond,test
+1,1,126,240,Tripel,test
+1,1,127,12,Lambic,test
+1,1,129,23,Tripel,test
+1,1,130,226,Strong ale,test
+1,1,133,16,Dubbel,test
+1,1,134,47,Tripel,test
+1,1,139,120,Hoppy,test
+1,1,142,98,Brown,test
+1,1,144,32,Amber,test
+1,1,145,27,Hoppy,test
+1,1,159,147,Tripel,test
+1,1,162,104,Strong ale,test
+1,1,163,101,Blond,test
+1,1,165,127,Blond,test
+1,1,166,245,Tripel,test
+1,1,169,51,Strong ale,test
+1,1,171,28,Pils/Lager,test
+1,1,176,30,Blond,test
+1,1,181,130,Brut,test
+1,1,184,52,Stout/Porter,test
+1,1,189,75,Lambic,test
+1,1,191,108,Brown,test
+1,1,195,121,Blond,test
+1,1,197,208,Wheat,test
+1,1,198,38,Christmas,test
+1,1,200,214,Christmas,test
+1,1,201,35,Blond,test
+1,1,202,215,Blond,test
+1,1,204,89,Brown,test
+1,1,211,182,Stout/Porter,test
+1,1,212,17,Tripel,test
+1,1,214,148,Strong ale,test
+1,1,215,248,Blond,test
+1,1,216,65,Hoppy,test
+1,1,226,102,Christmas,test
+1,1,239,21,Lambic,test
+1,1,241,239,Tripel,test
+1,1,242,117,Strong ale,test
+1,1,243,171,Tripel,test
+1,1,245,175,Strong ale,test
+1,2,0,10,Low/No alcohol,test
+1,2,4,40,Low/No alcohol,test
+1,2,5,247,Fruitbeer,test
+1,2,8,124,Pils/Lager,test
+1,2,10,155,Low/No alcohol,test
+1,2,16,88,Kriek,test
+1,2,18,22,Wheat,test
+1,2,24,230,Pils/Lager,test
+1,2,26,161,Flanders old brown,test
+1,2,32,211,Lambic,test
+1,2,33,190,Flanders old brown,test
+1,2,43,111,Dubbel,test
+1,2,44,46,Blond,test
+1,2,47,158,Amber,test
+1,2,48,224,Wheat,test
+1,2,49,54,Kriek,test
+1,2,50,5,Blond,test
+1,2,57,74,Faro,test
+1,2,62,194,Dubbel,test
+1,2,68,55,Hoppy,test
+1,2,69,26,West Flanders ale,test
+1,2,76,113,Blond,test
+1,2,77,176,West Flanders ale,test
+1,2,87,110,Blond,test
+1,2,89,112,Brown,test
+1,2,91,129,Brown,test
+1,2,93,72,Hoppy,test
+1,2,94,186,Strong ale,test
+1,2,95,109,Brown,test
+1,2,98,87,Stout/Porter,test
+1,2,102,173,Stout/Porter,test
+1,2,104,119,Pils/Lager,test
+1,2,105,177,Fruitbeer,test
+1,2,106,106,Christmas,test
+1,2,118,136,Blond,test
+1,2,122,243,Wheat,test
+1,2,123,134,Strong ale,test
+1,2,124,193,Blond,test
+1,2,125,39,Hoppy,test
+1,2,128,150,Brett/cofermented,test
+1,2,131,29,Saison,test
+1,2,132,132,Saison,test
+1,2,135,164,Blond,test
+1,2,137,149,Blond,test
+1,2,138,80,Hoppy,test
+1,2,143,221,Dubbel,test
+1,2,146,13,Christmas,test
+1,2,148,79,Hoppy,test
+1,2,150,152,Wheat,test
+1,2,153,145,Saison,test
+1,2,155,6,Amber,test
+1,2,158,234,Blond,test
+1,2,164,237,Brown,test
+1,2,167,191,Tripel,test
+1,2,170,144,Lambic,test
+1,2,172,41,Lambic,test
+1,2,173,153,Kriek,test
+1,2,175,168,Scotch,test
+1,2,178,126,Amber,test
+1,2,179,162,Lambic,test
+1,2,183,31,Hoppy,test
+1,2,186,204,Tripel,test
+1,2,188,131,Scotch,test
+1,2,190,34,Tripel,test
+1,2,193,45,Tripel,test
+1,2,194,154,Tripel,test
+1,2,207,225,Strong ale,test
+1,2,210,133,Strong ale,test
+1,2,217,73,Blond,test
+1,2,218,198,Dubbel,test
+1,2,220,217,Tripel,test
+1,2,225,71,Blond,test
+1,2,228,67,Stout/Porter,test
+1,2,229,210,Amber,test
+1,2,232,199,Tripel,test
+1,2,234,95,Christmas,test
+1,2,236,203,Brett/cofermented,test
+1,2,237,85,Tripel,test
+1,2,240,192,Brut,test
+1,2,244,103,Stout/Porter,test
+1,2,246,196,Strong ale,test
+1,2,248,99,Strong ale,test
+1,2,249,157,Tripel,test
+1,3,2,2,Low/No alcohol,test
+1,3,9,207,Fruitbeer,test
+1,3,12,179,Flanders old brown,test
+1,3,14,50,Fruitbeer,test
+1,3,20,202,Stout/Porter,test
+1,3,21,64,Blond,test
+1,3,22,218,Pils/Lager,test
+1,3,25,44,Wheat,test
+1,3,30,236,Brett/cofermented,test
+1,3,31,223,Low/No alcohol,test
+1,3,34,197,Wheat,test
+1,3,35,228,Tripel,test
+1,3,36,185,Pils/Lager,test
+1,3,37,166,Saison,test
+1,3,45,213,Hoppy,test
+1,3,46,250,Faro,test
+1,3,51,209,Pils/Lager,test
+1,3,53,11,Amber,test
+1,3,54,56,Saison,test
+1,3,63,160,Wheat,test
+1,3,64,43,Amber,test
+1,3,65,100,Dubbel,test
+1,3,67,62,Blond,test
+1,3,72,61,Stout/Porter,test
+1,3,73,156,Kriek,test
+1,3,74,138,Kriek,test
+1,3,75,70,Blond,test
+1,3,78,105,Strong ale,test
+1,3,79,167,Flanders old brown,test
+1,3,80,59,Blond,test
+1,3,81,135,Tripel,test
+1,3,86,178,West Flanders ale,test
+1,3,92,42,Lambic,test
+1,3,97,97,Hoppy,test
+1,3,99,220,Kriek,test
+1,3,100,201,Stout/Porter,test
+1,3,103,37,Strong ale,test
+1,3,108,90,Pils/Lager,test
+1,3,110,93,Tripel,test
+1,3,111,238,Blond,test
+1,3,112,76,Blond,test
+1,3,116,53,Brown,test
+1,3,120,180,Christmas,test
+1,3,136,115,Lambic,test
+1,3,140,222,Brett/cofermented,test
+1,3,141,18,Lambic,test
+1,3,147,174,Dubbel,test
+1,3,149,118,West Flanders ale,test
+1,3,151,184,Fruitbeer,test
+1,3,152,19,Amber,test
+1,3,154,125,Blond,test
+1,3,156,212,Stout/Porter,test
+1,3,157,78,Brown,test
+1,3,160,66,Tripel,test
+1,3,161,249,Blond,test
+1,3,168,60,Christmas,test
+1,3,174,146,Scotch,test
+1,3,177,36,Brown,test
+1,3,180,123,Stout/Porter,test
+1,3,182,8,Hoppy,test
+1,3,185,9,Hoppy,test
+1,3,187,94,Blond,test
+1,3,192,187,Dubbel,test
+1,3,196,242,Saison,test
+1,3,199,170,Strong ale,test
+1,3,203,235,Strong ale,test
+1,3,205,114,Hoppy,test
+1,3,206,181,Christmas,test
+1,3,208,57,Tripel,test
+1,3,209,143,Hoppy,test
+1,3,213,229,Wheat,test
+1,3,219,91,Strong ale,test
+1,3,221,163,Tripel,test
+1,3,222,68,Tripel,test
+1,3,223,15,Tripel,test
+1,3,224,1,Brut,test
+1,3,227,140,Tripel,test
+1,3,230,189,Tripel,test
+1,3,231,233,Scotch,test
+1,3,233,63,Amber,test
+1,3,235,25,Brown,test
+1,3,238,3,Blond,test
+1,3,247,4,Strong ale,test
+2,1,1,86,Low/No alcohol,test
+2,1,5,247,Fruitbeer,test
+2,1,6,48,Dubbel,test
+2,1,7,165,Fruitbeer,test
+2,1,10,155,Low/No alcohol,test
+2,1,11,141,Low/No alcohol,test
+2,1,13,33,Fruitbeer,test
+2,1,17,77,Blond,test
+2,1,22,218,Pils/Lager,test
+2,1,25,44,Wheat,test
+2,1,27,195,Wheat,test
+2,1,30,236,Brett/cofermented,test
+2,1,32,211,Lambic,test
+2,1,33,190,Flanders old brown,test
+2,1,35,228,Tripel,test
+2,1,39,200,West Flanders ale,test
+2,1,41,139,Pils/Lager,test
+2,1,44,46,Blond,test
+2,1,45,213,Hoppy,test
+2,1,54,56,Saison,test
+2,1,58,188,Stout/Porter,test
+2,1,62,194,Dubbel,test
+2,1,63,160,Wheat,test
+2,1,64,43,Amber,test
+2,1,67,62,Blond,test
+2,1,68,55,Hoppy,test
+2,1,70,232,Kriek,test
+2,1,71,151,Faro,test
+2,1,74,138,Kriek,test
+2,1,75,70,Blond,test
+2,1,77,176,West Flanders ale,test
+2,1,89,112,Brown,test
+2,1,90,219,Hoppy,test
+2,1,94,186,Strong ale,test
+2,1,96,246,Blond,test
+2,1,97,97,Hoppy,test
+2,1,99,220,Kriek,test
+2,1,101,14,Brett/cofermented,test
+2,1,102,173,Stout/Porter,test
+2,1,104,119,Pils/Lager,test
+2,1,108,90,Pils/Lager,test
+2,1,114,205,Brut,test
+2,1,117,24,Kriek,test
+2,1,119,69,Tripel,test
+2,1,123,134,Strong ale,test
+2,1,131,29,Saison,test
+2,1,132,132,Saison,test
+2,1,133,16,Dubbel,test
+2,1,136,115,Lambic,test
+2,1,137,149,Blond,test
+2,1,139,120,Hoppy,test
+2,1,141,18,Lambic,test
+2,1,144,32,Amber,test
+2,1,146,13,Christmas,test
+2,1,149,118,West Flanders ale,test
+2,1,152,19,Amber,test
+2,1,158,234,Blond,test
+2,1,161,249,Blond,test
+2,1,162,104,Strong ale,test
+2,1,168,60,Christmas,test
+2,1,170,144,Lambic,test
+2,1,177,36,Brown,test
+2,1,180,123,Stout/Porter,test
+2,1,181,130,Brut,test
+2,1,186,204,Tripel,test
+2,1,187,94,Blond,test
+2,1,190,34,Tripel,test
+2,1,191,108,Brown,test
+2,1,194,154,Tripel,test
+2,1,196,242,Saison,test
+2,1,197,208,Wheat,test
+2,1,204,89,Brown,test
+2,1,211,182,Stout/Porter,test
+2,1,212,17,Tripel,test
+2,1,214,148,Strong ale,test
+2,1,226,102,Christmas,test
+2,1,227,140,Tripel,test
+2,1,230,189,Tripel,test
+2,1,231,233,Scotch,test
+2,1,232,199,Tripel,test
+2,1,233,63,Amber,test
+2,1,238,3,Blond,test
+2,1,246,196,Strong ale,test
+2,1,247,4,Strong ale,test
+2,2,0,10,Low/No alcohol,test
+2,2,3,83,Low/No alcohol,test
+2,2,8,124,Pils/Lager,test
+2,2,9,207,Fruitbeer,test
+2,2,14,50,Fruitbeer,test
+2,2,16,88,Kriek,test
+2,2,20,202,Stout/Porter,test
+2,2,21,64,Blond,test
+2,2,23,96,Pils/Lager,test
+2,2,28,142,Wheat,test
+2,2,31,223,Low/No alcohol,test
+2,2,34,197,Wheat,test
+2,2,37,166,Saison,test
+2,2,38,216,Scotch,test
+2,2,40,116,Lambic,test
+2,2,48,224,Wheat,test
+2,2,50,5,Blond,test
+2,2,52,58,Saison,test
+2,2,57,74,Faro,test
+2,2,59,20,Saison,test
+2,2,61,169,Hoppy,test
+2,2,65,100,Dubbel,test
+2,2,69,26,West Flanders ale,test
+2,2,76,113,Blond,test
+2,2,79,167,Flanders old brown,test
+2,2,80,59,Blond,test
+2,2,81,135,Tripel,test
+2,2,82,82,Kriek,test
+2,2,84,128,Amber,test
+2,2,86,178,West Flanders ale,test
+2,2,87,110,Blond,test
+2,2,95,109,Brown,test
+2,2,103,37,Strong ale,test
+2,2,107,159,Flanders old brown,test
+2,2,109,92,Amber,test
+2,2,110,93,Tripel,test
+2,2,115,206,Brown,test
+2,2,118,136,Blond,test
+2,2,120,180,Christmas,test
+2,2,124,193,Blond,test
+2,2,125,39,Hoppy,test
+2,2,127,12,Lambic,test
+2,2,129,23,Tripel,test
+2,2,138,80,Hoppy,test
+2,2,140,222,Brett/cofermented,test
+2,2,142,98,Brown,test
+2,2,147,174,Dubbel,test
+2,2,150,152,Wheat,test
+2,2,156,212,Stout/Porter,test
+2,2,160,66,Tripel,test
+2,2,163,101,Blond,test
+2,2,167,191,Tripel,test
+2,2,171,28,Pils/Lager,test
+2,2,173,153,Kriek,test
+2,2,174,146,Scotch,test
+2,2,178,126,Amber,test
+2,2,179,162,Lambic,test
+2,2,182,8,Hoppy,test
+2,2,183,31,Hoppy,test
+2,2,189,75,Lambic,test
+2,2,192,187,Dubbel,test
+2,2,193,45,Tripel,test
+2,2,195,121,Blond,test
+2,2,199,170,Strong ale,test
+2,2,200,214,Christmas,test
+2,2,202,215,Blond,test
+2,2,206,181,Christmas,test
+2,2,210,133,Strong ale,test
+2,2,215,248,Blond,test
+2,2,216,65,Hoppy,test
+2,2,218,198,Dubbel,test
+2,2,219,91,Strong ale,test
+2,2,221,163,Tripel,test
+2,2,224,1,Brut,test
+2,2,228,67,Stout/Porter,test
+2,2,229,210,Amber,test
+2,2,235,25,Brown,test
+2,2,236,203,Brett/cofermented,test
+2,2,241,239,Tripel,test
+2,2,242,117,Strong ale,test
+2,2,244,103,Stout/Porter,test
+2,2,248,99,Strong ale,test
+2,2,249,157,Tripel,test
+2,3,2,2,Low/No alcohol,test
+2,3,4,40,Low/No alcohol,test
+2,3,12,179,Flanders old brown,test
+2,3,15,227,Fruitbeer,test
+2,3,18,22,Wheat,test
+2,3,19,81,Pils/Lager,test
+2,3,24,230,Pils/Lager,test
+2,3,26,161,Flanders old brown,test
+2,3,29,137,Amber,test
+2,3,36,185,Pils/Lager,test
+2,3,42,183,Saison,test
+2,3,43,111,Dubbel,test
+2,3,46,250,Faro,test
+2,3,47,158,Amber,test
+2,3,49,54,Kriek,test
+2,3,51,209,Pils/Lager,test
+2,3,53,11,Amber,test
+2,3,55,84,West Flanders ale,test
+2,3,56,172,Wheat,test
+2,3,60,122,Brett/cofermented,test
+2,3,66,7,Saison,test
+2,3,72,61,Stout/Porter,test
+2,3,73,156,Kriek,test
+2,3,78,105,Strong ale,test
+2,3,83,241,Kriek,test
+2,3,85,244,West Flanders ale,test
+2,3,88,231,Stout/Porter,test
+2,3,91,129,Brown,test
+2,3,92,42,Lambic,test
+2,3,93,72,Hoppy,test
+2,3,98,87,Stout/Porter,test
+2,3,100,201,Stout/Porter,test
+2,3,105,177,Fruitbeer,test
+2,3,106,106,Christmas,test
+2,3,111,238,Blond,test
+2,3,112,76,Blond,test
+2,3,113,107,Dubbel,test
+2,3,116,53,Brown,test
+2,3,121,49,Blond,test
+2,3,122,243,Wheat,test
+2,3,126,240,Tripel,test
+2,3,128,150,Brett/cofermented,test
+2,3,130,226,Strong ale,test
+2,3,134,47,Tripel,test
+2,3,135,164,Blond,test
+2,3,143,221,Dubbel,test
+2,3,145,27,Hoppy,test
+2,3,148,79,Hoppy,test
+2,3,151,184,Fruitbeer,test
+2,3,153,145,Saison,test
+2,3,154,125,Blond,test
+2,3,155,6,Amber,test
+2,3,157,78,Brown,test
+2,3,159,147,Tripel,test
+2,3,164,237,Brown,test
+2,3,165,127,Blond,test
+2,3,166,245,Tripel,test
+2,3,169,51,Strong ale,test
+2,3,172,41,Lambic,test
+2,3,175,168,Scotch,test
+2,3,176,30,Blond,test
+2,3,184,52,Stout/Porter,test
+2,3,185,9,Hoppy,test
+2,3,188,131,Scotch,test
+2,3,198,38,Christmas,test
+2,3,201,35,Blond,test
+2,3,203,235,Strong ale,test
+2,3,205,114,Hoppy,test
+2,3,207,225,Strong ale,test
+2,3,208,57,Tripel,test
+2,3,209,143,Hoppy,test
+2,3,213,229,Wheat,test
+2,3,217,73,Blond,test
+2,3,220,217,Tripel,test
+2,3,222,68,Tripel,test
+2,3,223,15,Tripel,test
+2,3,225,71,Blond,test
+2,3,234,95,Christmas,test
+2,3,237,85,Tripel,test
+2,3,239,21,Lambic,test
+2,3,240,192,Brut,test
+2,3,243,171,Tripel,test
+2,3,245,175,Strong ale,test

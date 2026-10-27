@@ -1,0 +1,3 @@
+method,models,pair_delta_noise_rms,pair_delta_signal_rms,response_noise_ratio,status
+refined_selected,60,0.07681889663558933,0.12195504912635607,0.6298951719169761,descriptive fixed-pair architecture comparison; not used for selection
+domain_local_previous,60,0.29486599299680205,0.3799128761227098,0.7761410879413362,descriptive fixed-pair architecture comparison; not used for selection

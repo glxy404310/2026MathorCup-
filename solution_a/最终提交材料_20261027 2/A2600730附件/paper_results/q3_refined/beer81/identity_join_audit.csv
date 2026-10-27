@@ -1,0 +1,5 @@
+source,rows,beer_unique,beer81_matches,style,style_matches_1csv,beer_id_text,exact_id_matches_1csv,id_matches_printed_precision,beer_id_unique_count,rows_after_exact_beer_join
+1.csv,250,True,1,Pils/Lager,True,8715608222557,True,True,250,250
+4.csv,250,True,1,Pils/Lager,True,8.71561E+12,False,True,96,250
+7.csv,250,True,1,Pils/Lager,True,8.71561E+12,False,True,96,250
+8.xlsx/calibrated,250,True,1,Pils/Lager,True,8715608222557,True,True,250,250

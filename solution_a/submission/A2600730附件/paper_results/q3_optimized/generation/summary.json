@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-23",
+  "n_real": 250,
+  "n_features": 226,
+  "outer_seeds": [
+    20261123,
+    20262123
+  ],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "mc_repeats": 2,
+  "generated_n_each_draw": 300,
+  "candidate_methods": [
+    "style_margin_copula",
+    "style_smoothed_mixture",
+    "legacy_copula"
+  ],
+  "smoothing_noise": 0.45,
+  "selection_uses_outer_test": false,
+  "selection_metric": "shared_training_reference_pca5_energy",
+  "novelty_gates": {
+    "minimum_inner_nn_ratio": 0.35,
+    "maximum_inner_nearest_equal_fraction": 0.95,
+    "maximum_inner_copy_rate": 0.0,
+    "maximum_inner_observed_training_copy_rate": 0.0
+  },
+  "cv_records": 240,
+  "full_generation_rows": 1200,
+  "full_selected_methods": {
+    "Tripel": "legacy_copula",
+    "Kriek": "style_margin_copula",
+    "Lambic": "style_smoothed_mixture",
+    "Pils/Lager": "style_margin_copula"
+  },
+  "full_generation_copy_rate": 0.0,
+  "full_generation_observed_copy_rate": 0.0,
+  "elapsed_seconds": 14.253126791969407,
+  "limits": [
+    "New outer seeds still reuse the previously explored real dataset",
+    "Small style samples and unstable inner selection",
+    "Local-margin methods use style-imputed support; legacy uses global training support",
+    "Chemical spectra are not validated brewing recipes"
+  ]
+}

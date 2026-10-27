@@ -1,0 +1,5 @@
+outer_fold,selected_method,qualified_for_proxy,heldout_styles,train_n,test_n
+1,stable_ridge_aging100,True,Amber;Brut;Christmas;Faro;Saison;West Flanders ale,194,45
+2,equal3_supervised_ensemble,True,Blond;Brett/cofermented;Brown;Low/No alcohol;Wheat,170,69
+3,stable_ridge_all1000,True,Dubbel;Fruitbeer;Hoppy;Stout/Porter;Tripel,163,76
+4,equal3_supervised_ensemble,True,Flanders old brown;Kriek;Lambic;Scotch;Strong ale,190,49

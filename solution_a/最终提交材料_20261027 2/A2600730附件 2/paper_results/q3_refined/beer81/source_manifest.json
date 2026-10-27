@@ -1,0 +1,46 @@
+[
+  {
+    "path": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv",
+    "sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69"
+  },
+  {
+    "path": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件/4.csv",
+    "sha256": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c"
+  },
+  {
+    "path": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件/7.csv",
+    "sha256": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e"
+  },
+  {
+    "path": "2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件/8.xlsx",
+    "sha256": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  {
+    "path": "solution_a/outputs/q3_domain/stale/predeclared_aging_features.csv",
+    "sha256": "1d8f3b4c97464238667942f9ab42922f27eee7b9cf0ec550640e1139ddca110a"
+  },
+  {
+    "path": "solution_a/outputs/q3/transfer/transfer_copula.joblib",
+    "sha256": "f1b90bf65c226239cd68e88ffe3a21e16ae7aee154080b08252382de49ca5a6c"
+  },
+  {
+    "path": "solution_a/outputs/q3_domain/stale/transfer_stale_model.joblib",
+    "sha256": "e9b0e6ced184c601facac10eb4c0b25a5133a255a81725634af1b17fa052a961"
+  },
+  {
+    "path": "solution_a/outputs/q3_domain/stale/pils_diagnostic_predictions.csv",
+    "sha256": "37fb966fc903b4858a0a511532f06d605039163493baf994ce8390d2c329f26b"
+  },
+  {
+    "path": "solution_a/outputs/q3_optimized/stale_fixed/pils_style_holdout_predictions.csv",
+    "sha256": "90679cbebdd1eeebf5b8b4ecb716e0f9bdb79d33aa9a9a8f2911bd780604f779"
+  },
+  {
+    "path": "solution_a/outputs/q3/sensory/transfer_pils_heldout_predictions.csv",
+    "sha256": "a9464d4f47f30128faf9e39b98a891fe25d63cc6de279c028c0278a4c5b657d8"
+  },
+  {
+    "path": "solution_a/outputs/q3_domain/stale/summary.json",
+    "sha256": "740fea9f5a99c784ae8690b49abc7ac77f5c5e51f24676d45f033d9f2e10c860"
+  }
+]

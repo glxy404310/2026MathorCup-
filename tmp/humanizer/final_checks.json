@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-27",
+  "main_prose_revisions": 38,
+  "support_prose_files_revised": 9,
+  "tables_equations_images_unchanged": true,
+  "original_programs_and_saved_results_unchanged": true,
+  "ai_word_preserved": true,
+  "paper_pdf_pages": 354,
+  "main_before_appendices_numbered_pages": 24,
+  "updated_entries": [
+    "solution_a/README.md",
+    "solution_a/docs/data_audit.md",
+    "solution_a/docs/final_model_selection.md",
+    "solution_a/docs/q2_q3_design_review.md",
+    "solution_a/docs/q3_domain_review.md",
+    "solution_a/docs/q3_method_review.md",
+    "solution_a/docs/q3_optimization_review.md",
+    "solution_a/docs/q3_stale_refined.md",
+    "solution_a/docs/stage1_results.md",
+    "solution_a/paper/manuscript.json",
+    "solution_a/paper/sections/q1.json",
+    "solution_a/paper/sections/q3.json",
+    "solution_a/paper/sections/core.json",
+    "solution_a/paper/sections/q2.json",
+    "solution_a/docs/use_statement.md"
+  ],
+  "second_pass_marker_hits": [],
+  "final_package": "/Users/Admin1/Documents/GitHub/repos/2026MathorCup-/solution_a/最终提交材料_20261027.zip",
+  "package_bytes": 45217279
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "path": "outputs/q3_refined/beer81/summary.json",
+    "sha256": "091958d2fec9e8a342cc6e7e1a0c5b43d42051cc562b42620b35b41ced24422f",
+    "rows": null
+  },
+  {
+    "path": "outputs/q3_refined/stale/summary.json",
+    "sha256": "051d12f02e429c86de5eef9563867ab98715649303c5a12824cfd2d6ded47b21",
+    "rows": null
+  },
+  {
+    "path": "outputs/q3_refined/stale/loso_metrics_overall.csv",
+    "sha256": "82515a3179078e4370901a5e29a1204caf7321cc656a53cc4cb14ec886513b84",
+    "rows": 12
+  },
+  {
+    "path": "outputs/q3_refined/stale/pils_diagnostic_metrics.csv",
+    "sha256": "f81e2aab78d564e0be4bb893bb6c8e0310b08b123974e5624d57dff2bdc81571",
+    "rows": 12
+  },
+  {
+    "path": "outputs/q3_refined/stale/pils_diagnostic_predictions.csv",
+    "sha256": "7a70261069b7323dc96bd21f1e1fd2e7aecd3bd327d7d20deef5185b30eb77ad",
+    "rows": 132
+  },
+  {
+    "path": "outputs/q3_refined/stale/nested_metrics.csv",
+    "sha256": "13c76891bad84fff003cd471b051448a84e890c0ab2042240f1fdac77f6ea086",
+    "rows": 4
+  },
+  {
+    "path": "outputs/q3_refined/stale/bootstrap_response_comparison.csv",
+    "sha256": "8bd30411a4c59696ee8752dae03dbc6ff4af66e5028e53e9cb10186554a53082",
+    "rows": 2
+  },
+  {
+    "path": "outputs/q3_refined/transfer/summary.json",
+    "sha256": "7bee6a95acc4f08808e421af69dafc6f55feb02aaed9f070736560fc78e029d4",
+    "rows": null
+  },
+  {
+    "path": "outputs/q3_refined/transfer/run_manifest.json",
+    "sha256": "ff9bb31092f799955708aa0aee34f9abaf8e4a0943e36f995ed987adcbb39e89",
+    "rows": null
+  },
+  {
+    "path": "outputs/q3_refined/transfer/frontier.csv",
+    "sha256": "24ef6bfab8b00a544ea24390138ddadea85904f9414e34e20380e5b14a362fe2",
+    "rows": 72
+  },
+  {
+    "path": "outputs/q3_refined/transfer/transfer_summary.csv",
+    "sha256": "e69a04695ca20c11fb3d071b5d949b72f0e12fe2cf6a0a5114553e7877809e69",
+    "rows": 792
+  },
+  {
+    "path": "outputs/q3_refined/transfer/fixed_spectra_rechecks.csv",
+    "sha256": "2607c8d36f46684e95d8f9854c5feb358b00595345f86cf8c0427512ed16d741",
+    "rows": 372
+  },
+  {
+    "path": "outputs/q3_refined/transfer/pool_uniqueness.csv",
+    "sha256": "57ef406a19ca218c8d89fa99aa233835bbb994788d6202b5e1f2295c0b7c2463",
+    "rows": 33
+  }
+]

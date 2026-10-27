@@ -1,0 +1,61 @@
+{
+  "default": {
+    "arm": "refined",
+    "pool": "contracted_6004",
+    "bound": "retain80",
+    "ranking": "margin"
+  },
+  "default_results": {
+    "sources": 11,
+    "selected": 5,
+    "new_passed": 5,
+    "fresh_consistency_passed": 5,
+    "historical_consistency_passed": 5,
+    "no_candidate": 6,
+    "median_improvement_selected": 0.5316619941538967,
+    "median_improvement_passed": 0.5316619941538967,
+    "median_retention_selected": 0.8284541190164344,
+    "median_change_rms_selected": 1.0618252153350156
+  },
+  "arm_defaults": {
+    "refined": {
+      "sources": 11,
+      "selected": 5,
+      "new_passed": 5,
+      "fresh_consistency_passed": 5,
+      "historical_consistency_passed": 5,
+      "no_candidate": 6,
+      "median_improvement_selected": 0.5316619941538967,
+      "median_improvement_passed": 0.5316619941538967,
+      "median_retention_selected": 0.8284541190164344,
+      "median_change_rms_selected": 1.0618252153350156
+    },
+    "fixed": {
+      "sources": 11,
+      "selected": 11,
+      "new_passed": 10,
+      "fresh_consistency_passed": 10,
+      "historical_consistency_passed": 10,
+      "no_candidate": 0,
+      "median_improvement_selected": 0.5774027685828544,
+      "median_improvement_passed": 0.5844222495356494,
+      "median_retention_selected": 1.0180052127724506,
+      "median_change_rms_selected": 0.9649779853844759
+    }
+  },
+  "model_qualified": {
+    "refined": true,
+    "fixed": true
+  },
+  "nominal_candidates_per_source": 12004,
+  "sources": 11,
+  "training_n": 239,
+  "support_limit": 1.1066513889749567,
+  "contracted_targets_unique": 1500,
+  "contracted_targets_nominal": 1500,
+  "frontier_rows": 72,
+  "policies": 792,
+  "selected": 440,
+  "threshold_rows": 17600,
+  "elapsed_seconds": 124.53461079095723
+}

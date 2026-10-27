@@ -1,0 +1,16 @@
+{
+  "cv_records": 240,
+  "outer_test_partition_rows": 500,
+  "inner_only_argmin_matches_saved_choices": true,
+  "inner_fold_score_rows": 144,
+  "generated_rows": 1200,
+  "generated_full_rows_unique_and_nonnegative_calibrated": true,
+  "generator_reproducible": true,
+  "minimum_style_correlation_eigenvalue": 0.15666167468419967,
+  "all_style_correlation_diagonals_one": true,
+  "239_non_pils_fit_and_tripel_sample_passed": true,
+  "239_tripel_selected_method": "legacy_copula",
+  "observed_value_copy_checks_all_nonbootstrap_zero": true,
+  "bootstrap_observed_copy_rate_one": true,
+  "full_generated_observed_value_copies": 0
+}

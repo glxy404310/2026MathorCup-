@@ -1,0 +1,63 @@
+{
+  "selected_method": "local_aging_pca8_k25",
+  "non_pils_training_n": 239,
+  "loso_styles": 21,
+  "pils_diagnostic_n": 11,
+  "selected_loso_macro_rmse": 0.36496808436107453,
+  "selected_pils_diagnostic_rmse": 0.5615034206672974,
+  "matched_fixed_tree_pils_rmse": 0.5464203285497945,
+  "matched_old_multioutput_pils_rmse": 0.5307111228553366,
+  "pils_prediction_improved": false,
+  "experiments": {
+    "domain": {
+      "default_pool": "matched_2004",
+      "default_policy": "joint_margin",
+      "default": {
+        "sources": 11,
+        "selected": 5,
+        "new": 5,
+        "historical": 5,
+        "fresh": 4,
+        "all": 4
+      },
+      "previous_same_spectra": {
+        "sources": 11,
+        "new": 1,
+        "historical": 1,
+        "fresh": 1,
+        "all": 1
+      }
+    },
+    "consensus": {
+      "default_pool": "matched_2004",
+      "default_policy": "joint_margin",
+      "default": {
+        "sources": 11,
+        "selected": 10,
+        "new": 6,
+        "historical": 6,
+        "fresh": 6,
+        "all": 6
+      },
+      "previous_same_spectra": {
+        "sources": 11,
+        "new": 8,
+        "historical": 4,
+        "fresh": 5,
+        "all": 4
+      }
+    }
+  },
+  "consensus_expanded_same_policy": {
+    "budget": 6004,
+    "sources": 11,
+    "selected": 10,
+    "fresh": 8,
+    "all": 8,
+    "median_target_improvement_selected": 0.19868371223355213,
+    "median_change_rms_selected": 0.9382220854522909
+  },
+  "threshold_scenarios": 10,
+  "scientific_figure_count": 3,
+  "scope": "Failed Pils prediction exploration and limited consensus-search gains, no sensory guarantee"
+}

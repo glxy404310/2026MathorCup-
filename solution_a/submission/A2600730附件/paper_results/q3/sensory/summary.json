@@ -1,0 +1,155 @@
+{
+  "seed": 20261023,
+  "samples": 250,
+  "features": 226,
+  "targets": 45,
+  "representation_counts": {
+    "relative": 157,
+    "calibrated": 69
+  },
+  "calibrated_negatives_invalidated": 3,
+  "hybrid_missing_values": 72,
+  "validation": "fixed 5-fold shuffled KFold shared with Q1; fold-local median imputation",
+  "identical_q1_folds": true,
+  "parameters": {
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "max_features": 0.7,
+    "n_jobs": 1,
+    "imputer": "median_with_missing_indicator"
+  },
+  "metrics": [
+    {
+      "model": "mean",
+      "mae": 0.40963440362067727,
+      "rmse": 0.574456094800438,
+      "macro_r2": -0.007573510386854935
+    },
+    {
+      "model": "extra_trees",
+      "mae": 0.34176487118726284,
+      "rmse": 0.4865170177515371,
+      "macro_r2": 0.21434534790542253
+    }
+  ],
+  "stale_hops_metrics": [
+    {
+      "model": "mean",
+      "target": "stale_hops",
+      "mae": 0.30878166360932,
+      "rmse": 0.44160921700242495,
+      "macro_r2": -0.004338645806095887,
+      "spearman": -0.12050725433961368
+    },
+    {
+      "model": "extra_trees",
+      "target": "stale_hops",
+      "mae": 0.3081953899559902,
+      "rmse": 0.4355844860975006,
+      "macro_r2": 0.02287815502535584,
+      "spearman": 0.14224577733895452
+    }
+  ],
+  "rmse_reduction_vs_mean": 0.15308232925868825,
+  "bootstrap": {
+    "repeats": 40,
+    "n_estimators": 120,
+    "target": "stale_hops",
+    "row_resampling": "paired X/y iid with replacement",
+    "population": "239 non-Pils/Lager samples; all 11 Pils sources excluded",
+    "selection_models": 30,
+    "independent_audit_models": 10,
+    "audit_protocol": "no reselection after audit",
+    "paired_difference_quantile": 0.95,
+    "coverage_calibrated": false,
+    "audit": "stale_bootstrap_indices.npz and saved bootstrap_indices"
+  },
+  "transfer_proxy": {
+    "train_n": 239,
+    "heldout_n": 11,
+    "excluded_style": "Pils/Lager",
+    "metrics": [
+      {
+        "model": "transfer_proxy",
+        "test_n": 11,
+        "mae": 0.2741785491081075,
+        "rmse": 0.36102728173384796,
+        "macro_r2": -2.6834075339025887
+      },
+      {
+        "model": "non_pils_mean",
+        "test_n": 11,
+        "mae": 0.3856817331395123,
+        "rmse": 0.4713607677473761,
+        "macro_r2": -6.624449729637323
+      }
+    ],
+    "stale_hops_metrics": [
+      {
+        "model": "transfer_proxy",
+        "target": "stale_hops",
+        "mae": 0.3243668564639242,
+        "rmse": 0.5262761756598126,
+        "macro_r2": -0.04203819703316891
+      },
+      {
+        "model": "non_pils_mean",
+        "target": "stale_hops",
+        "mae": 0.33748453712209964,
+        "rmse": 0.5465995758349875,
+        "macro_r2": -0.12407373246010622
+      }
+    ],
+    "limitations": "11 held-out sources in one style; not a calibrated transfer test"
+  },
+  "defect_thresholds": {
+    "DMS": {
+      "feature": "DMS",
+      "chemical_name": "Dimethyl sulfide",
+      "unit": "ug/L",
+      "threshold_median": 19.0,
+      "threshold_mean": 17.25,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "Diacetyl": {
+      "feature": "X2.3.butanedione",
+      "chemical_name": "Diacetyl",
+      "unit": "mg/L",
+      "threshold_median": 0.09,
+      "threshold_mean": 0.29925,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "4VG": {
+      "feature": "X4VG",
+      "chemical_name": "4-vinylguaiacol",
+      "unit": "mg/L",
+      "threshold_median": 0.2,
+      "threshold_mean": 0.206333333,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    },
+    "trans_2_nonenal": {
+      "feature": "X.E..2.nonenal",
+      "chemical_name": "E-2-nonenal",
+      "unit": "mg/L",
+      "threshold_median": null,
+      "threshold_mean": null,
+      "threshold_source": "8.xlsx / Sensory thresholds / exact field_name_R"
+    }
+  },
+  "limitations": [
+    "Targets are attachment-standardized sensory values, not original 0-6 scores.",
+    "Random folds assess new samples in the observed style mixture, not unseen-style transfer.",
+    "Attachment-level preprocessing and calibration cannot be re-estimated within folds.",
+    "Optimization candidates may be out of distribution despite passing chemical constraints.",
+    "Stale hops no-increase is a model-proxy constraint, not an actual tasting guarantee.",
+    "40 iid row bootstrap models give descriptive paired-model uncertainty; the upper 95% quantile has neither calibrated coverage nor a physical causal interpretation.",
+    "Full-data fitted predictions and bootstrap fitted bands are not validation."
+  ],
+  "versions": {
+    "python": "3.13.15",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "sklearn": "1.9.1"
+  },
+  "elapsed_seconds": 15.016422167012934
+}

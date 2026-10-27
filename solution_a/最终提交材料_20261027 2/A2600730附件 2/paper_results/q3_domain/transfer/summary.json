@@ -1,0 +1,264 @@
+{
+  "experiment": "domain_loso",
+  "protocol": {
+    "experiment": "domain_loso",
+    "proxy_directory": "outputs/q3_domain/stale",
+    "default_pool": "matched_2004",
+    "default_policy": "joint_margin",
+    "pools": {
+      "matched_2004": 2004,
+      "expanded_6004": 6004
+    },
+    "policies": [
+      "single_geometry",
+      "joint_geometry",
+      "joint_margin"
+    ],
+    "selection": "40 current-proxy models; first 30 frozen original models; paired Q95 <= 0",
+    "joint_margin_order": "minimize max(domain selection Q95, original selection Q95), then geometry objective",
+    "geometry_objective": "target_distance/source_distance + .2*change_rms/source_center_rms",
+    "domain_audit": "last 20 current-proxy models, selected spectra only",
+    "fresh_domain_audit_seed": null,
+    "historical_diagnostic": "last 10 original models, adaptively reused across previous experiments",
+    "fresh_audit": "20 fresh-seed draws of original 120-tree single-target protocol, selected spectra only",
+    "fresh_audit_seed": 20280123,
+    "additional_draw_seed": 20271223,
+    "gammas": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "lambda": 0.2,
+    "minimum_target_improvement": 0.1,
+    "minimum_change_rms": 0.05,
+    "threshold_scenarios": [
+      {
+        "scenario": "median_x0.8",
+        "statistic": "median",
+        "factor": 0.8,
+        "thresholds": {
+          "DMS": 15.200000000000001,
+          "X2.3.butanedione": 0.072,
+          "X4VG": 0.16000000000000003,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "median_x0.9",
+        "statistic": "median",
+        "factor": 0.9,
+        "thresholds": {
+          "DMS": 17.1,
+          "X2.3.butanedione": 0.081,
+          "X4VG": 0.18000000000000002,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "median_x1.0",
+        "statistic": "median",
+        "factor": 1.0,
+        "thresholds": {
+          "DMS": 19.0,
+          "X2.3.butanedione": 0.09,
+          "X4VG": 0.2,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "median_x1.1",
+        "statistic": "median",
+        "factor": 1.1,
+        "thresholds": {
+          "DMS": 20.900000000000002,
+          "X2.3.butanedione": 0.099,
+          "X4VG": 0.22000000000000003,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "median_x1.2",
+        "statistic": "median",
+        "factor": 1.2,
+        "thresholds": {
+          "DMS": 22.8,
+          "X2.3.butanedione": 0.108,
+          "X4VG": 0.24,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "mean_x0.8",
+        "statistic": "mean",
+        "factor": 0.8,
+        "thresholds": {
+          "DMS": 13.8,
+          "X2.3.butanedione": 0.23940000000000003,
+          "X4VG": 0.1650666664,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "mean_x0.9",
+        "statistic": "mean",
+        "factor": 0.9,
+        "thresholds": {
+          "DMS": 15.525,
+          "X2.3.butanedione": 0.26932500000000004,
+          "X4VG": 0.1856999997,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "mean_x1.0",
+        "statistic": "mean",
+        "factor": 1.0,
+        "thresholds": {
+          "DMS": 17.25,
+          "X2.3.butanedione": 0.29925,
+          "X4VG": 0.206333333,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "mean_x1.1",
+        "statistic": "mean",
+        "factor": 1.1,
+        "thresholds": {
+          "DMS": 18.975,
+          "X2.3.butanedione": 0.32917500000000005,
+          "X4VG": 0.22696666630000004,
+          "X.E..2.nonenal": null
+        }
+      },
+      {
+        "scenario": "mean_x1.2",
+        "statistic": "mean",
+        "factor": 1.2,
+        "thresholds": {
+          "DMS": 20.7,
+          "X2.3.butanedione": 0.35910000000000003,
+          "X4VG": 0.2475999996,
+          "X.E..2.nonenal": null
+        }
+      }
+    ],
+    "audit_reselection": false,
+    "default_selected_from_audit": false,
+    "qualification_required": true,
+    "limitations": [
+      "All audits reuse the same 239 observed training beers.",
+      "Bootstrap quantiles do not have calibrated post-search or causal coverage.",
+      "A safety-margin objective can require larger chemical changes."
+    ]
+  },
+  "training_n": 239,
+  "sources": 11,
+  "features": 226,
+  "support_nn_limit": 1.1066513889749567,
+  "proxy_qualified": true,
+  "selected_domain_config": {
+    "name": "local_aging_pca8_k25",
+    "family": "local",
+    "feature_set": "aging",
+    "n_components": 8,
+    "n_neighbors": 25,
+    "balanced": true,
+    "selectable": true
+  },
+  "default_policy": {
+    "sources": 11,
+    "selected": 5,
+    "new_model_checks_passed": 5,
+    "historical_cross_proxy_passed": 5,
+    "fresh_cross_proxy_passed": 4,
+    "all_committees_passed": 4,
+    "no_candidate": 6
+  },
+  "policies": [
+    {
+      "pool": "expanded_6004",
+      "policy": "joint_geometry",
+      "sources": 11,
+      "selected": 5,
+      "new_model_checks_passed": 3,
+      "historical_cross_proxy_passed": 3,
+      "fresh_cross_proxy_passed": 2,
+      "all_committees_passed": 2,
+      "no_candidate": 6
+    },
+    {
+      "pool": "expanded_6004",
+      "policy": "joint_margin",
+      "sources": 11,
+      "selected": 5,
+      "new_model_checks_passed": 5,
+      "historical_cross_proxy_passed": 5,
+      "fresh_cross_proxy_passed": 4,
+      "all_committees_passed": 4,
+      "no_candidate": 6
+    },
+    {
+      "pool": "expanded_6004",
+      "policy": "single_geometry",
+      "sources": 11,
+      "selected": 8,
+      "new_model_checks_passed": 4,
+      "historical_cross_proxy_passed": 2,
+      "fresh_cross_proxy_passed": 1,
+      "all_committees_passed": 1,
+      "no_candidate": 3
+    },
+    {
+      "pool": "matched_2004",
+      "policy": "joint_geometry",
+      "sources": 11,
+      "selected": 5,
+      "new_model_checks_passed": 3,
+      "historical_cross_proxy_passed": 3,
+      "fresh_cross_proxy_passed": 2,
+      "all_committees_passed": 2,
+      "no_candidate": 6
+    },
+    {
+      "pool": "matched_2004",
+      "policy": "joint_margin",
+      "sources": 11,
+      "selected": 5,
+      "new_model_checks_passed": 5,
+      "historical_cross_proxy_passed": 5,
+      "fresh_cross_proxy_passed": 4,
+      "all_committees_passed": 4,
+      "no_candidate": 6
+    },
+    {
+      "pool": "matched_2004",
+      "policy": "single_geometry",
+      "sources": 11,
+      "selected": 6,
+      "new_model_checks_passed": 4,
+      "historical_cross_proxy_passed": 2,
+      "fresh_cross_proxy_passed": 1,
+      "all_committees_passed": 1,
+      "no_candidate": 5
+    }
+  ],
+  "previous_original_rules": {
+    "sources": 11,
+    "selected": 11,
+    "model_checks_passed_all_thresholds": 9,
+    "cross_proxy_checks_passed_all_thresholds": 6,
+    "audit_failed": 2,
+    "no_candidate": 0
+  },
+  "previous_same_spectra_current_rules": {
+    "sources": 11,
+    "new_model_checks_passed": 1,
+    "historical_cross_proxy_passed": 1,
+    "fresh_cross_proxy_passed": 1,
+    "all_committees_passed": 1
+  },
+  "original_committee_protocol": "single-target 120-tree ExtraTrees; central original predictor alone was 45-output",
+  "elapsed_seconds": 46.87820370797999
+}

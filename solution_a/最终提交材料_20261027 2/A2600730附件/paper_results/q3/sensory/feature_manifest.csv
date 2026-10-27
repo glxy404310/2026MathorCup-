@@ -1,0 +1,227 @@
+position,feature,representation,unit,unit_source,source,original_missing_count,original_1csv_missing_count,negative_invalid_count,final_missing_count,zero_count,negative_policy,is_defect_concentration
+0,acetaldehyde,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+1,CS2,calibrated,ug/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,209,replace_with_NaN,False
+2,DES,calibrated,ug/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,29,replace_with_NaN,False
+3,DMS,calibrated,ug/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,True
+4,ethyl_2.methyl_butyrate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,85,replace_with_NaN,False
+5,ethyl_acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+6,ethyl_decanoate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+7,ethyl_hexanoate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+8,ethyl_isovalerate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,83,replace_with_NaN,False
+9,ethyl_octanoate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+10,ethyl_propionate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,10,replace_with_NaN,False
+11,H2S,calibrated,ug/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,10,replace_with_NaN,False
+12,isoamyl_alcohol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,2,replace_with_NaN,False
+13,isobutanol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,5,replace_with_NaN,False
+14,isobutyl_acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,8,replace_with_NaN,False
+15,isopentyl_acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+16,MeSH,calibrated,ug/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+17,octyl_acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,110,replace_with_NaN,False
+18,phenethyl_acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+19,phenethyl_alcohol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+20,X4VG,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,168,replace_with_NaN,True
+21,SO2.mg.L.,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+22,acetic_acid.g.L.,calibrated,g/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,2,replace_with_NaN,False
+23,ammonia.mg.L.,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,5,replace_with_NaN,False
+24,color.EBC.,calibrated,EBC,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+25,betaglucan.mg.L.,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,2,2,10,replace_with_NaN,False
+26,lactic_acid.mg.L.,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+27,glycerol,calibrated,g/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+28,iron,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,3,replace_with_NaN,False
+29,pH,calibrated,pH,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+30,protein.g.L.,calibrated,g/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+31,bitterness,calibrated,IBU,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,2,replace_with_NaN,False
+32,GFS,calibrated,g/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,6,replace_with_NaN,False
+33,ethanol..v.v.,calibrated,v/v,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,1,replace_with_NaN,False
+34,CO2.PSI.,calibrated,PSI,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,39,0,0,39,0,replace_with_NaN,False
+35,unfermentables,calibrated,not_provided_in_attachment,unidentified,8.xlsx / Calibrated chemical dataset,0,0,1,1,0,replace_with_NaN,False
+36,X1.propanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+37,X2.3.butanedione,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,9,0,0,9,replace_with_NaN,True
+38,X3.methylbutanal,calibrated,A.U.,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,7,0,1,7,replace_with_NaN,False
+39,propylene.glycol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+40,propyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+41,n.pentanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+42,X2.methyl.1.butanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+43,isopentyl.formate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+44,ethyl.isobutyrate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,3,1,0,3,1,replace_with_NaN,False
+45,X3.methyl.2.butenal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+46,X2.methyltetrahydrofuran.3.one,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+47,ethyl.butyrate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,False
+48,butyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+49,methylpyrazine,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,12,0,0,12,replace_with_NaN,False
+50,furfural,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,1,0,1,1,replace_with_NaN,False
+51,ethyl.lactate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+52,X3Z.hexenol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+53,n.hexanol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+54,styrene,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+55,X2.furanmethanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+56,X3.methyl.2.hexanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+57,X3.furanmethanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+58,X2.acetylfuran,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+59,X2.6.dimethyl.pyrazine,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+60,amyl.acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,27,0,0,27,replace_with_NaN,False
+61,ethyl.tiglate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+62,benzaldehyde,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,3,0,0,3,0,replace_with_NaN,False
+63,X5.methylfurfural,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,False
+64,n.heptanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+65,X1.octen.3.ol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+66,X3.methylthio.propanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+67,isomaltol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+68,X6.methyl.5.hepten.2.one,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+69,X2.pentyl.furan,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+70,ethyl.hex..3E..enoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+71,alpha.phellandrene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+72,dehydroxy.cis.linalool.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+73,hexyl.acetate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+74,isopentyl.butanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+75,X2.ethyl.1.hexanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+76,beta.phellandrene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+77,limonene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+78,eucalyptol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+79,benzyl.alcohol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,4,0,0,4,0,replace_with_NaN,False
+80,ethyl.hex..2E..enoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+81,phenylacetaldehyde,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,1,0,1,1,replace_with_NaN,False
+82,X.E..beta.ocimene,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,False
+83,prenyl.isobutyrate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+84,ethyl.furoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+85,ortho.cresol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+86,ethyl.5.methylhexanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+87,X2.acetylpyrrole,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+88,isoamyl.lactate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+89,n.octanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+90,cis.linalool.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+91,meta.cymenene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+92,terpinolene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+93,linalool,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,3,0,0,3,0,replace_with_NaN,False
+94,nonan.2.ol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+95,n.nonanal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+96,X2.methyl.benzofuran,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+97,heptyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+98,X4.methyl.1.pentanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+99,neo.allo.ocimene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+100,x.methyl.1.octanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+101,trans.dihydro.beta.terpineol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+102,cis.beta.terpineol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+103,y.methyl.1.octanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+104,camphor,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+105,isobutyl.hexanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+106,nerol.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+107,X.E..2.nonenal,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,True
+108,cis.dihydro.beta.terpineol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+109,X4.ethyl.phenol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+110,isoborneol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+111,ethyl.benzoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+112,n.nonanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+113,terpinen.4.ol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+114,diethyl.succinate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,3,0,0,3,0,replace_with_NaN,False
+115,vinyl.caprylate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+116,X1.alpha.terpineol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+117,ethyl..E..linalool,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+118,ethyl.nicotinate,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,2,0,0,2,replace_with_NaN,False
+119,citronellol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+120,nerol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+121,hydroxy.methyl.furfural,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+122,E.ocimenone,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+123,cumin.aldehyde,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+124,ethyl.phenylacetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+125,isopentyl.hexanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+126,geraniol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,4,0,0,4,0,replace_with_NaN,False
+127,beta.cyclohomocitral,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+128,E.cinnamaldehyde,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+129,n.decanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+130,neryl.formate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+131,X4.ethyl.guaiacol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+132,X2.undecanone,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+133,trans.dihydro.alpha.terpinyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+134,terpinen.4.ol.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+135,X2.undecanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+136,delta.terpinyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+137,X.E.E..2.4.decadienal,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,False
+138,methyl.geranate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+139,car.3.en.2.one,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+140,dimethoxy..E..citral,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+141,X2.butyloctanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+142,X4.methoxysalicylaldehyde,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+143,ethyl.hydrocinnamate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+144,eugenol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+145,gamma.nonalactone,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+146,methyl.para.anisate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+147,X.E..beta.damascenone,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+148,ethyl..9..decenoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+149,vanillin,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+150,geosmin,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+151,dodecanal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+152,X4.8.alpha.epoxy.caryophyllane,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+153,E.caryophyllene,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+154,X.E..alpha.ionone,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+155,perillyl.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+156,beta.humulene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+157,X2.phenyl.ethyl.butyrate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+158,X.Z..beta.farnesene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+159,pentyl.octanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+160,X.E..beta.farnesene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+161,X2.methylbutyl.octanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+162,alpha.humulene,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+163,neryl.propanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+164,X9.epi..E..caryophyllene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+165,ethyl..E..cinnamate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+166,linalool.isovalerate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+167,alpha.terpinyl.isobutanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+168,n.dodecanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+169,germacrene.D,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+170,X.E..beta.ionone,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+171,valencene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+172,neryl.isobutanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+173,E.methyl.isoeugenol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+174,X.Z..dihydro.apofarnesal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+175,butylated.hydroxytoluene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+176,X.E..dihydro.apofarnesal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+177,Z.nerolidol,calibrated,mg/L,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+178,X.E..ortho.methoxy.cinnamaldehyde,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+179,alpha.calacorene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+180,E.nerolidol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+181,dihydroisocaryophyllene.epoxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+182,caryophyllene.alcohol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+183,neryl.isovalerate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+184,spathulenol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+185,caryophyllene.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+186,humulene.epoxide.II,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+187,alloaromadendrene.epoxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+188,X1.10.di.epi.cubenol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+189,isopropyl.laurate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+190,caryophylla.4.12..8.13..dien.5.alpha.ol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+191,gamma.eudesmol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+192,alpha.muurolol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+193,X1.2.dihydro.8.hydroxy..2E..linalool,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+194,tau.cadinol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+195,selin.11.en.4.alpha.ol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+196,alpha.eudesmol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+197,X14.hydroxy.9.epi..E..caryophyllene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+198,tau.muurolol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+199,n.tetradecanol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+200,foeniculin,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+201,cadalene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+202,X2.3.dihydro.farnesol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+203,X2E.6Z.farnesal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+204,caryophyllene.acetate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+205,X14.hydroxy.alpha.humulene,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+206,X2Z.6E.farnesal,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+207,X2Z.6Z.farnesol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+208,X2Z.6E.farnesol,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+209,ambroxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+210,benzyl.benzoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+211,X2E.6E.methyl.farnesoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+212,ethyl.tetradecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+213,X2.ethylhexylsalicylate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+214,isopropyl.tetradecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+215,ethyl.pentadecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+216,methyl.hexadecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+217,Z.Z.geranyl.linalool,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+218,ethyl.hexadecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+219,manool.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+220,X13.epi.manool.oxide,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+221,isopropyl.hexadecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+222,manool,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+223,ethyl.octadecanoate,relative,supplied_relative_or_transformed_units,unidentified,1.csv,0,0,0,0,0,retain_supplied_representation,False
+224,ethyl.pentanoate,calibrated,not_provided_in_attachment,unidentified,8.xlsx / Calibrated chemical dataset,0,0,0,0,0,replace_with_NaN,False
+225,X2.ethyl.3.methylpyrazine,calibrated,A.U.,8.xlsx / Sensory thresholds / exact field_name_R,8.xlsx / Calibrated chemical dataset,1,0,0,1,0,replace_with_NaN,False

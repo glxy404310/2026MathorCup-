@@ -1,0 +1,25 @@
+{
+  "seed": 20269123,
+  "repeats": 2000,
+  "independent_resampling_unit": "beer",
+  "beers": 250,
+  "pre_aggregation": "mean squared error within beer and method across two repeats",
+  "comparison": "fixed single-target ExtraTrees minus old multi-output ExtraTrees",
+  "point_rmse_difference": -0.003705562626533765,
+  "rmse_difference_percentile95": [
+    -0.015646083395678544,
+    0.009669896654431319
+  ],
+  "point_relative_rmse_reduction": 0.008498882212014891,
+  "relative_rmse_reduction_percentile95": [
+    -0.023865377685717015,
+    0.036511989635072434
+  ],
+  "bootstrap_fraction_rmse_difference_below_zero": 0.702,
+  "interpretation": "sampling uncertainty conditional on saved OOF predictions; not a selection-adjusted external-validation interval",
+  "limitations": [
+    "Same-data algorithm exploration/selection is not resampled or accounted for",
+    "Models are not refitted within these 2000 resamples",
+    "Shared training folds create dependencies beyond the repeated-beer clustering"
+  ]
+}

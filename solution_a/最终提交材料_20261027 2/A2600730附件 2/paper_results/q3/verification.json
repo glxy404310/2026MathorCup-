@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "source_hashes_before",
+      "status": "passed",
+      "details": {
+        "files": 9,
+        "hash_algorithm": "sha256",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "hybrid_data_contract",
+      "status": "passed",
+      "details": {
+        "rows": 250,
+        "features": 226,
+        "calibrated": 69,
+        "relative": 157,
+        "negative_calibrated_invalidated": 3,
+        "missing_cells_preserved": 72
+      }
+    },
+    {
+      "name": "generation_training_support",
+      "status": "passed",
+      "details": {
+        "styles": [
+          "Tripel",
+          "Kriek",
+          "Lambic",
+          "Pils/Lager"
+        ],
+        "rows_per_style": 300,
+        "rows": 1200,
+        "whole_training_row_copies": 0,
+        "calibrated_nonnegative": true,
+        "marginal_training_support": true,
+        "discrete_empirical_support": true
+      }
+    },
+    {
+      "name": "generation_repeated_cv",
+      "status": "passed",
+      "details": {
+        "repeats": 2,
+        "folds": 3,
+        "mc_per_method_fold": 3,
+        "every_sample_test_once_per_repeat": true,
+        "metric_records": 216,
+        "fold_and_overall_summaries_reconciled": true,
+        "scope": "Saved split assignments, schema and aggregation; no claim of independent real experiments"
+      }
+    },
+    {
+      "name": "sensory_oof_and_source_exclusion",
+      "status": "passed",
+      "details": {
+        "oof_models": 2,
+        "oof_folds": 5,
+        "targets": 45,
+        "excluded_sources": 11,
+        "transfer_training_rows": 239,
+        "bootstrap_models": 40,
+        "bootstrap_resample_shape": [
+          40,
+          239
+        ],
+        "stale_hops_oof_r2": 0.02287815502535584,
+        "stale_hops_oof_rmse": 0.4355844860975006,
+        "stale_hops_oof_mean_rmse": 0.44160921700242495
+      }
+    },
+    {
+      "name": "transfer_constraints_and_selection",
+      "status": "passed",
+      "details": {
+        "selected_spectra_checked": 63,
+        "source_training_rows": 239,
+        "protected_fixed_argmin_checks": 30,
+        "selection_models": 30,
+        "audit_models": 10,
+        "maximum_paired_quantile_error": 0.0,
+        "maximum_target_distance_error": 2.220446049250313e-16,
+        "maximum_full_space_nn_error": 0.0,
+        "default_policy": {
+          "n_sources": 11,
+          "n_candidates_selected": 10,
+          "n_model_checks_passed": 5,
+          "n_audit_failed": 5,
+          "n_no_candidate": 1,
+          "n_source_unverifiable": 0,
+          "n_all_checks_also_pass_mean_thresholds_same_spectra": 1
+        },
+        "scope": "Chemical constraints and uncalibrated model diagnostics; no actual taste guarantee"
+      }
+    },
+    {
+      "name": "report_and_generated_sensory",
+      "status": "passed",
+      "details": {
+        "generated_sensory_rows": 1200,
+        "sensory_dimensions": 45,
+        "frozen_model_predictions_reconciled": true,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "source_hashes_after",
+      "status": "passed",
+      "details": {
+        "files": 9,
+        "hash_algorithm": "sha256",
+        "unchanged": true
+      }
+    }
+  ],
+  "scope": "Source provenance, saved-output integrity and independently recomputed numerical consistency",
+  "limitations": [
+    "Numerical consistency does not establish model adequacy or physical brewing feasibility.",
+    "Bootstrap selection and audit groups share real training data and have no calibrated outcome coverage.",
+    "Sensory values are relative attachment-standardized predictions, not recovered raw 0-6 panel scores."
+  ],
+  "elapsed_seconds": 2.6479970419895835
+}

@@ -1,0 +1,10 @@
+arm,pool,bound,ranking,original_sources,original_selected,original_new_passed,original_fresh_consistency_passed,original_historical_consistency_passed,original_no_candidate,rebuilt_sources,rebuilt_selected,rebuilt_new_passed,rebuilt_fresh_consistency_passed,rebuilt_historical_consistency_passed,rebuilt_no_candidate
+fixed,legacy_2004,retain100,geometry,11,8,7,6,6,3,11,7,7,6,6,4
+fixed,legacy_2004,retain100,margin,11,8,7,6,6,3,11,7,7,6,6,4
+fixed,legacy_6004,retain100,geometry,11,8,7,6,5,3,11,8,8,6,6,3
+fixed,legacy_6004,retain100,margin,11,8,8,8,7,3,11,8,8,8,6,3
+refined,legacy_2004,absolute10,geometry,11,8,7,6,4,3,11,9,8,7,5,2
+refined,legacy_2004,absolute10,margin,11,8,8,7,6,3,11,9,9,8,7,2
+refined,legacy_2004,retain100,geometry,11,3,3,2,1,8,11,2,2,1,1,9
+refined,legacy_2004,retain100,margin,11,3,3,2,1,8,11,2,2,1,1,9
+refined,legacy_6004,retain100,geometry,11,3,3,2,2,8,11,3,3,2,3,8

@@ -1,0 +1,36 @@
+{
+  "purpose": "Exploratory robustness follow-up; original five folds reused after anomaly diagnosis",
+  "seed": 20261023,
+  "train_quantiles": [
+    0.01,
+    0.99
+  ],
+  "samples_retained": 250,
+  "metrics": [
+    {
+      "model": "ridge_winsor",
+      "mae": 0.35251306672944865,
+      "rmse": 0.49917856125134796,
+      "macro_r2": 0.18578379784879215
+    },
+    {
+      "model": "ridge_winsor_mask10",
+      "mae": 0.3595044946190716,
+      "rmse": 0.5079324442605735,
+      "macro_r2": 0.16224823163310978
+    },
+    {
+      "model": "ridge_winsor_mask20",
+      "mae": 0.3648714002851122,
+      "rmse": 0.5141419630986049,
+      "macro_r2": 0.14635772392866342
+    }
+  ],
+  "final_alpha": 1000.0,
+  "limitations": [
+    "Not a fresh holdout test",
+    "Fixed 1%/99% clipping can suppress genuine extremes",
+    "Original 0-6 scores still not identified",
+    "One split seed only"
+  ]
+}

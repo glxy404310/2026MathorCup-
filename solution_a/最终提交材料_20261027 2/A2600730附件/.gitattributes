@@ -1,0 +1,16 @@
+# Keep generated text byte-identical when a frozen experiment is checked out.
+/.gitattributes text eol=lf
+/solution_a/** text=auto eol=lf
+# CSV fields can contain literal CRLF; keep their data bytes intact by default.
+/solution_a/**/*.csv -text
+/solution_a/outputs/q3/**/*.csv text eol=lf
+/solution_a/outputs/q3_optimized/**/*.csv text eol=lf
+/solution_a/outputs/q3_domain/**/*.csv text eol=lf
+/solution_a/**/*.joblib -text
+/solution_a/**/*.npy -text
+/solution_a/**/*.npz -text
+/solution_a/**/*.gz -text
+/solution_a/**/*.png -text
+/solution_a/**/*.pdf -text
+/solution_a/**/*.docx -text
+/solution_a/**/*.zip -text

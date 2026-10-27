@@ -1,0 +1,5 @@
+dataset,R_name,Category_Paper,Category,CleanName_Paper,CleanName_PaperLong,CleanName_PanelFeedback,DataType
+Trained panel,barnyard,Taste,Wild flora,Barnyard,Barnyard,Barnyard,numeric
+Trained panel,dms,Taste,Others,Dimethyl sulfide,Dimethyl sulfide,Dimethyl sulfide,numeric
+Trained panel,stale_hops,Taste,Others,Stale hops,Stale hops,Stale hops,numeric
+Trained panel,t2n,Taste,Others,Trans-2-nonenal,Aging aroma - cardboard,Trans-2-nonenal,numeric

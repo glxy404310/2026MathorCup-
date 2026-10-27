@@ -2,7 +2,7 @@
 
 本目录保存数据审计、模型、原始实验结果和复现程序。第一问已完成45维连续预测与缺失压力实验，第二问已完成关联网络与Top-3稳定性基线，第三问已运行风格生成和带缺陷保护的迁移搜索。真实0–6量尺校准、部分机制核验和实际品评验证仍待完成。
 
-论文定稿采用口径见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
+论文定稿采用的方案见 [最终采用方案](docs/final_model_selection.md)，工件和结果选择条件见 [final_model_selection.json](final_model_selection.json)。最新实验见 [beer 81诊断与兼顾接近度的迁移搜索](docs/q3_refinement_results.md)。[上轮未见风格探索](docs/q3_domain_results.md)、[生成优化结果](docs/q3_optimization_results.md)、[第三问首轮结果](docs/q3_results.md)保留历史对照。
 
 本次提交文件为[论文PDF](submission/A2600730.pdf)与[程序及结果附件包](submission/A2600730附件.zip)，可编辑源稿保存在[Word文件](paper/啤酒风味建模提交稿.docx)。PDF含完整程序全文、135项化学证据、72组迁移策略表及逐感官折外置换结果。补充分析见[supplement/README.txt](supplement/README.txt)：保留原五折主表，另列三折固定参数比较、整风格留出、多掩码压力、缺失指示消融和分层Bootstrap；补入逐折模块案例、44项迁移浓度及beer 96逐阶段复核。正文保留原始0–6量尺不可恢复、相关与因果区别及尚无实际品评的限制；这些限制不因排版完成而消失。
 
@@ -67,6 +67,6 @@ macOS/Linux将上述Python路径换为`.venv/bin/python`。默认入口校验现
 
 ## 解释结果时的边界
 
-`oof_*.csv`是折外预测；`fitted_standardized_NOT_validation.csv`是全量拟合值，不能作为测试证据。所有感官数值均为附件4的标准化尺度，当前不能当作原始0–6分。第二问关联不证明因果机制。优化后Kriek/Lambic生成能量差异下降约20.5%/23.4%；Stale hops预测提升尚未得到稳定证实。新轮使用239个非Pils样本的21个完整风格留出选择模型，Pils标签已在此前反复查看，其指标只作诊断。上一轮9/11和6/11属于原检查规则；新轮另报同一规则下的固定旧谱对照与新增筛选结果。原bootstrap委员会为单目标树，旧中心预测器才是45输出；两者不能混称。全部数值检查均不替代真实品评。
+`oof_*.csv`是折外预测；`fitted_standardized_NOT_validation.csv`是全量拟合值，不能作为测试证据。所有感官数值均为附件4的标准化尺度，当前不能当作原始0–6分。第二问关联不证明因果机制。优化后Kriek/Lambic生成能量差异下降约20.5%/23.4%；Stale hops预测提升尚未得到稳定证实。新轮使用239个非Pils样本的21个完整风格留出选择模型，Pils标签已在此前反复查看，其指标仅用于诊断。上一轮9/11和6/11属于原检查规则；新轮另报同一规则下的固定旧谱对照与新增筛选结果。原bootstrap委员会为单目标树，旧中心预测器才是45输出；两者不能混称。全部数值检查均不替代真实品评。
 
 原始赛题附件未被更改。提交文件保存在submission/；尚未向竞赛平台上传。签署承诺书需由参赛队自行完成。

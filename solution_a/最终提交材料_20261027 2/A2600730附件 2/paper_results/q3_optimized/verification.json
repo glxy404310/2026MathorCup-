@@ -1,0 +1,154 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "preserved_baseline_before",
+      "details": {
+        "unchanged_files": 65,
+        "hash_algorithm": "sha256"
+      }
+    },
+    {
+      "name": "raw_sources_and_hybrid_contract",
+      "details": {
+        "sources": {
+          "files": 9,
+          "hash_algorithm": "sha256",
+          "unchanged": true
+        },
+        "contract": {
+          "rows": 250,
+          "features": 226,
+          "calibrated": 69,
+          "relative": 157,
+          "negative_calibrated_invalidated": 3,
+          "missing_cells_preserved": 72
+        }
+      }
+    },
+    {
+      "name": "optimized_stale_nested_validation",
+      "details": {
+        "outer_seeds": [
+          20261123,
+          20262123
+        ],
+        "outer_folds": 5,
+        "candidate_count": 18,
+        "nested_choices_recomputed": 80,
+        "transfer_config": {
+          "name": "svr_aging_C1",
+          "family": "svr",
+          "feature_set": "aging",
+          "params": {
+            "C": 1.0,
+            "epsilon": 0.05,
+            "gamma": "scale"
+          }
+        },
+        "qualified_for_proxy": true,
+        "training_rows": 239,
+        "excluded_sources": 11,
+        "bootstrap_shape": [
+          60,
+          239
+        ],
+        "preprocessing_training_checks": 61,
+        "nested_selected_rmse": 0.43817239247605383,
+        "old_multioutput_same_split_rmse": 0.4342756528527088,
+        "fixed_single_tree_rmse": 0.4247527809803629,
+        "pils_holdout_rmse": 0.5506518077021654,
+        "pils_holdout_mean_rmse": 0.5465995758349875
+      }
+    },
+    {
+      "name": "optimized_generation_nested_validation",
+      "details": {
+        "cv_records": 240,
+        "inner_records": 144,
+        "inner_choices_recomputed": 24,
+        "generated_rows": 1200,
+        "observed_training_row_copies": 0,
+        "full_selected_methods": {
+          "Tripel": "legacy_copula",
+          "Kriek": "style_margin_copula",
+          "Lambic": "style_smoothed_mixture",
+          "Pils/Lager": "style_margin_copula"
+        },
+        "training_empirical_support": true,
+        "nested_outcomes_match_selected_methods": true
+      }
+    },
+    {
+      "name": "fixed_single_target_followup",
+      "details": {
+        "extra_internal_seeds": [
+          20263123,
+          20264123
+        ],
+        "parameter_tuning": false,
+        "fixed_single_oof_rmse": 0.43230031839334826,
+        "same_split_old_multioutput_rmse": 0.436005881019882,
+        "same_split_mean_rmse": 0.44256821702706917,
+        "transfer_qualified": true,
+        "bootstrap_shape": [
+          60,
+          239
+        ],
+        "beer_cluster_bootstrap_repeats": 2000,
+        "rmse_difference_interval": [
+          -0.015646083395678544,
+          0.009669896654431319
+        ],
+        "pils_holdout_rmse": 0.5592061699600495,
+        "pils_holdout_mean_rmse": 0.5465995758349875
+      }
+    },
+    {
+      "name": "robust_threshold_transfer",
+      "details": {
+        "scenario_count": 10,
+        "sources": 11,
+        "reconstructed_candidates": 44044,
+        "fixed_selection_argmin_checks": 99,
+        "concentration_scenario_checks": 3960,
+        "maximum_paired_quantile_error": 0.0,
+        "base_draws_equal": true,
+        "default_policy": {
+          "sources": 11,
+          "selected": 11,
+          "model_checks_passed_all_thresholds": 9,
+          "cross_proxy_checks_passed_all_thresholds": 6,
+          "audit_failed": 2,
+          "no_candidate": 0
+        }
+      }
+    },
+    {
+      "name": "report_profiles_and_threshold_counts",
+      "details": {
+        "generated_sensory_rows": 1200,
+        "sensory_targets": 45,
+        "profile_model": "44 original full-data outputs plus source-excluded fixed stale target",
+        "scenario_count_rows": 10,
+        "summary_values_recomputed": true,
+        "figures_with_png_and_svg": 3,
+        "results_report_exists": true
+      }
+    },
+    {
+      "name": "preserved_baseline_after",
+      "details": {
+        "unchanged_files": 65,
+        "hash_algorithm": "sha256"
+      }
+    }
+  ],
+  "scope": "Frozen baseline integrity, repeated internal validation and robust candidate model checks",
+  "limitations": [
+    "Repeated and nested validation reuse the same real samples; new seeds are not fresh independent data.",
+    "Bootstrap audit shares real training data and does not provide calibrated post-search coverage.",
+    "Numerical and chemical checks do not establish actual sensory improvement or brewing feasibility."
+  ],
+  "elapsed_seconds": 16.69979137502378
+}

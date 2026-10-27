@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-23",
+  "n_real": 250,
+  "n_features": 226,
+  "n_styles": 22,
+  "mean_strength": 5.0,
+  "cov_strength": 20.0,
+  "parameter_policy": "prespecified_fixed_main_and_separate_sensitivity_no_outer_selection",
+  "cv_repeat_seeds": [
+    20261023,
+    20262023
+  ],
+  "cv_folds": 3,
+  "mc_repeats": 3,
+  "generated_n_each_draw": 300,
+  "validation_records": 216,
+  "validation_test_style_n_min": 3,
+  "validation_test_style_n_max": 10,
+  "full_generation_rows": 1200,
+  "full_generation_copy_rate": 0.0,
+  "full_generation_within_insample_latent_q95": 0.0,
+  "full_generation_within_cv_latent_q95": 1.0,
+  "minimum_style_cov_eigenvalue": 0.0708438062143493,
+  "elapsed_seconds": 7.340922791976482,
+  "limits": [
+    "Tiny style samples; 300 generated rows are Monte Carlo, not independent real evidence",
+    "Shared empirical margins and shrinkage may dilute style-specific distributions",
+    "Full-fit support thresholds are descriptive, not independently calibrated",
+    "Chemical target spectra are not brewing recipes or sensory panel validation"
+  ]
+}

@@ -1,0 +1,737 @@
+{
+  "main_pages": 57,
+  "source_pages": 297,
+  "total_pages": 354,
+  "files": [
+    {
+      "path": "paper/make_figures.py",
+      "lines": 468,
+      "sha256": "9afa35400e3fb8c506fd2bd9652115f0fa7f6def743d654aa9afce88c368314e",
+      "first_pdf_page": 58,
+      "last_pdf_page": 67
+    },
+    {
+      "path": "run_all.py",
+      "lines": 52,
+      "sha256": "e8fef69f625466acc22b552ec490bc6c5bda3836423deca6cc993a21704c57fd",
+      "first_pdf_page": 68,
+      "last_pdf_page": 69
+    },
+    {
+      "path": "run_q3.py",
+      "lines": 10,
+      "sha256": "943fd76e3cc904583cf6ba12f559700aa052be0a6ac698e9467b80eac2f78d13",
+      "first_pdf_page": 70,
+      "last_pdf_page": 70
+    },
+    {
+      "path": "run_q3_domain.py",
+      "lines": 38,
+      "sha256": "6a8ebd9be8e7a3e9e47ca878daa3d5f25e7dccd5f64d092f6efc8d32ba38a3c4",
+      "first_pdf_page": 71,
+      "last_pdf_page": 71
+    },
+    {
+      "path": "run_q3_optimized.py",
+      "lines": 37,
+      "sha256": "a50fb056c91889f873e63b720329ace2a32d8d8e5dcc55f962c1e778b8e1ab7f",
+      "first_pdf_page": 72,
+      "last_pdf_page": 72
+    },
+    {
+      "path": "run_q3_refined.py",
+      "lines": 40,
+      "sha256": "e5fde50e937cde776f4f878aa08b680d22ca9950d8f6dc004e37920c3a335176",
+      "first_pdf_page": 73,
+      "last_pdf_page": 73
+    },
+    {
+      "path": "run_supplement.py",
+      "lines": 31,
+      "sha256": "b2f0a50147b4339ee2b0745332648b111427164eb6066b54d8e5727b0db67659",
+      "first_pdf_page": 74,
+      "last_pdf_page": 74
+    },
+    {
+      "path": "src/01_audit.py",
+      "lines": 467,
+      "sha256": "b81848d6eaf8c0a4b6aebe881c519837e154a84f52f285fa6f3be55c65d41c80",
+      "first_pdf_page": 75,
+      "last_pdf_page": 85
+    },
+    {
+      "path": "src/02_q1_baseline.py",
+      "lines": 173,
+      "sha256": "6357ece28220bd3567803a214e4b83d84c8192713622bbf0500ab58e6b0f94ab",
+      "first_pdf_page": 86,
+      "last_pdf_page": 89
+    },
+    {
+      "path": "src/02b_q1_robust.py",
+      "lines": 93,
+      "sha256": "e7ea1f17106fdeabf52087e9532421927210e3ebbcb05c1dcf13b61bb14679f1",
+      "first_pdf_page": 90,
+      "last_pdf_page": 91
+    },
+    {
+      "path": "src/03_q2_network.py",
+      "lines": 246,
+      "sha256": "56e7858449d5aa25efd2ce581a083d6b477711991dd7f78a3c9552849cc5603b",
+      "first_pdf_page": 92,
+      "last_pdf_page": 97
+    },
+    {
+      "path": "src/04_stage_summary.py",
+      "lines": 131,
+      "sha256": "79ef7338a76e6ec46e81e86782c902bc295b1606754c986c18b36d76e3ded45d",
+      "first_pdf_page": 98,
+      "last_pdf_page": 101
+    },
+    {
+      "path": "src/05_verify_outputs.py",
+      "lines": 111,
+      "sha256": "34ba31074ee8d2133c5d57dda035e9d14ea5726396991e8ca04d99cc96980810",
+      "first_pdf_page": 102,
+      "last_pdf_page": 104
+    },
+    {
+      "path": "src/06_q3_sensory.py",
+      "lines": 230,
+      "sha256": "d4e7e5cc71284e24318acffa44983de164adef4a2c24523606ed20d1dcbc78d9",
+      "first_pdf_page": 105,
+      "last_pdf_page": 109
+    },
+    {
+      "path": "src/07_q3_generation.py",
+      "lines": 419,
+      "sha256": "32ad2b7003ef0525a4cdd5d722f3713697d9fa59a3eed5a82555060e80bc166e",
+      "first_pdf_page": 110,
+      "last_pdf_page": 119
+    },
+    {
+      "path": "src/08_q3_transfer.py",
+      "lines": 320,
+      "sha256": "fb99a8dff4c78fd0d705507e65f3a64c9855e18a4462dd2ba53a0df578405cd5",
+      "first_pdf_page": 120,
+      "last_pdf_page": 127
+    },
+    {
+      "path": "src/09_q3_report.py",
+      "lines": 271,
+      "sha256": "3621f641847b101cc18abd754d6e7ce9ff6bfb9be162ec0572a66060ec4509d6",
+      "first_pdf_page": 128,
+      "last_pdf_page": 134
+    },
+    {
+      "path": "src/10_q3_verify.py",
+      "lines": 543,
+      "sha256": "f7ef0ef5732cfbfe61c9332d751840568b11c3742400f4e7e74f741e2f5be563",
+      "first_pdf_page": 135,
+      "last_pdf_page": 146
+    },
+    {
+      "path": "src/11_q3_generation_optimized.py",
+      "lines": 288,
+      "sha256": "4ec959714acc717e509e415faa4401c093c7c3b783edf08bf790c8e5bad498fe",
+      "first_pdf_page": 147,
+      "last_pdf_page": 153
+    },
+    {
+      "path": "src/12_q3_stale_optimized.py",
+      "lines": 241,
+      "sha256": "56b2e4c89b7616ca459a26b21db244597ffd51d1e2993f13e79121d2cbced3ef",
+      "first_pdf_page": 154,
+      "last_pdf_page": 159
+    },
+    {
+      "path": "src/12b_q3_stale_fixed.py",
+      "lines": 217,
+      "sha256": "d7202fbaca1f8f67063ae5084a57a8669a170005c9195d9857033ef88b16cbdc",
+      "first_pdf_page": 160,
+      "last_pdf_page": 165
+    },
+    {
+      "path": "src/13_q3_transfer_optimized.py",
+      "lines": 335,
+      "sha256": "bdc28b4229fee67fb8e0d5a6ad87cd259c42dbb5081902162dbea3b2eea3a9d0",
+      "first_pdf_page": 166,
+      "last_pdf_page": 173
+    },
+    {
+      "path": "src/14_q3_optimization_report.py",
+      "lines": 293,
+      "sha256": "285c5096f0b8863567c4b0d03f5334353c6dbf5c5d8e88c79b844ebf4879340c",
+      "first_pdf_page": 174,
+      "last_pdf_page": 180
+    },
+    {
+      "path": "src/15_q3_optimized_verify.py",
+      "lines": 732,
+      "sha256": "237c77ca0ffc4b5d22df880087508302ffae20567b106bfd84844b8e977ff17c",
+      "first_pdf_page": 181,
+      "last_pdf_page": 197
+    },
+    {
+      "path": "src/16_q3_stale_domain.py",
+      "lines": 323,
+      "sha256": "65bb6832fc558142c609129009b595681fd6a074a94f327b579cac0e85c92122",
+      "first_pdf_page": 198,
+      "last_pdf_page": 205
+    },
+    {
+      "path": "src/17_q3_transfer_domain.py",
+      "lines": 337,
+      "sha256": "037118a4c4ef024736fd03c754110118fa8c67f0035d6c907e4dfcf6ef21b642",
+      "first_pdf_page": 206,
+      "last_pdf_page": 213
+    },
+    {
+      "path": "src/18_q3_domain_report.py",
+      "lines": 513,
+      "sha256": "60ba9b79a52af7cdd74e0dfe12175209d329267cc011bc8792afa969d8927712",
+      "first_pdf_page": 214,
+      "last_pdf_page": 225
+    },
+    {
+      "path": "src/19_q3_domain_verify.py",
+      "lines": 566,
+      "sha256": "47b27fb2c62595bf9fbf11563176d4af2e70047402846433426d14830b7aef92",
+      "first_pdf_page": 226,
+      "last_pdf_page": 239
+    },
+    {
+      "path": "src/20_q3_transfer_consensus.py",
+      "lines": 21,
+      "sha256": "dda1e13b939733bb8c569a3d452e8e36c3b170a98035caf726be04bdc6c31fcf",
+      "first_pdf_page": 240,
+      "last_pdf_page": 240
+    },
+    {
+      "path": "src/21_q3_beer81_audit.py",
+      "lines": 453,
+      "sha256": "20907975c2045de3afabc81913c3e7a98d49be21194eb90a9147d7ac00ab5e3e",
+      "first_pdf_page": 241,
+      "last_pdf_page": 251
+    },
+    {
+      "path": "src/22_q3_stale_refined.py",
+      "lines": 406,
+      "sha256": "d9a9f67965d6270217dfb145ebbfd429c4928f349085cd266bb7b47aa19236ef",
+      "first_pdf_page": 252,
+      "last_pdf_page": 261
+    },
+    {
+      "path": "src/23_q3_transfer_balanced.py",
+      "lines": 328,
+      "sha256": "953bf8882498756a1dbcf8675f41144e55967be5d2475f35868fb31efa3a935d",
+      "first_pdf_page": 262,
+      "last_pdf_page": 269
+    },
+    {
+      "path": "src/24_q3_refinement_report.py",
+      "lines": 188,
+      "sha256": "ddcd0c5097ddbfa230a6544cdc717bfa08eec80d964cb1a59fc4999162c3f87e",
+      "first_pdf_page": 270,
+      "last_pdf_page": 274
+    },
+    {
+      "path": "src/25_q3_refined_verify.py",
+      "lines": 728,
+      "sha256": "7db48f83f62efdf7ed8240cbff3404c1788d88a3f18a578b64f1a4b3fd1f9491",
+      "first_pdf_page": 275,
+      "last_pdf_page": 291
+    },
+    {
+      "path": "src/common.py",
+      "lines": 73,
+      "sha256": "b1b8ef459cfe3b9461efa0310ebe49e9593b655d8e58d2a02f32e7138fc5fa0f",
+      "first_pdf_page": 292,
+      "last_pdf_page": 293
+    },
+    {
+      "path": "src/platform_selfcheck.py",
+      "lines": 118,
+      "sha256": "35df4e836b8fb2d968dca1e679f27f3e1ebb97dd5bb9a93b70a1fd0a4b1c702b",
+      "first_pdf_page": 294,
+      "last_pdf_page": 296
+    },
+    {
+      "path": "src/q3_copula.py",
+      "lines": 152,
+      "sha256": "1d5e21ca13654b7724a87f7590615cfc809a3061a8970c0e81475993c7763b73",
+      "first_pdf_page": 297,
+      "last_pdf_page": 299
+    },
+    {
+      "path": "src/q3_data.py",
+      "lines": 122,
+      "sha256": "00f645b5502651a2f4f57998c9286d38ef35ac8e6320c99455afd3a6a300a7f7",
+      "first_pdf_page": 300,
+      "last_pdf_page": 302
+    },
+    {
+      "path": "src/q3_generator_optimized.py",
+      "lines": 222,
+      "sha256": "3d7f1004577298d5ecdd2ad9b7e0bbd2f299d863eff699fc45c047d279785156",
+      "first_pdf_page": 303,
+      "last_pdf_page": 307
+    },
+    {
+      "path": "src/q3_stale_domain.py",
+      "lines": 158,
+      "sha256": "6d0be013ea3249f3ff95cd212e7011414796569d32eebd6fbdf26b412830e1c9",
+      "first_pdf_page": 308,
+      "last_pdf_page": 311
+    },
+    {
+      "path": "src/q3_stale_optimized.py",
+      "lines": 180,
+      "sha256": "1720024ac5855f1b905de115a751cbdcfc9f97e06249091e27c24549bd34dc4a",
+      "first_pdf_page": 312,
+      "last_pdf_page": 315
+    },
+    {
+      "path": "src/q3_stale_refined.py",
+      "lines": 205,
+      "sha256": "11730edf74f74a438072a3ad3bc9e3218fbbf0fe1a9a602a2b936e37eec4b076",
+      "first_pdf_page": 316,
+      "last_pdf_page": 320
+    },
+    {
+      "path": "supplement/q1_additional_checks.py",
+      "lines": 67,
+      "sha256": "fef1d87fbcf839edc7270cf9fbcb25ed71fe5d27328e7c652d780b648cac4c93",
+      "first_pdf_page": 321,
+      "last_pdf_page": 322
+    },
+    {
+      "path": "supplement/q1_comparison.py",
+      "lines": 151,
+      "sha256": "02febdf363a347d68891531d88abcfa1396db9679155d55238a3b650ba091ec3",
+      "first_pdf_page": 323,
+      "last_pdf_page": 326
+    },
+    {
+      "path": "supplement/q1_indicator_ablation.py",
+      "lines": 306,
+      "sha256": "12410d3c8990ba0d2d7993b903f3498c52f5b045f7c966022b07a93e3e8a1308",
+      "first_pdf_page": 327,
+      "last_pdf_page": 333
+    },
+    {
+      "path": "supplement/q2_permutation.py",
+      "lines": 189,
+      "sha256": "603de849964bae027c68f5bd6735070bb2dfc742fb5586e6f20b0301a9373a77",
+      "first_pdf_page": 334,
+      "last_pdf_page": 337
+    },
+    {
+      "path": "supplement/q2_stratified_bootstrap.py",
+      "lines": 191,
+      "sha256": "af7ab7e04241b297b306c35215c15472b1ba69330ff096afb2d19fc8d65b5c50",
+      "first_pdf_page": 338,
+      "last_pdf_page": 342
+    },
+    {
+      "path": "supplement/reference_tables.py",
+      "lines": 331,
+      "sha256": "a0191d5003e8d8ba7ea448132b51bd9154b7b6b3e5181d35612f23c02240f5a8",
+      "first_pdf_page": 343,
+      "last_pdf_page": 350
+    },
+    {
+      "path": "supplement/verify_supplement.py",
+      "lines": 170,
+      "sha256": "e98d1d0bb8c6a7332fec3de0902432f9cbb07ca256e9b76e0ee908e9fa73c715",
+      "first_pdf_page": 351,
+      "last_pdf_page": 354
+    }
+  ],
+  "source_lines": 12284,
+  "contents_links": [
+    {
+      "text": "1 问题重述",
+      "target_pdf_page": 3,
+      "rect": [
+        70.9,
+        726.1,
+        524.5,
+        739.1
+      ]
+    },
+    {
+      "text": "2 数据核验与统一处理",
+      "target_pdf_page": 3,
+      "rect": [
+        70.9,
+        713.1,
+        524.5,
+        726.1
+      ]
+    },
+    {
+      "text": "3 问题分析与技术路线",
+      "target_pdf_page": 4,
+      "rect": [
+        70.9,
+        700.1,
+        524.5,
+        713.1
+      ]
+    },
+    {
+      "text": "4 模型假设与符号",
+      "target_pdf_page": 5,
+      "rect": [
+        70.9,
+        687.1,
+        524.5,
+        700.1
+      ]
+    },
+    {
+      "text": "5 缺失条件下的感官预测",
+      "target_pdf_page": 6,
+      "rect": [
+        70.9,
+        674.1,
+        524.5,
+        687.1
+      ]
+    },
+    {
+      "text": "5.1 预测目标与评分量尺",
+      "target_pdf_page": 6,
+      "rect": [
+        70.9,
+        661.1,
+        524.5,
+        674.1
+      ]
+    },
+    {
+      "text": "5.2 折内缺失处理与多输出ExtraTrees",
+      "target_pdf_page": 7,
+      "rect": [
+        70.9,
+        648.1,
+        524.5,
+        661.1
+      ]
+    },
+    {
+      "text": "5.3 折外验证与模型比较",
+      "target_pdf_page": 7,
+      "rect": [
+        70.9,
+        635.1,
+        524.5,
+        648.1
+      ]
+    },
+    {
+      "text": "5.4 缺失压力与极端外推诊断",
+      "target_pdf_page": 8,
+      "rect": [
+        70.9,
+        622.1,
+        524.5,
+        635.1
+      ]
+    },
+    {
+      "text": "5.5 逐维表现与应用边界",
+      "target_pdf_page": 9,
+      "rect": [
+        70.9,
+        609.1,
+        524.5,
+        622.1
+      ]
+    },
+    {
+      "text": "5.6 补充对照与未见风格验证",
+      "target_pdf_page": 9,
+      "rect": [
+        70.9,
+        596.1,
+        524.5,
+        609.1
+      ]
+    },
+    {
+      "text": "6 化合物关联网络与关键候选",
+      "target_pdf_page": 11,
+      "rect": [
+        70.9,
+        583.1,
+        524.5,
+        596.1
+      ]
+    },
+    {
+      "text": "6.1 Spearman关联网络",
+      "target_pdf_page": 11,
+      "rect": [
+        70.9,
+        570.1,
+        524.5,
+        583.1
+      ]
+    },
+    {
+      "text": "6.2 感官Top-3候选与重抽样稳定性",
+      "target_pdf_page": 11,
+      "rect": [
+        70.9,
+        557.1,
+        524.5,
+        570.1
+      ]
+    },
+    {
+      "text": "6.3 方法与风格敏感性",
+      "target_pdf_page": 12,
+      "rect": [
+        70.9,
+        544.1,
+        524.5,
+        557.1
+      ]
+    },
+    {
+      "text": "6.4 化学依据与解释边界",
+      "target_pdf_page": 13,
+      "rect": [
+        70.9,
+        531.1,
+        524.5,
+        544.1
+      ]
+    },
+    {
+      "text": "6.5 折外置换与预测依赖",
+      "target_pdf_page": 14,
+      "rect": [
+        70.9,
+        518.1,
+        524.5,
+        531.1
+      ]
+    },
+    {
+      "text": "7 风格条件生成与受约束迁移",
+      "target_pdf_page": 16,
+      "rect": [
+        70.9,
+        505.1,
+        524.5,
+        518.1
+      ]
+    },
+    {
+      "text": "7.1 混合化学表示与高斯秩映射",
+      "target_pdf_page": 16,
+      "rect": [
+        70.9,
+        492.1,
+        524.5,
+        505.1
+      ]
+    },
+    {
+      "text": "7.2 共享信息的条件Copula基准",
+      "target_pdf_page": 16,
+      "rect": [
+        70.9,
+        479.1,
+        524.5,
+        492.1
+      ]
+    },
+    {
+      "text": "7.3 局部边缘Copula与平滑混合",
+      "target_pdf_page": 16,
+      "rect": [
+        70.9,
+        466.1,
+        524.5,
+        479.1
+      ]
+    },
+    {
+      "text": "7.4 嵌套选择、生成质量与感官画像",
+      "target_pdf_page": 17,
+      "rect": [
+        70.9,
+        453.1,
+        524.5,
+        466.1
+      ]
+    },
+    {
+      "text": "7.5 距离、支持域与中央候选池",
+      "target_pdf_page": 19,
+      "rect": [
+        70.9,
+        440.1,
+        524.5,
+        453.1
+      ]
+    },
+    {
+      "text": "7.6 化学阈值与最低改善要求",
+      "target_pdf_page": 19,
+      "rect": [
+        70.9,
+        427.1,
+        524.5,
+        440.1
+      ]
+    },
+    {
+      "text": "7.7 Stale hops预测及beer 81误差诊断",
+      "target_pdf_page": 21,
+      "rect": [
+        70.9,
+        414.1,
+        524.5,
+        427.1
+      ]
+    },
+    {
+      "text": "7.8 配对预测筛选与留出模型复核",
+      "target_pdf_page": 21,
+      "rect": [
+        70.9,
+        401.1,
+        524.5,
+        414.1
+      ]
+    },
+    {
+      "text": "7.9 两种排序的迁移结果",
+      "target_pdf_page": 22,
+      "rect": [
+        70.9,
+        388.1,
+        524.5,
+        401.1
+      ]
+    },
+    {
+      "text": "7.10 方案选择与后续验证",
+      "target_pdf_page": 23,
+      "rect": [
+        70.9,
+        375.1,
+        524.5,
+        388.1
+      ]
+    },
+    {
+      "text": "8 结果检验与模型评价",
+      "target_pdf_page": 23,
+      "rect": [
+        70.9,
+        362.1,
+        524.5,
+        375.1
+      ]
+    },
+    {
+      "text": "9 结论与建议",
+      "target_pdf_page": 24,
+      "rect": [
+        70.9,
+        349.1,
+        524.5,
+        362.1
+      ]
+    },
+    {
+      "text": "使用声明",
+      "target_pdf_page": 25,
+      "rect": [
+        70.9,
+        336.1,
+        524.5,
+        349.1
+      ]
+    },
+    {
+      "text": "参考文献",
+      "target_pdf_page": 25,
+      "rect": [
+        70.9,
+        323.1,
+        524.5,
+        336.1
+      ]
+    },
+    {
+      "text": "附录A 感官字段及逐维精度",
+      "target_pdf_page": 27,
+      "rect": [
+        70.9,
+        310.1,
+        524.5,
+        323.1
+      ]
+    },
+    {
+      "text": "附录B 完整Top 3候选",
+      "target_pdf_page": 29,
+      "rect": [
+        70.9,
+        297.1,
+        524.5,
+        310.1
+      ]
+    },
+    {
+      "text": "附录C 逐源迁移检查",
+      "target_pdf_page": 48,
+      "rect": [
+        70.9,
+        284.1,
+        524.5,
+        297.1
+      ]
+    },
+    {
+      "text": "附录D 软件环境与运行方法",
+      "target_pdf_page": 54,
+      "rect": [
+        70.9,
+        271.1,
+        524.5,
+        284.1
+      ]
+    },
+    {
+      "text": "附录E 完整计算机源程序",
+      "target_pdf_page": 56,
+      "rect": [
+        70.9,
+        258.1,
+        524.5,
+        271.1
+      ]
+    }
+  ],
+  "layout": {
+    "font_pt": 9,
+    "leading_pt": 11.5,
+    "all_lines_within_margins": true,
+    "running_source_headers": false,
+    "contents_rectangles": "exported",
+    "fonts": {
+      "mono": "Monaco.ttf",
+      "cjk": "Songti.ttc",
+      "cjk_index": 6,
+      "math": "DejaVuSans.ttf",
+      "math_index": 0
+    }
+  }
+}

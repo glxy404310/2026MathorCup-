@@ -1,0 +1,10 @@
+pool,lambda,sources,selected,model_checks_passed,cross_proxy_checks_passed,audit_failed,no_candidate
+combined_pool,0.05,11,11,9,6,2,0
+combined_pool,0.2,11,11,9,6,2,0
+combined_pool,1.0,11,11,9,6,2,0
+old_generator,0.05,11,11,9,6,2,0
+old_generator,0.2,11,11,9,6,2,0
+old_generator,1.0,11,11,9,6,2,0
+optimized_generator,0.05,11,11,9,6,2,0
+optimized_generator,0.2,11,11,9,6,2,0
+optimized_generator,1.0,11,11,9,6,2,0

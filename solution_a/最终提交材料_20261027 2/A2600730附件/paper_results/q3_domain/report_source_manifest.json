@@ -1,0 +1,92 @@
+[
+  {
+    "path": "outputs/q3_domain/stale/summary.json",
+    "rows": null,
+    "sha256": "740fea9f5a99c784ae8690b49abc7ac77f5c5e51f24676d45f033d9f2e10c860"
+  },
+  {
+    "path": "outputs/q3_domain/stale/run_manifest.json",
+    "rows": null,
+    "sha256": "4d2e90d45c7019d27e849a2b3a42fd13879ef2a9935b4ef15677edee121e4af5"
+  },
+  {
+    "path": "outputs/q3_domain/stale/loso_metrics_overall.csv",
+    "rows": 14,
+    "sha256": "1a82b205508dbfec445b6ecaa62992928dabeaa64b4c85bb06ca002a4c4353d9"
+  },
+  {
+    "path": "outputs/q3_domain/stale/loso_metrics_by_style.csv",
+    "rows": 294,
+    "sha256": "5055f256448d2098560e71b1be3be8b2e7748ba926f7d18066d58db18f127065"
+  },
+  {
+    "path": "outputs/q3_domain/stale/pils_diagnostic_metrics.csv",
+    "rows": 14,
+    "sha256": "04a62a311225aeddb5d53b7188a5191a9f3eb8c862f89fc08f37483a6998e359"
+  },
+  {
+    "path": "outputs/q3_domain/stale/pils_diagnostic_predictions.csv",
+    "rows": 154,
+    "sha256": "37fb966fc903b4858a0a511532f06d605039163493baf994ce8390d2c329f26b"
+  },
+  {
+    "path": "outputs/q3_domain/stale/neighborhood_bootstrap_diagnostics.csv",
+    "rows": 660,
+    "sha256": "804dbe83fe83c7ed3e28d253f98c2a646467b2a1fd4850a76c8328bde11dde4e"
+  },
+  {
+    "path": "outputs/q3_domain/transfer/summary.json",
+    "rows": null,
+    "sha256": "994405588f02ada2a10cec48a362d3b325e0c73d02fb073e28ffcd274288b2c8"
+  },
+  {
+    "path": "outputs/q3_domain/transfer/run_manifest.json",
+    "rows": null,
+    "sha256": "378c9bd7bc9148138abf0fd488d63648a9a73c7a3f69e40aa77114b77d2929e4"
+  },
+  {
+    "path": "outputs/q3_domain/transfer/transfer_summary.csv",
+    "rows": 66,
+    "sha256": "33b5a48e3e5ec02f1e2db299b12bd1417ce3cb2d3333883890cace0717335679"
+  },
+  {
+    "path": "outputs/q3_domain/transfer/threshold_sensitivity.csv",
+    "rows": 1360,
+    "sha256": "ecd9a2ac76477692044025c37b86ff727cf2a3b549dcefe1f4000a866c50eac0"
+  },
+  {
+    "path": "outputs/q3_domain/transfer/previous_same_spectra_recheck.csv",
+    "rows": 11,
+    "sha256": "b2bf78f056e82f1338bdc0c07a8f2afbdd687a8ee624be077de68095af8721cf"
+  },
+  {
+    "path": "outputs/q3_domain/consensus/summary.json",
+    "rows": null,
+    "sha256": "ec34451b3c9dfc7cfa317f3555ac317acd9f776bfd78fb22b3ed12ccb6633308"
+  },
+  {
+    "path": "outputs/q3_domain/consensus/run_manifest.json",
+    "rows": null,
+    "sha256": "e8a65f862e28520620c19d23ffd229b49fe422e90bb40ab266ae65688e95d789"
+  },
+  {
+    "path": "outputs/q3_domain/consensus/transfer_summary.csv",
+    "rows": 66,
+    "sha256": "23f587c487c9d45a1d01967d7c8a0b008a05f173775233a728988e8f65932c09"
+  },
+  {
+    "path": "outputs/q3_domain/consensus/threshold_sensitivity.csv",
+    "rows": 2480,
+    "sha256": "6a31c641aad20404e613458970219b3ddb0c546d32341b7ecb95af575f2c91ac"
+  },
+  {
+    "path": "outputs/q3_domain/consensus/previous_same_spectra_recheck.csv",
+    "rows": 11,
+    "sha256": "24c4bc99e8e9d3235a9542405d330b74e7e03fb9e45c8178dd94707309781bfc"
+  },
+  {
+    "path": "outputs/q3_optimized/transfer/transfer_summary.csv",
+    "rows": 99,
+    "sha256": "fdd75f79682e7a1a9a137310f212a85d3a6285ab13834089b99871bb97114ad0"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "environment": {
+    "python": "3.13.9",
+    "os": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1"
+  },
+  "platform_selfchecks": {
+    "tests": 8,
+    "status": "PASS",
+    "checks": [
+      "portable paths",
+      "three frozen histories byte-identical",
+      "recorded source relocation and SHA-256",
+      "single-byte tampering rejected",
+      "rebuild refuses nonempty outputs",
+      "clean rebuild phase ordering",
+      "working directory cannot shadow repository-relative provenance",
+      "rebuild refuses nonempty supplementary outputs"
+    ]
+  },
+  "line_ending_restoration": {
+    "files": 183,
+    "criterion": "Each conversion was accepted only when the original recorded SHA-256 was exactly restored; snapshot values unchanged.",
+    "raw_attachments_modified": false
+  },
+  "saved_result_checks": {
+    "q1_q2": {
+      "status": "passed",
+      "report": "solution_a/review/verification/locked_env/q1_q2.json"
+    },
+    "q3_refined": {
+      "status": "PASS",
+      "report": "solution_a/review/verification/locked_env/q3_refined.json"
+    }
+  },
+  "fresh_rebuild": {
+    "directory": "solution_a/tmp/rebuild_copy",
+    "log": "solution_a/review/verification/fresh_rebuild.log",
+    "status": "PASS",
+    "original_outputs_replaced": false,
+    "continuation_log": "solution_a/review/verification/fresh_rebuild_refined.log",
+    "completed_phases": "01-24 complete; 25 resumed standalone and passed; default run_all.py read-only checks passed from repository cwd.",
+    "portability_issue_fixed": "Relative source paths must resolve from script ROOT, not process working directory.",
+    "completed_at_utc": "2026-10-24T02:41:54.264244+00:00",
+    "read_only_validation_log": "solution_a/review/verification/fresh_readonly.log",
+    "final_reports": {
+      "q1_q2": "solution_a/review/verification/fresh_final/q1_q2.json",
+      "q3_refined": "solution_a/review/verification/fresh_final/q3_refined.json"
+    },
+    "resumed_final_verification_log": "solution_a/review/verification/fresh_rebuild_finish.log",
+    "default_run_exit_code": 0,
+    "platform_selfchecks": "PASS (7/7)",
+    "raw_hash_status": "PASS",
+    "original_outputs_unchanged": true,
+    "original_output_file_count": 333,
+    "principal_transfer_headline_reproduction": "PASS",
+    "exact_full_grid_reproduction": "FAIL",
+    "numerical_differences_report": "solution_a/review/verification/rebuilt_numeric_comparison.json",
+    "exact_reproduction_limitation": "Full exploration grid differs in 16/792 selected candidate indices, 7 statuses and 4 fresh-consistency flags; 9/72 frontier rows differ in at least one count. All three principal contracted_6004/retain80 comparisons reproduce.",
+    "interruption_note": "The earlier 25 process exited with 1073807364 without an assertion traceback. Only final verification was resumed; training phases were not rerun."
+  },
+  "scope": "Original results retained; supplementary analyses saved separately, with post-hoc interpretation and validation.",
+  "supplementary_validation": {
+    "status": "PASS",
+    "run_all_exit_code": 0,
+    "report": "solution_a/supplement/verification.json",
+    "full_run_log": "solution_a/review/verification/with_supplement.log",
+    "checks": {
+      "q1_oof_tables": 8,
+      "paired_test_masks": 40,
+      "stratified_bootstrap_draws": 200,
+      "permutation_feature_target_pairs": 10395,
+      "independent_raw_permutation_checks": 75
+    },
+    "all_original_output_hashes_unchanged": 333
+  }
+}

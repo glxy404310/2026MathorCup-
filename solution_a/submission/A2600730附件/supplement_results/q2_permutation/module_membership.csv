@@ -1,0 +1,835 @@
+fold,module,size,members
+1,1,1,acetaldehyde
+1,2,1,CS2
+1,3,1,DES
+1,4,1,DMS
+1,5,2,ethyl_2.methyl_butyrate | ethyl_isovalerate
+1,6,11,ethyl_acetate | ethyl_decanoate | ethyl_hexanoate | ethyl_octanoate | isobutyl_acetate | isopentyl_acetate | phenethyl_acetate | glycerol | ethanol..v.v. | kcalperc | esters_sum
+1,7,1,ethyl_propionate
+1,8,2,H2S | sulfur_sum
+1,9,2,isoamyl_alcohol | isobutanol
+1,10,1,MeSH
+1,11,1,octyl_acetate
+1,12,1,phenethyl_alcohol
+1,13,1,X4VG
+1,14,1,SO2.mg.L.
+1,15,2,acetic_acid.g.L. | acids_sum
+1,16,1,ammonia.mg.L.
+1,17,2,color.EBC. | protein.g.L.
+1,18,1,betaglucan.mg.L.
+1,19,1,lactic_acid.mg.L.
+1,20,1,iron
+1,21,1,pH
+1,22,1,bitterness
+1,23,1,GFS
+1,24,1,CO2.PSI.
+1,25,1,unfermentables
+1,26,4,X1.propanol | n.pentanol | X2.methyl.1.butanol | isopentyl.formate
+1,27,1,X2.3.butanedione
+1,28,1,X3.methylbutanal
+1,29,1,propylene.glycol
+1,30,1,propyl.acetate
+1,31,1,ethyl.isobutyrate
+1,32,1,X3.methyl.2.butenal
+1,33,1,X2.methyltetrahydrofuran.3.one
+1,34,1,ethyl.butyrate
+1,35,1,butyl.acetate
+1,36,1,methylpyrazine
+1,37,1,furfural
+1,38,1,ethyl.lactate
+1,39,1,X3Z.hexenol
+1,40,1,n.hexanol
+1,41,1,styrene
+1,42,1,X2.furanmethanol
+1,43,7,X3.methyl.2.hexanol | X3.furanmethanol | ortho.cresol | n.octanol | X4.methyl.1.pentanol | x.methyl.1.octanol | n.nonanol
+1,44,1,X2.acetylfuran
+1,45,1,X2.6.dimethyl.pyrazine
+1,46,1,amyl.acetate
+1,47,1,ethyl.tiglate
+1,48,1,benzaldehyde
+1,49,1,X5.methylfurfural
+1,50,1,n.heptanol
+1,51,1,X1.octen.3.ol
+1,52,1,X3.methylthio.propanol
+1,53,1,isomaltol
+1,54,1,X6.methyl.5.hepten.2.one
+1,55,1,X2.pentyl.furan
+1,56,1,ethyl.hex..3E..enoate
+1,57,1,alpha.phellandrene
+1,58,1,dehydroxy.cis.linalool.oxide
+1,59,1,hexyl.acetate
+1,60,1,isopentyl.butanoate
+1,61,1,X2.ethyl.1.hexanol
+1,62,1,beta.phellandrene
+1,63,1,limonene
+1,64,1,eucalyptol
+1,65,1,benzyl.alcohol
+1,66,28,ethyl.hex..2E..enoate | isobutyl.hexanoate | nerol.oxide | isopentyl.hexanoate | trans.dihydro.alpha.terpinyl.acetate | X2.undecanol | methyl.geranate | X2.butyloctanoate | ethyl..9..decenoate | X2.phenyl.ethyl.butyrate | X.Z..beta.farnesene | pentyl.octanoate | X2.methylbutyl.octanoate | neryl.propanoate | alpha.calacorene | caryophyllene.oxide | humulene.epoxide.II | alloaromadendrene.epoxide | X1.10.di.epi.cubenol | caryophylla.4.12..8.13..dien.5.alpha.ol | alpha.muurolol | X1.2.dihydro.8.hydroxy..2E..linalool | tau.muurolol | ethyl.tetradecanoate | ethyl.pentadecanoate | Z.Z.geranyl.linalool | ethyl.hexadecanoate | ethyl.octadecanoate
+1,67,1,phenylacetaldehyde
+1,68,1,X.E..beta.ocimene
+1,69,3,prenyl.isobutyrate | ethyl.benzoate | ethyl.phenylacetate
+1,70,1,ethyl.furoate
+1,71,1,ethyl.5.methylhexanoate
+1,72,1,X2.acetylpyrrole
+1,73,1,isoamyl.lactate
+1,74,1,cis.linalool.oxide
+1,75,1,meta.cymenene
+1,76,1,terpinolene
+1,77,3,linalool | citronellol | aroma_hops_sum
+1,78,1,nonan.2.ol
+1,79,1,n.nonanal
+1,80,1,X2.methyl.benzofuran
+1,81,1,heptyl.acetate
+1,82,1,neo.allo.ocimene
+1,83,1,trans.dihydro.beta.terpineol
+1,84,1,cis.beta.terpineol
+1,85,1,y.methyl.1.octanol
+1,86,1,camphor
+1,87,1,X.E..2.nonenal
+1,88,1,cis.dihydro.beta.terpineol
+1,89,3,X4.ethyl.phenol | neryl.formate | X4.ethyl.guaiacol
+1,90,3,isoborneol | terpinen.4.ol | ethyl..E..linalool
+1,91,1,diethyl.succinate
+1,92,1,vinyl.caprylate
+1,93,1,X1.alpha.terpineol
+1,94,1,ethyl.nicotinate
+1,95,1,nerol
+1,96,1,hydroxy.methyl.furfural
+1,97,1,E.ocimenone
+1,98,1,cumin.aldehyde
+1,99,1,geraniol
+1,100,1,beta.cyclohomocitral
+1,101,1,E.cinnamaldehyde
+1,102,1,n.decanol
+1,103,1,X2.undecanone
+1,104,1,terpinen.4.ol.acetate
+1,105,1,delta.terpinyl.acetate
+1,106,1,X.E.E..2.4.decadienal
+1,107,2,car.3.en.2.one | dimethoxy..E..citral
+1,108,1,X4.methoxysalicylaldehyde
+1,109,1,ethyl.hydrocinnamate
+1,110,1,eugenol
+1,111,1,gamma.nonalactone
+1,112,1,methyl.para.anisate
+1,113,1,X.E..beta.damascenone
+1,114,1,vanillin
+1,115,1,geosmin
+1,116,1,dodecanal
+1,117,1,X4.8.alpha.epoxy.caryophyllane
+1,118,1,E.caryophyllene
+1,119,1,X.E..alpha.ionone
+1,120,1,perillyl.acetate
+1,121,1,beta.humulene
+1,122,1,X.E..beta.farnesene
+1,123,1,alpha.humulene
+1,124,1,X9.epi..E..caryophyllene
+1,125,1,ethyl..E..cinnamate
+1,126,1,linalool.isovalerate
+1,127,1,alpha.terpinyl.isobutanoate
+1,128,3,n.dodecanol | n.tetradecanol | manool
+1,129,1,germacrene.D
+1,130,1,X.E..beta.ionone
+1,131,1,valencene
+1,132,1,neryl.isobutanoate
+1,133,2,E.methyl.isoeugenol | butylated.hydroxytoluene
+1,134,1,X.Z..dihydro.apofarnesal
+1,135,1,X.E..dihydro.apofarnesal
+1,136,1,Z.nerolidol
+1,137,1,X.E..ortho.methoxy.cinnamaldehyde
+1,138,4,E.nerolidol | dihydroisocaryophyllene.epoxide | X2.3.dihydro.farnesol | X2Z.6E.farnesol
+1,139,1,caryophyllene.alcohol
+1,140,1,neryl.isovalerate
+1,141,1,spathulenol
+1,142,1,isopropyl.laurate
+1,143,1,gamma.eudesmol
+1,144,1,tau.cadinol
+1,145,1,selin.11.en.4.alpha.ol
+1,146,1,alpha.eudesmol
+1,147,1,X14.hydroxy.9.epi..E..caryophyllene
+1,148,1,foeniculin
+1,149,1,cadalene
+1,150,1,X2E.6Z.farnesal
+1,151,1,caryophyllene.acetate
+1,152,1,X14.hydroxy.alpha.humulene
+1,153,1,X2Z.6E.farnesal
+1,154,1,X2Z.6Z.farnesol
+1,155,1,ambroxide
+1,156,1,benzyl.benzoate
+1,157,1,X2E.6E.methyl.farnesoate
+1,158,1,X2.ethylhexylsalicylate
+1,159,1,isopropyl.tetradecanoate
+1,160,1,methyl.hexadecanoate
+1,161,1,manool.oxide
+1,162,1,X13.epi.manool.oxide
+1,163,1,isopropyl.hexadecanoate
+1,164,1,ethyl.pentanoate
+1,165,1,X2.ethyl.3.methylpyrazine
+2,1,12,acetaldehyde | ethyl_acetate | ethyl_decanoate | ethyl_hexanoate | ethyl_octanoate | isobutyl_acetate | isopentyl_acetate | phenethyl_acetate | glycerol | ethanol..v.v. | kcalperc | esters_sum
+2,2,1,CS2
+2,3,1,DES
+2,4,1,DMS
+2,5,2,ethyl_2.methyl_butyrate | ethyl_isovalerate
+2,6,1,ethyl_propionate
+2,7,2,H2S | sulfur_sum
+2,8,1,isoamyl_alcohol
+2,9,1,isobutanol
+2,10,1,MeSH
+2,11,1,octyl_acetate
+2,12,1,phenethyl_alcohol
+2,13,1,X4VG
+2,14,1,SO2.mg.L.
+2,15,2,acetic_acid.g.L. | acids_sum
+2,16,1,ammonia.mg.L.
+2,17,2,color.EBC. | protein.g.L.
+2,18,1,betaglucan.mg.L.
+2,19,1,lactic_acid.mg.L.
+2,20,1,iron
+2,21,1,pH
+2,22,1,bitterness
+2,23,1,GFS
+2,24,1,CO2.PSI.
+2,25,1,unfermentables
+2,26,1,X1.propanol
+2,27,1,X2.3.butanedione
+2,28,1,X3.methylbutanal
+2,29,1,propylene.glycol
+2,30,1,propyl.acetate
+2,31,3,n.pentanol | X2.methyl.1.butanol | isopentyl.formate
+2,32,1,ethyl.isobutyrate
+2,33,1,X3.methyl.2.butenal
+2,34,1,X2.methyltetrahydrofuran.3.one
+2,35,1,ethyl.butyrate
+2,36,1,butyl.acetate
+2,37,1,methylpyrazine
+2,38,1,furfural
+2,39,1,ethyl.lactate
+2,40,1,X3Z.hexenol
+2,41,1,n.hexanol
+2,42,1,styrene
+2,43,1,X2.furanmethanol
+2,44,6,X3.methyl.2.hexanol | X3.furanmethanol | ortho.cresol | n.octanol | X4.methyl.1.pentanol | x.methyl.1.octanol
+2,45,1,X2.acetylfuran
+2,46,1,X2.6.dimethyl.pyrazine
+2,47,1,amyl.acetate
+2,48,1,ethyl.tiglate
+2,49,1,benzaldehyde
+2,50,1,X5.methylfurfural
+2,51,1,n.heptanol
+2,52,1,X1.octen.3.ol
+2,53,1,X3.methylthio.propanol
+2,54,1,isomaltol
+2,55,1,X6.methyl.5.hepten.2.one
+2,56,1,X2.pentyl.furan
+2,57,1,ethyl.hex..3E..enoate
+2,58,1,alpha.phellandrene
+2,59,1,dehydroxy.cis.linalool.oxide
+2,60,1,hexyl.acetate
+2,61,1,isopentyl.butanoate
+2,62,1,X2.ethyl.1.hexanol
+2,63,4,beta.phellandrene | isoborneol | terpinen.4.ol | ethyl..E..linalool
+2,64,1,limonene
+2,65,1,eucalyptol
+2,66,1,benzyl.alcohol
+2,67,1,ethyl.hex..2E..enoate
+2,68,1,phenylacetaldehyde
+2,69,1,X.E..beta.ocimene
+2,70,4,prenyl.isobutyrate | ethyl.benzoate | ethyl.phenylacetate | perillyl.acetate
+2,71,1,ethyl.furoate
+2,72,1,ethyl.5.methylhexanoate
+2,73,1,X2.acetylpyrrole
+2,74,1,isoamyl.lactate
+2,75,1,cis.linalool.oxide
+2,76,1,meta.cymenene
+2,77,1,terpinolene
+2,78,4,linalool | X1.alpha.terpineol | citronellol | aroma_hops_sum
+2,79,1,nonan.2.ol
+2,80,1,n.nonanal
+2,81,1,X2.methyl.benzofuran
+2,82,1,heptyl.acetate
+2,83,1,neo.allo.ocimene
+2,84,1,trans.dihydro.beta.terpineol
+2,85,1,cis.beta.terpineol
+2,86,1,y.methyl.1.octanol
+2,87,1,camphor
+2,88,15,isobutyl.hexanoate | nerol.oxide | isopentyl.hexanoate | trans.dihydro.alpha.terpinyl.acetate | X2.butyloctanoate | X2.phenyl.ethyl.butyrate | X.Z..beta.farnesene | pentyl.octanoate | X2.methylbutyl.octanoate | X1.2.dihydro.8.hydroxy..2E..linalool | ethyl.tetradecanoate | ethyl.pentadecanoate | Z.Z.geranyl.linalool | ethyl.hexadecanoate | ethyl.octadecanoate
+2,89,1,X.E..2.nonenal
+2,90,1,cis.dihydro.beta.terpineol
+2,91,3,X4.ethyl.phenol | neryl.formate | X4.ethyl.guaiacol
+2,92,1,n.nonanol
+2,93,1,diethyl.succinate
+2,94,1,vinyl.caprylate
+2,95,1,ethyl.nicotinate
+2,96,1,nerol
+2,97,1,hydroxy.methyl.furfural
+2,98,1,E.ocimenone
+2,99,1,cumin.aldehyde
+2,100,1,geraniol
+2,101,1,beta.cyclohomocitral
+2,102,1,E.cinnamaldehyde
+2,103,1,n.decanol
+2,104,1,X2.undecanone
+2,105,1,terpinen.4.ol.acetate
+2,106,11,X2.undecanol | methyl.geranate | neryl.propanoate | alpha.calacorene | caryophyllene.oxide | humulene.epoxide.II | alloaromadendrene.epoxide | X1.10.di.epi.cubenol | caryophylla.4.12..8.13..dien.5.alpha.ol | alpha.muurolol | tau.muurolol
+2,107,1,delta.terpinyl.acetate
+2,108,1,X.E.E..2.4.decadienal
+2,109,2,car.3.en.2.one | dimethoxy..E..citral
+2,110,1,X4.methoxysalicylaldehyde
+2,111,1,ethyl.hydrocinnamate
+2,112,1,eugenol
+2,113,1,gamma.nonalactone
+2,114,1,methyl.para.anisate
+2,115,1,X.E..beta.damascenone
+2,116,1,ethyl..9..decenoate
+2,117,1,vanillin
+2,118,1,geosmin
+2,119,1,dodecanal
+2,120,1,X4.8.alpha.epoxy.caryophyllane
+2,121,1,E.caryophyllene
+2,122,1,X.E..alpha.ionone
+2,123,1,beta.humulene
+2,124,1,X.E..beta.farnesene
+2,125,1,alpha.humulene
+2,126,1,X9.epi..E..caryophyllene
+2,127,1,ethyl..E..cinnamate
+2,128,1,linalool.isovalerate
+2,129,1,alpha.terpinyl.isobutanoate
+2,130,3,n.dodecanol | n.tetradecanol | manool
+2,131,1,germacrene.D
+2,132,1,X.E..beta.ionone
+2,133,1,valencene
+2,134,1,neryl.isobutanoate
+2,135,2,E.methyl.isoeugenol | butylated.hydroxytoluene
+2,136,1,X.Z..dihydro.apofarnesal
+2,137,1,X.E..dihydro.apofarnesal
+2,138,1,Z.nerolidol
+2,139,1,X.E..ortho.methoxy.cinnamaldehyde
+2,140,2,E.nerolidol | dihydroisocaryophyllene.epoxide
+2,141,1,caryophyllene.alcohol
+2,142,1,neryl.isovalerate
+2,143,1,spathulenol
+2,144,1,isopropyl.laurate
+2,145,1,gamma.eudesmol
+2,146,1,tau.cadinol
+2,147,1,selin.11.en.4.alpha.ol
+2,148,1,alpha.eudesmol
+2,149,1,X14.hydroxy.9.epi..E..caryophyllene
+2,150,1,foeniculin
+2,151,1,cadalene
+2,152,2,X2.3.dihydro.farnesol | X2Z.6E.farnesol
+2,153,1,X2E.6Z.farnesal
+2,154,1,caryophyllene.acetate
+2,155,1,X14.hydroxy.alpha.humulene
+2,156,1,X2Z.6E.farnesal
+2,157,1,X2Z.6Z.farnesol
+2,158,1,ambroxide
+2,159,1,benzyl.benzoate
+2,160,1,X2E.6E.methyl.farnesoate
+2,161,1,X2.ethylhexylsalicylate
+2,162,1,isopropyl.tetradecanoate
+2,163,1,methyl.hexadecanoate
+2,164,2,manool.oxide | isopropyl.hexadecanoate
+2,165,1,X13.epi.manool.oxide
+2,166,1,ethyl.pentanoate
+2,167,1,X2.ethyl.3.methylpyrazine
+3,1,1,acetaldehyde
+3,2,1,CS2
+3,3,1,DES
+3,4,1,DMS
+3,5,2,ethyl_2.methyl_butyrate | ethyl_isovalerate
+3,6,9,ethyl_acetate | ethyl_hexanoate | isobutyl_acetate | isopentyl_acetate | phenethyl_acetate | glycerol | ethanol..v.v. | kcalperc | esters_sum
+3,7,2,ethyl_decanoate | ethyl_octanoate
+3,8,1,ethyl_propionate
+3,9,2,H2S | sulfur_sum
+3,10,2,isoamyl_alcohol | isobutanol
+3,11,1,MeSH
+3,12,1,octyl_acetate
+3,13,1,phenethyl_alcohol
+3,14,1,X4VG
+3,15,1,SO2.mg.L.
+3,16,2,acetic_acid.g.L. | acids_sum
+3,17,1,ammonia.mg.L.
+3,18,2,color.EBC. | protein.g.L.
+3,19,1,betaglucan.mg.L.
+3,20,1,lactic_acid.mg.L.
+3,21,1,iron
+3,22,1,pH
+3,23,1,bitterness
+3,24,1,GFS
+3,25,1,CO2.PSI.
+3,26,1,unfermentables
+3,27,4,X1.propanol | n.pentanol | X2.methyl.1.butanol | isopentyl.formate
+3,28,1,X2.3.butanedione
+3,29,1,X3.methylbutanal
+3,30,1,propylene.glycol
+3,31,1,propyl.acetate
+3,32,1,ethyl.isobutyrate
+3,33,1,X3.methyl.2.butenal
+3,34,1,X2.methyltetrahydrofuran.3.one
+3,35,1,ethyl.butyrate
+3,36,1,butyl.acetate
+3,37,1,methylpyrazine
+3,38,1,furfural
+3,39,1,ethyl.lactate
+3,40,1,X3Z.hexenol
+3,41,1,n.hexanol
+3,42,1,styrene
+3,43,1,X2.furanmethanol
+3,44,6,X3.methyl.2.hexanol | X3.furanmethanol | ortho.cresol | n.octanol | X4.methyl.1.pentanol | x.methyl.1.octanol
+3,45,1,X2.acetylfuran
+3,46,1,X2.6.dimethyl.pyrazine
+3,47,1,amyl.acetate
+3,48,1,ethyl.tiglate
+3,49,1,benzaldehyde
+3,50,1,X5.methylfurfural
+3,51,1,n.heptanol
+3,52,1,X1.octen.3.ol
+3,53,1,X3.methylthio.propanol
+3,54,1,isomaltol
+3,55,1,X6.methyl.5.hepten.2.one
+3,56,1,X2.pentyl.furan
+3,57,1,ethyl.hex..3E..enoate
+3,58,1,alpha.phellandrene
+3,59,1,dehydroxy.cis.linalool.oxide
+3,60,1,hexyl.acetate
+3,61,1,isopentyl.butanoate
+3,62,1,X2.ethyl.1.hexanol
+3,63,4,beta.phellandrene | isoborneol | terpinen.4.ol | ethyl..E..linalool
+3,64,1,limonene
+3,65,1,eucalyptol
+3,66,1,benzyl.alcohol
+3,67,15,ethyl.hex..2E..enoate | nerol.oxide | isopentyl.hexanoate | trans.dihydro.alpha.terpinyl.acetate | X2.butyloctanoate | X2.phenyl.ethyl.butyrate | X.Z..beta.farnesene | pentyl.octanoate | X2.methylbutyl.octanoate | X1.2.dihydro.8.hydroxy..2E..linalool | ethyl.tetradecanoate | ethyl.pentadecanoate | Z.Z.geranyl.linalool | ethyl.hexadecanoate | ethyl.octadecanoate
+3,68,1,phenylacetaldehyde
+3,69,1,X.E..beta.ocimene
+3,70,5,prenyl.isobutyrate | ethyl.benzoate | ethyl.phenylacetate | perillyl.acetate | germacrene.D
+3,71,1,ethyl.furoate
+3,72,1,ethyl.5.methylhexanoate
+3,73,1,X2.acetylpyrrole
+3,74,1,isoamyl.lactate
+3,75,1,cis.linalool.oxide
+3,76,1,meta.cymenene
+3,77,1,terpinolene
+3,78,4,linalool | X1.alpha.terpineol | citronellol | aroma_hops_sum
+3,79,1,nonan.2.ol
+3,80,1,n.nonanal
+3,81,1,X2.methyl.benzofuran
+3,82,1,heptyl.acetate
+3,83,1,neo.allo.ocimene
+3,84,1,trans.dihydro.beta.terpineol
+3,85,1,cis.beta.terpineol
+3,86,1,y.methyl.1.octanol
+3,87,1,camphor
+3,88,1,isobutyl.hexanoate
+3,89,1,X.E..2.nonenal
+3,90,1,cis.dihydro.beta.terpineol
+3,91,3,X4.ethyl.phenol | neryl.formate | X4.ethyl.guaiacol
+3,92,1,n.nonanol
+3,93,1,diethyl.succinate
+3,94,1,vinyl.caprylate
+3,95,1,ethyl.nicotinate
+3,96,1,nerol
+3,97,1,hydroxy.methyl.furfural
+3,98,1,E.ocimenone
+3,99,1,cumin.aldehyde
+3,100,1,geraniol
+3,101,1,beta.cyclohomocitral
+3,102,1,E.cinnamaldehyde
+3,103,1,n.decanol
+3,104,1,X2.undecanone
+3,105,1,terpinen.4.ol.acetate
+3,106,11,X2.undecanol | methyl.geranate | neryl.propanoate | alpha.calacorene | caryophyllene.oxide | humulene.epoxide.II | alloaromadendrene.epoxide | X1.10.di.epi.cubenol | caryophylla.4.12..8.13..dien.5.alpha.ol | alpha.muurolol | tau.muurolol
+3,107,1,delta.terpinyl.acetate
+3,108,1,X.E.E..2.4.decadienal
+3,109,2,car.3.en.2.one | dimethoxy..E..citral
+3,110,1,X4.methoxysalicylaldehyde
+3,111,1,ethyl.hydrocinnamate
+3,112,1,eugenol
+3,113,1,gamma.nonalactone
+3,114,1,methyl.para.anisate
+3,115,1,X.E..beta.damascenone
+3,116,1,ethyl..9..decenoate
+3,117,1,vanillin
+3,118,1,geosmin
+3,119,1,dodecanal
+3,120,1,X4.8.alpha.epoxy.caryophyllane
+3,121,1,E.caryophyllene
+3,122,1,X.E..alpha.ionone
+3,123,1,beta.humulene
+3,124,1,X.E..beta.farnesene
+3,125,1,alpha.humulene
+3,126,1,X9.epi..E..caryophyllene
+3,127,1,ethyl..E..cinnamate
+3,128,1,linalool.isovalerate
+3,129,1,alpha.terpinyl.isobutanoate
+3,130,3,n.dodecanol | n.tetradecanol | manool
+3,131,1,X.E..beta.ionone
+3,132,1,valencene
+3,133,1,neryl.isobutanoate
+3,134,2,E.methyl.isoeugenol | butylated.hydroxytoluene
+3,135,1,X.Z..dihydro.apofarnesal
+3,136,1,X.E..dihydro.apofarnesal
+3,137,1,Z.nerolidol
+3,138,1,X.E..ortho.methoxy.cinnamaldehyde
+3,139,3,E.nerolidol | dihydroisocaryophyllene.epoxide | X2Z.6E.farnesol
+3,140,1,caryophyllene.alcohol
+3,141,1,neryl.isovalerate
+3,142,1,spathulenol
+3,143,1,isopropyl.laurate
+3,144,1,gamma.eudesmol
+3,145,1,tau.cadinol
+3,146,1,selin.11.en.4.alpha.ol
+3,147,1,alpha.eudesmol
+3,148,1,X14.hydroxy.9.epi..E..caryophyllene
+3,149,1,foeniculin
+3,150,1,cadalene
+3,151,1,X2.3.dihydro.farnesol
+3,152,1,X2E.6Z.farnesal
+3,153,1,caryophyllene.acetate
+3,154,1,X14.hydroxy.alpha.humulene
+3,155,1,X2Z.6E.farnesal
+3,156,1,X2Z.6Z.farnesol
+3,157,1,ambroxide
+3,158,1,benzyl.benzoate
+3,159,1,X2E.6E.methyl.farnesoate
+3,160,1,X2.ethylhexylsalicylate
+3,161,1,isopropyl.tetradecanoate
+3,162,1,methyl.hexadecanoate
+3,163,2,manool.oxide | isopropyl.hexadecanoate
+3,164,1,X13.epi.manool.oxide
+3,165,1,ethyl.pentanoate
+3,166,1,X2.ethyl.3.methylpyrazine
+4,1,11,acetaldehyde | ethyl_acetate | ethyl_decanoate | ethyl_hexanoate | ethyl_octanoate | isobutyl_acetate | isopentyl_acetate | glycerol | ethanol..v.v. | kcalperc | esters_sum
+4,2,1,CS2
+4,3,1,DES
+4,4,1,DMS
+4,5,2,ethyl_2.methyl_butyrate | ethyl_isovalerate
+4,6,1,ethyl_propionate
+4,7,2,H2S | sulfur_sum
+4,8,1,isoamyl_alcohol
+4,9,1,isobutanol
+4,10,1,MeSH
+4,11,1,octyl_acetate
+4,12,1,phenethyl_acetate
+4,13,1,phenethyl_alcohol
+4,14,1,X4VG
+4,15,1,SO2.mg.L.
+4,16,2,acetic_acid.g.L. | acids_sum
+4,17,1,ammonia.mg.L.
+4,18,2,color.EBC. | protein.g.L.
+4,19,1,betaglucan.mg.L.
+4,20,1,lactic_acid.mg.L.
+4,21,1,iron
+4,22,1,pH
+4,23,1,bitterness
+4,24,1,GFS
+4,25,1,CO2.PSI.
+4,26,1,unfermentables
+4,27,1,X1.propanol
+4,28,1,X2.3.butanedione
+4,29,1,X3.methylbutanal
+4,30,1,propylene.glycol
+4,31,1,propyl.acetate
+4,32,3,n.pentanol | X2.methyl.1.butanol | isopentyl.formate
+4,33,1,ethyl.isobutyrate
+4,34,1,X3.methyl.2.butenal
+4,35,1,X2.methyltetrahydrofuran.3.one
+4,36,1,ethyl.butyrate
+4,37,1,butyl.acetate
+4,38,1,methylpyrazine
+4,39,1,furfural
+4,40,1,ethyl.lactate
+4,41,1,X3Z.hexenol
+4,42,1,n.hexanol
+4,43,1,styrene
+4,44,1,X2.furanmethanol
+4,45,6,X3.methyl.2.hexanol | X3.furanmethanol | ortho.cresol | n.octanol | X4.methyl.1.pentanol | x.methyl.1.octanol
+4,46,1,X2.acetylfuran
+4,47,1,X2.6.dimethyl.pyrazine
+4,48,1,amyl.acetate
+4,49,1,ethyl.tiglate
+4,50,1,benzaldehyde
+4,51,1,X5.methylfurfural
+4,52,1,n.heptanol
+4,53,1,X1.octen.3.ol
+4,54,1,X3.methylthio.propanol
+4,55,1,isomaltol
+4,56,1,X6.methyl.5.hepten.2.one
+4,57,1,X2.pentyl.furan
+4,58,1,ethyl.hex..3E..enoate
+4,59,1,alpha.phellandrene
+4,60,1,dehydroxy.cis.linalool.oxide
+4,61,1,hexyl.acetate
+4,62,1,isopentyl.butanoate
+4,63,1,X2.ethyl.1.hexanol
+4,64,1,beta.phellandrene
+4,65,1,limonene
+4,66,1,eucalyptol
+4,67,1,benzyl.alcohol
+4,68,1,ethyl.hex..2E..enoate
+4,69,1,phenylacetaldehyde
+4,70,1,X.E..beta.ocimene
+4,71,3,prenyl.isobutyrate | ethyl.benzoate | ethyl.phenylacetate
+4,72,1,ethyl.furoate
+4,73,1,ethyl.5.methylhexanoate
+4,74,1,X2.acetylpyrrole
+4,75,1,isoamyl.lactate
+4,76,1,cis.linalool.oxide
+4,77,1,meta.cymenene
+4,78,1,terpinolene
+4,79,7,linalool | isoborneol | terpinen.4.ol | X1.alpha.terpineol | ethyl..E..linalool | citronellol | aroma_hops_sum
+4,80,1,nonan.2.ol
+4,81,1,n.nonanal
+4,82,1,X2.methyl.benzofuran
+4,83,1,heptyl.acetate
+4,84,1,neo.allo.ocimene
+4,85,1,trans.dihydro.beta.terpineol
+4,86,1,cis.beta.terpineol
+4,87,1,y.methyl.1.octanol
+4,88,1,camphor
+4,89,16,isobutyl.hexanoate | nerol.oxide | isopentyl.hexanoate | trans.dihydro.alpha.terpinyl.acetate | X2.butyloctanoate | ethyl..9..decenoate | X2.phenyl.ethyl.butyrate | X.Z..beta.farnesene | pentyl.octanoate | X2.methylbutyl.octanoate | X1.2.dihydro.8.hydroxy..2E..linalool | ethyl.tetradecanoate | ethyl.pentadecanoate | Z.Z.geranyl.linalool | ethyl.hexadecanoate | ethyl.octadecanoate
+4,90,1,X.E..2.nonenal
+4,91,1,cis.dihydro.beta.terpineol
+4,92,3,X4.ethyl.phenol | neryl.formate | X4.ethyl.guaiacol
+4,93,1,n.nonanol
+4,94,1,diethyl.succinate
+4,95,1,vinyl.caprylate
+4,96,1,ethyl.nicotinate
+4,97,1,nerol
+4,98,1,hydroxy.methyl.furfural
+4,99,1,E.ocimenone
+4,100,1,cumin.aldehyde
+4,101,1,geraniol
+4,102,1,beta.cyclohomocitral
+4,103,1,E.cinnamaldehyde
+4,104,1,n.decanol
+4,105,1,X2.undecanone
+4,106,1,terpinen.4.ol.acetate
+4,107,11,X2.undecanol | methyl.geranate | neryl.propanoate | alpha.calacorene | caryophyllene.oxide | humulene.epoxide.II | alloaromadendrene.epoxide | X1.10.di.epi.cubenol | caryophylla.4.12..8.13..dien.5.alpha.ol | alpha.muurolol | tau.muurolol
+4,108,1,delta.terpinyl.acetate
+4,109,1,X.E.E..2.4.decadienal
+4,110,2,car.3.en.2.one | dimethoxy..E..citral
+4,111,1,X4.methoxysalicylaldehyde
+4,112,1,ethyl.hydrocinnamate
+4,113,1,eugenol
+4,114,1,gamma.nonalactone
+4,115,1,methyl.para.anisate
+4,116,1,X.E..beta.damascenone
+4,117,1,vanillin
+4,118,1,geosmin
+4,119,1,dodecanal
+4,120,1,X4.8.alpha.epoxy.caryophyllane
+4,121,1,E.caryophyllene
+4,122,1,X.E..alpha.ionone
+4,123,1,perillyl.acetate
+4,124,1,beta.humulene
+4,125,1,X.E..beta.farnesene
+4,126,1,alpha.humulene
+4,127,1,X9.epi..E..caryophyllene
+4,128,1,ethyl..E..cinnamate
+4,129,1,linalool.isovalerate
+4,130,1,alpha.terpinyl.isobutanoate
+4,131,3,n.dodecanol | n.tetradecanol | manool
+4,132,1,germacrene.D
+4,133,1,X.E..beta.ionone
+4,134,1,valencene
+4,135,1,neryl.isobutanoate
+4,136,2,E.methyl.isoeugenol | butylated.hydroxytoluene
+4,137,1,X.Z..dihydro.apofarnesal
+4,138,1,X.E..dihydro.apofarnesal
+4,139,1,Z.nerolidol
+4,140,1,X.E..ortho.methoxy.cinnamaldehyde
+4,141,2,E.nerolidol | dihydroisocaryophyllene.epoxide
+4,142,1,caryophyllene.alcohol
+4,143,1,neryl.isovalerate
+4,144,1,spathulenol
+4,145,1,isopropyl.laurate
+4,146,1,gamma.eudesmol
+4,147,1,tau.cadinol
+4,148,1,selin.11.en.4.alpha.ol
+4,149,1,alpha.eudesmol
+4,150,1,X14.hydroxy.9.epi..E..caryophyllene
+4,151,1,foeniculin
+4,152,1,cadalene
+4,153,1,X2.3.dihydro.farnesol
+4,154,1,X2E.6Z.farnesal
+4,155,1,caryophyllene.acetate
+4,156,1,X14.hydroxy.alpha.humulene
+4,157,1,X2Z.6E.farnesal
+4,158,1,X2Z.6Z.farnesol
+4,159,1,X2Z.6E.farnesol
+4,160,1,ambroxide
+4,161,1,benzyl.benzoate
+4,162,1,X2E.6E.methyl.farnesoate
+4,163,1,X2.ethylhexylsalicylate
+4,164,1,isopropyl.tetradecanoate
+4,165,1,methyl.hexadecanoate
+4,166,2,manool.oxide | isopropyl.hexadecanoate
+4,167,1,X13.epi.manool.oxide
+4,168,1,ethyl.pentanoate
+4,169,1,X2.ethyl.3.methylpyrazine
+5,1,27,acetaldehyde | ethyl_acetate | ethyl_decanoate | ethyl_hexanoate | ethyl_octanoate | isobutyl_acetate | isopentyl_acetate | phenethyl_acetate | glycerol | ethanol..v.v. | kcalperc | isobutyl.hexanoate | nerol.oxide | isopentyl.hexanoate | trans.dihydro.alpha.terpinyl.acetate | X2.butyloctanoate | X2.phenyl.ethyl.butyrate | X.Z..beta.farnesene | pentyl.octanoate | X2.methylbutyl.octanoate | X1.2.dihydro.8.hydroxy..2E..linalool | ethyl.tetradecanoate | ethyl.pentadecanoate | Z.Z.geranyl.linalool | ethyl.hexadecanoate | ethyl.octadecanoate | esters_sum
+5,2,1,CS2
+5,3,1,DES
+5,4,3,DMS | H2S | sulfur_sum
+5,5,2,ethyl_2.methyl_butyrate | ethyl_isovalerate
+5,6,1,ethyl_propionate
+5,7,2,isoamyl_alcohol | isobutanol
+5,8,1,MeSH
+5,9,1,octyl_acetate
+5,10,1,phenethyl_alcohol
+5,11,1,X4VG
+5,12,1,SO2.mg.L.
+5,13,2,acetic_acid.g.L. | acids_sum
+5,14,1,ammonia.mg.L.
+5,15,2,color.EBC. | protein.g.L.
+5,16,1,betaglucan.mg.L.
+5,17,1,lactic_acid.mg.L.
+5,18,1,iron
+5,19,1,pH
+5,20,1,bitterness
+5,21,1,GFS
+5,22,1,CO2.PSI.
+5,23,1,unfermentables
+5,24,4,X1.propanol | n.pentanol | X2.methyl.1.butanol | isopentyl.formate
+5,25,1,X2.3.butanedione
+5,26,1,X3.methylbutanal
+5,27,1,propylene.glycol
+5,28,1,propyl.acetate
+5,29,1,ethyl.isobutyrate
+5,30,1,X3.methyl.2.butenal
+5,31,1,X2.methyltetrahydrofuran.3.one
+5,32,1,ethyl.butyrate
+5,33,1,butyl.acetate
+5,34,1,methylpyrazine
+5,35,1,furfural
+5,36,1,ethyl.lactate
+5,37,1,X3Z.hexenol
+5,38,1,n.hexanol
+5,39,1,styrene
+5,40,1,X2.furanmethanol
+5,41,5,X3.methyl.2.hexanol | X3.furanmethanol | ortho.cresol | X4.methyl.1.pentanol | x.methyl.1.octanol
+5,42,1,X2.acetylfuran
+5,43,1,X2.6.dimethyl.pyrazine
+5,44,1,amyl.acetate
+5,45,1,ethyl.tiglate
+5,46,1,benzaldehyde
+5,47,1,X5.methylfurfural
+5,48,1,n.heptanol
+5,49,1,X1.octen.3.ol
+5,50,1,X3.methylthio.propanol
+5,51,1,isomaltol
+5,52,1,X6.methyl.5.hepten.2.one
+5,53,1,X2.pentyl.furan
+5,54,1,ethyl.hex..3E..enoate
+5,55,1,alpha.phellandrene
+5,56,1,dehydroxy.cis.linalool.oxide
+5,57,1,hexyl.acetate
+5,58,1,isopentyl.butanoate
+5,59,1,X2.ethyl.1.hexanol
+5,60,1,beta.phellandrene
+5,61,1,limonene
+5,62,1,eucalyptol
+5,63,1,benzyl.alcohol
+5,64,1,ethyl.hex..2E..enoate
+5,65,1,phenylacetaldehyde
+5,66,1,X.E..beta.ocimene
+5,67,3,prenyl.isobutyrate | ethyl.benzoate | ethyl.phenylacetate
+5,68,1,ethyl.furoate
+5,69,1,ethyl.5.methylhexanoate
+5,70,1,X2.acetylpyrrole
+5,71,1,isoamyl.lactate
+5,72,1,n.octanol
+5,73,1,cis.linalool.oxide
+5,74,1,meta.cymenene
+5,75,1,terpinolene
+5,76,3,linalool | citronellol | aroma_hops_sum
+5,77,1,nonan.2.ol
+5,78,1,n.nonanal
+5,79,1,X2.methyl.benzofuran
+5,80,1,heptyl.acetate
+5,81,1,neo.allo.ocimene
+5,82,1,trans.dihydro.beta.terpineol
+5,83,1,cis.beta.terpineol
+5,84,1,y.methyl.1.octanol
+5,85,1,camphor
+5,86,1,X.E..2.nonenal
+5,87,1,cis.dihydro.beta.terpineol
+5,88,3,X4.ethyl.phenol | neryl.formate | X4.ethyl.guaiacol
+5,89,3,isoborneol | terpinen.4.ol | ethyl..E..linalool
+5,90,1,n.nonanol
+5,91,1,diethyl.succinate
+5,92,1,vinyl.caprylate
+5,93,1,X1.alpha.terpineol
+5,94,1,ethyl.nicotinate
+5,95,1,nerol
+5,96,1,hydroxy.methyl.furfural
+5,97,1,E.ocimenone
+5,98,1,cumin.aldehyde
+5,99,1,geraniol
+5,100,1,beta.cyclohomocitral
+5,101,1,E.cinnamaldehyde
+5,102,1,n.decanol
+5,103,1,X2.undecanone
+5,104,1,terpinen.4.ol.acetate
+5,105,12,X2.undecanol | methyl.geranate | neryl.propanoate | X.E..beta.ionone | alpha.calacorene | caryophyllene.oxide | humulene.epoxide.II | alloaromadendrene.epoxide | X1.10.di.epi.cubenol | caryophylla.4.12..8.13..dien.5.alpha.ol | alpha.muurolol | tau.muurolol
+5,106,1,delta.terpinyl.acetate
+5,107,1,X.E.E..2.4.decadienal
+5,108,2,car.3.en.2.one | dimethoxy..E..citral
+5,109,1,X4.methoxysalicylaldehyde
+5,110,1,ethyl.hydrocinnamate
+5,111,1,eugenol
+5,112,1,gamma.nonalactone
+5,113,1,methyl.para.anisate
+5,114,1,X.E..beta.damascenone
+5,115,1,ethyl..9..decenoate
+5,116,1,vanillin
+5,117,1,geosmin
+5,118,1,dodecanal
+5,119,1,X4.8.alpha.epoxy.caryophyllane
+5,120,1,E.caryophyllene
+5,121,1,X.E..alpha.ionone
+5,122,1,perillyl.acetate
+5,123,1,beta.humulene
+5,124,1,X.E..beta.farnesene
+5,125,1,alpha.humulene
+5,126,1,X9.epi..E..caryophyllene
+5,127,1,ethyl..E..cinnamate
+5,128,1,linalool.isovalerate
+5,129,1,alpha.terpinyl.isobutanoate
+5,130,3,n.dodecanol | n.tetradecanol | manool
+5,131,1,germacrene.D
+5,132,1,valencene
+5,133,1,neryl.isobutanoate
+5,134,2,E.methyl.isoeugenol | butylated.hydroxytoluene
+5,135,1,X.Z..dihydro.apofarnesal
+5,136,1,X.E..dihydro.apofarnesal
+5,137,1,Z.nerolidol
+5,138,1,X.E..ortho.methoxy.cinnamaldehyde
+5,139,2,E.nerolidol | dihydroisocaryophyllene.epoxide
+5,140,1,caryophyllene.alcohol
+5,141,1,neryl.isovalerate
+5,142,1,spathulenol
+5,143,1,isopropyl.laurate
+5,144,1,gamma.eudesmol
+5,145,1,tau.cadinol
+5,146,1,selin.11.en.4.alpha.ol
+5,147,1,alpha.eudesmol
+5,148,1,X14.hydroxy.9.epi..E..caryophyllene
+5,149,1,foeniculin
+5,150,1,cadalene
+5,151,1,X2.3.dihydro.farnesol
+5,152,1,X2E.6Z.farnesal
+5,153,1,caryophyllene.acetate
+5,154,1,X14.hydroxy.alpha.humulene
+5,155,1,X2Z.6E.farnesal
+5,156,1,X2Z.6Z.farnesol
+5,157,1,X2Z.6E.farnesol
+5,158,1,ambroxide
+5,159,1,benzyl.benzoate
+5,160,1,X2E.6E.methyl.farnesoate
+5,161,1,X2.ethylhexylsalicylate
+5,162,1,isopropyl.tetradecanoate
+5,163,1,methyl.hexadecanoate
+5,164,2,manool.oxide | isopropyl.hexadecanoate
+5,165,1,X13.epi.manool.oxide
+5,166,1,ethyl.pentanoate
+5,167,1,X2.ethyl.3.methylpyrazine

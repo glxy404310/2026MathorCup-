@@ -1,0 +1,153 @@
+{
+  "renderer": "matplotlib",
+  "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+  "dpi": 300,
+  "widthcm": 16.0,
+  "source_root": "solution_a",
+  "sources_mutated": false,
+  "figures": [
+    {
+      "id": 1,
+      "caption": "图1 三问的数据处理、模型与验证流程。第一问使用231维原表示；第三问使用69维校准量与157维相对量组成的226维混合表示。迁移训练排除全部11款Pils。",
+      "relativepath": "figures/figure1_workflow.png",
+      "svg_relativepath": "figures/figure1_workflow.svg",
+      "widthcm": 16.0,
+      "heightcm": 11.2,
+      "sources": [
+        "outputs/q1/summary.json",
+        "outputs/q2/summary.json",
+        "outputs/q3_optimized/generation/summary.json",
+        "outputs/q3_refined/stale/summary.json",
+        "src/q3_data.py"
+      ]
+    },
+    {
+      "id": 2,
+      "caption": "图2 第一问四种方法的五折折外误差、宏平均R²及ExtraTrees缺失压力结果。裁剪Ridge为稳健性对照；额外隐藏20%已观测特征后，ExtraTrees的RMSE由0.4862增至0.4992。",
+      "relativepath": "figures/figure2_q1.png",
+      "svg_relativepath": "figures/figure2_q1.svg",
+      "widthcm": 16.0,
+      "heightcm": 11.2,
+      "sources": [
+        "outputs/q1/metrics_overall.csv",
+        "outputs/q1/missingness_stress.csv",
+        "outputs/q1_robust/metrics_overall.csv"
+      ]
+    },
+    {
+      "id": 3,
+      "caption": "图3 化学关联网络及稳定性。(a) 实际|Spearman ρ|≥0.7网络，保留全部231节点和109条正相关边；81个非孤立节点采用固定种子20261023的分量内力导向布局及分量打包，并进行显示避碰，150个孤立节点在外围环逐点保留，节点面积随度增加。A—H为度最高八个节点，图内列简名；布局距离不表示化学浓度或因果关系。(b) 三个阈值下的边数。(c) 135个Top-3位置的200次配对重抽样入选频率，其中14个达到0.8；频率区间左闭右开，最后一组包含1。",
+      "relativepath": "figures/figure3_q2.png",
+      "svg_relativepath": "figures/figure3_q2.svg",
+      "widthcm": 16.0,
+      "heightcm": 11.8,
+      "sources": [
+        "outputs/q2/network_nodes.csv",
+        "outputs/q2/network_edges_rho_0.7.csv",
+        "outputs/q2/summary.json",
+        "outputs/q2/top3_compounds.csv"
+      ]
+    },
+    {
+      "id": 4,
+      "caption": "图4 三种目标风格的生成能量差异，比较基准Copula、完整嵌套选择器及重采样对照。柱为外层六个折均值的平均值，误差线为其标准差；每折先平均两个模拟种子。折间标准差不是置信区间，真实样本数列于横轴。",
+      "relativepath": "figures/figure4_generation.png",
+      "svg_relativepath": "figures/figure4_generation.svg",
+      "widthcm": 16.0,
+      "heightcm": 8.6,
+      "sources": [
+        "outputs/q3_optimized/generation/cv_summary.csv",
+        "outputs/q3_optimized/generation/cv_fold_means.csv",
+        "outputs/q2/summary.json"
+      ]
+    },
+    {
+      "id": 5,
+      "caption": "图5 三种风格在列示的12个代表感官维度上的生成画像。圆点为每风格300条谱的预测均值，线段为5%—95%生成分布范围，三个面板使用共同横轴。陈旧酒花来自239款非Pils训练的固定单目标树，其余维度来自226维全量多输出代理；区间不是校准预测置信区间，数值不是原始0—6分。",
+      "relativepath": "figures/figure5_profiles.png",
+      "svg_relativepath": "figures/figure5_profiles.svg",
+      "widthcm": 16.0,
+      "heightcm": 12.7,
+      "sources": [
+        "outputs/q3_optimized/generated_sensory_summary.csv",
+        "outputs/q3_optimized/generation/summary.json",
+        "outputs/q3_optimized/stale_fixed/summary.json"
+      ]
+    },
+    {
+      "id": 6,
+      "caption": "图6 固定树、中央6004候选池与retain80条件下，11款Pils源的所选谱目标距离改善。余量优先和几何优先均通过10/11款，beer 96的审计失败保留；改善中位数分别为57.74%与70.08%，包括已选但失败的谱。几何优先为探索性应用示例，模型检查通过不代表实际品评成功。",
+      "relativepath": "figures/figure6_transfer.png",
+      "svg_relativepath": "figures/figure6_transfer.svg",
+      "widthcm": 16.0,
+      "heightcm": 10.3,
+      "sources": [
+        "outputs/q3_refined/transfer/transfer_summary.csv",
+        "outputs/q3_refined/transfer/frontier.csv"
+      ]
+    }
+  ],
+  "profile_targets": [
+    {
+      "target": "A_malt_all",
+      "label": "麦芽香气"
+    },
+    {
+      "target": "A_hops_all",
+      "label": "酒花香气"
+    },
+    {
+      "target": "A_esters_fruity",
+      "label": "水果酯香"
+    },
+    {
+      "target": "F_malt_all",
+      "label": "麦芽风味"
+    },
+    {
+      "target": "F_hops_all",
+      "label": "酒花风味"
+    },
+    {
+      "target": "acidity",
+      "label": "酸度"
+    },
+    {
+      "target": "bitternes",
+      "label": "苦度"
+    },
+    {
+      "target": "sweetness",
+      "label": "甜度"
+    },
+    {
+      "target": "X4vg",
+      "label": "4VG 酚味"
+    },
+    {
+      "target": "stale_hops",
+      "label": "陈旧酒花"
+    },
+    {
+      "target": "lactic",
+      "label": "乳酸味"
+    },
+    {
+      "target": "barnyard",
+      "label": "畜棚气味"
+    }
+  ],
+  "verification": {
+    "figure3_nodes": 231,
+    "figure3_edges": 109,
+    "figure3_active_nodes": 81,
+    "figure3_isolated_nodes": 150,
+    "figure3_all_edges_positive": true,
+    "figure3_layout_seed": 20261023,
+    "figure3_top3_positions": 135,
+    "figure3_frequency_at_least_0_8": 14,
+    "figure6_sources": 11,
+    "figure6_passed_each_ranking": 10,
+    "figure6_failed_source_each_ranking": 96
+  }
+}

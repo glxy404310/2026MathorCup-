@@ -1,0 +1,11 @@
+{
+  "identity_join_four_sources_passed": true,
+  "features": 226,
+  "forum_fields": 186,
+  "ood_query_space_rows": 77,
+  "training_neighbor_rank_rows": 1673,
+  "other_pils_neighbor_rows": 70,
+  "local_target_convex_hull_gap_verified": true,
+  "leave_one_source_out_only_fixed_prediction_influence": true,
+  "source_hashes_unchanged_after_analysis": true
+}
